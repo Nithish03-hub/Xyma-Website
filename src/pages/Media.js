@@ -260,7 +260,7 @@ const Media = () => {
                </p>
             </div>
 
-            <div className='flex'>
+            <div className='flex '>
             <div>
           <VerticalSlider images={images1} />
        </div>

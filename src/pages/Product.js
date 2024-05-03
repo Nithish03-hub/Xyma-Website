@@ -21,8 +21,9 @@ import logo from '../Assets/logo.png';
 import share from '../Assets/share.png';
 import line from '../Assets/line.png';
 import arrow from '../Assets/arrow.png';
-
-
+import semi from '../Assets/semi.png';
+import ref from '../Assets/refineries.png';
+import eor from '../Assets/eor.png';
 
 
 
@@ -76,7 +77,6 @@ const Product = () => {
     bottom: '60%',
     left: '2%',
     color: '#fff',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     padding: '1% 2%',
     borderRadius: '5px',
     fontSize: '2.5vw', 
@@ -138,16 +138,30 @@ const Product = () => {
           </div>
         </div>
         <div className='mt-8'>
-        <div className='font-semibold text-2xl mt-2'>Multi-Point Temperature Mapping  <br/> Sensor</div>  <Icon/>  
+        <div className='font-semibold text-2xl mt-2'>Multi-Point Temperature <br/>Mapping Sensor</div>  <Icon/>  
               <Badge text="Temperature Range: 25° C to 1600° C "/>
               <div className='mt-6'>
-                <p className='text-[#60646C] text-sm'>µTMapS & µSTMapS are IIoT-enabled temperature measurement and temperature profiling sensors that captures continuous measurements at multiple points with a single customizable waveguide with multiple configurations in contrast to contact based thermocouples/RTDs or contactless IR guns.</p>
+                <p className='text-[#60646C] text-base'style={{width:'85%'}}>µTMapS & µSTMapS are IIoT-enabled temperature measurement and temperature profiling sensors that captures continuous measurements at multiple points with a single customizable waveguide with multiple configurations in contrast to contact based thermocouples/RTDs or contactless IR guns.</p>
               </div>
               <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
-              <img className='bg-white w-auto h-auto border border-gray-300 rounded-lg' src={isteel} style={{ marginRight: '14px',width:"30px" ,height:"30px"  }}   />
-              <span className='text-sm font-semibold'>Steel Manufacturing</span>
-              <img className='bg-white w-auto h-auto border border-gray-300 rounded-lg ' src={aicon} style={{ marginRight: '14px',width:"30px" ,height:"25px"  }}   />
-              <span className='text-sm font-semibold'>Aluminum Manufacturing</span>
+                <div className='flex border border-gray-200 rounded-lg p-3'>
+                  <img className='bg-white w-auto h-auto ' src={isteel} style={{ marginRight: '12px',width:"20%"  }}   />
+                  <span className='text-sm font-semibold mt-1.5'>Steel Manufacturing</span>
+                </div>
+                <div className='flex border border-gray-200 rounded-lg p-3 ml-4'>
+                  <img className='bg-white w-auto h-auto  ' src={aicon} style={{ marginRight: '12px',width:"40px",marginLeft:'8%'  }}   />
+                  <span className='text-sm font-semibold' >Aluminum Manufacturing</span>
+              </div>
+            </div>
+            <div  className='mt-2'style={{ display: 'flex', alignItems: 'center' }}>
+                <div className='flex border border-gray-200 rounded-lg p-3'>
+                  <img className='bg-white w-auto h-auto ' src={semi} style={{ marginRight: '12px',width:"18%"  }}   />
+                  <span className='text-sm font-semibold mt-0 w-32 ml-1'>Semiconductor Manufacturing</span>
+                </div>
+                <div className='flex border border-gray-200 rounded-lg p-3 ml-4' style={{width:'48%'}}>
+                  <img className='bg-white w-auto h-auto  ' src={ref} style={{ marginRight: '12px',width:"40px",marginLeft:'8%'  }}   />
+                  <span className='text-sm font-semibold mt-1.5' >Refineries</span>
+              </div>
             </div>
         </div>
       </div>
@@ -183,13 +197,23 @@ const Product = () => {
           <Badge text="Temperature: 20° C to 400° C"/>
       </div>  </div>
               <div className='mt-6'>
-                <p className='text-[#60646C] text-sm'>PoRTS is an invasive/non-invasive based IIoT-enabled rheology and temperature measurement sensor that continuously captures multiple parameters such as viscosity, density and temperature with a single waveguide unlike discrete measurements with thermocouple/RTDs or discrete measurements with sampling from viscometer and density meter.</p>
+                <p className='text-[#60646C] text-base' style={{width:'95%'}}>PoRTS is an invasive/non-invasive based IIoT-enabled rheology and temperature measurement sensor that continuously captures multiple parameters such as viscosity, density and temperature with a single waveguide unlike discrete measurements with thermocouple/RTDs or discrete measurements with sampling from viscometer and density meter.</p>
               </div>
               <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
-              <img className='bg-white w-auto h-auto border border-gray-300 rounded-lg' src={paint} style={{ marginRight: '14px',width:"30px" ,height:"30px"  }}   />
-              <span className='text-sm font-semibold'>Metal Manufacturing</span>
-              <img className='bg-white w-auto h-auto border border-gray-300 rounded-lg 'src={luboil} style={{ marginRight: '14px',width:"30px" ,height:"30px"  }}   />
-              <span className='text-sm font-semibold'>Lubrication Oil</span>
+                <div className='flex border border-gray-200 rounded-lg p-3'>
+                  <img className='bg-white w-auto h-auto ' src={paint} style={{ marginRight: '12px',width:"20%"  }}   />
+                  <span className='text-sm font-semibold mt-1.5'>Paint Manufacturing</span>
+                </div>
+                <div className='flex border border-gray-200 rounded-lg p-3 ml-4'style={{width:'48%'}}>
+                  <img className='bg-white w-auto h-auto  ' src={luboil} style={{ marginRight: '12px',width:"40px",marginLeft:'8%'  }}   />
+                  <span className='text-sm font-semibold mt-1.5' >Lubrication Oil</span>
+              </div>
+            </div>
+            <div  className='mt-2'style={{ display: 'flex', alignItems: 'center' }}>
+                <div className='flex border border-gray-200 rounded-lg p-3'>
+                  <img className='bg-white w-auto h-auto ' src={eor} style={{ marginRight: '12px',width:"18%"  }}   />
+                  <span className='text-sm font-semibold mt-1.5 w-32 ml-1'>E.O.R.</span>
+                </div>
             </div>
         </div>
       </div>
@@ -219,13 +243,17 @@ const Product = () => {
         <div className='font-semibold text-2xl mt-2'> Ultrasonic contact &   <br/>non-contact based level <br/> measurement sensor</div>  <Icon/>  
               <Badge text="Level: 0.03 m to 10 m "/>
               <div className='mt-6'>
-                <p className='text-[#60646C] text-sm'>Ztar is a contact/contactless IIoT-enabled level measurement sensor that captures continuous level across any hazardous environment with accuracy in contrast to radar-based level measurement sensors.</p>
+                <p className='text-[#60646C] text-base' style={{width:'95%'}}>Ztar is a contact/contactless IIoT-enabled level measurement sensor that captures continuous level across any hazardous environment with accuracy in contrast to radar-based level measurement sensors.</p>
               </div>
               <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
-              <img className='bg-white w-auto h-auto border border-gray-300 rounded-lg' src={metal} style={{ marginRight: '14px',width:"30px" ,height:"30px"  }}   />
-              <span className='text-sm font-semibold'>Steel Manufacturing</span>
-              <img className='bg-white w-auto h-auto border border-gray-300 rounded-lg' src={refrigerant} style={{ marginRight: '14px',width:"30px" ,height:"30px"  }}   />
-              <span className='text-sm font-semibold'>Refrigerants</span>
+                <div className='flex border border-gray-200 rounded-lg p-3'>
+                  <img className='bg-white w-auto h-auto ' src={metal} style={{ marginRight: '12px',width:"20%"  }}   />
+                  <span className='text-sm font-semibold mt-1.5'>Metal Manufacturing</span>
+                </div>
+                <div className='flex border border-gray-200 rounded-lg p-3 ml-4'style={{width:'48%'}}>
+                  <img className='bg-white w-auto h-auto  ' src={refrigerant} style={{ marginRight: '12px',width:"40px",marginLeft:'8%'  }}   />
+                  <span className='text-sm font-semibold mt-1.5' >Refrigerants</span>
+              </div>
             </div>
         </div>
       </div>

@@ -93,7 +93,7 @@ const About = () => {
 
       <div>
          <div>
-            <p className='text-[#1C2024] font-semibold' style={{width:'58%',marginTop:'10%',marginLeft:'10%'}}>Lorem Ipsum has been the industry's standard dummy text when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p className='text-[#1C2024] font-semibold' style={{width:'58%',marginTop:'25%',marginLeft:'10%'}}>Lorem Ipsum has been the industry's standard dummy text when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
          </div>
       </div>
 

@@ -311,7 +311,7 @@ export const Home = () => {
                 <img className='bg-white w-auto h-auto rounded-lg mb-4' src={client} alt="Client icon" style={{ width: "45px", height: "45px" }} />
                 <p className='text-black text-2xl font-semibold mb-3 md:text-2xl'>Client-Centric</p>
                 <p className='text-[#60646C] text-sm md:text-sm'>The Solution is provided based on in-depth understanding of clients needs addressing the relevant challenges.</p>
-                
+                <hr class="mt-4 border border-gray-200" />
                 <p className='text-gray-300 text-xs mt-3 mb-3 md:text-sm'>04/05</p>
                 <img className='bg-white w-auto h-auto rounded-lg mb-4' src={solution} alt="Solution icon" style={{ width: "45px", height: "45px" }} />
                 <p className='text-black text-2xl font-semibold mb-3 md:text-2xl'>Customization For Solutions</p>
