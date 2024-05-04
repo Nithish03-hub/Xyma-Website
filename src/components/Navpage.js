@@ -6,6 +6,7 @@ import Product from '../pages/Product';
 import Career from '../pages/Career';
 import Media from '../pages/Media';
 import Resource from '../pages/Resource';
+import Contact from '../pages/Contact';
 
 const Navpage = () => {
   return (
@@ -18,6 +19,7 @@ const Navpage = () => {
           <Route path="/resources" element={<Resource />} />
           <Route path="/media" element={<Media />} />
           <Route path="/careers" element={<Career />} />
+          <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </section>
     </div>

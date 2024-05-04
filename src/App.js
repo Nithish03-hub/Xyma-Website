@@ -1,6 +1,6 @@
 import React from 'react'
 import Mainpage from './components/Mainpage'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 import Navpage from './components/Navpage';
 import './App.css'
 
@@ -13,6 +13,8 @@ const App = () => {
         <Mainpage/> 
         
       </BrowserRouter>
+    
+   
     </React.Fragment>
     
   )
