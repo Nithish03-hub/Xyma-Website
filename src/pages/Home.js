@@ -54,7 +54,7 @@ export const Home = () => {
   const phrase = "Prevent Unplanned Downtime";
   const wordsArray = phrase.split(" ");
   const [clickedImage, setClickedImage] = useState("Aluminum");
-  const [selectedWord, setSelectedWord] = useState('Aluminum');
+  const [selectedWord, setSelectedWord] = useState("Aluminum");
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const handleClick = (event) => {
