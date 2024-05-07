@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import media from '../Assets/Framemedia.png';
 import second from '../Assets/secondline.png';
 import asian from '../Assets/Frameasian.png';
@@ -34,7 +34,7 @@ import logo from '../Assets/logo.png';
 import share from '../Assets/share.png';
 import line from '../Assets/line.png';
 import arrow from '../Assets/arrow.png';
-
+import asain2 from '../Assets/asian2.png';
 
 
 
@@ -43,6 +43,15 @@ import arrow from '../Assets/arrow.png';
 
 
 const Media = () => {
+
+  const [isHovered1, setIsHovered1] = useState(false);
+  const [isHovered2, setIsHovered2] = useState(false);
+  const [isHovered3, setIsHovered3] = useState(false);
+  const [isHovered4, setIsHovered4] = useState(false);
+  const [isHovered5, setIsHovered5] = useState(false);
+  const [isHovered6, setIsHovered6] = useState(false);
+  const [isHovered7, setIsHovered7] = useState(false);
+
 
   const images3 = [
     image1,
@@ -121,33 +130,49 @@ const Media = () => {
 
         
      <div className='mt-10 grid grid-cols-1 md:grid-cols-3 gap-0'>
-          <div className=' border border-gray-300 p-1' style={{ borderRadius: '14px', width: '80%', margin: 'auto' }}>
-            <img src={asian} alt="Asian" style={{ width: '100%' }} />
-            <div className='text-xl font-semibold mt-1'>Advancing Technology to Foster a Sustainable Energy Landscape</div>
-            <div className='text-xs mt-1'>February 24, 2024</div>
-            <center>
-              <button className='text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9' style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }}>View More</button>
-            </center>
-         </div>
 
-      <div className=' border border-gray-300 p-1' style={{ borderRadius: '14px', width: '80%', margin: 'auto' }}>
-        <div style={{ position: 'relative' }}>
-          <img src={shell} alt="Shell" style={{ width: '100%' }} />
-          <div className="flex gap-4" style={{ position: 'absolute', top: '85%', left: '32%', transform: 'translate(-50%, -50%)' }}>
-            <img src={icon1} alt="Icon 1" style={{ width: '20%' }} />
-            <p className='text-white mt-1'>SAUR ENERGY</p>
-          </div>
-        </div>
-        <div className='text-xl font-semibold mt-1'>Shell Launches ‘Digital Track’ for Indian Startups under its E4 Programme</div>
-        <div className='text-xs mt-1'>Updated On Thu, Jul 8th, 2021</div>
+
+      <div className='border border-gray-300 p-1 hover:scale-90 transition-transform duration-300' style={{ borderRadius: '14px', width: '80%', margin: 'auto' }}>
+        <img src={asian} alt="Asian" style={{ width: '100%' }} />
+        <div className='text-xl font-semibold mt-1'>Advancing Technology to Foster a Sustainable Energy Landscape</div>
+        <div className='text-xs mt-1'>February 24, 2024</div>
         <center>
           <button className='text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9' style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }}>View More</button>
         </center>
-      </div>
+     </div>
 
-      <div className=' border border-gray-300 p-1' style={{ borderRadius: '14px', width: '80%', margin: 'auto' }}>
-        <div style={{ position: 'relative' }}>
-          <img src={business} alt="Business" style={{ width: '100%' }} />
+
+     <div className='border border-gray-300 p-1 hover:scale-90 transition-transform duration-300' 
+         style={{ borderRadius: '14px', width: '80%', margin: 'auto' }}
+         onMouseEnter={() => setIsHovered1(true)}
+         onMouseLeave={() => setIsHovered1(false)}>
+      <div style={{ position: 'relative' }}>
+        {isHovered1 ? (
+          <img src={asain2} alt="Asian2" style={{ width: '100%' }} />
+        ) : (
+          <img src={shell} alt="Shell" style={{ width: '100%' }} />
+        )}
+        <div className="flex gap-4" style={{ position: 'absolute', top: '85%', left: '32%', transform: 'translate(-50%, -50%)' }}>
+          <img src={icon1} alt="Icon 1" style={{ width: '20%' }} />
+          <p className='text-white mt-1'>SAUR ENERGY</p>
+        </div>
+      </div>
+      <div className='text-xl font-semibold mt-1'>Shell Launches ‘Digital Track’ for Indian Startups under its E4 Programme</div>
+      <div className='text-xs mt-1'>Updated On Thu, Jul 8th, 2021</div>
+      <center>
+        <button className='text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9' style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }}>View More</button>
+      </center> 
+    </div>
+
+      <div className=' border border-gray-300 p-1 hover:scale-90 transition-transform duration-300' style={{ borderRadius: '14px', width: '80%', margin: 'auto' }}
+      onMouseEnter={() => setIsHovered2(true)}
+      onMouseLeave={() => setIsHovered2(false)}>
+   <div style={{ position: 'relative' }}>
+     {isHovered2 ? (
+       <img src={asain2} alt="Asian2" style={{ width: '100%' }} />
+     ) : (
+       <img src={business} alt="Business" style={{ width: '100%' }} />
+     )}
           <div className="flex gap-4" style={{ position: 'absolute', top: '85%', left: '32%', transform: 'translate(-50%, -50%)' }}>
             <img src={icon2} alt="Icon 2" style={{ width: '20%' }} />
             <p className='text-white mt-1'>Businessline</p>
@@ -161,9 +186,15 @@ const Media = () => {
       </div>
 
 
-      <div className=' border border-gray-300 p-1' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}>
-        <div style={{ position: 'relative' }}>
-          <img src={iitm} alt="iitm" style={{ width: '100%' }} />
+      <div className=' border border-gray-300 p-1 hover:scale-90 transition-transform duration-300' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}
+      onMouseEnter={() => setIsHovered3(true)}
+      onMouseLeave={() => setIsHovered3(false)}>
+   <div style={{ position: 'relative' }}>
+     {isHovered3 ? (
+       <img src={asain2} alt="Asian2" style={{ width: '100%' }} />
+     ) : (
+       <img src={iitm} alt="Iitm" style={{ width: '100%' }} />
+     )}
           <div className="flex gap-4" style={{ position: 'absolute', top: '85%', left: '32%', transform: 'translate(-50%, -50%)' }}>
             <img src={icon3} alt="Icon 3" style={{ width: '20%' }} />
             <p className='text-white mt-1'>IIT MADRAS</p>
@@ -177,9 +208,15 @@ const Media = () => {
       </div>
 
 
-      <div className=' border border-gray-300 p-1' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}>
-        <div style={{ position: 'relative' }}>
-          <img src={story} alt="Story" style={{ width: '100%' }} />
+      <div className=' border border-gray-300 p-1 hover:scale-90 transition-transform duration-300' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}
+      onMouseEnter={() => setIsHovered4(true)}
+      onMouseLeave={() => setIsHovered4(false)}>
+   <div style={{ position: 'relative' }}>
+     {isHovered4 ? (
+       <img src={asain2} alt="Asian2" style={{ width: '100%' }} />
+     ) : (
+       <img src={story} alt="Story" style={{ width: '100%' }} />
+     )}
           <div className="flex gap-4" style={{ position: 'absolute', top: '85%', left: '32%', transform: 'translate(-50%, -50%)' }}>
             <img src={icon4} alt="Icon 4" style={{ width: '20%' }} />
             <p className='text-white mt-1'>YOUR STORY</p>
@@ -193,9 +230,15 @@ const Media = () => {
       </div>
 
 
-      <div className=' border border-gray-300 p-1' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}>
-        <div style={{ position: 'relative' }}>
-          <img src={cm} alt="CM" style={{ width: '100%' }} />
+      <div className=' border border-gray-300 p-1 hover:scale-90 transition-transform duration-300' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}
+      onMouseEnter={() => setIsHovered5(true)}
+      onMouseLeave={() => setIsHovered5(false)}>
+   <div style={{ position: 'relative' }}>
+     {isHovered5 ? (
+       <img src={asain2} alt="Asian2" style={{ width: '100%' }} />
+     ) : (
+       <img src={cm} alt="Cm" style={{ width: '100%' }} />
+     )}
           <div className="flex gap-4" style={{ position: 'absolute', top: '85%', left: '32%', transform: 'translate(-50%, -50%)' }}>
             <img src={icon2} alt="Icon 2" style={{ width: '20%' }} />
             <p className='text-white mt-1'>Businessline</p>
@@ -209,9 +252,15 @@ const Media = () => {
       </div>
 
 
-      <div className=' border border-gray-300 p-1' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}>
-        <div style={{ position: 'relative' }}>
-          <img src={smart} alt="Shell" style={{ width: '100%' }} />
+      <div className=' border border-gray-300 p-1 hover:scale-90 transition-transform duration-300' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}
+      onMouseEnter={() => setIsHovered6(true)}
+      onMouseLeave={() => setIsHovered6(false)}>
+   <div style={{ position: 'relative' }}>
+     {isHovered6 ? (
+       <img src={asain2} alt="Asian2" style={{ width: '100%' }} />
+     ) : (
+       <img src={smart} alt="Smart" style={{ width: '100%' }} />
+     )}
           <div className="flex gap-4" style={{ position: 'absolute', top: '85%', left: '32%', transform: 'translate(-50%, -50%)' }}>
             <img src={icon2} alt="Icon 2" style={{ width: '22%' }} />
             <p className='text-white mt-1'>Newswires</p>
@@ -225,9 +274,15 @@ const Media = () => {
       </div>
 
 
-      <div className=' border border-gray-300 p-1' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}>
-        <div style={{ position: 'relative' }}>
-          <img src={pm} alt="PM" style={{ width: '100%' }} />
+      <div className=' border border-gray-300 p-1 hover:scale-90 transition-transform duration-300' style={{ borderRadius: '14px', width: '80%', margin: 'auto',marginTop:'5%' }}
+      onMouseEnter={() => setIsHovered7(true)}
+      onMouseLeave={() => setIsHovered7(false)}>
+   <div style={{ position: 'relative' }}>
+     {isHovered7 ? (
+       <img src={asain2} alt="Asian2" style={{ width: '100%' }} />
+     ) : (
+       <img src={pm} alt="Pm" style={{ width: '100%' }} />
+     )}
           <div className="flex gap-4" style={{ position: 'absolute', top: '85%', left: '36%', transform: 'translate(-50%, -50%)' }}>
             <img src={icon5} alt="Icon 2" style={{ width: '18%' }} />
             <p className='text-white mt-1'>ANI Multimedia News</p>

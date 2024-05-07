@@ -21,3 +21,6 @@ code {
      url('./fonts/Satoshi-Variable.ttf') format('truetype');
 }
 
+.scale-85 {
+  transform: scale(0.85);
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import video2 from '../Images/contact.mp4';
 import black from '../Images/-66.png';
 import second from '../Assets/secondline.png';
@@ -16,7 +16,15 @@ import arrow from '../Assets/arrow.png';
 
 
 
+
 const ContactPage = () => {
+
+  const sectionRef = useRef(null);
+
+  const handleButtonClick = () => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div>
       <section>
@@ -61,7 +69,7 @@ const ContactPage = () => {
               marginLeft: '8rem',
               marginTop:'60%'
             }}
-           
+           onClick={handleButtonClick}
           >
             Get in Touch
           </button>
@@ -69,7 +77,7 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <section style={{marginTop:'5%'}}>
+      <section ref={sectionRef} style={{marginTop:'5%'}}>
         <div className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-semibold text-center">
           Get In Touch
           <center>

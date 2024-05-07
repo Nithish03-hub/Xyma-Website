@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { TiStarburst } from "react-icons/ti";
 import Badge from './Badge';
 import aluminum from '../Assets/aluminum.png';
 import steel from '../Assets/steel.png';
@@ -51,6 +53,12 @@ import tool from '../Assets/tool.png';
 
 
 export const Home = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    
+    navigate('/contact');
+  };
   const phrase = "Prevent Unplanned Downtime";
   const wordsArray = phrase.split(" ");
   const [clickedImage, setClickedImage] = useState("Aluminum");
@@ -296,37 +304,61 @@ export const Home = () => {
             </p>
 
           </div>
+
+          
           <div className="flex justify-center items-center mt-4">
-            <div className='grid grid-cols-1 md:grid-cols-3 rounded-lg w-full md:w-[160vh] h-auto md:h-[84vh] shadow-lg bg-white'>
-              <div className="col-span-1 md:col-span-1" style={{ borderRadius: '8px', background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)', width: '111%', padding: '20px' }}>
+            <div className='flex '>
+              <div className="col-span-1 md:col-span-1" style={{ borderRadius: '8px', background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)', width: '45%',height:'10%', padding: '10px' }}>
                 <div className='md:ml-4 md:mt-32 md:mb-4'>
-                  <div className='mb-2 text-xs md:text-sm'>01/05</div>
                   <img className='bg-white w-auto h-auto border rounded-lg mb-3' src={trophy} alt="Trophy icon" style={{ width: "75px", height: "75px" }} />
                   <p className='text-2xl font-semibold mb-3 md:text-3xl'>Award Winning Technology</p>
                   <p className='text-sm mb-3 md:text-sm'>The team leverages state-of-the-art, award-winning, ultrasonic waveguide technology developed through 25+ years of research and development.</p>
                 </div>
               </div>
-              <div className="col-span-1 md:col-span-1 border-r border-b md:border-b-0 md:border-r-0 border-gray-300" style={{ marginLeft: '14%', padding: '20px' }}>
-                <p className='text-gray-300 text-xs mt-3 mb-3 md:text-sm'>02/05</p>
-                <img className='bg-white w-auto h-auto rounded-lg mb-4' src={client} alt="Client icon" style={{ width: "45px", height: "45px" }} />
-                <p className='text-black text-2xl font-semibold mb-3 md:text-2xl'>Client-Centric</p>
-                <p className='text-[#60646C] text-sm md:text-sm'>The Solution is provided based on in-depth understanding of clients needs addressing the relevant challenges.</p>
-                <hr class="mt-4 border border-gray-200" />
-                <p className='text-gray-300 text-xs mt-3 mb-3 md:text-sm'>04/05</p>
-                <img className='bg-white w-auto h-auto rounded-lg mb-4' src={solution} alt="Solution icon" style={{ width: "45px", height: "45px" }} />
-                <p className='text-black text-2xl font-semibold mb-3 md:text-2xl'>Customization For Solutions</p>
-                <p className='text-[#60646C] text-sm md:text-sm'>Gain immediate access to valuable data through the technology's adaptability with material selection and configuration for waveguides.</p>
+
+             <div>
+              <div className='flex'>
+                <div className="bg-white col-span-1 md:col-span-1 p-5 rounded-xl" style={{ marginLeft: '1%',width:'30%',height:'120%' }}>
+                  <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>01/05</p>
+                  <div className='flex'>
+                    <img className='bg-white w-auto h-auto rounded-lg mb-4' src={client} alt="Client icon" style={{ width: "45px", height: "45px" }} />
+                    <p className='text-black text-2xl font-semibold mt-1 md:text-xl' style={{marginLeft:'5%'}}>Client-Centric</p>
+                  </div>
+                  <p className='text-[#60646C] text-sm md:text-sm' >The Solution is provided based on in-depth understanding of clients needs addressing the relevant challenges.</p>
               </div>
-              <div className="col-span-1 md:col-span-1 border-b md:border-b-0 border-gray-300" style={{ borderLeft: '1px solid #e5e7eb', padding: '20px' }}>
-                <p className='text-gray-300 text-xs mt-3 mb-3 md:text-sm'>03/05</p>
-                <img className='bg-white w-auto h-auto rounded-lg mb-4' src={real} alt="Real icon" style={{ width: "45px", height: "45px" }} />
-                <p className='text-black text-2xl font-semibold mb-3 md:text-2xl'>Real-Time Insights</p>
-                <p className='text-[#60646C] text-sm md:text-sm'>Gain immediate access to valuable data through our supervised sensing capabilities, empowering informed decision-making.</p>
-                <hr class="mt-4 border border-gray-200" />
-                <p className='text-gray-300 text-xs mt-3 mb-3 md:text-sm'>05/05</p>
-                <img className='bg-white w-auto h-auto rounded-lg mb-4' src={time} alt="Time icon" style={{ width: "45px", height: "45px" }} />
-                <p className='text-black text-2xl font-semibold mb-3 md:text-2xl'>On-Time Delivery</p>
-                <p className='text-[#60646C] text-sm md:text-sm'>Committed to adhering to project timelines and satisfaction.</p>
+
+              <div className='bg-white rounded-xl p-3' style={{width:'30%',height:'10%',marginLeft:'1%'}}>  
+                 <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>02/05</p> 
+                 <div className='flex'>
+                   <img className='bg-white w-auto h-auto rounded-lg mb-4' src={solution} alt="Solution icon" style={{ width: "45px", height: "45px" }} />
+                   <p className='text-black text-2xl font-semibold md:text-xl w-52 ml-6 '>Customization For Solutions</p>
+                 </div> 
+                  <p className='text-[#60646C] text-sm md:text-sm'>Gain immediate access to valuable data through the technology's adaptability with material selection and configuration for waveguides.</p>
+                </div>
+              </div>  
+              
+
+             
+             <div className='flex'>   
+              <div className="bg-white col-span-1 md:col-span-1 rounded-xl p-2" style={{ marginLeft: '1%',width:'30%',height:'90%',marginTop:'1%' }}>
+                  <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>03/05</p>
+                  <div className='flex'>
+                    <img className='bg-white w-auto h-auto rounded-lg mb-4' src={real} alt="Real icon" style={{ width: "45px", height: "45px" }} />
+                    <p className='text-black text-2xl font-semibold mb-3 md:text-xl ml-4 mt-1'>Real-Time Insights</p>
+                  </div>
+                  <p className='text-[#60646C] text-sm md:text-sm'>Gain immediate access to valuable data through our supervised sensing capabilities, empowering informed decision-making.</p>
+               </div>
+
+               <div className='bg-white rounded-xl p-4' style={{ marginLeft: '1%',width:'30%',height:'95%',marginTop:'1%' }}>
+                 <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>04/05</p>
+                 <div className='flex'>
+                   <img className='bg-white w-auto h-auto rounded-lg mb-4' src={time} alt="Time icon" style={{ width: "45px", height: "45px" }} />
+                   <p className='text-black text-2xl font-semibold mb-3 md:text-xl ml-3 mt-1'>On-Time Delivery</p>
+                 </div>
+                 <p className='text-[#60646C] text-sm md:text-sm' >Committed to adhering to project timelines and satisfaction.</p>
+               </div>
+              
+              </div>
               </div>
             </div>
           </div>
@@ -338,8 +370,8 @@ export const Home = () => {
       <section>
         <div className='h-12 w-full' style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }}>
           <div className="sliding-text-container ">
-            <span className="mt-2.5 sliding-text text-white w-screen ">
-              Continuous Multi-point temperature measurements
+            <span className="mt-2.5 sliding-text text-white w-screen">
+              Continuous Multi-point temperature measurements 
               Continuous multi-parameter measurements
               Continuous contact & non-contact based level measurement
               Continuous wear monitoring
@@ -390,7 +422,7 @@ export const Home = () => {
                     <img className='mb-1 w-full md:w-40 mx-auto md:ml-40' src={vector} alt="Vector Image" />
                 </div>
                 <div className='md:mr-10 md:mt-5 text-xs mt-5 md:text-right'>
-                    <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10'>Get in Touch</button>
+                    <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10' onClick={handleContactClick} >Get in Touch</button>
                     <button className='bg-white text-[#01285C] rounded-full w-36 h-10 md:w-36 md:h-10 ml-4 md:ml-8 md:mr-4 mb-2 md:mt-0'>Download Brochure</button>
                 </div>
             </div>
