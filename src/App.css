@@ -13,7 +13,7 @@
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,7 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -37,7 +37,7 @@
   }
 }
 
-.underlined:after {
+/* .underlined:after {
   content: "";
   position: absolute;
   bottom: -8px;
@@ -47,9 +47,7 @@
   border: solid 4px #ffa400;
   border-color: #ffa400 transparent transparent transparent;
   border-radius: 30%;
-}
-
-
+} */
 
 .word-selected {
   color: #013872;
@@ -103,7 +101,7 @@
   margin-left: 60px;
 }
 
-.vertical-line {
+/* .vertical-line {
   position: absolute;
   top: 0;
   right: 50%; 
@@ -111,7 +109,7 @@
   width: 1px;
   background-color: black;
   display: none;
-}
+} */
 
 
 .word-selected:hover + .vertical-line {
@@ -120,6 +118,6 @@
 
 }
 
-
-
-
+body::-webkit-scrollbar {
+  width: 0px;
+}

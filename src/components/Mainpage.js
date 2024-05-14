@@ -8,7 +8,7 @@ const Mainpage = () => {
 
     <React.Fragment>
         <section >
-            <div >
+            <div>
               <Navbar/>
             </div>
             <div>
