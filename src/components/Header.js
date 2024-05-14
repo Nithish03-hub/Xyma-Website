@@ -5,7 +5,7 @@ import CircleComponent from '../CircleComponent';
 import Home from '../pages/Home';
 
 function Header() {
-  const [selectedIndex, setSelectedIndex] = useState(null); 
+  const [selectedIndex, setSelectedIndex] = useState(0); 
 
   const handleNavItemClick = (index) => {
     setSelectedIndex(index);
@@ -18,7 +18,7 @@ function Header() {
        <div key={index} className="relative">
           <NavLink
             to={item.path}
-            className={`text text-1xl relative ${selectedIndex === index ? 'text-orange-400' : ''}`}
+            className={`${selectedIndex === index ? 'text-orange-400' : ''}`}
             onClick={() => handleNavItemClick(index)}>
             <span>{item.title}</span>
           </NavLink>

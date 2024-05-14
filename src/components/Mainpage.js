@@ -10,7 +10,8 @@ const Mainpage = () => {
         <section >
             <div >
               <Navbar/>
-              </div><div>
+            </div>
+            <div>
               <Navpage/>
             </div>           
         </section>
