@@ -12,6 +12,7 @@ import utmap1 from '../Assets/maps1.png';
 import utmap2 from '../Assets/maps2.png';
 import utmap3 from '../Assets/maps3.png';
 import video from '../Assets/xymavideo.mp4';
+import newpage from '../Assets/newpage.png';
 import trophy from '../Assets/trophy.png';
 import client from '../Assets/client.png';
 import real from '../Assets/real.png';
@@ -51,7 +52,6 @@ import tool from '../Assets/tool.png';
 
 
 
-
 export const Home = () => {
   const navigate = useNavigate();
 
@@ -61,9 +61,12 @@ export const Home = () => {
   };
   const phrase = "Prevent Unplanned Downtime";
   const wordsArray = phrase.split(" ");
-  const [clickedImage, setClickedImage] = useState("Aluminum");
+  const [clickedImage, setClickedImage] = useState('Aluminum');
   const [selectedWord, setSelectedWord] = useState("Aluminum");
   const [hoveredItem, setHoveredItem] = useState(null);
+
+ 
+
 
   const handleClick = (event) => {
     const clickedWordId = event.target.id;
@@ -115,7 +118,7 @@ export const Home = () => {
     }
   };
   const wordTextMessages = {
-    Aluminum: "10 °C deviation in ideal bath temperature reduces current efficiency, promotes anode effect, and increasesPFC emissions ",
+    Aluminum: "10 °C deviation in ideal bath temperature reduces current efficiency, promotes anode effect, and increases PFC emissions ",
     Steel: "$5.1M would be worth of steel produced by extending ladle life for 1 set of cycle",
     "Reformer Tube": "20°C increase in design temperature reduces operational life of reformer tubes by 50%",
     Lubricant: "30% of maintenance budget is affected by lubricants.",
@@ -125,12 +128,11 @@ export const Home = () => {
 
   return (
     <div>
-      <section className="relative flex justify-center items-center h-screen">
-        <div className="absolute inset-2 overflow-hidden mt-16">
-          <video
-            src={video}
-            autoPlay
-            className="shadow-lg" />
+      <section className="relative flex justify-center items-center h-screen w-full">
+        <div className="absolute inset-0 overflow-hidden mt-16">
+          <img
+            src={newpage}
+            className="shadow-lg " />
         </div>
 
         <center>
@@ -229,7 +231,7 @@ export const Home = () => {
           {clickedImage && (
             <div className="text-center grid grid-cols-2 gap-20 absolute right-10 top-1/2 transform -translate-y-1/2" style={{ marginTop: '88px' }}>
               <img src={clickedImage} alt="Clicked Image" className={`clicked-image ${getImageSizeClass(selectedWord)}`} />
-              <p className='text-left' style={{ color: 'transparent', background: 'linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)', backgroundClip: 'text' }}>{wordTextMessages[selectedWord]}</p>
+              <p className='text-left' style={{ color: 'transparent', background: 'linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)', backgroundClip: 'text',width:'100%' }}>{wordTextMessages[selectedWord]}</p>
             </div>
           )}
         </div>
@@ -252,41 +254,41 @@ export const Home = () => {
     
         <div style={{ position: 'relative', width: '45%', height: '60%', display: 'block', marginTop: '40px' }}>
            <img src={newbg} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Background Image" />
-           <div>
+           <div className='text-right'>
               <img className='w-20 h-20'src={sensor} style={{ position: 'absolute', top: '75%', left: '2%', transform: 'translate(-50%, -50%)' }}alt="Sensor Image"
-               onMouseEnter={() => setHoveredItem('sensor')}
-               onMouseLeave={() => setHoveredItem(null)}/>
-               {hoveredItem === 'sensor' &&  <p style={{ position: 'absolute', top: '70%', right: '102%', backgroundColor: 'white', padding: '5px', }}>Sensor life up to 50,000 hrs</p>}
+               onMouseEnter={() => {setHoveredItem('sensor');}}
+               onMouseLeave={() => {setHoveredItem(null); }}/>
+               {hoveredItem === 'sensor' &&  <p style={{ position: 'absolute', top: '68%', right: '102%', backgroundColor: 'white', padding: '5px',width:'25%' }}>Sensor life up to 50,000 hrs</p>}
            </div>   
-           <div>       
+           <div className='text-right'>       
              <img className='w-20 h-20' src={iot} style={{ position: 'absolute', top: '40%', left: '5%', transform: 'translate(-50%, -50%)' }} alt="Sensor Image" 
              onMouseEnter={()=> setHoveredItem('iot')}
              onMouseLeave={()=> setHoveredItem(null)}/>
              {hoveredItem ==='iot' && <p style={{ position: 'absolute', top: '33%', right: '100%', backgroundColor: 'white', padding: '5px' }}>Multi - point Measurement</p>}
            </div>   
-           <div>
+           <div className='text-right'>
              <img className='w-20 h-20' src={grp} style={{ position: 'absolute', top: '12%', left: '20%', transform: 'translate(-50%, -50%)' }} alt="Sensor Image" 
-             onMouseEnter={()=> setHoveredItem('grp')}
-             onMouseLeave={()=> setHoveredItem(null)}/>
-             {hoveredItem === 'grp' && <p style={{ position: 'absolute', top: '8%', right: '85%', backgroundColor: 'white', padding: '5px' }}>Energy Management System-IoT</p>}
-           </div>
+             onMouseEnter={()=> {setHoveredItem('grp');}}
+             onMouseLeave={()=> {setHoveredItem(null);}}/>
+             {hoveredItem === 'grp' && <p style={{ position: 'absolute', top: '6%', right: '85%', backgroundColor: 'white', padding: '5px',width:'35%' }}>Energy Management System-IoT</p>}
+           </div>                                       
            <div>
             <img className='w-20 h-20' src={zero} style={{ position: 'absolute', top: '12%', left: '75%', transform: 'translate(-50%, -50%)' }} alt="Sensor Image"
             onMouseEnter={()=> setHoveredItem('zero')}
             onMouseLeave={()=> setHoveredItem(null)} />
-            {hoveredItem === 'zero' && <p style={{ position: 'absolute', top: '8%', right: '-12%', backgroundColor: 'white', padding: '5px' }}>Zero Manual Intervention</p>}
+            {hoveredItem === 'zero' && <p style={{ position: 'absolute', top: '5%', right: '-5%', backgroundColor: 'white', padding: '5px',width:'25%' }}>Zero Manual Intervention</p>}
            </div>
            <div>
             <img className='w-20 h-20' src={ai} style={{ position: 'absolute', top: '40%', left: '89%', transform: 'translate(-50%, -50%)' }} alt="Sensor Image" 
             onMouseEnter={() => setHoveredItem('ai')}
             onMouseLeave={() => setHoveredItem(null)}/>
-            {hoveredItem === 'ai' && <p style={{ position: 'absolute', top: '35%', right: '-28%', backgroundColor: 'white', padding: '5px' }}>AI Enable Corrective Actions</p>}
+            {hoveredItem === 'ai' && <p style={{ position: 'absolute', top: '33%', right: '-19%', backgroundColor: 'white', padding: '5px',width:'25%' }}>AI Enable Corrective Actions</p>}
            </div> 
            <div>
             <img className='w-20 h-20' src={tool} style={{ position: 'absolute', top: '75%', left: '92%', transform: 'translate(-50%, -50%)' }} alt="Sensor Image"
             onMouseEnter={() => setHoveredItem('tool')} 
             onMouseLeave={() => setHoveredItem(null)}/>
-            {hoveredItem === 'tool' && <p style={{ position: 'absolute', top: '70%', right: '-18%', backgroundColor: 'white', padding: '5px' }}>Retrofit Benifits</p>}
+            {hoveredItem === 'tool' && <p style={{ position: 'absolute', top: '67.5%', right: '-8%', backgroundColor: 'white', padding: '5px',width:'10%' }}>Retrofit Benifits</p>}
            </div>    
         </div>
 
@@ -305,63 +307,68 @@ export const Home = () => {
 
           </div>
 
-          
-          <div className="flex justify-center items-center mt-4">
-            <div className='flex '>
-              <div className="col-span-1 md:col-span-1" style={{ borderRadius: '8px', background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)', width: '45%',height:'10%', padding: '10px' }}>
-                <div className='md:ml-4 md:mt-32 md:mb-4'>
-                  <img className='bg-white w-auto h-auto border rounded-lg mb-3' src={trophy} alt="Trophy icon" style={{ width: "75px", height: "75px" }} />
-                  <p className='text-2xl font-semibold mb-3 md:text-3xl'>Award Winning Technology</p>
-                  <p className='text-sm mb-3 md:text-sm'>The team leverages state-of-the-art, award-winning, ultrasonic waveguide technology developed through 25+ years of research and development.</p>
-                </div>
-              </div>
+         
+          <div className="mt-8" style={{marginLeft:'15%'}}>
+          <div className='flex '>
+          <div class="col-span-1 md:col-span-1" style={{borderRadius: '8px', background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)', width: '55%', height: 'auto', maxWidth: 'auto', padding: '20px'}}>
+            <div class="md:ml-4 md:mt-16 md:mb-4">
+        <center>
+            <img class="bg-white w-auto h-auto border rounded-lg mb-3 mr-8" src={trophy} alt="Trophy icon" style={{width: '75px', height: '75px'}} />
+        </center>
+        <p class="text-2xl font-semibold mb-3 md:text-3xl text-center mr-8">Award Winning Technology</p>
+        <p class="text-sm mb-3 md:text-sm text-center mr-8" style={{width: '100%'}}>The team leverages state-of-the-art, award-winning, ultrasonic waveguide technology developed through 25+ years of research and development.</p>
+    </div>
+    </div>
+
 
              <div>
-              <div className='flex'>
-                <div className="bg-white col-span-1 md:col-span-1 p-5 rounded-xl" style={{ marginLeft: '1%',width:'30%',height:'120%' }}>
-                  <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>01/05</p>
-                  <div className='flex'>
-                    <img className='bg-white w-auto h-auto rounded-lg mb-4' src={client} alt="Client icon" style={{ width: "45px", height: "45px" }} />
-                    <p className='text-black text-2xl font-semibold mt-1 md:text-xl' style={{marginLeft:'5%'}}>Client-Centric</p>
-                  </div>
-                  <p className='text-[#60646C] text-sm md:text-sm' >The Solution is provided based on in-depth understanding of clients needs addressing the relevant challenges.</p>
-              </div>
+             <div className='flex flex-wrap'>
+  <div className="bg-white col-span-1 md:col-span-1 rounded-xl m-2 md:m-0 md:w-1/3 md:ml-3.5" style={{ padding: '13px' }}>
+    <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>01/04</p>
+    <div className='flex'>
+      <img className='bg-white w-auto h-auto rounded-lg mb-4' src={client} alt="Client icon" style={{ width: "45px", height: "45px" }} />
+      <p className='text-black text-2xl font-semibold mt-1 md:text-xl' style={{marginLeft:'5%'}}>Client-Centric</p>
+    </div>
+    <p className='text-[#60646C] text-sm md:text-sm' >The Solution is provided based on in-depth understanding of clients needs addressing the relevant challenges.</p>
+  </div>
 
-              <div className='bg-white rounded-xl p-3' style={{width:'30%',height:'10%',marginLeft:'1%'}}>  
-                 <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>02/05</p> 
-                 <div className='flex'>
-                   <img className='bg-white w-auto h-auto rounded-lg mb-4' src={solution} alt="Solution icon" style={{ width: "45px", height: "45px" }} />
-                   <p className='text-black text-2xl font-semibold md:text-xl w-52 ml-6 '>Customization For Solutions</p>
-                 </div> 
-                  <p className='text-[#60646C] text-sm md:text-sm'>Gain immediate access to valuable data through the technology's adaptability with material selection and configuration for waveguides.</p>
-                </div>
-              </div>  
+  <div className='bg-white rounded-xl p-3 m-2 md:m-0 md:w-1/3 md:ml-3.5'>  
+    <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>02/04</p> 
+    <div className='flex'>
+      <img className='bg-white w-auto h-auto rounded-lg mb-4 mt-1' src={solution} alt="Solution icon" style={{ width: "45px", height: "45px" }} />
+      <p className='text-black text-2xl font-semibold md:text-xl w-52 ml-6'>Customization For Solutions</p>
+    </div> 
+    <p className='text-[#60646C] text-sm md:text-sm'>Gain immediate access to valuable data through the technology's adaptability with material selection and configuration for waveguides.</p>
+  </div>
+</div>
+
               
 
              
-             <div className='flex'>   
-              <div className="bg-white col-span-1 md:col-span-1 rounded-xl p-2" style={{ marginLeft: '1%',width:'30%',height:'90%',marginTop:'1%' }}>
-                  <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>03/05</p>
-                  <div className='flex'>
-                    <img className='bg-white w-auto h-auto rounded-lg mb-4' src={real} alt="Real icon" style={{ width: "45px", height: "45px" }} />
-                    <p className='text-black text-2xl font-semibold mb-3 md:text-xl ml-4 mt-1'>Real-Time Insights</p>
-                  </div>
-                  <p className='text-[#60646C] text-sm md:text-sm'>Gain immediate access to valuable data through our supervised sensing capabilities, empowering informed decision-making.</p>
-               </div>
+<div className='flex flex-wrap'>
+  <div className="bg-white col-span-1 md:col-span-1 rounded-xl m-2 md:m-0 md:w-1/3 md:mt-3.5 md:ml-3.5" style={{ padding: '13px' }}>
+    <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>03/04</p>
+    <div className='flex'>
+      <img className='bg-white w-auto h-auto rounded-lg mb-4' src={real} alt="Client icon" style={{ width: "45px", height: "45px" }} />
+      <p className='text-black text-2xl font-semibold mt-1 md:text-xl' style={{marginLeft:'5%'}}>Real-Time Insights</p>
+    </div>
+    <p className='text-[#60646C] text-sm md:text-sm' >Gain immediate access to valuable data through our supervised sensing capabilities, empowering informed decision-making.</p>
+  </div>
 
-               <div className='bg-white rounded-xl p-4' style={{ marginLeft: '1%',width:'30%',height:'95%',marginTop:'1%' }}>
-                 <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>04/05</p>
-                 <div className='flex'>
-                   <img className='bg-white w-auto h-auto rounded-lg mb-4' src={time} alt="Time icon" style={{ width: "45px", height: "45px" }} />
-                   <p className='text-black text-2xl font-semibold mb-3 md:text-xl ml-3 mt-1'>On-Time Delivery</p>
-                 </div>
-                 <p className='text-[#60646C] text-sm md:text-sm' >Committed to adhering to project timelines and satisfaction.</p>
-               </div>
-              
-              </div>
+  <div className='bg-white rounded-xl p-3 m-2 md:m-0 md:w-1/3 md:mt-3.5 md:ml-3.5'>  
+    <p className='text-gray-300 text-xs mt-3 mb-3 md:text-xs'>04/04</p> 
+    <div className='flex'>
+      <img className='bg-white w-auto h-auto rounded-lg mb-4 mt-1' src={time} alt="Solution icon" style={{ width: "45px", height: "45px" }} />
+      <p className='text-black text-2xl font-semibold md:text-xl w-52 ml-6'>On-Time Delivery</p>
+    </div> 
+    <p className='text-[#60646C] text-sm md:text-sm'>Committed to adhering to project timelines and satisfaction.</p>
+  </div>
+</div>
+
+
               </div>
             </div>
-          </div>
+          </div> 
         </div>
       </section>
 

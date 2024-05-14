@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState,useRef  } from 'react';
+import { useNavigate } from 'react-router-dom';
 import frame from '../Assets/frame2.png'
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
@@ -10,6 +11,9 @@ import share from '../Assets/share.png';
 import arrow from '../Assets/arrow.png';
 import vector from '../Assets/Vector.png';
 import line from '../Assets/line.png';
+
+
+
 
 
 const Badge2 = ({ text, selected, onClick }) => {
@@ -32,11 +36,24 @@ const Badge2 = ({ text, selected, onClick }) => {
 
 const Career = () => {
 
-  const [selectedBadge, setSelectedBadge] = useState(null);
+  const [selectedBadge, setSelectedBadge] = useState(0);
 
   const handleBadgeClick = (index) => {
     setSelectedBadge(index);
   };
+
+  const sectionRef = useRef(null);
+
+  const handleButtonClick = () => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const navigate = useNavigate();
+  const handleContactClick =()=>{
+    navigate ('/contact');
+  }
+
+
 
   return (
     <div>
@@ -47,7 +64,8 @@ const Career = () => {
               <h1 className="text-white text-5xl font-bold mt-4 sm:mt-24">"Together,<br/>we shine"</h1>
                 <p className='text-white mt-2 sm:mt-5 text-sm'>We help you grow along with us</p>
                     <button className=" text-white text-xs py-2 px-5 mt-3 rounded-full" 
-                      style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)'}}>
+                      style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)'}}
+                      onClick={handleButtonClick}>
                       Know More
                     </button>
                </div>
@@ -72,7 +90,7 @@ const Career = () => {
       </section>
 
      
-      <section >
+      <section ref={sectionRef}>
         <div style={{marginTop:'10%',textAlign: 'center'}}>
            <div className='text-[#1C2024] text-3xl font-semibold'>
               Opportunities<img style={{marginLeft:'44.5%',width:'11.5%'}}src={uline}/>
@@ -182,7 +200,7 @@ const Career = () => {
                 <img className='mb-1 w-full md:w-40 mx-auto md:ml-40' src={vector} alt="Vector Image" />
             </div>
             <div className='md:mr-10 md:mt-5 text-xs mt-5 md:text-right'>
-                <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10'>Get in Touch</button>
+                <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10' onClick={handleContactClick}>Get in Touch</button>
                 <button className='bg-white text-[#01285C] rounded-full w-36 h-10 md:w-36 md:h-10 ml-4 md:ml-8 md:mr-4 mb-2 md:mt-0'>Download Brochure</button>
             </div>
         </div>

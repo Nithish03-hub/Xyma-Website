@@ -12,7 +12,7 @@ function Badge({ text, color, imageUrl, hoverText, hoverImageUrl, hoverHeading }
       <span className="badge" >
         {text}
       </span>
-      <span className="hover-text">
+      <span className="hover-text " >
         <div className='grid grid-cols-2'>
         <img src={hoverImageUrl} alt="Hover Image" className="hover-image" />
         <div>

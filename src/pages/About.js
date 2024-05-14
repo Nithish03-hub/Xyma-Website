@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import iit from '../Assets/Frameiit.png';
 import second from '../Assets/secondline.png';
 import left from '../Assets/leftarrow.png';
@@ -26,9 +27,18 @@ import line from '../Assets/line.png';
 
 
 
+ 
 
 
 const About = () => {
+  
+ const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    
+    navigate('/contact');
+  };
+  
   return (
    <div>
    <section >  
@@ -84,7 +94,7 @@ const About = () => {
          </div>
          <button className='mt-4 text-white text-sm rounded-full w-36 h-10 md:w-24 md:h-9' style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)'}}>View More</button>
       </div>
-
+        
       <div>
          <div>
             <p className='text-[#1C2024] font-semibold' style={{width:'58%',marginTop:'22%',marginLeft:'22%'}}>Lorem Ipsum has been the industry's standard dummy text when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
@@ -107,7 +117,6 @@ const About = () => {
          </div>
          <button className='mt-4 text-white text-sm rounded-full w-36 h-10 md:w-24 md:h-9' style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)'}}>View More</button>
       </div>
-
       <div className=' ml-14 border border-gray-300 p-6' style={{ borderRadius: '14px',width:'70%',height:'75%',marginTop:'10%'}}>
          <button className='bg-[#FEE1B7]  rounded-full w-36 h-10 md:w-16 md:h-8'>2020</button>
          <div>
@@ -229,7 +238,7 @@ const About = () => {
                 <img className='mb-1 w-full md:w-40 mx-auto md:ml-40' src={vector} alt="Vector Image" />
             </div>
             <div className='md:mr-10 md:mt-5 text-xs mt-5 md:text-right'>
-                <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10'>Get in Touch</button>
+                <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10'onClick={handleContactClick}>Get in Touch</button>
                 <button className='bg-white text-[#01285C] rounded-full w-36 h-10 md:w-36 md:h-10 ml-4 md:ml-8 md:mr-4 mb-2 md:mt-0'>Download Brochure</button>
             </div>
         </div>

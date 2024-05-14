@@ -24,6 +24,7 @@ import arrow from '../Assets/arrow.png';
 import semi from '../Assets/semi.png';
 import ref from '../Assets/refineries.png';
 import eor from '../Assets/eor.png';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -46,9 +47,9 @@ function Badge({ text }) {
 const Product = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    { src: image1, text: "Multi-point temperature measurements" },
-    { src: image2, text: "Multi - Parameter Measurements" },
-    { src: image3, text: "Powered by AI" }
+    { src: image1, title: "Multi-point temperature measurements", text1:'Up to 1600° C', text:'“The Disruptive Ultrasonic Waveguide Technology”' },
+    { src: image2, title: "Multi - Parameter Measurements", text1:'Viscosity, Density, Temperature', text:'“The Disruptive Ultrasonic Waveguide Technology”'},
+    { src: image3, title: "Powered by AI",text1:'IIoT Enabled, Data Analytics, Anomaly Detection, Predictive Maintenance' }
   ];
 
   useEffect(() => {
@@ -74,7 +75,7 @@ const Product = () => {
 
   const textStyle = {
     position: 'absolute',
-    bottom: '60%',
+    bottom: '25%',
     left: '2%',
     color: '#fff',
     padding: '1% 2%',
@@ -82,6 +83,11 @@ const Product = () => {
     fontSize: '2.5vw', 
     fontWeight: 'bold',
   };
+
+  const navigate=useNavigate();
+  const handleContactClick=()=>{
+    navigate ('/contact');
+  } 
 
   return (
     <div style={{ position: 'relative' }}>
@@ -95,7 +101,16 @@ const Product = () => {
             }}
           >
             <img src={item.src} alt={`Slide ${index + 1}`} style={{ ...imageStyle }} />
-            <div style={textStyle}>{item.text}</div>
+            <div style={textStyle} >
+              <h2 style={{width:'40%'}}>{item.title}</h2>
+              <p style={{background: 'linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  backgroundColor: 'rgba(255, 255, 255, 1)',
+                  display: 'inline-block',
+                  width:'55%'}}>{item.text1}</p>
+              <p className='text-sm font-semibold'>{item.text}</p>    
+            </div>
           </div>
         ))}
         <div style={{ position: 'absolute', bottom: '10px', left: '10px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
@@ -119,7 +134,7 @@ const Product = () => {
 
 
     <div className='flex justify-center items-center h-screen'>
-      <div className='grid grid-cols-2 rounded-lg w-[140vh] shadow-lg border border-gray-200'>
+      <div className='grid grid-cols-2 rounded-lg w-[160vh] shadow-lg border border-gray-200'>
         <div>
           <div className='m-10 rounded-lg'style={{ background: 'radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)' }}>
            <img className='product-image' src={utmap} alt="UTMapS" style={{ width: '100%', height: 'auto' }} />
@@ -132,16 +147,20 @@ const Product = () => {
                   backgroundColor: 'rgba(255, 255, 255, 1)',
                   display: 'inline-block'
                 }}>μTMapS</h2>
-                <p className='text-white'>A single customizable waveguide can measure temperature at 10 points over 50 meters length.</p>
+                <p className='text-white' style={{width:'90%'}}>A single customizable waveguide can measure temperature at 10 points over 50 meters length.</p>
               </div> 
             </div> 
           </div>
         </div>
         <div className='mt-8'>
-        <div className='font-semibold text-2xl mt-2'>Multi-Point Temperature <br/>Mapping Sensor</div>  <Icon/>  
-              <Badge text="Temperature Range: 25° C to 1600° C "/>
+          <div className='flex'>
+            <div className='font-semibold text-2xl mt-2' style={{width:'60%'}}>Multi-Point Temperature Mapping Sensor  </div>  
+            <button className='flex bg-[#01285C] rounded-full p-0.5 mt-2' style={{height:'0.5%',width:'20%',marginLeft:'15%'}}>
+             <Icon/><div className='mt-1.5 text-xs text-white'>Play Video</div></button>
+          </div>
+             <div className='mt-3'><Badge text="Temperature Range: 25° C to 1600° C "/></div> 
               <div className='mt-6'>
-                <p className='text-[#60646C] text-base'style={{width:'85%'}}>µTMapS & µSTMapS are IIoT-enabled temperature measurement and temperature profiling sensors that captures continuous measurements at multiple points with a single customizable waveguide with multiple configurations in contrast to contact based thermocouples/RTDs or contactless IR guns.</p>
+                <p className='text-[#60646C] text-sm'style={{width:'90%'}}>µTMapS & µSTMapS are IIoT-enabled temperature measurement and temperature profiling sensors that captures continuous measurements at multiple points with a single customizable waveguide with multiple configurations in contrast to contact based thermocouples/RTDs or contactless IR guns.</p>
               </div>
               <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
                 <div className='flex border border-gray-200 rounded-lg p-3'>
@@ -149,8 +168,8 @@ const Product = () => {
                   <span className='text-sm font-semibold mt-1.5'>Steel Manufacturing</span>
                 </div>
                 <div className='flex border border-gray-200 rounded-lg p-3 ml-4'>
-                  <img className='bg-white w-auto h-auto  ' src={aicon} style={{ marginRight: '12px',width:"40px",marginLeft:'8%'  }}   />
-                  <span className='text-sm font-semibold' >Aluminum Manufacturing</span>
+                  <img className='bg-white w-auto h-auto' src={aicon} style={{ marginRight: '12px',width:"45px" }}   />
+                  <span className='text-sm font-semibold mt-2' >Aluminum Manufacturing</span>
               </div>
             </div>
             <div  className='mt-2'style={{ display: 'flex', alignItems: 'center' }}>
@@ -159,7 +178,7 @@ const Product = () => {
                   <span className='text-sm font-semibold mt-0 w-32 ml-1'>Semiconductor Manufacturing</span>
                 </div>
                 <div className='flex border border-gray-200 rounded-lg p-3 ml-4' style={{width:'48%'}}>
-                  <img className='bg-white w-auto h-auto  ' src={ref} style={{ marginRight: '12px',width:"40px",marginLeft:'8%'  }}   />
+                  <img className='bg-white w-auto h-auto  ' src={ref} style={{ marginRight: '12px',width:"40px" }}   />
                   <span className='text-sm font-semibold mt-1.5' >Refineries</span>
               </div>
             </div>
@@ -169,7 +188,7 @@ const Product = () => {
 
 
     <div className='flex justify-center items-center h-screen'>
-      <div className='grid grid-cols-2 rounded-lg w-[140vh] shadow-lg border border-gray-200'>
+      <div className='grid grid-cols-2 rounded-lg w-[160vh] shadow-lg border border-gray-200'>
         <div>
           <div className='m-10 rounded-lg'style={{ background: 'radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)' }}>
            <img className='product-image' src={ports} alt="PoRTS" style={{ width: '100%', height: 'auto' }} />
@@ -188,8 +207,12 @@ const Product = () => {
           </div>
         </div>
         <div className='mt-8'>
-        <div className='font-semibold text-2xl mt-2'>Multi-Parameter <br/>  Measurement Sensor</div>  <Icon/>  
-        <div>
+          <div className='flex'>
+          <div className='font-semibold text-2xl mt-2' style={{width:'50%'}}>Multi-Parameter Measurement Sensor</div>
+          <button className='flex bg-[#01285C] rounded-full p-0.5 mt-3' style={{height:'0.5%',width:'20%',marginLeft:'25%'}}>
+             <Icon/><div className='mt-1.5 text-xs text-white'>Play Video</div></button>
+          </div>
+        <div className='mt-3'>
           <Badge text="Viscosity: 50 cP - 15000 cP"/>
           <span style={{ marginRight: '8px'}} />
           <Badge text="Density: 700 kg/m³ to 1200 kg/m³ "/>
@@ -197,7 +220,7 @@ const Product = () => {
           <Badge text="Temperature: 20° C to 400° C"/>
       </div>  </div>
               <div className='mt-6'>
-                <p className='text-[#60646C] text-base' style={{width:'95%'}}>PoRTS is an invasive/non-invasive based IIoT-enabled rheology and temperature measurement sensor that continuously captures multiple parameters such as viscosity, density and temperature with a single waveguide unlike discrete measurements with thermocouple/RTDs or discrete measurements with sampling from viscometer and density meter.</p>
+                <p className='text-[#60646C] text-sm' style={{width:'90%'}}>PoRTS is an invasive/non-invasive based IIoT-enabled rheology and temperature measurement sensor that continuously captures multiple parameters such as viscosity, density and temperature with a single waveguide unlike discrete measurements with thermocouple/RTDs or discrete measurements with sampling from viscometer and density meter.</p>
               </div>
               <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
                 <div className='flex border border-gray-200 rounded-lg p-3'>
@@ -221,7 +244,7 @@ const Product = () => {
 
 
     <div className='flex justify-center items-center h-screen'>
-      <div className='grid grid-cols-2 rounded-lg w-[140vh] shadow-lg border border-gray-200'>
+      <div className='grid grid-cols-2 rounded-lg w-[160vh] shadow-lg border border-gray-200'>
         <div>
           <div className='m-10 rounded-lg'style={{ background: 'radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)' }}>
            <img className='product-image' src={ztar} alt="Ztar" style={{ width: '100%', height: 'auto' }} />
@@ -240,10 +263,14 @@ const Product = () => {
           </div>
         </div>
         <div className='mt-8'>
-        <div className='font-semibold text-2xl mt-2'> Ultrasonic contact &   <br/>non-contact based level <br/> measurement sensor</div>  <Icon/>  
-              <Badge text="Level: 0.03 m to 10 m "/>
+          <div className='flex'>
+           <div className='font-semibold text-2xl mt-2'> Ultrasonic contact &   <br/>non-contact based level <br/> measurement sensor</div>  
+           <button className='flex bg-[#01285C] rounded-full p-0.5 mt-3' style={{height:'0.5%',width:'20%',marginLeft:'25%'}}>
+             <Icon/><div className='mt-1.5 text-xs text-white'>Play Video</div></button> 
+          </div>
+             <div className='mt-3'> <Badge text="Level: 0.03 m to 10 m "/></div>
               <div className='mt-6'>
-                <p className='text-[#60646C] text-base' style={{width:'95%'}}>Ztar is a contact/contactless IIoT-enabled level measurement sensor that captures continuous level across any hazardous environment with accuracy in contrast to radar-based level measurement sensors.</p>
+                <p className='text-[#60646C] text-sm' style={{width:'90%'}}>Ztar is a contact/contactless IIoT-enabled level measurement sensor that captures continuous level across any hazardous environment with accuracy in contrast to radar-based level measurement sensors.</p>
               </div>
               <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
                 <div className='flex border border-gray-200 rounded-lg p-3'>
@@ -273,7 +300,7 @@ const Product = () => {
                     <img className='mb-1 w-full md:w-40 mx-auto md:ml-40' src={vector} alt="Vector Image" />
                 </div>
                 <div className='md:mr-10 md:mt-5 text-xs mt-5 md:text-right'>
-                    <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10'>Get in Touch</button>
+                    <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10' onClick={handleContactClick}>Get in Touch</button>
                     <button className='bg-white text-[#01285C] rounded-full w-36 h-10 md:w-36 md:h-10 ml-4 md:ml-8 md:mr-4 mb-2 md:mt-0'>Download Brochure</button>
                 </div>
             </div>

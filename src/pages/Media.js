@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import media from '../Assets/Framemedia.png';
 import second from '../Assets/secondline.png';
 import asian from '../Assets/Frameasian.png';
@@ -43,6 +44,11 @@ import asain2 from '../Assets/asian2.png';
 
 
 const Media = () => {
+
+  const navigate =useNavigate();
+  const handleContactClick =()=>{
+    navigate ('/contact');
+  }
 
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
@@ -340,7 +346,7 @@ const Media = () => {
                 <img className='mb-1 w-full md:w-40 mx-auto md:ml-40' src={vector} alt="Vector Image" />
             </div>
             <div className='md:mr-10 md:mt-5 text-xs mt-5 md:text-right'>
-                <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10'>Get in Touch</button>
+                <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10'onClick={handleContactClick}>Get in Touch</button>
                 <button className='bg-white text-[#01285C] rounded-full w-36 h-10 md:w-36 md:h-10 ml-4 md:ml-8 md:mr-4 mb-2 md:mt-0'>Download Brochure</button>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import cs from '../Assets/cs.png';
 import all1 from '../Images/all1.png';
 import all2 from '../Images/all2.png';
@@ -17,19 +17,24 @@ import share from '../Assets/share.png';
 import line from '../Assets/line.png';
 import arrow from '../Assets/arrow.png';
 import vector from '../Assets/Vector.png';
+import { useNavigate } from 'react-router-dom';
 
 const Resource = () => {
-    const [displayContent, setDisplayContent] = useState(true);
-    const [selectedWord, setSelectedWord] = useState('All');
+  const [selectedWord, setSelectedWord] = useState('All');
 
-    const toggleContent = (word) => {
-        setSelectedWord(word);
-        if (word === 'All') {
-            setDisplayContent(true); 
-        } else {
-            setDisplayContent(!displayContent);
-        }
-    };
+  const toggleContent = (word) => {
+      setSelectedWord(word);
+  };
+
+  const navigate= useNavigate();
+  const handleContactClick = () =>{
+    navigate ('/contact');
+  }
+  const handleCaseStudyClick=()=>{
+    navigate('/casestudy');
+  }
+  
+
 
     return (
         <div>
@@ -50,49 +55,49 @@ const Resource = () => {
             <section>
               <div className='flex'>
                 <div style={{width:'20%',marginLeft:'5%',marginTop:'12%'}}> 
-                    <p>
-                        <span style={{ cursor: 'pointer',color: selectedWord === 'All' ? '#013872':'black' }} onClick={() => toggleContent('All')}>
+                    <p className='font-semibold'> 
+                        <span style={{ fontSize: '15px', cursor: 'pointer',color: selectedWord === 'All' ? '#013872':'gray' }} onClick={() => toggleContent('All')}>
                             All
                         </span>
                     </p>
-                    <p>
-                        <span style={{ cursor: 'pointer',color: selectedWord === 'Aluminum' ? '#013872':'black' }} onClick={() => toggleContent('Aluminum')}>
+                    <p className='font-semibold'> 
+                        <span style={{fontSize: '15px', cursor: 'pointer',color: selectedWord === 'Aluminum' ? '#013872':'gray' }} onClick={() => toggleContent('Aluminum')}>
                             Aluminum
                         </span>
                     </p>
-                    <p>
-                        <span style={{ cursor: 'pointer',color: selectedWord === 'Steel' ? '#013872':'black' }} onClick={() => toggleContent('Steel')}>
+                    <p className='font-semibold'> 
+                        <span style={{fontSize: '15px', cursor: 'pointer',color: selectedWord === 'Steel' ? '#013872':'gray' }} onClick={() => toggleContent('Steel')} >
                             Steel
                         </span>
                     </p>
-                    <p>
-                        <span style={{ cursor: 'pointer',color: selectedWord === 'Refineries' ? '#013872':'black' }} onClick={() => toggleContent('Refineries')}>
+                    <p className='font-semibold'> 
+                        <span style={{fontSize: '15px', cursor: 'pointer',color: selectedWord === 'Refineries' ? '#013872':'gray' }} onClick={() => toggleContent('Refineries')}>
                             Refineries
                         </span>
                     </p>
-                    <p>
-                        <span style={{ cursor: 'pointer',color: selectedWord === 'Lubricants' ? '#013872':'black' }} onClick={() => toggleContent('Lubricants')}>
+                    <p className='font-semibold'> 
+                        <span style={{fontSize: '15px', cursor: 'pointer',color: selectedWord === 'Lubricants' ? '#013872':'gray' }} onClick={() => toggleContent('Lubricants')}>
                             Lubricants
                         </span>
                     </p>
-                    <p>
-                        <span style={{ cursor: 'pointer',color: selectedWord === 'Oil Recovery' ? '#013872':'black' }} onClick={() => toggleContent('Oil Recovery')}>
+                    <p className='font-semibold'> 
+                        <span style={{fontSize: '15px', cursor: 'pointer',color: selectedWord === 'Oil Recovery' ? '#013872':'gray' }} onClick={() => toggleContent('Oil Recovery')}>
                             Oil Recovery
                         </span>
                     </p>
-                    <p>
-                        <span style={{ cursor: 'pointer',color: selectedWord === 'Paints' ? '#013872':'black' }} onClick={() => toggleContent('Paints')}>
+                    <p className='font-semibold'> 
+                        <span style={{fontSize: '15px', cursor: 'pointer',color: selectedWord === 'Paints' ? '#013872':'gray' }} onClick={() => toggleContent('Paints')}>
                             Paints
                         </span>
                     </p>
                  </div>
                   <div > 
-                    {displayContent && (selectedWord === 'Aluminum' || selectedWord === 'All') && (
+                  {(selectedWord === 'Aluminum' || selectedWord === 'All') && (
                          <div className='border border-gray-200 rounded-2xl p-3 flex ' style={{width:'70%',marginLeft:'10%',marginTop:'10%'}}>
                          <span className='text-xl'>Aluminum</span>
                          <div style={{ position: 'relative', display: 'inline-block',marginTop:'6%',marginRight:'5%' }}> 
                            <img style={{ width: '95%' }} src={aluminum} alt="Aluminum Image" />
-                           <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '45%', left: '68%',width:'22%',height:'7%' }}>Case Studies</button>
+                           <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '55%', left: '68%',width:'25%',height:'6%' }} onClick={handleCaseStudyClick}>Case Studies</button>
                            <p style={{width:'90%',fontSize:'20px',marginTop:'20px'}}>A 10°C temperature deviation reduces efficiency, promotes anode effect, and increases PFC emissions.</p>
                          </div>
  
@@ -108,7 +113,7 @@ const Resource = () => {
                           
                            <div className='flex mt-6'> 
                              <div>
-                             <hr class="ml-9 mt-2 border border-gray-200" style={{width:'220%'}} />
+                             <hr class="ml-3 mt-2 border border-gray-200" style={{width:'220%'}} />
                                <img style={{width:'65%',marginLeft:'25%',marginTop:'15px'}}src={all2}></img>
                              </div>
                                <p  style={{width:'68%',fontSize:'18px',marginTop:'20px'}}>Extending the ladle life for one cycle would result in steel production worth $5.1 million.</p>
@@ -116,7 +121,7 @@ const Resource = () => {
  
                            <div className='flex mt-6'>
                              <div>
-                             <hr class="ml-10 border border-gray-200" style={{width:'220%'}} />
+                             <hr class="ml-2 border border-gray-200" style={{width:'220%'}} />
                                <img style={{width:'65%',marginLeft:'25%',marginTop:'16px'}}src={all3}></img>
                              </div>
                                <p  style={{width:'65%',fontSize:'18px',marginTop:'20px'}}>20°C rise halves reformer tube lifespan; design temperature crucial.</p>
@@ -125,12 +130,14 @@ const Resource = () => {
                          </div>
                        </div>
                     )}
-                    {displayContent && (selectedWord === 'Steel' || selectedWord === 'All') && (
+
+                  
+                    {(selectedWord === 'Steel' || selectedWord === 'All') && (
                         <div className='border border-gray-200 rounded-2xl p-3 flex ' style={{width:'70%',marginLeft:'10%',marginTop:'3%'}}>
                         <div className='text-xl'>Steel</div>
                         <div style={{ position: 'relative', display: 'inline-block',marginTop:'6%',marginLeft:'5%' }}> 
                           <img style={{ width: '100%' }} src={steel1} alt="Steel Image" />
-                          <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '38%', left: '70%',width:'24%',height:'7%' }}>Case Studies</button>
+                          <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '38%', left: '70%',width:'25%',height:'7%' }}>Case Studies</button>
                           <p style={{width:'95%',fontSize:'20px',marginTop:'20px'}}>Extending ladle life for one cycle yields steel worth $5.1M</p>
                         </div>
 
@@ -148,7 +155,9 @@ const Resource = () => {
                         </div>
                       </div>
                     )}
-                    {displayContent && (selectedWord === 'Refineries' || selectedWord === 'All') && (
+                  
+
+                     {(selectedWord === 'Refineries' || selectedWord === 'All') && (
                          <div className='border border-gray-200 rounded-2xl p-3 flex ' style={{width:'70%',marginLeft:'10%',marginTop:'3%'}}>
                          <div className='text-xl'>Refineries</div>
                          <div style={{ position: 'relative', display: 'inline-block',marginTop:'6%' }}> 
@@ -159,7 +168,7 @@ const Resource = () => {
  
                          <div>  
                            <div>
-                             <button className=" text-white py-2 px-3 rounded-full text-xs mt-2" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',marginLeft:'70%',width:'23%',height:'25%'}}>
+                             <button className=" text-white py-2 px-1 rounded-full text-xs mt-2" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',marginLeft:'70%',width:'25%',height:'25%'}}>
                                 Read More
                              </button>
                            </div>
@@ -171,24 +180,25 @@ const Resource = () => {
                          </div>
                        </div>
                     )}
-                    {displayContent && (selectedWord === 'Lubricants' || selectedWord === 'All') && (
+                    
+                     {(selectedWord === 'Lubricants' || selectedWord === 'All') && (
                          <div className='border border-gray-200 rounded-2xl p-3 flex ' style={{width:'70%',marginLeft:'10%',marginTop:'3%'}}>
                          <div className='text-xl'>Lubricants</div>
                          <div style={{ position: 'relative', display: 'inline-block',marginTop:'6%' }}> 
                            <img style={{ width: '85%' }} src={oil1} alt="Oil Image" />
-                           <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '38%', left: '60%',width:'22%',height:'7%' }}>Case Studies</button>
+                           <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '43%', left: '60%',width:'22%',height:'7%' }}>Case Studies</button>
                            <p style={{width:'95%',fontSize:'20px',marginTop:'20px'}}>30% of maintenance budget influenced by lubricants, highlighting their significant role in operational expenses</p>
                          </div>
  
                          <div>  
                            <div>
-                             <button className=" text-white py-2 px-3 rounded-full text-xs mt-2" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',marginLeft:'70%',width:'25%',height:'25%'}}>
+                             <button className=" text-white py-2 px-1 rounded-full text-xs mt-2" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',marginLeft:'70%',width:'26%',height:'25%'}}>
                                 Read More
                              </button>
                            </div>
                            <div style={{ position: 'relative', display: 'inline-block',marginTop:'0%', }}> 
                                <img style={{width:'95%',marginLeft:'1%',marginTop:'4%'}}src={oil2}></img>
-                               <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '37%', left: '70%',width:'22%',height:'7%' }}>Case Studies</button>
+                               <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '37%', left: '70%',width:'24%',height:'7%' }}>Case Studies</button>
                                <p  style={{width:'95%',fontSize:'20px',marginTop:'6.5%',marginLeft:'1%'}}>Lubricants significantly affect operational costs, accounting for 30% of the maintenance budget</p>
                            </div>
                          </div>
@@ -212,7 +222,7 @@ const Resource = () => {
                     <img className='mb-1 w-full md:w-40 mx-auto md:ml-40' src={vector} alt="Vector Image" />
                 </div>
                 <div className='md:mr-10 md:mt-5 text-xs mt-5 md:text-right'>
-                    <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10'>Get in Touch</button>
+                    <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10' onClick={handleContactClick}>Get in Touch</button>
                     <button className='bg-white text-[#01285C] rounded-full w-36 h-10 md:w-36 md:h-10 ml-4 md:ml-8 md:mr-4 mb-2 md:mt-0'>Download Brochure</button>
                 </div>
             </div>

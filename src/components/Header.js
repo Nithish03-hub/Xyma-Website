@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeaderData } from '../data/HeaderData';
 import CircleComponent from '../CircleComponent';
+import Home from '../pages/Home';
 
 function Header() {
   const [selectedIndex, setSelectedIndex] = useState(null); 
@@ -17,7 +18,7 @@ function Header() {
        <div key={index} className="relative">
           <NavLink
             to={item.path}
-            className={`text text-1xl relative ${selectedIndex === index ? 'text-orange-400' : 'hover:text-orange-400'}`}
+            className={`text text-1xl relative ${selectedIndex === index ? 'text-orange-400' : ''}`}
             onClick={() => handleNavItemClick(index)}>
             <span>{item.title}</span>
           </NavLink>

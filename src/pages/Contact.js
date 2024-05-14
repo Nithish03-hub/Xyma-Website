@@ -63,11 +63,11 @@ const ContactPage = () => {
             style={{ zIndex: 5 }}
           >
           <button 
-            className="text-white py-3 px-4 rounded-full text" 
+            className="text-white py-2 px-3 rounded-full text-xs" 
             style={{ 
               background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',
-              marginLeft: '8rem',
-              marginTop:'60%'
+              marginLeft: '5rem',
+              marginTop:'80%'
             }}
            onClick={handleButtonClick}
           >
@@ -90,8 +90,8 @@ const ContactPage = () => {
         </div>
 
         <div className="flex justify-center items-center h-screen">
-          <form style={{width:'52.5%',marginBottom:'10%'}}>
-          <div className='flex flex-wrap'>
+          <form style={{width:'58%',marginBottom:'10%'}}>
+          <div className='flex '>
               <div className="mb-4">
                 <label className="block text-base mb-2" htmlFor="username">
                   Your Name <span className='text-[#CE2C31]'>*</span>
@@ -116,7 +116,7 @@ const ContactPage = () => {
              </div>
            </div>
 
-           <div className='flex flex-wrap'>
+           <div className='flex '>
               <div className="mb-4">
                 <label className="block text-base mb-2" htmlFor="job">
                  Job Title  <span className='text-[#CE2C31]'>*</span>
@@ -182,6 +182,7 @@ const ContactPage = () => {
        
      </section>
 
+
      <section>
       <div className='text-3xl font-semibold text-center '>
         Around the world: XYMA Analytics
@@ -191,7 +192,7 @@ const ContactPage = () => {
       </div>
       <div className='text-[#60646C] text-sm text-center mt-2'>Installations of Ultrasonic Waveguide Sensors in different countries</div>
        <div>
-         <img  style={{width:'80%',marginLeft:'10%'}}src={map}></img>
+         <img  style={{width:'80%',marginLeft:'10%',marginTop:'3%'}}src={map}></img>
        </div>
      </section>
 
