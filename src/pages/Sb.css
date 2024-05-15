@@ -6,7 +6,10 @@
 .hover-text {
   visibility: hidden;
   width: 400px;
+  height: 200px;
   color: black;
+  /* border: 1px solid black; */
+  /* background-color: white; */
   text-align: justify;
   padding: 5px 0;
   border-radius: 6px;
@@ -51,14 +54,14 @@
   
 }
 
-.hover-image {
-  width: 100px; 
-  height: auto;
+/* .hover-image {
+  width: 250px; 
+  height: 200px;
   margin-top: 10px; 
   background:black;
   border-radius: 6px;
   margin-left: 90px;
-}
+} */
 
 .product-image {
   
@@ -91,12 +94,11 @@
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
-  
 }
 
 .sliding-text {
-  display: inline-block;
-  animation: slide 10s linear infinite; 
+  /* display: inline-block; */
+  animation: slide 15s linear infinite; 
 }
 
 @keyframes slide {

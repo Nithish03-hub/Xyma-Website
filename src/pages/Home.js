@@ -21,6 +21,7 @@ import real from '../Assets/real.png';
 import solution from '../Assets/solution.png';
 import time from '../Assets/time.png';
 import bstar from '../Assets/bstar.png';
+import white from '../Assets/white.png'
 import sg from '../Brand/sg.png';
 import tata from '../Brand/tata.png';
 import lam from '../Brand/lam.png';
@@ -78,6 +79,7 @@ export const Home = () => {
   // const wordsArray = phrase.split(" ");
   const [clickedImage, setClickedImage] = useState(aluminum);
   const [imageDesc, setImageDesc] = useState(imageDescription.Aluminum);
+  const [imageName, setImageName] = useState('ALUMINUM');
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const handleImageChange = (event) => {
@@ -88,31 +90,37 @@ export const Home = () => {
       case "aluminum":
         setClickedImage(aluminum);
         setImageDesc(imageDescription.Aluminum);
+        setImageName('ALUMINUM');
         break;
 
       case "steel":
         setClickedImage(steel);
         setImageDesc(imageDescription.Steel);
+        setImageName("STEEL");
         break;
 
       case "refiniries":
         setClickedImage(reformerTubes);
         setImageDesc(imageDescription.Refiniries);
+        setImageName("REFINIRIES");
         break;
 
       case "lubricants":
         setClickedImage(lubricants);
         setImageDesc(imageDescription.Lubricants);
+        setImageName("LUBRICANTS");
         break;
 
       case "oilRecovery":
         setClickedImage(oilRecovery);
         setImageDesc(imageDescription.OilRecovery);
+        setImageName("OIL RECOVERY");
         break;
 
       case "paints":
         setClickedImage(paints);
         setImageDesc(imageDescription.Paints);
+        setImageName("PAINTS");
         break;
 
       default:
@@ -144,7 +152,7 @@ export const Home = () => {
   
 
   return (
-    <div>
+    <div className="w-full">
       {/* cover image */}
       <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
         <img
@@ -152,127 +160,169 @@ export const Home = () => {
           alt="cover image"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-start mt-28 text-6xl text-white font-semibold ml-24 gap-2 2xl:text-8xl">
+        <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl sm:text-6xl text-white font-semibold ml-24 gap-2 2xl:text-8xl">
           <div>Prevent</div>
           <div>Unplanned</div>
           <div>Downtime</div>
-          <div className="text-sm mt-2 2xl:text-base">
+          <div className="text-xs sm:text-sm mt-2 2xl:text-base">
             "The Disruptive Ultrasonic Waveguide Technology"
           </div>
         </div>
       </div>
       {/* bottom text */}
-      <div className="w-full text-center text-gray-300 font-semibold text-[90px] 2xl:text-[120px] -mt-[50px] 2xl:-mt-[65px]">
+      <div className="w-full text-center text-gray-300 font-semibold text-[30px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px]">
         XYMA ANALYTICS
       </div>
 
       {/* text with underline */}
-      <div className="flex justify-center items-center mt-8">
-        <div className="text-3xl 2xl:text-4xl font-semibold">
+      <div className="border border-black flex justify-center items-center mt-8 2xl:mt-20">
+        <div className="text-xl sm:text-3xl 2xl:text-5xl font-semibold text-center">
           Impact of discrete inaccurate Process parameter measurements
-          <img className="w-auto h-2 ml-96" src={newline}></img>
+          <img
+            className="w-[250px] sm:w-auto 2xl:w-[800px] h-2 ml-[25%] sm:ml-96 2xl:ml-[600px]"
+            src={newline}
+          ></img>
         </div>
       </div>
-      <div>
+      <div className="w-full border border-black ">
         {/* elements cards */}
-        <div className="h-[60vh] 2xl:h-[70vh] mt-4 2xl:mt-10 flex pt-8 px-36">
+        <div className="h-[80vh] sm:h-[60vh] 2xl:h-[70vh] sm:mt-4 2xl:mt-16 sm:flex pt-8 sm:px-36 2xl:px-16">
           {/* list of elements */}
-          <div className="w-[15%] h-full text-gray-500">
-            <div
-              className={`cursor-pointer p-1 mb-1 flex ${
-                clickedImage === aluminum && "text-[#013872] font-medium"
-              }`}
-              id="aluminum"
-              onClick={handleImageChange}
-            >
+          <div
+            className="w-full overflow-auto sm:w-[15%] h-[8%] sm:h-full text-gray-500 2xl:text-3xl flex items-center justify-center sm:items-start sm:justify-start sm:flex-col"
+            style={{ scrollbarWidth: "none" }}
+          >
+            <div>
+              <div
+                className={`sm:w-full cursor-pointer p-1 mb-1 flex ${
+                  clickedImage === aluminum && "text-[#013872] font-medium"
+                }`}
+                id="aluminum"
+                onClick={handleImageChange}
+              >
+                {clickedImage === aluminum && (
+                  <div className="invisible sm:visible border border-blue-800"></div>
+                )}
+                <div className="ml-1 -z-10">Aluminum</div>
+                {/* {clickedImage === aluminum && (
+                <div className="border border-blue-800 sm:hidden" />
+              )} */}
+              </div>
               {clickedImage === aluminum && (
-                <div className="border border-blue-800"></div>
+                <div className="border border-blue-800 sm:hidden" />
               )}
-              <div className="ml-1 -z-10">Aluminum</div>
             </div>
 
-            <div
-              className={`flex p-1 mb-1 cursor-pointer ${
-                clickedImage === steel && "text-[#013872] font-medium"
-              }`}
-              id="steel"
-              onClick={handleImageChange}
-            >
+            <div>
+              <div
+                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === steel && "text-[#013872] font-medium"
+                }`}
+                id="steel"
+                onClick={handleImageChange}
+              >
+                {clickedImage === steel && (
+                  <div className="invisible sm:visible border border-blue-800"></div>
+                )}
+                <div className="ml-1 -z-10">Steel</div>
+              </div>
               {clickedImage === steel && (
-                <div className="border border-blue-800"></div>
+                <div className="border border-blue-800 sm:hidden" />
               )}
-              <div className="ml-1 -z-10">Steel</div>
             </div>
 
-            <div
-              className={`flex p-1 mb-1 cursor-pointer ${
-                clickedImage === reformerTubes && "text-[#013872] font-medium"
-              }`}
-              id="refiniries"
-              onClick={handleImageChange}
-            >
+            <div>
+              <div
+                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === reformerTubes && "text-[#013872] font-medium"
+                }`}
+                id="refiniries"
+                onClick={handleImageChange}
+              >
+                {clickedImage === reformerTubes && (
+                  <div className="invisible sm:visible border border-blue-800"></div>
+                )}
+                <div className="ml-1 -z-10">Refiniries</div>
+              </div>
               {clickedImage === reformerTubes && (
-                <div className="border border-blue-800"></div>
+                <div className="border border-blue-800 sm:hidden" />
               )}
-              <div className="ml-1 -z-10">Refiniries</div>
             </div>
 
-            <div
-              className={`flex p-1 mb-1 cursor-pointer ${
-                clickedImage === lubricants && "text-[#013872] font-medium"
-              }`}
-              id="lubricants"
-              onClick={handleImageChange}
-            >
+            <div>
+              <div
+                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === lubricants && "text-[#013872] font-medium"
+                }`}
+                id="lubricants"
+                onClick={handleImageChange}
+              >
+                {clickedImage === lubricants && (
+                  <div className="invisible sm:visible border border-blue-800"></div>
+                )}
+                <div className="ml-1 -z-10">Lubricants</div>
+              </div>
               {clickedImage === lubricants && (
-                <div className="border border-blue-800"></div>
+                <div className="border border-blue-800 sm:hidden" />
               )}
-              <div className="ml-1 -z-10">Lubricants</div>
             </div>
 
-            <div
-              className={`flex p-1 mb-1 cursor-pointer ${
-                clickedImage === oilRecovery && "text-[#013872] font-medium"
-              }`}
-              id="oilRecovery"
-              onClick={handleImageChange}
-            >
+            <div>
+              <div
+                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === oilRecovery && "text-[#013872] font-medium"
+                }`}
+                id="oilRecovery"
+                onClick={handleImageChange}
+              >
+                {clickedImage === oilRecovery && (
+                  <div className="invisible sm:visible border border-blue-800"></div>
+                )}
+                <div className="ml-1 -z-10">OilRecovery</div>
+              </div>
               {clickedImage === oilRecovery && (
-                <div className="border border-blue-800"></div>
+                <div className="border border-blue-800 sm:hidden" />
               )}
-              <div className="ml-1 -z-10">Oil Recovery</div>
             </div>
 
-            <div
-              className={`flex p-1 mb-1 cursor-pointer ${
-                clickedImage === paints && "text-[#013872] font-medium"
-              }`}
-              id="paints"
-              onClick={handleImageChange}
-            >
+            <div>
+              <div
+                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === paints && "text-[#013872] font-medium"
+                }`}
+                id="paints"
+                onClick={handleImageChange}
+              >
+                {clickedImage === paints && (
+                  <div className="invisible sm:visible border border-blue-800"></div>
+                )}
+                <div className="ml-1 -z-10">Paints</div>
+              </div>
               {clickedImage === paints && (
-                <div className="border border-blue-800"></div>
+                <div className="border border-blue-800 sm:hidden" />
               )}
-              <div className="ml-1 -z-10">Paints</div>
             </div>
           </div>
           {/* element images */}
-          <div className="w-[45%] h-full">
+          <div className="w-full sm:w-[45%] 2xl:w-[50%] h-[61%] sm:h-full">
             {clickedImage && (
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center h-full">
                 <img
                   src={clickedImage}
                   alt="Clicked Image"
-                  className="rounded-2xl h-[320px] w-[430px] shadow-white shadow-2xl"
+                  className="rounded-2xl h-[90%] w-[90%] shadow-white shadow-2xl z-10"
                 />
               </div>
             )}
+            <div className="text-center text-4xl 2xl:text-6xl font-bold text-gray-400 -mt-7 2xl:-mt-14">
+              {imageName}
+            </div>
           </div>
           {/* elements description */}
-          <div className="w-[40%] h-full flex items-center justify-center p-4">
+          <div className="border border-black w-full sm:w-[40%] 2xl:w-[35%] h-[31%] sm:h-full flex items-center justify-center p-4">
             {clickedImage && (
               <div
-                className="text-3xl font-semibold"
+                className="text-xl sm:text-3xl 2xl:text-5xl font-semibold text-center"
                 style={{
                   color: "transparent",
                   background:
@@ -286,141 +336,17 @@ export const Home = () => {
             )}
           </div>
         </div>
-        {/* elements bottom title */}
-        <div className="h-[10vh] flex px-36">
-          <div className="h-[10vh] w-[15%]"></div>
-          <div className="h-[10vh] w-[45%] text-4xl font-bold text-gray-400 text-center -mt-[40px] -z-10">
-            {clickedImage === aluminum && (
-              <div className="h-full w-full">ALUMINUM</div>
-            )}
-            {clickedImage === steel && (
-              <div className="h-full w-full">STEEL</div>
-            )}
-            {clickedImage === reformerTubes && (
-              <div className="h-full w-full">REFINIRIES</div>
-            )}
-            {clickedImage === lubricants && (
-              <div className="h-full w-full">LUBRICANTS</div>
-            )}
-            {clickedImage === oilRecovery && (
-              <div className="h-full w-full">OIL RECOVERY</div>
-            )}
-            {clickedImage === paints && (
-              <div className="h-full w-full">PAINTS</div>
-            )}
-          </div>
-          <div className="h-[10vh] w-[40%]"></div>
-        </div>
       </div>
 
-      {/* <div> */}
-      {/* <div
-            style={{
-              fontSize: "14px",
-              color: "grey",
-              marginLeft: "-150px",
-              marginTop: "60px",
-            }}
-          >
-            <div>
-              <span
-                id="Aluminum"
-                onClick={handleClick}
-                style={{ cursor: "pointer" }}
-                className={
-                  selectedWord === "Aluminum" ? "word-selected" : "word"
-                }
-              >
-                Aluminum
-              </span>
-            </div>
-            <div>
-              <span
-                id="Steel"
-                onClick={handleClick}
-                style={{ cursor: "pointer" }}
-                className={selectedWord === "Steel" ? "word-selected" : "word"}
-              >
-                Steel
-              </span>
-            </div>
-            <div>
-              <span
-                id="Reformer Tube"
-                onClick={handleClick}
-                style={{ cursor: "pointer" }}
-                className={
-                  selectedWord === "Reformer Tube" ? "word-selected" : "word"
-                }
-              >
-                Reformer Tube
-              </span>
-            </div>
-            <div>
-              <span
-                id="Lubricant"
-                onClick={handleClick}
-                style={{ cursor: "pointer" }}
-                className={
-                  selectedWord === "Lubricant" ? "word-selected" : "word"
-                }
-              >
-                Lubricant
-              </span>
-            </div>
-            <div>
-              <span
-                id="EOR"
-                onClick={handleClick}
-                style={{ cursor: "pointer" }}
-                className={selectedWord === "EOR" ? "word-selected" : "word"}
-              >
-                EOR
-              </span>
-            </div>
-            <div>
-              <span
-                id="Paints"
-                onClick={handleClick}
-                style={{ cursor: "pointer" }}
-                className={selectedWord === "Paints" ? "word-selected" : "word"}
-              >
-                Paints
-              </span>
-            </div>
-          </div> */}
-      {/* {clickedImage && (
-            <div
-              className="text-center grid grid-cols-2 gap-20 absolute right-10 top-1/2 transform -translate-y-1/2"
-              style={{ marginTop: "88px" }}
-            >
-              <img
-                src={clickedImage}
-                alt="Clicked Image"
-                className={`clicked-image ${getImageSizeClass(selectedWord)}`}
-              />
-              <p
-                className="text-left"
-                style={{
-                  color: "transparent",
-                  background:
-                    "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
-                  backgroundClip: "text",
-                  width: "100%",
-                }}
-              >
-                {wordTextMessages[selectedWord]}
-              </p>
-            </div>
-          )}
-        </div>
-      </div> */}
-
+      {/* semi circle component */}
       <section className="bg-white flex flex-col items-center justify-center h-[90vh] mt-8">
-        <div className="text-3xl font-semibold relative">
+        <div className="text-3xl font-semibold relative 2xl:text-5xl">
           <p>
             Patented Ultrasonic Waveguide Sensors:
-            <img className="w-64 h-2 ml-44" src={old}></img>
+            <img
+              className="w-64 h-2 ml-44 2xl:ml-48 2xl:w-[500px]"
+              src={old}
+            ></img>
             <p style={{ textAlign: "center" }}>Xyma Analytics</p>
           </p>
         </div>
@@ -432,6 +358,7 @@ export const Home = () => {
               imageUrl={utmaps}
               hoverImageUrl={utmap1}
               hoverText="μTMapS & μSTMapS are IIoT-enabled temperature measurement temperature profiling sensors that captures continuos measurements at multiple points with asingle customized waveguide with multiple configurations in contrast to based thermocouples/RTDs or contactless IR guns"
+              hoverHeading="μTMapS & μSTMapS"
             />
             <Badge
               text="Multi-Parameter Viscosity, Density and Temperature"
@@ -439,7 +366,7 @@ export const Home = () => {
               imageUrl={utmaps}
               hoverImageUrl={utmap2}
               hoverText="PoRTS is an invasive/non-invasive based IIoT-enabled rheology and temperature mesurement sensor that continuously captures multiple parameters such as viscosity, density and temperature with a single waveguide unlike discrete measurement with thermocouple/RTDs or discrete measurements with sampling from viscometer and density meter."
-              hoverHeading="PoRTS "
+              hoverHeading="PoRTS"
             />
             <Badge
               text="Contact/Non-contact based Level"
@@ -452,19 +379,13 @@ export const Home = () => {
           </div>
         </div>
 
-        <div
-          style={{
-            position: "relative",
-            width: "45%",
-            height: "60%",
-            display: "block",
-            marginTop: "40px",
-          }}
-        >
+        <div className="relative block w-[45%] h-[60%] mt-[40px] 2xl:w-[50%]">
           <img
             src={newbg}
-            style={{ width: "100%", height: "100%", 
-            //objectFit: "cover" 
+            style={{
+              width: "100%",
+              height: "100%",
+              //objectFit: "cover"
             }}
             alt="Background Image"
           />
@@ -511,7 +432,7 @@ export const Home = () => {
                 left: "5%",
                 transform: "translate(-50%, -50%)",
               }}
-              alt="Sensor Image"
+              alt="Sensor"
               onMouseEnter={() => setHoveredItem("iot")}
               onMouseLeave={() => setHoveredItem(null)}
             />
@@ -652,14 +573,15 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* grid card section */}
       <section>
         <div
-          className=" text-white py-10 md:py-20 h-auto md:h-[114vh]"
+          className="text-white py-16 h-[100vh]"
           style={{
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          <img className="w-5 h-5 ml-20 md:ml-0" src={bstar} alt="BStar logo" />
+          {/* <img className="w-5 h-5 ml-20 md:ml-0" src={bstar} alt="BStar logo" /> */}
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4">
             <p className="text-2xl md:text-2xl lg:text-2xl xl:text-4xl font-semibold text-center">
               Making a difference with the approach
@@ -670,145 +592,107 @@ export const Home = () => {
               />
             </p>
           </div>
-
-          <div className="mt-8" style={{ marginLeft: "15%" }}>
-            <div className="flex ">
+          <div className="h-[90%] mt-4 mx-20 2xl:mx-10 flex p-4">
+            <div className="w-[35%] p-4">
               <div
-                class="col-span-1 md:col-span-1"
+                className="h-full w-full rounded-lg"
                 style={{
-                  borderRadius: "8px",
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                  width: "55%",
-                  height: "auto",
-                  maxWidth: "auto",
-                  padding: "20px",
                 }}
               >
-                <div class="md:ml-4 md:mt-16 md:mb-4">
-                  <center>
+                <div className="h-[40%] flex items-end justify-center">
+                  <img
+                    className="w-[75px] h-[75px]"
+                    src={trophy}
+                    alt="Trophy icon"
+                  />
+                </div>
+                <div className="h-[20%] text-3xl font-semibold">
+                  <div className="h-1/2 flex items-center justify-center">
+                    Award Winning
+                  </div>
+                  <div className="h-1/2 flex items-center justify-center">
+                    Technology
+                  </div>
+                </div>
+                <div className="h-[40%] flex justify-center text-[10px] mx-4 text-center">
+                  The team leverages state-of-the-art, award-winning, ultrasonic
+                  waveguide technology developed through 25+ years of research
+                  and development.
+                </div>
+              </div>
+            </div>
+            <div className="w-[65%] grid grid-cols-2 p-4 gap-4">
+              <div className="rounded-lg bg-white px-4">
+                <div className="h-1/4"></div>
+                <div className="h-1/4 flex">
+                  <div className="w-[20%] h-full flex items-center justify-center">
                     <img
-                      class="bg-white w-auto h-auto border rounded-lg mb-3 mr-8"
-                      src={trophy}
-                      alt="Trophy icon"
-                      style={{ width: "75px", height: "75px" }}
+                      className="w-[45px] h-[45px]"
+                      src={client}
+                      alt="Client icon"
                     />
-                  </center>
-                  <p class="text-2xl font-semibold mb-3 md:text-3xl text-center mr-8">
-                    Award Winning Technology
-                  </p>
-                  <p
-                    class="text-sm mb-3 md:text-sm text-center mr-8"
-                    style={{ width: "100%" }}
-                  >
-                    The team leverages state-of-the-art, award-winning,
-                    ultrasonic waveguide technology developed through 25+ years
-                    of research and development.
-                  </p>
+                  </div>
+                  <div className="w-[80%] h-full flex items-center text-lg font-[635] text-black">
+                    Client-Centric
+                  </div>
+                </div>
+                <div className="h-1/2 text-[#60646C] text-center text-sm">
+                  The Solution is provided based on in-depth understanding of
+                  clients needs addressing the relevant challenges.
                 </div>
               </div>
 
-              <div>
-                <div className="flex flex-wrap">
-                  <div
-                    className="bg-white col-span-1 md:col-span-1 rounded-xl m-2 md:m-0 md:w-1/3 md:ml-3.5"
-                    style={{ padding: "13px" }}
-                  >
-                    <p className="text-gray-300 text-xs mt-3 mb-3 md:text-xs">
-                      01/04
-                    </p>
-                    <div className="flex">
-                      <img
-                        className="bg-white w-auto h-auto rounded-lg mb-4"
-                        src={client}
-                        alt="Client icon"
-                        style={{ width: "45px", height: "45px" }}
-                      />
-                      <p
-                        className="text-black text-2xl font-semibold mt-1 md:text-xl"
-                        style={{ marginLeft: "5%" }}
-                      >
-                        Client-Centric
-                      </p>
-                    </div>
-                    <p className="text-[#60646C] text-sm md:text-sm">
-                      The Solution is provided based on in-depth understanding
-                      of clients needs addressing the relevant challenges.
-                    </p>
+              <div className="rounded-lg bg-white px-4">
+                <div className="h-1/4"></div>
+                <div className="h-1/4 flex">
+                  <div className="w-[20%] h-full flex items-center justify-center">
+                    <img
+                      className="w-[45px] h-[45px]"
+                      src={solution}
+                      alt="solution"
+                    />
                   </div>
-
-                  <div className="bg-white rounded-xl p-3 m-2 md:m-0 md:w-1/3 md:ml-3.5">
-                    <p className="text-gray-300 text-xs mt-3 mb-3 md:text-xs">
-                      02/04
-                    </p>
-                    <div className="flex">
-                      <img
-                        className="bg-white w-auto h-auto rounded-lg mb-4 mt-1"
-                        src={solution}
-                        alt="Solution icon"
-                        style={{ width: "45px", height: "45px" }}
-                      />
-                      <p className="text-black text-2xl font-semibold md:text-xl w-52 ml-6">
-                        Customization For Solutions
-                      </p>
-                    </div>
-                    <p className="text-[#60646C] text-sm md:text-sm">
-                      Gain immediate access to valuable data through the
-                      technology's adaptability with material selection and
-                      configuration for waveguides.
-                    </p>
+                  <div className="w-[80%] h-full flex items-center text-lg font-[635] text-black">
+                    Customization for Solutions
                   </div>
                 </div>
+                <div className="h-1/2 text-[#60646C] text-center text-sm">
+                  Gain immediate access to valuable data through the
+                  technology's adaptability with material selection and
+                  configuration for waveguides.
+                </div>
+              </div>
 
-                <div className="flex flex-wrap">
-                  <div
-                    className="bg-white col-span-1 md:col-span-1 rounded-xl m-2 md:m-0 md:w-1/3 md:mt-3.5 md:ml-3.5"
-                    style={{ padding: "13px" }}
-                  >
-                    <p className="text-gray-300 text-xs mt-3 mb-3 md:text-xs">
-                      03/04
-                    </p>
-                    <div className="flex">
-                      <img
-                        className="bg-white w-auto h-auto rounded-lg mb-4"
-                        src={real}
-                        alt="Client icon"
-                        style={{ width: "45px", height: "45px" }}
-                      />
-                      <p
-                        className="text-black text-2xl font-semibold mt-1 md:text-xl"
-                        style={{ marginLeft: "5%" }}
-                      >
-                        Real-Time Insights
-                      </p>
-                    </div>
-                    <p className="text-[#60646C] text-sm md:text-sm">
-                      Gain immediate access to valuable data through our
-                      supervised sensing capabilities, empowering informed
-                      decision-making.
-                    </p>
+              <div className="rounded-lg bg-white px-4">
+                <div className="h-1/4"></div>
+                <div className="h-1/4 flex">
+                  <div className="w-[20%] h-full flex items-center justify-center">
+                    <img className="w-[45px] h-[45px]" src={real} alt="real" />
                   </div>
+                  <div className="w-[80%] h-full flex items-center text-lg font-[635] text-black">
+                    Real-Time Insights
+                  </div>
+                </div>
+                <div className="h-1/2 text-[#60646C] text-center text-sm">
+                  Gain immediate access to valuable data through our supervised
+                  sensing capabilities, empowering informed decision-making.
+                </div>
+              </div>
 
-                  <div className="bg-white rounded-xl p-3 m-2 md:m-0 md:w-1/3 md:mt-3.5 md:ml-3.5">
-                    <p className="text-gray-300 text-xs mt-3 mb-3 md:text-xs">
-                      04/04
-                    </p>
-                    <div className="flex">
-                      <img
-                        className="bg-white w-auto h-auto rounded-lg mb-4 mt-1"
-                        src={time}
-                        alt="Solution icon"
-                        style={{ width: "45px", height: "45px" }}
-                      />
-                      <p className="text-black text-2xl font-semibold md:text-xl w-52 ml-6">
-                        On-Time Delivery
-                      </p>
-                    </div>
-                    <p className="text-[#60646C] text-sm md:text-sm">
-                      Committed to adhering to project timelines and
-                      satisfaction.
-                    </p>
+              <div className="rounded-lg bg-white px-4">
+                <div className="h-1/4"></div>
+                <div className="h-1/4 flex">
+                  <div className="w-[20%] h-full flex items-center justify-center">
+                    <img className="w-[45px] h-[45px]" src={time} alt="time" />
                   </div>
+                  <div className="w-[80%] h-full flex items-center text-lg font-[635] text-black">
+                    On-Time Delivery
+                  </div>
+                </div>
+                <div className="h-1/2 text-[#60646C] text-center text-sm">
+                  Committed to adhering to project timelines and satisfaction.
                 </div>
               </div>
             </div>
@@ -824,14 +708,20 @@ export const Home = () => {
           }}
         >
           <div className="sliding-text-container ">
-            <span className="mt-2.5 sliding-text text-white w-screen">
-              Continuous Multi-point temperature measurements Continuous
-              multi-parameter measurements Continuous contact & non-contact
-              based level measurement Continuous wear monitoring Continuous
-              Multi-point temperature measurements Continuous multi-parameter
-              measurements Continuous contact & non-contact based level
-              measurements Continuous wear monitoring
-            </span>
+            <div className="mt-2.5 sliding-text text-white w-screen flex items-center gap-4">
+              <div>Continuous Wear Monitoring</div>
+              <img className="w-4 h-4" src={white} alt="BStar logo" />
+
+              <div>Continuous Multi-point temperature measurements</div>
+              <img className="w-4 h-4" src={white} alt="BStar logo" />
+
+              <div>Continuous multi-parameter measurements</div>
+              <img className="w-4 h-4" src={white} alt="BStar logo" />
+
+              <div>
+                Continuous contact & non-contact based level measurement
+              </div>
+            </div>
           </div>
         </div>
         <div className="flex justify-center items-center mt-20">

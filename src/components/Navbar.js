@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import xyma from '../Assets/xymalogo_white.png';
 import { HeaderData } from "../data/HeaderData";
 import CircleComponent from "../CircleComponent";
+import { IoMenu } from "react-icons/io5";
 
 
 const Navbar = () => {
@@ -26,9 +27,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full  z-50">
-      <div className="bg-[#122e4b] h-16 flex items-center">
-        <div className=" flex items-center text-white justify-around w-full 2xl:text-lg">
+    <nav className="fixed top-0 left-0 w-full z-50">
+      <div className="bg-[#122e4b] h-16 flex items-center px-4">
+        <div className=" flex items-center text-white md:justify-around justify-between w-full 2xl:text-lg">
           <div>
             <img className="mr-4 h-10" src={xyma} alt="Logo" />
           </div>
@@ -50,13 +51,16 @@ const Navbar = () => {
             ))}
           </div>
           <div
-            className="text-white py-3 px-4 rounded-full cursor-pointer"
+            className="hidden md:block text-white py-3 px-4 rounded-full cursor-pointer"
             style={{
               background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
             }}
             onClick={handleContactClick}
           >
             Get in Touch
+          </div>
+          <div className="flex items-center justify-center md:hidden">
+            <IoMenu size={30} />
           </div>
         </div>
         {/* <button
