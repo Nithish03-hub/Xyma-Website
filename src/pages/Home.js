@@ -175,21 +175,21 @@ export const Home = () => {
       </div>
 
       {/* text with underline */}
-      <div className="border border-black flex justify-center items-center mt-8 2xl:mt-20">
+      <div className="flex justify-center items-center mt-8 2xl:mt-20">
         <div className="text-xl sm:text-3xl 2xl:text-5xl font-semibold text-center">
           Impact of discrete inaccurate Process parameter measurements
           <img
-            className="w-[250px] sm:w-auto 2xl:w-[800px] h-2 ml-[25%] sm:ml-96 2xl:ml-[600px]"
+            className="w-[200px] sm:w-auto 2xl:w-[800px] h-2 ml-[30%] sm:ml-96 2xl:ml-[600px]"
             src={newline}
           ></img>
         </div>
       </div>
-      <div className="w-full border border-black ">
+      <div className="w-full">
         {/* elements cards */}
         <div className="h-[80vh] sm:h-[60vh] 2xl:h-[70vh] sm:mt-4 2xl:mt-16 sm:flex pt-8 sm:px-36 2xl:px-16">
           {/* list of elements */}
           <div
-            className="w-full overflow-auto sm:w-[15%] h-[8%] sm:h-full text-gray-500 2xl:text-3xl flex items-center justify-center sm:items-start sm:justify-start sm:flex-col"
+            className="w-full overflow-auto sm:p-4 sm:w-[15%] h-[8%] sm:h-full text-gray-500 2xl:text-3xl flex items-center justify-center sm:items-start sm:justify-start sm:flex-col"
             style={{ scrollbarWidth: "none" }}
           >
             <div>
@@ -319,10 +319,10 @@ export const Home = () => {
             </div>
           </div>
           {/* elements description */}
-          <div className="border border-black w-full sm:w-[40%] 2xl:w-[35%] h-[31%] sm:h-full flex items-center justify-center p-4">
+          <div className="w-full sm:w-[40%] 2xl:w-[35%] h-[31%] sm:h-full flex items-center justify-center p-4">
             {clickedImage && (
               <div
-                className="text-xl sm:text-3xl 2xl:text-5xl font-semibold text-center"
+                className="text-2xl sm:text-3xl 2xl:text-5xl font-semibold text-center"
                 style={{
                   color: "transparent",
                   background:
@@ -340,52 +340,57 @@ export const Home = () => {
 
       {/* semi circle component */}
       <section className="bg-white flex flex-col items-center justify-center h-[90vh] mt-8">
-        <div className="text-3xl font-semibold relative 2xl:text-5xl">
+        <div className="text-xl sm:text-3xl font-semibold relative 2xl:text-5xl w-full text-center">
           <p>
             Patented Ultrasonic Waveguide Sensors:
             <img
-              className="w-64 h-2 ml-44 2xl:ml-48 2xl:w-[500px]"
+              className="w-[175px] sm:w-64 h-2 ml-44 sm:ml-[500px] 2xl:ml-[530px] 2xl:w-[500px]"
               src={old}
             ></img>
             <p style={{ textAlign: "center" }}>Xyma Analytics</p>
           </p>
         </div>
         <div className="mt-3">
-          <div className="flex gap-2">
-            <Badge
-              text="Multi-Point Temperature "
-              color="#FFF6EA"
-              imageUrl={utmaps}
-              hoverImageUrl={utmap1}
-              hoverText="μTMapS & μSTMapS are IIoT-enabled temperature measurement temperature profiling sensors that captures continuos measurements at multiple points with asingle customized waveguide with multiple configurations in contrast to based thermocouples/RTDs or contactless IR guns"
-              hoverHeading="μTMapS & μSTMapS"
-            />
-            <Badge
-              text="Multi-Parameter Viscosity, Density and Temperature"
-              color="#FFF6EA"
-              imageUrl={utmaps}
-              hoverImageUrl={utmap2}
-              hoverText="PoRTS is an invasive/non-invasive based IIoT-enabled rheology and temperature mesurement sensor that continuously captures multiple parameters such as viscosity, density and temperature with a single waveguide unlike discrete measurement with thermocouple/RTDs or discrete measurements with sampling from viscometer and density meter."
-              hoverHeading="PoRTS"
-            />
-            <Badge
-              text="Contact/Non-contact based Level"
-              color="#FFF6EA"
-              imageUrl={utmaps}
-              hoverImageUrl={utmap3}
-              hoverText="Ztar is a contact/contactless IIoT-enabled level that captures continuous level across any hazardous environment with accuracy in contrast to radar-based level measurement sensors."
-              hoverHeading="Ztar"
-            />
+          <div className="px-4 sm:px-0 sm:flex gap-2">
+            <div className="mb-2">
+              <Badge
+                text="Multi-Point Temperature "
+                color="#FFF6EA"
+                imageUrl={utmaps}
+                hoverImageUrl={utmap1}
+                hoverText="μTMapS & μSTMapS are IIoT-enabled temperature measurement temperature profiling sensors that captures continuos measurements at multiple points with asingle customized waveguide with multiple configurations in contrast to based thermocouples/RTDs or contactless IR guns"
+                hoverHeading="μTMapS & μSTMapS"
+              />
+            </div>
+            <div className="mb-2">
+              <Badge
+                text="Multi-Parameter Viscosity, Density and Temperature"
+                color="#FFF6EA"
+                imageUrl={utmaps}
+                hoverImageUrl={utmap2}
+                hoverText="PoRTS is an invasive/non-invasive based IIoT-enabled rheology and temperature mesurement sensor that continuously captures multiple parameters such as viscosity, density and temperature with a single waveguide unlike discrete measurement with thermocouple/RTDs or discrete measurements with sampling from viscometer and density meter."
+                hoverHeading="PoRTS"
+              />
+            </div>
+            <div>
+              <Badge
+                text="Contact/Non-contact based Level"
+                color="#FFF6EA"
+                imageUrl={utmaps}
+                hoverImageUrl={utmap3}
+                hoverText="Ztar is a contact/contactless IIoT-enabled level that captures continuous level across any hazardous environment with accuracy in contrast to radar-based level measurement sensors."
+                hoverHeading="Ztar"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="relative block w-[45%] h-[60%] mt-[40px] 2xl:w-[50%]">
+        <div className="relative block w-[70%] h-[50%] sm:w-[45%] sm:h-[60%] mt-[40px] 2xl:w-[50%]">
           <img
             src={newbg}
             style={{
               width: "100%",
               height: "100%",
-              //objectFit: "cover"
             }}
             alt="Background Image"
           />
@@ -409,6 +414,7 @@ export const Home = () => {
             />
             {hoveredItem === "sensor" && (
               <p
+                className="text-[10px] sm:text-base"
                 style={{
                   position: "absolute",
                   top: "68%",
@@ -438,6 +444,7 @@ export const Home = () => {
             />
             {hoveredItem === "iot" && (
               <p
+                className="text-[10px] sm:text-base"
                 style={{
                   position: "absolute",
                   top: "33%",
@@ -470,6 +477,7 @@ export const Home = () => {
             />
             {hoveredItem === "grp" && (
               <p
+                className="text-[10px] sm:text-base"
                 style={{
                   position: "absolute",
                   top: "6%",
@@ -499,6 +507,7 @@ export const Home = () => {
             />
             {hoveredItem === "zero" && (
               <p
+                className="text-[10px] sm:text-base"
                 style={{
                   position: "absolute",
                   top: "5%",
@@ -528,6 +537,7 @@ export const Home = () => {
             />
             {hoveredItem === "ai" && (
               <p
+                className="text-[10px] sm:text-base"
                 style={{
                   position: "absolute",
                   top: "33%",
@@ -557,6 +567,7 @@ export const Home = () => {
             />
             {hoveredItem === "tool" && (
               <p
+                className="text-[10px] sm:text-base"
                 style={{
                   position: "absolute",
                   top: "67.5%",
@@ -576,26 +587,25 @@ export const Home = () => {
       {/* grid card section */}
       <section>
         <div
-          className="text-white py-16 h-[100vh]"
+          className="text-white py-16 h-auto sm:h-[100vh]"
           style={{
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          {/* <img className="w-5 h-5 ml-20 md:ml-0" src={bstar} alt="BStar logo" /> */}
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4">
-            <p className="text-2xl md:text-2xl lg:text-2xl xl:text-4xl font-semibold text-center">
+            <p className="text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-4xl font-semibold text-center">
               Making a difference with the approach
               <img
-                className="md:w-40 ml-24 lg:ml-auto"
+                className="w-[100px] md:w-40 ml-[125px] sm:ml-24 lg:ml-auto"
                 src={second}
                 alt="Approach Image"
               />
             </p>
           </div>
-          <div className="h-[90%] mt-4 mx-20 2xl:mx-10 flex p-4">
-            <div className="w-[35%] p-4">
+          <div className="h-[90%] mt-4 mx-4 sm:mx-20 2xl:mx-10 sm:flex p-4">
+            <div className="w-full sm:w-[35%] p-4">
               <div
-                className="h-full w-full rounded-lg"
+                className="h-full w-full rounded-lg p-4"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -608,7 +618,7 @@ export const Home = () => {
                     alt="Trophy icon"
                   />
                 </div>
-                <div className="h-[20%] text-3xl font-semibold">
+                <div className="h-[20%] text-2xl sm:text-3xl font-semibold">
                   <div className="h-1/2 flex items-center justify-center">
                     Award Winning
                   </div>
@@ -623,10 +633,10 @@ export const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[65%] grid grid-cols-2 p-4 gap-4">
-              <div className="rounded-lg bg-white px-4">
-                <div className="h-1/4"></div>
-                <div className="h-1/4 flex">
+            <div className="w-full sm:w-[65%] flex flex-col sm:grid grid-cols-2 p-4 gap-4">
+              <div className="rounded-lg bg-white px-4 p-4 sm:p-0">
+                <div className="hidden sm:block h-1/4"></div>
+                <div className="h-1/2 sm:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
                     <img
                       className="w-[45px] h-[45px]"
@@ -634,19 +644,19 @@ export const Home = () => {
                       alt="Client icon"
                     />
                   </div>
-                  <div className="w-[80%] h-full flex items-center text-lg font-[635] text-black">
+                  <div className="w-[80%] flex items-center text-lg font-[635] text-black">
                     Client-Centric
                   </div>
                 </div>
-                <div className="h-1/2 text-[#60646C] text-center text-sm">
+                <div className="h-1/2 text-[#60646C] text-left text-sm p-2">
                   The Solution is provided based on in-depth understanding of
                   clients needs addressing the relevant challenges.
                 </div>
               </div>
 
-              <div className="rounded-lg bg-white px-4">
-                <div className="h-1/4"></div>
-                <div className="h-1/4 flex">
+              <div className="rounded-lg bg-white px-4 p-4 sm:p-0">
+                <div className="hidden sm:block h-1/4"></div>
+                <div className="h-1/2 sm:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
                     <img
                       className="w-[45px] h-[45px]"
@@ -654,44 +664,44 @@ export const Home = () => {
                       alt="solution"
                     />
                   </div>
-                  <div className="w-[80%] h-full flex items-center text-lg font-[635] text-black">
+                  <div className="w-[80%] flex items-center text-lg font-[635] text-black">
                     Customization for Solutions
                   </div>
                 </div>
-                <div className="h-1/2 text-[#60646C] text-center text-sm">
+                <div className="h-1/2 text-[#60646C] text-left text-sm p-2">
                   Gain immediate access to valuable data through the
                   technology's adaptability with material selection and
                   configuration for waveguides.
                 </div>
               </div>
 
-              <div className="rounded-lg bg-white px-4">
-                <div className="h-1/4"></div>
-                <div className="h-1/4 flex">
+              <div className="rounded-lg bg-white px-4 p-4 sm:p-0">
+                <div className="hidden sm:block h-1/4"></div>
+                <div className="h-1/2 sm:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
                     <img className="w-[45px] h-[45px]" src={real} alt="real" />
                   </div>
-                  <div className="w-[80%] h-full flex items-center text-lg font-[635] text-black">
+                  <div className="w-[80%] flex items-center text-lg font-[635] text-black">
                     Real-Time Insights
                   </div>
                 </div>
-                <div className="h-1/2 text-[#60646C] text-center text-sm">
+                <div className="h-1/2 text-[#60646C] text-left text-sm p-2">
                   Gain immediate access to valuable data through our supervised
                   sensing capabilities, empowering informed decision-making.
                 </div>
               </div>
 
-              <div className="rounded-lg bg-white px-4">
-                <div className="h-1/4"></div>
-                <div className="h-1/4 flex">
+              <div className="rounded-lg bg-white px-4 p-4 sm:p-0">
+                <div className="hidden sm:block h-1/4"></div>
+                <div className="h-1/2 sm:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
                     <img className="w-[45px] h-[45px]" src={time} alt="time" />
                   </div>
-                  <div className="w-[80%] h-full flex items-center text-lg font-[635] text-black">
+                  <div className="w-[80%] flex items-center text-lg font-[635] text-black">
                     On-Time Delivery
                   </div>
                 </div>
-                <div className="h-1/2 text-[#60646C] text-center text-sm">
+                <div className="h-1/2 text-[#60646C] text-left text-sm p-2">
                   Committed to adhering to project timelines and satisfaction.
                 </div>
               </div>
@@ -724,58 +734,56 @@ export const Home = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center mt-20">
-          <div className="w-full md:w-[200vh]">
-            <div className="text-2xl font-semibold text-center">
-              Xyma Analytics' Clients
-            </div>
-            <div className="flex justify-center items-center mt-3">
-              <div className="text-center text-gray-500 w-full md:w-[130vh]">
-                Committed to client satisfaction with constant support at all
-                stages, our aim is to aid Industry 4.0 transformation while
-                reducing environmental impact, increasing cost savings, and
-                enhancing process efficiency.
-              </div>
-            </div>
-            <div class="mt-16 flex flex-col items-center">
-              <div class="max-w-full overflow-x-auto flex justify-center items-center ">
-                <img src={sg} style={{ maxWidth: "200px", height: "auto" }} />
-                <img src={tata} style={{ maxWidth: "200px", height: "auto" }} />
-                <img src={lam} style={{ maxWidth: "200px", height: "auto" }} />
-                <img src={ind} style={{ maxWidth: "200px", height: "auto" }} />
-                <img
-                  src={bharat}
-                  style={{ maxWidth: "200px", height: "auto" }}
-                />
-                <img src={ved} style={{ maxWidth: "200px", height: "auto" }} />
-              </div>
-              <div class="max-w-full overflow-x-auto mt-2 flex justify-center items-center ">
-                <img src={drdo} style={{ maxWidth: "200px", height: "auto" }} />
-                <img src={cumi} style={{ maxWidth: "200px", height: "auto" }} />
-                <img src={epri} style={{ maxWidth: "200px", height: "auto" }} />
-                <img src={skf} style={{ maxWidth: "200px", height: "auto" }} />
-                <img
-                  src={schneider}
-                  style={{ maxWidth: "200px", height: "auto" }}
-                />
-                <img
-                  src={reliance}
-                  style={{ maxWidth: "200px", height: "auto" }}
-                />
-              </div>
-            </div>
+
+        <div className="flex flex-col justify-center items-center mt-20">
+          <div className="text-2xl font-semibold text-center">
+            Xyma Analytics' Clients
+          </div>
+          <div className="flex justify-center items-center mt-3 text-center text-gray-600 w-full px-4">
+            Committed to client satisfaction with constant support at all
+            stages, our aim is to aid Industry 4.0 transformation while reducing
+            environmental impact, increasing cost savings, and enhancing process
+            efficiency.
+          </div>
+        </div>
+
+        <div class="mt-16 flex flex-col items-center">
+          <div
+            class="max-w-full overflow-x-auto flex justify-center items-center "
+            style={{ scrollbarWidth: "none" }}
+          >
+            <img src={sg} style={{ maxWidth: "200px", height: "auto" }} />
+            <img src={tata} style={{ maxWidth: "200px", height: "auto" }} />
+            <img src={lam} style={{ maxWidth: "200px", height: "auto" }} />
+            <img src={ind} style={{ maxWidth: "200px", height: "auto" }} />
+            <img src={bharat} style={{ maxWidth: "200px", height: "auto" }} />
+            <img src={ved} style={{ maxWidth: "200px", height: "auto" }} />
+          </div>
+          <div
+            class="max-w-full overflow-x-auto mt-2 flex justify-center items-center "
+            style={{ scrollbarWidth: "none" }}
+          >
+            <img src={drdo} style={{ maxWidth: "200px", height: "auto" }} />
+            <img src={cumi} style={{ maxWidth: "200px", height: "auto" }} />
+            <img src={epri} style={{ maxWidth: "200px", height: "auto" }} />
+            <img src={skf} style={{ maxWidth: "200px", height: "auto" }} />
+            <img
+              src={schneider}
+              style={{ maxWidth: "200px", height: "auto" }}
+            />
+            <img src={reliance} style={{ maxWidth: "200px", height: "auto" }} />
           </div>
         </div>
 
         <div
-          className="h-[60vh] mt-24"
+          className="mt-24"
           style={{
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          <div className="flex justify-center items-center ">
+          <div className="flex justify-center items-center">
             <div
-              className="mt-[-50px] h-28 md:mb-20 rounded-3xl w-full md:max-w-6xl"
+              className="mt-[-50px] rounded-3xl w-full sm:w-[90%]"
               style={{
                 background:
                   "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -785,47 +793,51 @@ export const Home = () => {
                 className="flex flex-col md:flex-row items-center justify-between"
                 style={{ marginBottom: "20px" }}
               >
-                <div className="md:ml-10 md:mt-3.5 text-white text-xl md:text-3xl text-center md:text-left">
+                <div className="md:ml-10 mt-3.5 text-white text-lg sm:text-xl md:text-3xl text-center sm:text-left w-full">
                   Enhance Process Efficiency through
                   <br />
                   XYMA Analytics' Innovations
                   <img
-                    className="mb-1 w-full md:w-40 mx-auto md:ml-40"
+                    className="mb-1 w-[250px] md:w-40 mx-auto md:ml-40"
                     src={vector}
                     alt="Vector Image"
                   />
                 </div>
-                <div className="md:mr-10 md:mt-5 text-xs mt-5 md:text-right">
+                <div className="md:mr-10 md:mt-5 text-xs mt-5 md:text-right flex gap-2">
                   <button
-                    className="bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10"
+                    className="bg-[#01285C] text-white rounded-full p-4 w-40"
                     onClick={handleContactClick}
                   >
                     Get in Touch
                   </button>
-                  <button className="bg-white text-[#01285C] rounded-full w-36 h-10 md:w-36 md:h-10 ml-4 md:ml-8 md:mr-4 mb-2 md:mt-0">
+                  <button className="bg-white text-[#01285C] rounded-full p-4 w-40">
                     Download Brochure
                   </button>
                 </div>
               </div>
-              <div className="mt-16 text-white flex flex-col md:flex-row">
-                <div className="flex flex-col items-center md:items-start">
-                  <img className="w-32 h-14" src={logo} alt="Logo"></img>
-                  <div className="text-white text-xs w-56 mt-2">
-                    Patented Ultrasonic Waveguide based sensors for preventing
-                    unplanned downtime and enhancing process efficiency.
-                  </div>
-                  <div className="flex gap-3 mt-4">
-                    <img className="w-6 h-6" src={twitter} alt="Twitter"></img>
-                    <img
-                      className="w-6 h-6"
-                      src={linkedin}
-                      alt="LinkedIn"
-                    ></img>
-                    <img className="w-6 h-6" src={share} alt="Share"></img>
-                  </div>
+            </div>
+          </div>
+          <div className="w-full flex flex-col items-center mt-12">
+            <div className="w-[90%] text-white flex flex-col sm:flex-row gap-2">
+              <div className="w-full sm:w-[25%] flex flex-col items-center md:items-start">
+                <img
+                  className="w-32 h-14"
+                  src={logo}
+                  alt="Logo"
+                ></img>
+                <div className="text-white text-xs w-full sm:w-[80%] mt-2 text-center sm:text-left">
+                  Patented Ultrasonic Waveguide based sensors for preventing
+                  unplanned downtime and enhancing process efficiency.
                 </div>
+                <div className="flex gap-3 mt-4">
+                  <img className="w-6 h-6" src={twitter} alt="Twitter"></img>
+                  <img className="w-6 h-6" src={linkedin} alt="LinkedIn"></img>
+                  <img className="w-6 h-6" src={share} alt="Share"></img>
+                </div>
+              </div>
 
-                <div className="text-xs mr-8 md:mr-24 ml-8 md:ml-28 mt-4 md:mt-0">
+              <div className="w-full sm:w-[50%] flex">
+                <div className="text-xs w-1/3">
                   <div className="font-semibold mb-5 text-sm">
                     Quick Links <img className="mt-1 h-0.5 w-5" src={line} />
                   </div>
@@ -834,7 +846,8 @@ export const Home = () => {
                   <div className="mb-3">Media</div>
                   <div className="mb-3">Resources</div>
                 </div>
-                <div className="text-xs mr-8 md:mr-24 mt-4 md:mt-0">
+
+                <div className="text-xs w-1/3">
                   <div className="font-semibold mb-5 text-sm ">
                     Products <img className="mt-1 h-0.5 w-5" src={line} />
                   </div>
@@ -843,50 +856,44 @@ export const Home = () => {
                   <div className="mb-3">Ztar</div>
                   <div className="mb-3">I-PAMS</div>
                 </div>
-                <div className="text-xs mr-8 mt-4 md:mt-0">
+
+                <div className="text-xs w-1/3">
                   <div className="font-semibold mb-5 text-sm ">
                     Support <img className="mt-1 h-0.5 w-5" src={line} />
                   </div>
                   <div className="mb-3">Contact Us</div>
                   <div className="mb-3">Contact Sales</div>
                 </div>
-                <div
-                  style={{
-                    marginLeft: "140px",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    padding: "10px",
-                    gap: "10px",
-                    width: "220px",
-                    height: "84px",
-                    background: "rgba(0, 0, 0, 0.4)",
-                    borderRadius: "10px",
-                    flex: "none",
-                    order: "4",
-                    flexGrow: "0",
-                  }}
-                >
+              </div>
+
+              <div className="w-full sm:w-[25%] flex items-start justify-center">
+                <div className="flex flex-col items-start p-2.5 gap-2.5 w-full h-full sm:h-[50%] bg-black/40 rounded-[10px]">
                   <div>Subscribe Now</div>
-                  <form class="flex items-center">
+                  <form class="flex items-center justify-between w-full">
                     <input
                       type="email"
-                      class="text-xs w-40 h-8 rounded-md pl-3"
+                      className="text-xs w-[85%] h-[90%] rounded-md pl-3"
                       placeholder="Enter your email"
                       required
                     />
-                    <img class="w-7 h-7 ml-2" src={arrow} />
+                    <img class="w-7 h-7" src={arrow} />
                   </form>
                 </div>
               </div>
-              <div className="h-0.5 mt-10" style={{ background: "#013872" }} />
-              <div className="text-white mt-6 text-xs">
-                © 2022 XYMA Analytics Inc.{" "}
-                <span className="text-gray-400">
+            </div>
+            <div
+              className="h-0.5 mt-4 mb-4 w-[90%] bg-[#013872]"/>
+            {/* footer */}
+            <div className="sm:flex justify-between text-white text-xs w-[90%] mb-4 font-light">
+              <div className="flex gap-1 justify-center">
+                <div className="">© 2022 XYMA Analytics Inc.</div>
+                <div className=" text-gray-400">
                   IIT Madras Research Park, Chennai, 600113
-                </span>{" "}
-                <span className="ml-96">Terms & Conditions</span>
-                <span className="ml-6">Privacy Policy</span>
+                </div>
+              </div>
+              <div className="flex gap-8 justify-center">
+                <div>Terms & Conditions</div>
+                <div>Privacy Policy</div>
               </div>
             </div>
           </div>
