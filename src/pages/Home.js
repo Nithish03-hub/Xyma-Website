@@ -201,7 +201,7 @@ export const Home = () => {
                 onClick={handleImageChange}
               >
                 {clickedImage === aluminum && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible sm:visible border border-[#013872]"></div>
                 )}
                 <div className="ml-1 -z-10">Aluminum</div>
                 {/* {clickedImage === aluminum && (
@@ -222,7 +222,7 @@ export const Home = () => {
                 onClick={handleImageChange}
               >
                 {clickedImage === steel && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible sm:visible border border-[#013872]"></div>
                 )}
                 <div className="ml-1 -z-10">Steel</div>
               </div>
@@ -240,12 +240,12 @@ export const Home = () => {
                 onClick={handleImageChange}
               >
                 {clickedImage === reformerTubes && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible sm:visible border border-[#013872]"></div>
                 )}
                 <div className="ml-1 -z-10">Refiniries</div>
               </div>
               {clickedImage === reformerTubes && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-[#013872] sm:hidden" />
               )}
             </div>
 
@@ -258,7 +258,7 @@ export const Home = () => {
                 onClick={handleImageChange}
               >
                 {clickedImage === lubricants && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible sm:visible border border-[#013872]"></div>
                 )}
                 <div className="ml-1 -z-10">Lubricants</div>
               </div>
@@ -276,12 +276,12 @@ export const Home = () => {
                 onClick={handleImageChange}
               >
                 {clickedImage === oilRecovery && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible sm:visible border border-[#013872]"></div>
                 )}
                 <div className="ml-1 -z-10">OilRecovery</div>
               </div>
               {clickedImage === oilRecovery && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-[#013872] sm:hidden" />
               )}
             </div>
 
@@ -294,12 +294,12 @@ export const Home = () => {
                 onClick={handleImageChange}
               >
                 {clickedImage === paints && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible sm:visible border border-[#013872]"></div>
                 )}
                 <div className="ml-1 -z-10">Paints</div>
               </div>
               {clickedImage === paints && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-[#013872] sm:hidden" />
               )}
             </div>
           </div>
