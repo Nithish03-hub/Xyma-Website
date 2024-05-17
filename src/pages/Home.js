@@ -153,14 +153,17 @@ export const Home = () => {
 
   return (
     <div className="w-full">
+      <div className='h-[10vh]'>
+        {/* space for navbar */}
+      </div>
       {/* cover image */}
-      <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+      <div className="relative h-[80vh] w-full shadow-white shadow-2xl">
         <img
           src={newpage}
           alt="cover image"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl sm:text-6xl text-white font-semibold ml-24 gap-2 2xl:text-8xl">
+        <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl sm:text-6xl text-white font-semibold ml-12 sm:ml-24 gap-2 2xl:text-8xl">
           <div>Prevent</div>
           <div>Unplanned</div>
           <div>Downtime</div>
@@ -170,12 +173,12 @@ export const Home = () => {
         </div>
       </div>
       {/* bottom text */}
-      <div className="w-full text-center text-gray-300 font-semibold text-[30px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px]">
+      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px]">
         XYMA ANALYTICS
       </div>
 
       {/* text with underline */}
-      <div className="flex justify-center items-center mt-8 2xl:mt-20">
+      <div className="flex justify-center items-center mt-8 2xl:mt-20 h-[10vh]">
         <div className="text-xl sm:text-3xl 2xl:text-5xl font-semibold text-center">
           Impact of discrete inaccurate Process parameter measurements
           <img
@@ -184,12 +187,12 @@ export const Home = () => {
           ></img>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full h-[80vh]">
         {/* elements cards */}
-        <div className="h-[80vh] sm:h-[60vh] 2xl:h-[70vh] sm:mt-4 2xl:mt-16 sm:flex pt-8 sm:px-36 2xl:px-16">
+        <div className="h-[80vh] sm:h-[60vh] 2xl:h-[70vh] sm:flex pt-8 sm:px-36 2xl:px-16">
           {/* list of elements */}
           <div
-            className="w-full overflow-auto sm:p-4 sm:w-[15%] h-[8%] sm:h-full text-gray-500 2xl:text-3xl flex items-center justify-center sm:items-start sm:justify-start sm:flex-col"
+            className="w-full overflow-auto sm:p-4 sm:w-[15%] h-[8%] sm:h-full text-gray-500 2xl:text-3xl flex items-center sm:items-start sm:justify-start sm:flex-col"
             style={{ scrollbarWidth: "none" }}
           >
             <div>
@@ -204,9 +207,6 @@ export const Home = () => {
                   <div className="invisible sm:visible border border-blue-800"></div>
                 )}
                 <div className="ml-1 -z-10">Aluminum</div>
-                {/* {clickedImage === aluminum && (
-                <div className="border border-blue-800 sm:hidden" />
-              )} */}
               </div>
               {clickedImage === aluminum && (
                 <div className="border border-blue-800 sm:hidden" />
@@ -319,7 +319,7 @@ export const Home = () => {
             </div>
           </div>
           {/* elements description */}
-          <div className="w-full sm:w-[40%] 2xl:w-[35%] h-[31%] sm:h-full flex items-center justify-center p-4">
+          <div className="w-full mt-4 sm:w-[40%] 2xl:w-[35%] h-[31%] sm:h-full flex items-center justify-center p-4">
             {clickedImage && (
               <div
                 className="text-2xl sm:text-3xl 2xl:text-5xl font-semibold text-center"
@@ -872,7 +872,7 @@ export const Home = () => {
                   <form class="flex items-center justify-between w-full">
                     <input
                       type="email"
-                      className="text-xs w-[85%] h-[90%] rounded-md pl-3"
+                      className="text-xs w-[85%] h-7 rounded-md pl-3"
                       placeholder="Enter your email"
                       required
                     />
@@ -886,7 +886,7 @@ export const Home = () => {
             {/* footer */}
             <div className="sm:flex justify-between text-white text-xs w-[90%] mb-4 font-light">
               <div className="flex gap-1 justify-center">
-                <div className="">© 2022 XYMA Analytics Inc.</div>
+                <div>© 2022 XYMA Analytics Inc.</div>
                 <div className=" text-gray-400">
                   IIT Madras Research Park, Chennai, 600113
                 </div>

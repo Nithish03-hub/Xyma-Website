@@ -27,8 +27,6 @@ import eor from '../Assets/eor.png';
 import { useNavigate } from 'react-router-dom';
 
 
-
-
 function Badge({ text }) {
   return (
     <span style={{
@@ -47,7 +45,7 @@ function Badge({ text }) {
 const Product = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    { src: image1, title: "Multi-point temperature measurements", text1:'Up to 1600° C', text:'“The Disruptive Ultrasonic Waveguide Technology”' },
+    { src: image1, title: "Multi-point Temperature Measurements", text1:'Up to 1600° C', text:'“The Disruptive Ultrasonic Waveguide Technology”' },
     { src: image2, title: "Multi - Parameter Measurements", text1:'Viscosity, Density, Temperature', text:'“The Disruptive Ultrasonic Waveguide Technology”'},
     { src: image3, title: "Powered by AI",text1:'IIoT Enabled, Data Analytics, Anomaly Detection, Predictive Maintenance' }
   ];
@@ -65,12 +63,12 @@ const Product = () => {
   };
 
   const imageStyle = {
-    position: 'relative',
+    //position: 'relative',
     width: '100%',
-    height: 'auto', 
+    //height: 'auto', 
     objectFit: 'cover',
-    maxHeight: '90vh', 
-    boxShadow: '0 10px 10px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.8)',
+    height: '80vh', 
+    //boxShadow: '0 10px 10px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.8)',
   };
 
   const textStyle = {
@@ -90,275 +88,569 @@ const Product = () => {
   } 
 
   return (
-    <div style={{ position: 'relative' }}>
-      <section style={{ position: 'relative' }}>
+    <div className="relative">
+      <div className="h-[10vh]">{/* navbar space */}</div>
+      <section className="relative shadow-white shadow-2xl">
         {images.map((item, index) => (
           <div
             key={index}
-            style={{
-              display: index === currentIndex ? 'block' : 'none',
-              width: '100%', 
-            }}
+            className={`${index === currentIndex ? "block" : "hidden"} w-full`}
           >
-            <img src={item.src} alt={`Slide ${index + 1}`} style={{ ...imageStyle }} />
-            <div style={textStyle} >
-              <h2 style={{width:'40%'}}>{item.title}</h2>
-              <p style={{background: 'linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                  backgroundColor: 'rgba(255, 255, 255, 1)',
-                  display: 'inline-block',
-                  width:'55%'}}>{item.text1}</p>
-              <p className='text-sm font-semibold'>{item.text}</p>    
+            <img
+              src={item.src}
+              alt={`Slide ${index + 1}`}
+              style={{ ...imageStyle }}
+            />
+            <div
+              style={textStyle}
+              className="h-[60%] w-[30%] flex flex-col gap-4"
+            >
+              <div className="text-2xl sm:text-5xl">{item.title}</div>
+              <div
+                className="sm:text-3xl p-1"
+                style={{
+                  background:
+                    "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                  backgroundColor: "rgba(255, 255, 255, 1)",
+                  // display: "inline-block",
+                  // width: "55%",
+                }}
+              >
+                {item.text1}
+              </div>
+              <div className="text-sm">{item.text}</div>
+              {/* <h2 className="w-[40%]">{item.title}</h2>
+              <p
+                style={{
+                  background:
+                    "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                  backgroundColor: "rgba(255, 255, 255, 1)",
+                  display: "inline-block",
+                  width: "55%",
+                }}
+              >
+                {item.text1}
+              </p>
+              <p className="text-sm font-semibold">{item.text}</p> */}
             </div>
           </div>
         ))}
-        <div style={{ position: 'absolute', bottom: '10px', left: '10px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+        <div className="absolute bottom-[65px] left-[50px] flex justify-start items-center gap-2">
           {images.map((_, index) => (
-            <div 
+            <div
               key={index}
               onClick={() => handleDotClick(index)}
-              style={{
-                width: '30px',
-                height: '2px',
-                backgroundColor: index === currentIndex ? '#000' : '#ccc',
-                borderRadius: '10px',
-                margin: '0 5px',
-                marginBottom:'44px',
-              }}
+              className={`w-[30px] h-[3px] cursor-pointer ${
+                index === currentIndex ? "bg-black" : "bg-gray-300"
+              } rounded-full`}
             />
           ))}
         </div>
-        {/*<div className="font-Satoshi text-grey text-7xl font-semibold leading-7 text-center text-gray-300"> XYMA PRODUCTS </div>
-     */} </section>
+      </section>
 
+      {/* bottom text */}
+      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px] border-4 border-red-500 mb-[20px] sm:mb-[70px]">
+        XYMA PRODUCTS
+      </div>
 
-    <div className='flex justify-center items-center h-screen'>
-      <div className='grid grid-cols-2 rounded-lg w-[160vh] shadow-lg border border-gray-200'>
-        <div>
-          <div className='m-10 rounded-lg'style={{ background: 'radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)' }}>
-           <img className='product-image' src={utmap} alt="UTMapS" style={{ width: '100%', height: 'auto' }} />
-           <div style={{ background: 'rgba(255, 255, 255, 0.1)' }}>
-              <div className='ml-4'> 
-                <h2 className="text-bold text-2xl" style={{
-                  background: 'linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                  backgroundColor: 'rgba(255, 255, 255, 1)',
-                  display: 'inline-block'
-                }}>μTMapS</h2>
-                <p className='text-white' style={{width:'90%'}}>A single customizable waveguide can measure temperature at 10 points over 50 meters length.</p>
-              </div> 
-            </div> 
-          </div>
-        </div>
-        <div className='mt-8'>
-          <div className='flex'>
-            <div className='font-semibold text-2xl mt-2' style={{width:'60%'}}>Multi-Point Temperature Mapping Sensor  </div>  
-            <button className='flex bg-[#01285C] rounded-full p-0.5 mt-2' style={{height:'0.5%',width:'20%',marginLeft:'15%'}}>
-             <Icon/><div className='mt-1.5 text-xs text-white'>Play Video</div></button>
-          </div>
-             <div className='mt-3'><Badge text="Temperature Range: 25° C to 1600° C "/></div> 
-              <div className='mt-6'>
-                <p className='text-[#60646C] text-sm'style={{width:'90%'}}>µTMapS & µSTMapS are IIoT-enabled temperature measurement and temperature profiling sensors that captures continuous measurements at multiple points with a single customizable waveguide with multiple configurations in contrast to contact based thermocouples/RTDs or contactless IR guns.</p>
-              </div>
-              <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
-                <div className='flex border border-gray-200 rounded-lg p-3'>
-                  <img className='bg-white w-auto h-auto ' src={isteel} style={{ marginRight: '12px',width:"20%"  }}   />
-                  <span className='text-sm font-semibold mt-1.5'>Steel Manufacturing</span>
-                </div>
-                <div className='flex border border-gray-200 rounded-lg p-3 ml-4'>
-                  <img className='bg-white w-auto h-auto' src={aicon} style={{ marginRight: '12px',width:"45px" }}   />
-                  <span className='text-sm font-semibold mt-2' >Aluminum Manufacturing</span>
-              </div>
+      {/* product cards */}
+
+      <div className="border border-black p-8">
+        <div className="border border-black h-[70vh] flex p-4">
+          <div className="border border-black w-[45%] p-4">
+            <div
+              className="border border-white w-full h-full flex justify-center items-center rounded-lg"
+              style={{
+                background:
+                  "radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)",
+              }}
+            >
+              <img className="w-[50%] h-[95%] object-cover object-top border border-white" src={utmap} alt="UTMapS" />
             </div>
-            <div  className='mt-2'style={{ display: 'flex', alignItems: 'center' }}>
-                <div className='flex border border-gray-200 rounded-lg p-3'>
-                  <img className='bg-white w-auto h-auto ' src={semi} style={{ marginRight: '12px',width:"18%"  }}   />
-                  <span className='text-sm font-semibold mt-0 w-32 ml-1'>Semiconductor Manufacturing</span>
-                </div>
-                <div className='flex border border-gray-200 rounded-lg p-3 ml-4' style={{width:'48%'}}>
-                  <img className='bg-white w-auto h-auto  ' src={ref} style={{ marginRight: '12px',width:"40px" }}   />
-                  <span className='text-sm font-semibold mt-1.5' >Refineries</span>
+          </div>
+          <div className="border border-black w-[55%]">
+            <div className="border border-black h-1/3">
+              <div className="border border-black h-[65%] flex">
+                <div className="border border-black w-[80%]"></div>
+                <div className="border border-black w-[20%]"></div>
               </div>
+              <div className="border border-black h-[35%]"></div>
             </div>
+            <div className="border border-black h-1/3"></div>
+            <div className="border border-black h-1/3 grid grid-cols-2">
+              <div className="border border-black"></div>
+              <div className="border border-black"></div>
+              <div className="border border-black"></div>
+              <div className="border border-black"></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-
-    <div className='flex justify-center items-center h-screen'>
-      <div className='grid grid-cols-2 rounded-lg w-[160vh] shadow-lg border border-gray-200'>
-        <div>
-          <div className='m-10 rounded-lg'style={{ background: 'radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)' }}>
-           <img className='product-image' src={ports} alt="PoRTS" style={{ width: '100%', height: 'auto' }} />
-           <div style={{ background: 'rgba(255, 255, 255, 0.1)' }}>
-              <div className='ml-4'> 
-                <h2 className="text-bold text-2xl" style={{
-                  background: 'linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                  backgroundColor: 'rgba(255, 255, 255, 1)',
-                  display: 'inline-block'
-                }}>PoRTS</h2>
-                <p className='text-white'>A single customizable wavelength can measure viscosity, density & Temperature continuously.</p>
-              </div> 
-            </div> 
-          </div>
-        </div>
-        <div className='mt-8'>
-          <div className='flex'>
-          <div className='font-semibold text-2xl mt-2' style={{width:'50%'}}>Multi-Parameter Measurement Sensor</div>
-          <button className='flex bg-[#01285C] rounded-full p-0.5 mt-3' style={{height:'0.5%',width:'20%',marginLeft:'25%'}}>
-             <Icon/><div className='mt-1.5 text-xs text-white'>Play Video</div></button>
-          </div>
-        <div className='mt-3'>
-          <Badge text="Viscosity: 50 cP - 15000 cP"/>
-          <span style={{ marginRight: '8px'}} />
-          <Badge text="Density: 700 kg/m³ to 1200 kg/m³ "/>
-          <div className='mt-2'>
-          <Badge text="Temperature: 20° C to 400° C"/>
-      </div>  </div>
-              <div className='mt-6'>
-                <p className='text-[#60646C] text-sm' style={{width:'90%'}}>PoRTS is an invasive/non-invasive based IIoT-enabled rheology and temperature measurement sensor that continuously captures multiple parameters such as viscosity, density and temperature with a single waveguide unlike discrete measurements with thermocouple/RTDs or discrete measurements with sampling from viscometer and density meter.</p>
-              </div>
-              <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
-                <div className='flex border border-gray-200 rounded-lg p-3'>
-                  <img className='bg-white w-auto h-auto ' src={paint} style={{ marginRight: '12px',width:"20%"  }}   />
-                  <span className='text-sm font-semibold mt-1.5'>Paint Manufacturing</span>
+      <div className="flex justify-center items-center border border-red-400">
+        <div className="grid grid-cols-2 rounded-lg shadow-lg border border-gray-200">
+          <div>
+            <div
+              className="m-10 rounded-lg"
+              style={{
+                background:
+                  "radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)",
+              }}
+            >
+              <img
+                className="w-full h-auto max-w-[260px] max-h-[380px] m-auto"
+                src={utmap}
+                alt="UTMapS"
+              />
+              <div style={{ background: "rgba(255, 255, 255, 0.1)" }}>
+                <div className="ml-4">
+                  <h2
+                    className="text-bold text-2xl"
+                    style={{
+                      background:
+                        "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
+                      WebkitBackgroundClip: "text",
+                      color: "transparent",
+                      backgroundColor: "rgba(255, 255, 255, 1)",
+                      display: "inline-block",
+                    }}
+                  >
+                    μTMapS
+                  </h2>
+                  <p className="text-white w-[90%]">
+                    A single customizable waveguide can measure temperature at
+                    10 points over 50 meters length.
+                  </p>
                 </div>
-                <div className='flex border border-gray-200 rounded-lg p-3 ml-4'style={{width:'48%'}}>
-                  <img className='bg-white w-auto h-auto  ' src={luboil} style={{ marginRight: '12px',width:"40px",marginLeft:'8%'  }}   />
-                  <span className='text-sm font-semibold mt-1.5' >Lubrication Oil</span>
               </div>
             </div>
-            <div  className='mt-2'style={{ display: 'flex', alignItems: 'center' }}>
-                <div className='flex border border-gray-200 rounded-lg p-3'>
-                  <img className='bg-white w-auto h-auto ' src={eor} style={{ marginRight: '12px',width:"18%"  }}   />
-                  <span className='text-sm font-semibold mt-1.5 w-32 ml-1'>E.O.R.</span>
-                </div>
+          </div>
+          <div className="mt-8">
+            <div className="flex">
+              <div className="font-semibold text-2xl mt-2 w-[60%]">
+                Multi-Point Temperature Mapping Sensor{" "}
+              </div>
+              <button className="flex bg-[#01285C] rounded-full p-0.5 mt-2 w-[20%] h-[0.5%] ml-[15%]">
+                <Icon />
+                <div className="mt-1.5 text-xs text-white">Play Video</div>
+              </button>
             </div>
+            <div className="mt-3">
+              <Badge text="Temperature Range: 25° C to 1600° C " />
+            </div>
+            <div className="mt-6">
+              <p className="text-[#60646C] text-sm w-[90%]">
+                µTMapS & µSTMapS are IIoT-enabled temperature measurement and
+                temperature profiling sensors that captures continuous
+                measurements at multiple points with a single customizable
+                waveguide with multiple configurations in contrast to contact
+                based thermocouples/RTDs or contactless IR guns.
+              </p>
+            </div>
+            <div
+              className="mt-6"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <div className="flex border border-gray-200 rounded-lg p-3">
+                <img
+                  className="bg-white w-auto h-auto "
+                  src={isteel}
+                  style={{ marginRight: "12px", width: "20%" }}
+                />
+                <span className="text-sm font-semibold mt-1.5">
+                  Steel Manufacturing
+                </span>
+              </div>
+              <div className="flex border border-gray-200 rounded-lg p-3 ml-4">
+                <img
+                  className="bg-white w-auto h-auto"
+                  src={aicon}
+                  style={{ marginRight: "12px", width: "45px" }}
+                />
+                <span className="text-sm font-semibold mt-2">
+                  Aluminum Manufacturing
+                </span>
+              </div>
+            </div>
+            <div
+              className="mt-2"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <div className="flex border border-gray-200 rounded-lg p-3">
+                <img
+                  className="bg-white w-auto h-auto "
+                  src={semi}
+                  style={{ marginRight: "12px", width: "18%" }}
+                />
+                <span className="text-sm font-semibold mt-0 w-32 ml-1">
+                  Semiconductor Manufacturing
+                </span>
+              </div>
+              <div
+                className="flex border border-gray-200 rounded-lg p-3 ml-4"
+                style={{ width: "48%" }}
+              >
+                <img
+                  className="bg-white w-auto h-auto  "
+                  src={ref}
+                  style={{ marginRight: "12px", width: "40px" }}
+                />
+                <span className="text-sm font-semibold mt-1.5">Refineries</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-
-    <div className='flex justify-center items-center h-screen'>
-      <div className='grid grid-cols-2 rounded-lg w-[160vh] shadow-lg border border-gray-200'>
-        <div>
-          <div className='m-10 rounded-lg'style={{ background: 'radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)' }}>
-           <img className='product-image' src={ztar} alt="Ztar" style={{ width: '100%', height: 'auto' }} />
-           <div style={{ background: 'rgba(255, 255, 255, 0.1)' }}>
-              <div className='ml-4'> 
-                <h2 className="text-bold text-2xl" style={{
-                  background: 'linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                  backgroundColor: 'rgba(255, 255, 255, 1)',
-                  display: 'inline-block'
-                }}>Ztar</h2>
-                <p className='text-white'>A single wavelength can measure viscosity, density & Temperature continuously.</p>
-              </div> 
-            </div> 
-          </div>
-        </div>
-        <div className='mt-8'>
-          <div className='flex'>
-           <div className='font-semibold text-2xl mt-2'> Ultrasonic contact &   <br/>non-contact based level <br/> measurement sensor</div>  
-           <button className='flex bg-[#01285C] rounded-full p-0.5 mt-3' style={{height:'0.5%',width:'20%',marginLeft:'25%'}}>
-             <Icon/><div className='mt-1.5 text-xs text-white'>Play Video</div></button> 
-          </div>
-             <div className='mt-3'> <Badge text="Level: 0.03 m to 10 m "/></div>
-              <div className='mt-6'>
-                <p className='text-[#60646C] text-sm' style={{width:'90%'}}>Ztar is a contact/contactless IIoT-enabled level measurement sensor that captures continuous level across any hazardous environment with accuracy in contrast to radar-based level measurement sensors.</p>
-              </div>
-              <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
-                <div className='flex border border-gray-200 rounded-lg p-3'>
-                  <img className='bg-white w-auto h-auto ' src={metal} style={{ marginRight: '12px',width:"20%"  }}   />
-                  <span className='text-sm font-semibold mt-1.5'>Metal Manufacturing</span>
+      <div className="flex justify-center items-center h-screen">
+        <div className="grid grid-cols-2 rounded-lg w-[160vh] shadow-lg border border-gray-200">
+          <div>
+            <div
+              className="m-10 rounded-lg"
+              style={{
+                background:
+                  "radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)",
+              }}
+            >
+              <img
+                className="product-image"
+                src={ports}
+                alt="PoRTS"
+                style={{ width: "100%", height: "auto" }}
+              />
+              <div style={{ background: "rgba(255, 255, 255, 0.1)" }}>
+                <div className="ml-4">
+                  <h2
+                    className="text-bold text-2xl"
+                    style={{
+                      background:
+                        "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
+                      WebkitBackgroundClip: "text",
+                      color: "transparent",
+                      backgroundColor: "rgba(255, 255, 255, 1)",
+                      display: "inline-block",
+                    }}
+                  >
+                    PoRTS
+                  </h2>
+                  <p className="text-white">
+                    A single customizable wavelength can measure viscosity,
+                    density & Temperature continuously.
+                  </p>
                 </div>
-                <div className='flex border border-gray-200 rounded-lg p-3 ml-4'style={{width:'48%'}}>
-                  <img className='bg-white w-auto h-auto  ' src={refrigerant} style={{ marginRight: '12px',width:"40px",marginLeft:'8%'  }}   />
-                  <span className='text-sm font-semibold mt-1.5' >Refrigerants</span>
               </div>
             </div>
+          </div>
+          <div className="mt-8">
+            <div className="flex">
+              <div
+                className="font-semibold text-2xl mt-2"
+                style={{ width: "50%" }}
+              >
+                Multi-Parameter Measurement Sensor
+              </div>
+              <button
+                className="flex bg-[#01285C] rounded-full p-0.5 mt-3"
+                style={{ height: "0.5%", width: "20%", marginLeft: "25%" }}
+              >
+                <Icon />
+                <div className="mt-1.5 text-xs text-white">Play Video</div>
+              </button>
+            </div>
+            <div className="mt-3">
+              <Badge text="Viscosity: 50 cP - 15000 cP" />
+              <span style={{ marginRight: "8px" }} />
+              <Badge text="Density: 700 kg/m³ to 1200 kg/m³ " />
+              <div className="mt-2">
+                <Badge text="Temperature: 20° C to 400° C" />
+              </div>{" "}
+            </div>
+            <div className="mt-6">
+              <p className="text-[#60646C] text-sm" style={{ width: "90%" }}>
+                PoRTS is an invasive/non-invasive based IIoT-enabled rheology
+                and temperature measurement sensor that continuously captures
+                multiple parameters such as viscosity, density and temperature
+                with a single waveguide unlike discrete measurements with
+                thermocouple/RTDs or discrete measurements with sampling from
+                viscometer and density meter.
+              </p>
+            </div>
+            <div
+              className="mt-6"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <div className="flex border border-gray-200 rounded-lg p-3">
+                <img
+                  className="bg-white w-auto h-auto "
+                  src={paint}
+                  style={{ marginRight: "12px", width: "20%" }}
+                />
+                <span className="text-sm font-semibold mt-1.5">
+                  Paint Manufacturing
+                </span>
+              </div>
+              <div
+                className="flex border border-gray-200 rounded-lg p-3 ml-4"
+                style={{ width: "48%" }}
+              >
+                <img
+                  className="bg-white w-auto h-auto  "
+                  src={luboil}
+                  style={{
+                    marginRight: "12px",
+                    width: "40px",
+                    marginLeft: "8%",
+                  }}
+                />
+                <span className="text-sm font-semibold mt-1.5">
+                  Lubrication Oil
+                </span>
+              </div>
+            </div>
+            <div
+              className="mt-2"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <div className="flex border border-gray-200 rounded-lg p-3">
+                <img
+                  className="bg-white w-auto h-auto "
+                  src={eor}
+                  style={{ marginRight: "12px", width: "18%" }}
+                />
+                <span className="text-sm font-semibold mt-1.5 w-32 ml-1">
+                  E.O.R.
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-      
 
-
-
-    <div className="h-[60vh] mt-24" style={{ background: 'linear-gradient(90deg, #00133D 0%, #01285C 100%)' }}>     
-
-    <div className='flex justify-center items-center '>
-        <div className='mt-[-50px] h-28 md:mb-20 rounded-3xl w-full md:max-w-6xl' style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }}>
-            <div className='flex flex-col md:flex-row items-center justify-between' style={{ marginBottom: '20px' }}>
-                <div className='md:ml-10 md:mt-3.5 text-white text-xl md:text-3xl text-center md:text-left'>
-                    Enhance Process Efficiency through<br />
-                    XYMA Analytics' Innovations
-                    <img className='mb-1 w-full md:w-40 mx-auto md:ml-40' src={vector} alt="Vector Image" />
+      <div className="flex justify-center items-center h-screen">
+        <div className="grid grid-cols-2 rounded-lg w-[160vh] shadow-lg border border-gray-200">
+          <div>
+            <div
+              className="m-10 rounded-lg"
+              style={{
+                background:
+                  "radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)",
+              }}
+            >
+              <img
+                className="product-image"
+                src={ztar}
+                alt="Ztar"
+                style={{ width: "100%", height: "auto" }}
+              />
+              <div style={{ background: "rgba(255, 255, 255, 0.1)" }}>
+                <div className="ml-4">
+                  <h2
+                    className="text-bold text-2xl"
+                    style={{
+                      background:
+                        "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
+                      WebkitBackgroundClip: "text",
+                      color: "transparent",
+                      backgroundColor: "rgba(255, 255, 255, 1)",
+                      display: "inline-block",
+                    }}
+                  >
+                    Ztar
+                  </h2>
+                  <p className="text-white">
+                    A single wavelength can measure viscosity, density &
+                    Temperature continuously.
+                  </p>
                 </div>
-                <div className='md:mr-10 md:mt-5 text-xs mt-5 md:text-right'>
-                    <button className='bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10' onClick={handleContactClick}>Get in Touch</button>
-                    <button className='bg-white text-[#01285C] rounded-full w-36 h-10 md:w-36 md:h-10 ml-4 md:ml-8 md:mr-4 mb-2 md:mt-0'>Download Brochure</button>
-                </div>
+              </div>
             </div>
-            <div className='mt-16 text-white flex flex-col md:flex-row'>
-                <div className="flex flex-col items-center md:items-start">
-                    <img className='w-32 h-14' src={logo} alt="Logo"></img>
-                    <div className='text-white text-xs w-56 mt-2'>
-                        Patented Ultrasonic Waveguide based sensors for preventing unplanned downtime and enhancing process efficiency.
-                    </div>
-                    <div className='flex gap-3 mt-4'> 
-                        <img className='w-6 h-6' src={twitter} alt="Twitter"></img>
-                        <img className='w-6 h-6' src={linkedin} alt="LinkedIn"></img>
-                        <img className='w-6 h-6' src={share} alt="Share"></img>
-                    </div>
-                </div>
-
-                <div className='text-xs mr-8 md:mr-24 ml-8 md:ml-28 mt-4 md:mt-0'>
-                    <div className='font-semibold mb-5 text-sm'>Quick Links <img className='mt-1 h-0.5 w-5' src={line}/></div>
-                    <div className='mb-3'>About Us</div>
-                    <div className='mb-3'>Career</div>
-                    <div className='mb-3'>Media</div>
-                    <div className='mb-3'>Resources</div>
-                </div>
-                <div className='text-xs mr-8 md:mr-24 mt-4 md:mt-0'>
-                    <div className='font-semibold mb-5 text-sm '>Products <img className='mt-1 h-0.5 w-5' src={line}/></div>
-                    <div className='mb-3'>μTMapS</div>
-                    <div className='mb-3'>PoRTS</div>
-                    <div className='mb-3'>Ztar</div>
-                    <div className='mb-3'>I-PAMS</div>
-                </div>
-                <div className='text-xs mr-8 mt-4 md:mt-0'>
-                    <div className='font-semibold mb-5 text-sm '>Support <img className='mt-1 h-0.5 w-5' src={line}/></div>
-                    <div className='mb-3'>Contact Us</div>
-                    <div className='mb-3'>Contact Sales</div>
-                </div>
-                <div style={{marginLeft:'140px',display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '10px', gap: '10px', width: '220px', height: '84px', background: 'rgba(0, 0, 0, 0.4)', borderRadius: '10px', flex: 'none', order: '4', flexGrow: '0'}}>
-                  <div>Subscribe Now</div>
-                  <form class="flex items-center"> 
-                    <input type="email" class="text-xs w-40 h-8 rounded-md pl-3" placeholder="Enter your email" required/>
-                    <img class="w-7 h-7 ml-2" src={arrow}/> 
-                  </form>
-                </div>
-            </div> 
-            <div className="h-0.5 mt-10" style={{ background: '#013872' }}/> 
-            <div className='text-white mt-6 text-xs'>© 2022 XYMA Analytics Inc. <span className='text-gray-400'>IIT Madras Research Park, Chennai, 600113</span> <span className='ml-96'>Terms & Conditions</span>
-             <span className='ml-6'>Privacy Policy</span>
+          </div>
+          <div className="mt-8">
+            <div className="flex">
+              <div className="font-semibold text-2xl mt-2">
+                {" "}
+                Ultrasonic contact & <br />
+                non-contact based level <br /> measurement sensor
+              </div>
+              <button
+                className="flex bg-[#01285C] rounded-full p-0.5 mt-3"
+                style={{ height: "0.5%", width: "20%", marginLeft: "25%" }}
+              >
+                <Icon />
+                <div className="mt-1.5 text-xs text-white">Play Video</div>
+              </button>
             </div>
-            
-              
-            
+            <div className="mt-3">
+              {" "}
+              <Badge text="Level: 0.03 m to 10 m " />
+            </div>
+            <div className="mt-6">
+              <p className="text-[#60646C] text-sm" style={{ width: "90%" }}>
+                Ztar is a contact/contactless IIoT-enabled level measurement
+                sensor that captures continuous level across any hazardous
+                environment with accuracy in contrast to radar-based level
+                measurement sensors.
+              </p>
+            </div>
+            <div
+              className="mt-6"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <div className="flex border border-gray-200 rounded-lg p-3">
+                <img
+                  className="bg-white w-auto h-auto "
+                  src={metal}
+                  style={{ marginRight: "12px", width: "20%" }}
+                />
+                <span className="text-sm font-semibold mt-1.5">
+                  Metal Manufacturing
+                </span>
+              </div>
+              <div
+                className="flex border border-gray-200 rounded-lg p-3 ml-4"
+                style={{ width: "48%" }}
+              >
+                <img
+                  className="bg-white w-auto h-auto  "
+                  src={refrigerant}
+                  style={{
+                    marginRight: "12px",
+                    width: "40px",
+                    marginLeft: "8%",
+                  }}
+                />
+                <span className="text-sm font-semibold mt-1.5">
+                  Refrigerants
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>  
+      </div>
 
-</div>
+      <div
+        className="h-[60vh] mt-24"
+        style={{
+          background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
+        }}
+      >
+        <div className="flex justify-center items-center ">
+          <div
+            className="mt-[-50px] h-28 md:mb-20 rounded-3xl w-full md:max-w-6xl"
+            style={{
+              background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+            }}
+          >
+            <div
+              className="flex flex-col md:flex-row items-center justify-between"
+              style={{ marginBottom: "20px" }}
+            >
+              <div className="md:ml-10 md:mt-3.5 text-white text-xl md:text-3xl text-center md:text-left">
+                Enhance Process Efficiency through
+                <br />
+                XYMA Analytics' Innovations
+                <img
+                  className="mb-1 w-full md:w-40 mx-auto md:ml-40"
+                  src={vector}
+                  alt="Vector Image"
+                />
+              </div>
+              <div className="md:mr-10 md:mt-5 text-xs mt-5 md:text-right">
+                <button
+                  className="bg-[#01285C] text-white rounded-full w-36 h-10 md:w-36 md:h-10"
+                  onClick={handleContactClick}
+                >
+                  Get in Touch
+                </button>
+                <button className="bg-white text-[#01285C] rounded-full w-36 h-10 md:w-36 md:h-10 ml-4 md:ml-8 md:mr-4 mb-2 md:mt-0">
+                  Download Brochure
+                </button>
+              </div>
+            </div>
+            <div className="mt-16 text-white flex flex-col md:flex-row">
+              <div className="flex flex-col items-center md:items-start">
+                <img className="w-32 h-14" src={logo} alt="Logo"></img>
+                <div className="text-white text-xs w-56 mt-2">
+                  Patented Ultrasonic Waveguide based sensors for preventing
+                  unplanned downtime and enhancing process efficiency.
+                </div>
+                <div className="flex gap-3 mt-4">
+                  <img className="w-6 h-6" src={twitter} alt="Twitter"></img>
+                  <img className="w-6 h-6" src={linkedin} alt="LinkedIn"></img>
+                  <img className="w-6 h-6" src={share} alt="Share"></img>
+                </div>
+              </div>
 
-
-
-
+              <div className="text-xs mr-8 md:mr-24 ml-8 md:ml-28 mt-4 md:mt-0">
+                <div className="font-semibold mb-5 text-sm">
+                  Quick Links <img className="mt-1 h-0.5 w-5" src={line} />
+                </div>
+                <div className="mb-3">About Us</div>
+                <div className="mb-3">Career</div>
+                <div className="mb-3">Media</div>
+                <div className="mb-3">Resources</div>
+              </div>
+              <div className="text-xs mr-8 md:mr-24 mt-4 md:mt-0">
+                <div className="font-semibold mb-5 text-sm ">
+                  Products <img className="mt-1 h-0.5 w-5" src={line} />
+                </div>
+                <div className="mb-3">μTMapS</div>
+                <div className="mb-3">PoRTS</div>
+                <div className="mb-3">Ztar</div>
+                <div className="mb-3">I-PAMS</div>
+              </div>
+              <div className="text-xs mr-8 mt-4 md:mt-0">
+                <div className="font-semibold mb-5 text-sm ">
+                  Support <img className="mt-1 h-0.5 w-5" src={line} />
+                </div>
+                <div className="mb-3">Contact Us</div>
+                <div className="mb-3">Contact Sales</div>
+              </div>
+              <div
+                style={{
+                  marginLeft: "140px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  padding: "10px",
+                  gap: "10px",
+                  width: "220px",
+                  height: "84px",
+                  background: "rgba(0, 0, 0, 0.4)",
+                  borderRadius: "10px",
+                  flex: "none",
+                  order: "4",
+                  flexGrow: "0",
+                }}
+              >
+                <div>Subscribe Now</div>
+                <form class="flex items-center">
+                  <input
+                    type="email"
+                    class="text-xs w-40 h-8 rounded-md pl-3"
+                    placeholder="Enter your email"
+                    required
+                  />
+                  <img class="w-7 h-7 ml-2" src={arrow} />
+                </form>
+              </div>
+            </div>
+            <div className="h-0.5 mt-10" style={{ background: "#013872" }} />
+            <div className="text-white mt-6 text-xs">
+              © 2022 XYMA Analytics Inc.{" "}
+              <span className="text-gray-400">
+                IIT Madras Research Park, Chennai, 600113
+              </span>{" "}
+              <span className="ml-96">Terms & Conditions</span>
+              <span className="ml-6">Privacy Policy</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

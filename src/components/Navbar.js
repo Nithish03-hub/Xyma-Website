@@ -34,92 +34,65 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
-      <div className="bg-[#122e4b] h-16 flex items-center px-4">
-        <div className=" flex items-center text-white md:justify-around justify-between w-full 2xl:text-lg">
-          <div>
-            <img className="mr-4 h-10" src={xyma} alt="Logo" />
-          </div>
-          <div className="hidden md:flex gap-8 items-center">
-            {HeaderData.map((item, index) => (
-              <div key={index} className="">
-                <NavLink
-                  to={item.path}
-                  className={`${
-                    selectedIndex === index ? "text-orange-400" : ""
-                  }`}
-                  onClick={() => handleNavItemClick(index)}
-                >
-                  <span>{item.title}</span>
-                </NavLink>
+      <div className="h-[10vh]">
+        <div className="bg-[#122e4b] h-[9vh] flex items-center px-4">
+          <div className=" flex items-center text-white md:justify-around justify-between w-full 2xl:text-lg">
+            <div>
+              <img className="mr-4 h-10" src={xyma} alt="Logo" />
+            </div>
+            <div className="hidden md:flex gap-8 items-center">
+              {HeaderData.map((item, index) => (
+                <div key={index} className="">
+                  <NavLink
+                    to={item.path}
+                    className={`${
+                      selectedIndex === index ? "text-orange-400" : ""
+                    }`}
+                    onClick={() => handleNavItemClick(index)}
+                  >
+                    <span>{item.title}</span>
+                  </NavLink>
 
-                {selectedIndex === index && <CircleComponent />}
+                  {selectedIndex === index && <CircleComponent />}
+                </div>
+              ))}
+            </div>
+            <div
+              className="hidden md:block text-white py-3 px-4 rounded-full cursor-pointer"
+              style={{
+                background:
+                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+              }}
+              onClick={handleContactClick}
+            >
+              Get in Touch
+            </div>
+            {!burgerMenuOpen && (
+              <div
+                className="flex items-center justify-center md:hidden cursor-pointer"
+                onClick={handleBurgerMenu}
+              >
+                <IoMenu size={30} />
               </div>
-            ))}
+            )}
+            {burgerMenuOpen && (
+              <div
+                className="flex items-center justify-center md:hidden cursor-pointer"
+                onClick={handleBurgerMenu}
+              >
+                <IoCloseSharp size={30} />
+              </div>
+            )}
           </div>
-          <div
-            className="hidden md:block text-white py-3 px-4 rounded-full cursor-pointer"
-            style={{
-              background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-            }}
-            onClick={handleContactClick}
-          >
-            Get in Touch
-          </div>
-          {!burgerMenuOpen && (
-            <div
-              className="flex items-center justify-center md:hidden cursor-pointer"
-              onClick={handleBurgerMenu}
-            >
-              <IoMenu size={30} />
-            </div>
-          )}
-          {burgerMenuOpen && (
-            <div
-              className="flex items-center justify-center md:hidden cursor-pointer"
-              onClick={handleBurgerMenu}
-            >
-              <IoCloseSharp size={30} />
-            </div>
-          )}
         </div>
-        {/* <button
-            className='text-white py-3 px-4 rounded-full'
-            style={{
-              background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',
-            }}
-            onClick={handleContactClick}
-          >
-            Get in Touch
-          </button> */}
-
-        {/* <div className='md:hidden'>
-          <button
-            className='text-white py-3 px-4 rounded-full'
-            style={{
-              background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',
-            }}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ☰
-          </button>
-        </div> */}
-      </div>
-      {/* {menuOpen && (
         <div
-          className='bg-[#122e4b] h-16 w-full flex flex-col items-center space-y-4 md:hidden'
+          className="h-[1vh] w-full"
           style={{
-            background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',
+            background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
           }}
-        >
-          <Header />
-        </div>
-      )} */}
-      <div
-        className="h-1.5 w-full"
-        style={{
-          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-        }}
-      ></div>
+        ></div>
+      </div>
+
       {burgerMenuOpen && (
         <div className="bg-white h-[90vh] w-full sm:hidden">
           <div className="h-[60%]">
@@ -141,7 +114,11 @@ const Navbar = () => {
                   {/* <div className="border border-black w-full h-full"> */}
                   {item.title}
                   <div
-                    className={`${selectedIndex === index ? "text-orange-400" : "text-gray-400"}`}
+                    className={`${
+                      selectedIndex === index
+                        ? "text-orange-400"
+                        : "text-gray-400"
+                    }`}
                   >
                     <FiArrowUpRight size={25} />
                   </div>
@@ -150,6 +127,37 @@ const Navbar = () => {
                 {/* <div></div> */}
               </div>
             ))}
+          </div>
+          <div className="p-3 h-[25%] flex items-end">
+            <div
+              className="text-white w-[125px] py-3 px-4 rounded-full cursor-pointer"
+              style={{
+                background:
+                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+              }}
+              onClick={() => {
+                handleContactClick();
+                handleBurgerMenu();
+              }}
+            >
+              Get in Touch
+            </div>
+          </div>
+          {/* footer */}
+          <div className="h-[15%] px-4 py-2 text-xs border border-t-gray-400">
+            <div className="h-[55%]">
+              <div className="h-1/2 flex gap-1 justify-center">
+                <div>© 2022 XYMA Analytics Inc.</div>
+                <div className="text-gray-400">IIT Madras Research Park,</div>
+              </div>
+              <div className="h-1/2 text-gray-400 text-center">
+                Chennai, 600113
+              </div>
+            </div>
+            <div className="h-[45%] flex gap-6 justify-center items-end py-1">
+              <div>Terms & Conditions</div>
+              <div>Privacy Policy</div>
+            </div>
           </div>
         </div>
       )}

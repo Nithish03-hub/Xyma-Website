@@ -20,7 +20,7 @@ function Badge({ text, color, imageUrl, hoverText, hoverImageUrl, hoverHeading }
         <span className="badge inline-block p-[0.25em] px-[0.5em] rounded-[1.50em] text-[12px] sm:text-[14px] font-medium text-[#FE9D1C]">
           {text}
         </span>
-        <div className="hover-text invisible grid grid-cols-2 w-[300px] sm:h-[200px] sm:w-[450px] text-black text-justify p-[5px] border border-red-400 bg-white rounded-md absolute z-10 top-[110%] left-[60%] transform -translate-x-1/2 opacity-0 transition-opacity duration-300 group-hover:visible group-hover:opacity-100">
+        <div className="hover-text invisible grid grid-cols-2 w-[280px] sm:h-[200px] sm:w-[450px] text-black text-justify p-[5px] border border-red-400 bg-white rounded-md absolute z-10 top-[110%] left-[60%] transform -translate-x-1/2 opacity-0 transition-opacity duration-300 group-hover:visible group-hover:opacity-100">
           {/* <div className="grid grid-cols-2 border border-black w-[350px] sm:h-[200px] sm:w-[450px] bg-white rounded-md"> */}
           <div className="p-2">
             <img
