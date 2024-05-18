@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Navpage from './Navpage'
+import Footer from './Footer'
 import Header from './Header'
 
 const Mainpage = () => {
@@ -13,7 +14,11 @@ const Mainpage = () => {
             </div>
             <div>
               <Navpage/>
-            </div>           
+            </div>
+            <div>
+              <Footer/>
+            </div>
+
         </section>
 
     </React.Fragment>
