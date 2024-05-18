@@ -209,7 +209,7 @@ export const Home = () => {
               )} */}
               </div>
               {clickedImage === aluminum && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-[#013872] sm:hidden" />
               )}
             </div>
 
@@ -227,7 +227,7 @@ export const Home = () => {
                 <div className="ml-1 -z-10">Steel</div>
               </div>
               {clickedImage === steel && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-[#013872] sm:hidden" />
               )}
             </div>
 
@@ -727,7 +727,7 @@ export const Home = () => {
 
               <div>Continuous multi-parameter measurements</div>
               <img className="w-4 h-4" src={white} alt="BStar logo" />
-
+              
               <div>
                 Continuous contact & non-contact based level measurement
               </div>
