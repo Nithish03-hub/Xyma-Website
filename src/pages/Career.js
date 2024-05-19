@@ -1,20 +1,26 @@
 import React, { useState,useRef  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import frame from '../Assets/frame2.png'
+import newframe from '../Assets/newframe.png'
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
 import uline from '../Assets/uline.png'
+import image1 from "../Assets/image1.png";
+import { IoIosArrowDown } from "react-icons/io";
+import ReactReadMoreReadLess from "react-read-more-read-less";
+import useWindowSize from "react-use/lib/useWindowSize";
 
 const Badge2 = ({ text, selected, onClick }) => {
   const badgeStyle = {
     backgroundColor: selected ? '#01285C' : '#EEF6FF',
     color: selected ? '#ffffff' : '#013872',
     padding: '5px 14px',
-    borderRadius: '15px',
-    fontSize: '1em',
-    border: `1px solid ${selected ? '#01285C' : '#B4CEEC'}`, 
-    marginRight: '12px' 
+    borderRadius: '9999px',
+    border: `1px solid ${selected ? '#01285C' : '#B4CEEC'}`,
+    cursor: 'pointer'
   };
+
+  
 
   return (
     <span style={badgeStyle} onClick={onClick}>
@@ -32,9 +38,19 @@ const Career = () => {
   };
 
   const sectionRef = useRef(null);
+  const { width } = useWindowSize();
+  const isLargeScreen = width >= 640;
 
   const handleButtonClick = () => {
-    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    const navbarHeight = window.innerHeight * 0.1; // 10vh to account for navbar
+    const sectionTop =
+      sectionRef.current.getBoundingClientRect().top + window.scrollY;
+    const scrollPosition = sectionTop - navbarHeight;
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    });
   };
 
   const navigate = useNavigate();
@@ -44,263 +60,461 @@ const Career = () => {
 
   return (
     <div>
-      <div className='h-[10vh]'>
-
-      </div>
-      <section className='w-full'>
-          <img src={frame} alt="Frame Image" className='h-[80vh] w-full object-cover object-top' />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center border border-white">
-            <h1 className="text-white text-5xl font-bold mt-4 sm:mt-24">
-              "Together,
-              <br />
-              we shine"
-            </h1>
-            <p className="text-white mt-2 sm:mt-5 text-sm">
-              We help you grow along with us
-            </p>
-            <button
-              className=" text-white text-xs py-2 px-5 mt-3 rounded-full"
-              style={{
-                background:
-                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-              }}
-              onClick={handleButtonClick}
-            >
-              Know More
-            </button>
+      <div className="h-[10vh]"></div>
+      <section className="relative w-full shadow-white shadow-2xl">
+        <img
+          src={newframe}
+          alt="Frame Image"
+          className="w-full h-[80vh] object-cover object-top"
+        />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center">
+          <div className="text-white text-4xl sm:text-5xl font-semibold sm:font-bold ">
+            <div>"Together,</div>
+            <div className="ml-6">we shine"</div>
           </div>
-      </section>
-      
-      <section style={{ textAlign: "center" }}>
-        <div className="relative">
-          <img
-            style={{ width: "5%", marginTop: "10%", marginLeft: "48%" }}
-            src={framevector}
-            alt="Frame Vector"
-          />
-          <p
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#60646C] font-semibold"
+          <div className="text-white mt-3 sm:mt-5 text-xs sm:text-sm">
+            We help you grow along with us
+          </div>
+          <button
+            className="text-white text-xs py-2 px-5 mt-3 rounded-full flex justify-center items-center gap-1"
             style={{
-              width: "66%",
-              fontSize: "25px",
-              textAlign: "center",
-              marginTop: "5.5%",
+              background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
             }}
+            onClick={handleButtonClick}
           >
+            <div>Know More</div>
+            <div>
+              <IoIosArrowDown size={13} />
+            </div>
+          </button>
+        </div>
+      </section>
+
+      {/* bottom text */}
+      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[25px] sm:-mt-[50px] 2xl:-mt-[65px] mb-[50px] sm:mb-[70px]">
+        WORK AT XYMA
+      </div>
+
+      <div className="sm:h-[90vh] flex items-center">
+        <div className="w-full flex flex-col items-center">
+          <div>
+            <img className="h-[50px] w-[65px]" src={framevector} alt="quote" />
+          </div>
+
+          <div className="text-[#60646C] font-semibold text-base sm:text-2xl w-[90%] sm:w-[80%] text-center mb-12">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries.
-          </p>
-        </div>
+          </div>
 
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <img
-            className="w-20"
-            style={{ marginTop: "13%" }}
-            src={photo}
-            alt="Photo"
+          <div>
+            <img className="h-[90px] w-[90px]" src={photo} alt="photo" />
+          </div>
+          <div className="text-[#1C2024] font-semibold">Dr. Nishanth Raja</div>
+          <div className="text-[#60646C] text-xs">C.E.O. and Co-founder</div>
+        </div>
+      </div>
+
+      <section ref={sectionRef}>
+        <div className="mt-10 sm:mt-0 text-center flex justify-center">
+          <div className="text-[#1C2024] text-3xl font-semibold flex flex-col w-[200px]">
+            <div>Opportunities</div>
+            <img className="object-cover" src={uline} />
+          </div>
+        </div>
+        <div
+          className="mt-8 font-semibold flex gap-2 sm:gap-4 sm:justify-center overflow-auto text-xs sm:text-base mx-2 sm:mx-0"
+          style={{ scrollbarWidth: "none" }}
+        >
+          <Badge2
+            text="All"
+            selected={selectedBadge === 0}
+            onClick={() => handleBadgeClick(0)}
+          />
+          <Badge2
+            text="Department&nbsp;Name"
+            selected={selectedBadge === 1}
+            onClick={() => handleBadgeClick(1)}
+          />
+          <Badge2
+            text="Department&nbsp;Name"
+            selected={selectedBadge === 2}
+            onClick={() => handleBadgeClick(2)}
+          />
+          <Badge2
+            text="Department&nbsp;Name"
+            selected={selectedBadge === 3}
+            onClick={() => handleBadgeClick(3)}
+          />
+          <Badge2
+            text="Department&nbsp;Name"
+            selected={selectedBadge === 4}
+            onClick={() => handleBadgeClick(4)}
           />
         </div>
 
-        <div className="text-[#1C2024] font-semibold mt-2">
-          Dr. Nishanth Raja
+        <div className="flex justify-center items-center">
+          <div className="mt-4 sm:mt-12 border border-gray-200 p-4 rounded-xl w-[85%]">
+            <div className="text-[#60646C] text-sm sm:text-base">
+              Department Name
+            </div>
+            <div className="text-xl sm:text-2xl font-semibold">
+              Sr. UI/UX Designer
+            </div>
+            <div className="text-[#60646C] text-sm sm:text-base">
+              {isLargeScreen ? (
+                <>
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </>
+              ) : (
+                <ReactReadMoreReadLess
+                  charLimit={212}
+                  readMoreText={"Read More+"}
+                  readLessText={"Read Less-"}
+                  readMoreStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                  readLessStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </ReactReadMoreReadLess>
+              )}
+            </div>
+          </div>
         </div>
-        <div className="text-[#60646C] text-xs">C.E.O. and Co-founder</div>
+
+        <div className="flex justify-center items-center">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+            <div className="text-[#60646C] text-sm sm:text-base">
+              Department Name
+            </div>
+            <div className="text-xl sm:text-2xl font-semibold">
+              Sr. UI/UX Designer
+            </div>
+            <div className="text-[#60646C] text-sm sm:text-base">
+              {isLargeScreen ? (
+                <>
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </>
+              ) : (
+                <ReactReadMoreReadLess
+                  charLimit={212}
+                  readMoreText={"Read More+"}
+                  readLessText={"Read Less-"}
+                  readMoreStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                  readLessStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </ReactReadMoreReadLess>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+            <div className="text-[#60646C] text-sm sm:text-base">
+              Department Name
+            </div>
+            <div className="text-xl sm:text-2xl font-semibold">
+              Sr. UI/UX Designer
+            </div>
+            <div className="text-[#60646C] text-sm sm:text-base">
+              {isLargeScreen ? (
+                <>
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </>
+              ) : (
+                <ReactReadMoreReadLess
+                  charLimit={212}
+                  readMoreText={"Read More+"}
+                  readLessText={"Read Less-"}
+                  readMoreStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                  readLessStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </ReactReadMoreReadLess>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+            <div className="text-[#60646C] text-sm sm:text-base">
+              Department Name
+            </div>
+            <div className="text-xl sm:text-2xl font-semibold">
+              Sr. UI/UX Designer
+            </div>
+            <div className="text-[#60646C] text-sm sm:text-base">
+              {isLargeScreen ? (
+                <>
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </>
+              ) : (
+                <ReactReadMoreReadLess
+                  charLimit={212}
+                  readMoreText={"Read More+"}
+                  readLessText={"Read Less-"}
+                  readMoreStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                  readLessStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </ReactReadMoreReadLess>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+            <div className="text-[#60646C] text-sm sm:text-base">
+              Department Name
+            </div>
+            <div className="text-xl sm:text-2xl font-semibold">
+              Sr. UI/UX Designer
+            </div>
+            <div className="text-[#60646C] text-sm sm:text-base">
+              {isLargeScreen ? (
+                <>
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </>
+              ) : (
+                <ReactReadMoreReadLess
+                  charLimit={212}
+                  readMoreText={"Read More+"}
+                  readLessText={"Read Less-"}
+                  readMoreStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                  readLessStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </ReactReadMoreReadLess>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+            <div className="text-[#60646C] text-sm sm:text-base">
+              Department Name
+            </div>
+            <div className="text-xl sm:text-2xl font-semibold">
+              Sr. UI/UX Designer
+            </div>
+            <div className="text-[#60646C] text-sm sm:text-base">
+              {isLargeScreen ? (
+                <>
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </>
+              ) : (
+                <ReactReadMoreReadLess
+                  charLimit={212}
+                  readMoreText={"Read More+"}
+                  readLessText={"Read Less-"}
+                  readMoreStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                  readLessStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </ReactReadMoreReadLess>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+            <div className="text-[#60646C] text-sm sm:text-base">
+              Department Name
+            </div>
+            <div className="text-xl sm:text-2xl font-semibold">
+              Sr. UI/UX Designer
+            </div>
+            <div className="text-[#60646C] text-sm sm:text-base">
+              {isLargeScreen ? (
+                <>
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </>
+              ) : (
+                <ReactReadMoreReadLess
+                  charLimit={212}
+                  readMoreText={"Read More+"}
+                  readLessText={"Read Less-"}
+                  readMoreStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                  readLessStyle={{
+                    color: "#013872",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur. Integer ultrices id
+                  lobortis et in lorem. Metus arcu hac placerat sagittis velit
+                  pellentesque velit sed diam. Nascetur duis nec ipsum viverra
+                  pharetra. Ultricies id gravida in ultricies donec scelerisque
+                  tincidunt vulputate viverra. Egestas integer ligula faucibus
+                  sem mauris. In pellentesque lectus integer sagittis mauris
+                  cursus. Quisque in imperdiet dolor quis fames mauris turpis.
+                  Sollicitudin nunc id a ornare mattis quis vitae amet dolor.
+                </ReactReadMoreReadLess>
+              )}
+            </div>
+          </div>
+        </div>
       </section>
-      <section ref={sectionRef}>
-        <div style={{ marginTop: "10%", textAlign: "center" }}>
-          <div className="text-[#1C2024] text-3xl font-semibold">
-            Opportunities
-            <img style={{ marginLeft: "44.5%", width: "11.5%" }} src={uline} />
-          </div>
-          <div className="mt-8 font-semibold">
-            <Badge2
-              text="All"
-              selected={selectedBadge === 0}
-              onClick={() => handleBadgeClick(0)}
-            />
-            <Badge2
-              text="Department Name"
-              selected={selectedBadge === 1}
-              onClick={() => handleBadgeClick(1)}
-            />
-            <Badge2
-              text="Department Name"
-              selected={selectedBadge === 2}
-              onClick={() => handleBadgeClick(2)}
-            />
-            <Badge2
-              text="Department Name"
-              selected={selectedBadge === 3}
-              onClick={() => handleBadgeClick(3)}
-            />
-            <Badge2
-              text="Department Name"
-              selected={selectedBadge === 4}
-              onClick={() => handleBadgeClick(4)}
-            />
-          </div>
-        </div>
 
-        <div className="flex justify-center items-center">
-          <div
-            className="mt-12 border border-gray-200 p-4"
-            style={{ width: "88%", borderRadius: "10px" }}
-          >
-            <div className="text-[#60646C]"> Department Name</div>
-            <div className="text-2xl font-semibold">Sr. UI/UX Designer</div>
-            <div className="text-[#60646C]">
-              Lorem ipsum dolor sit amet consectetur. Integer ultrices id
-              lobortis et in lorem. Metus arcu hac placerat sagittis velit
-              pellentesque velit sed diam. Nascetur duis nec ipsum viverra
-              pharetra. Ultricies id gravida in ultricies donec scelerisque
-              tincidunt vulputate viverra. Egestas integer ligula faucibus sem
-              mauris. In pellentesque lectus integer sagittis mauris cursus.
-              Quisque in imperdiet dolor quis fames mauris turpis. Sollicitudin
-              nunc id a ornare mattis quis vitae amet dolor.
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center items-center">
-          <div
-            className="mt-6 border border-gray-200 p-4"
-            style={{ width: "88%", borderRadius: "10px" }}
-          >
-            <div className="text-[#60646C]"> Department Name</div>
-            <div className="text-2xl font-semibold">Sr. UI/UX Designer</div>
-            <div className="text-[#60646C]">
-              Lorem ipsum dolor sit amet consectetur. Integer ultrices id
-              lobortis et in lorem. Metus arcu hac placerat sagittis velit
-              pellentesque velit sed diam. Nascetur duis nec ipsum viverra
-              pharetra. Ultricies id gravida in ultricies donec scelerisque
-              tincidunt vulputate viverra. Egestas integer ligula faucibus sem
-              mauris. In pellentesque lectus integer sagittis mauris cursus.
-              Quisque in imperdiet dolor quis fames mauris turpis. Sollicitudin
-              nunc id a ornare mattis quis vitae amet dolor.
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center items-center">
-          <div
-            className="mt-6 border border-gray-200 p-4"
-            style={{ width: "88%", borderRadius: "10px" }}
-          >
-            <div className="text-[#60646C]"> Department Name</div>
-            <div className="text-2xl font-semibold">Sr. UI/UX Designer</div>
-            <div className="text-[#60646C]">
-              Lorem ipsum dolor sit amet consectetur. Integer ultrices id
-              lobortis et in lorem. Metus arcu hac placerat sagittis velit
-              pellentesque velit sed diam. Nascetur duis nec ipsum viverra
-              pharetra. Ultricies id gravida in ultricies donec scelerisque
-              tincidunt vulputate viverra. Egestas integer ligula faucibus sem
-              mauris. In pellentesque lectus integer sagittis mauris cursus.
-              Quisque in imperdiet dolor quis fames mauris turpis. Sollicitudin
-              nunc id a ornare mattis quis vitae amet dolor.
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center items-center">
-          <div
-            className="mt-6 border border-gray-200 p-4"
-            style={{ width: "88%", borderRadius: "10px" }}
-          >
-            <div className="text-[#60646C]"> Department Name</div>
-            <div className="text-2xl font-semibold">Sr. UI/UX Designer</div>
-            <div className="text-[#60646C]">
-              Lorem ipsum dolor sit amet consectetur. Integer ultrices id
-              lobortis et in lorem. Metus arcu hac placerat sagittis velit
-              pellentesque velit sed diam. Nascetur duis nec ipsum viverra
-              pharetra. Ultricies id gravida in ultricies donec scelerisque
-              tincidunt vulputate viverra. Egestas integer ligula faucibus sem
-              mauris. In pellentesque lectus integer sagittis mauris cursus.
-              Quisque in imperdiet dolor quis fames mauris turpis. Sollicitudin
-              nunc id a ornare mattis quis vitae amet dolor.
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center items-center">
-          <div
-            className="mt-6 border border-gray-200 p-4"
-            style={{ width: "88%", borderRadius: "10px" }}
-          >
-            <div className="text-[#60646C]"> Department Name</div>
-            <div className="text-2xl font-semibold">Sr. UI/UX Designer</div>
-            <div className="text-[#60646C]">
-              Lorem ipsum dolor sit amet consectetur. Integer ultrices id
-              lobortis et in lorem. Metus arcu hac placerat sagittis velit
-              pellentesque velit sed diam. Nascetur duis nec ipsum viverra
-              pharetra. Ultricies id gravida in ultricies donec scelerisque
-              tincidunt vulputate viverra. Egestas integer ligula faucibus sem
-              mauris. In pellentesque lectus integer sagittis mauris cursus.
-              Quisque in imperdiet dolor quis fames mauris turpis. Sollicitudin
-              nunc id a ornare mattis quis vitae amet dolor.
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center items-center">
-          <div
-            className="mt-6 border border-gray-200 p-4"
-            style={{ width: "88%", borderRadius: "10px" }}
-          >
-            <div className="text-[#60646C]"> Department Name</div>
-            <div className="text-2xl font-semibold">Sr. UI/UX Designer</div>
-            <div className="text-[#60646C]">
-              Lorem ipsum dolor sit amet consectetur. Integer ultrices id
-              lobortis et in lorem. Metus arcu hac placerat sagittis velit
-              pellentesque velit sed diam. Nascetur duis nec ipsum viverra
-              pharetra. Ultricies id gravida in ultricies donec scelerisque
-              tincidunt vulputate viverra. Egestas integer ligula faucibus sem
-              mauris. In pellentesque lectus integer sagittis mauris cursus.
-              Quisque in imperdiet dolor quis fames mauris turpis. Sollicitudin
-              nunc id a ornare mattis quis vitae amet dolor.
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center items-center">
-          <div
-            className="mt-6 border border-gray-200 p-4"
-            style={{ width: "88%", borderRadius: "10px" }}
-          >
-            <div className="text-[#60646C]"> Department Name</div>
-            <div className="text-2xl font-semibold">Sr. UI/UX Designer</div>
-            <div className="text-[#60646C]">
-              Lorem ipsum dolor sit amet consectetur. Integer ultrices id
-              lobortis et in lorem. Metus arcu hac placerat sagittis velit
-              pellentesque velit sed diam. Nascetur duis nec ipsum viverra
-              pharetra. Ultricies id gravida in ultricies donec scelerisque
-              tincidunt vulputate viverra. Egestas integer ligula faucibus sem
-              mauris. In pellentesque lectus integer sagittis mauris cursus.
-              Quisque in imperdiet dolor quis fames mauris turpis. Sollicitudin
-              nunc id a ornare mattis quis vitae amet dolor.
-            </div>
-          </div>
-        </div>
-      </section>
-      <center style={{ marginTop: "15%" }}>
-        <p
-          className="text-[#60646C] font-semibold"
-          style={{
-            width: "66%",
-            fontSize: "25px",
-            marginTop: "5.5%",
-            textAlign: "center",
-          }}
-        >
+      <div className="mt-4 w-full flex justify-center">
+        <p className="text-[#60646C] sm:font-semibold w-[80%] text-xl sm:text-2xl text-center">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived not only
           five centuries.
         </p>
-      </center>
+      </div>
     </div>
   ); 
 }
