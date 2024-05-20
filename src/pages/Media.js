@@ -28,20 +28,7 @@ import image9 from '../Images/Image9.png';
 import image10 from '../Images/Image10.png';
 import image11 from '../Images/Image11.png';
 import VerticalSlider from './VerticalSlider';
-import vector from '../Assets/Vector.png';
-import twitter from '../Assets/twitter.png';
-import linkedin from '../Assets/linkedin.png';
-import logo from '../Assets/logo.png';
-import share from '../Assets/share.png';
-import line from '../Assets/line.png';
-import arrow from '../Assets/arrow.png';
 import asain2 from '../Assets/asian2.png';
-
-
-
-
-
-
 
 const Media = () => {
 
@@ -115,40 +102,48 @@ const Media = () => {
   return (
     <div>
       <section>
-        <div style={{ marginTop: "4.5%" }} className="relative">
-          <img src={media} alt="media" className="w-full" />
+        <div className="h-[10vh]">{/* navbar space */}</div>
+        <div className="relative shadow-white shadow-2xl">
+          <img
+            src={media}
+            alt="media"
+            className="w-full h-[90vh] object-cover sm:object-fill "
+          />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <h1 className="text-white text-5xl font-bold mt-4 sm:mt-24">
+            <div className="text-white text-3xl sm:text-5xl font-semibold sm:font-bold ">
               News Room
-            </h1>
-            <p className="text-white mt-2 sm:mt-5 text-sm">
+            </div>
+            <div className="text-white mt-2 sm:mt-5 text-xs sm:text-sm sm:font-semibold">
               Spotlight on XYMA Analytics
-            </p>
+            </div>
           </div>
         </div>
-        {/*<div className="leading-5 text-grey text-7xl font-semibold text-center text-gray-300">XYMA NEWS</div>*/}
+        {/* bottom text */}
+        <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px] mb-[20px] sm:mb-[70px]">
+          XYMA NEWS
+        </div>
       </section>
 
       <section>
         <center>
-          <div className="text-3xl font-semibold " style={{ marginTop: "10%" }}>
+          <div className="text-3xl font-semibold mt-[10%]">
             Highlights <img className="w-44 mt-1" src={second}></img>
           </div>
         </center>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-0">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 mx-4 sm:mx-16">
           <div
-            className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{ borderRadius: "14px", width: "80%", margin: "auto" }}
+            className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
+            style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
           >
             <img src={asian} alt="Asian" style={{ width: "100%" }} />
-            <div className="text-xl font-semibold mt-1">
+            <div className="text-lg font-semibold mt-1">
               Advancing Technology to Foster a Sustainable Energy Landscape
             </div>
-            <div className="text-xs mt-1">February 24, 2024</div>
+            <div className="text-xs mt-1 text-[#60646C]">February 24, 2024</div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
+                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -161,7 +156,7 @@ const Media = () => {
 
           <div
             className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{ borderRadius: "14px", width: "80%", margin: "auto" }}
+            style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
             onMouseEnter={() => setIsHovered1(true)}
             onMouseLeave={() => setIsHovered1(false)}
           >
@@ -171,27 +166,21 @@ const Media = () => {
               ) : (
                 <img src={shell} alt="Shell" style={{ width: "100%" }} />
               )}
-              <div
-                className="flex gap-4"
-                style={{
-                  position: "absolute",
-                  top: "85%",
-                  left: "32%",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <img src={icon1} alt="Icon 1" style={{ width: "20%" }} />
-                <p className="text-white mt-1">SAUR ENERGY</p>
+              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                <img src={icon1} alt="Icon 1" className="h-[40px]" />
+                <p className="text-white">SAUR ENERGY</p>
               </div>
             </div>
-            <div className="text-xl font-semibold mt-1">
+            <div className="text-lg font-semibold mt-1">
               Shell Launches ‘Digital Track’ for Indian Startups under its E4
               Programme
             </div>
-            <div className="text-xs mt-1">Updated On Thu, Jul 8th, 2021</div>
+            <div className="text-xs mt-1 text-[#60646C]">
+              Updated On Thu, Jul 8th, 2021
+            </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
+                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -204,7 +193,7 @@ const Media = () => {
 
           <div
             className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{ borderRadius: "14px", width: "80%", margin: "auto" }}
+            style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
             onMouseEnter={() => setIsHovered2(true)}
             onMouseLeave={() => setIsHovered2(false)}
           >
@@ -214,26 +203,20 @@ const Media = () => {
               ) : (
                 <img src={business} alt="Business" style={{ width: "100%" }} />
               )}
-              <div
-                className="flex gap-4"
-                style={{
-                  position: "absolute",
-                  top: "85%",
-                  left: "32%",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <img src={icon2} alt="Icon 2" style={{ width: "20%" }} />
+              <div className="flex items-center absolute bottom-0 w-full p-2 gap-2">
+                <img src={icon2} alt="Icon 2" className="h-[40px]" />
                 <p className="text-white mt-1">Businessline</p>
               </div>
             </div>
-            <div className="text-xl font-semibold mt-1">
+            <div className="text-lg font-semibold mt-1">
               Start-up tech. Remote sensing with XYMA Analytics
             </div>
-            <div className="text-xs mt-1">Updated - January 09, 2022</div>
+            <div className="text-xs mt-1 text-[#60646C]">
+              Updated - January 09, 2022
+            </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
+                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -248,7 +231,7 @@ const Media = () => {
             className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
-              width: "80%",
+              width: "100%",
               margin: "auto",
               marginTop: "5%",
             }}
@@ -261,26 +244,18 @@ const Media = () => {
               ) : (
                 <img src={iitm} alt="Iitm" style={{ width: "100%" }} />
               )}
-              <div
-                className="flex gap-4"
-                style={{
-                  position: "absolute",
-                  top: "85%",
-                  left: "32%",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <img src={icon3} alt="Icon 3" style={{ width: "20%" }} />
+              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                <img src={icon3} alt="Icon 3" className="h-[40px]" />
                 <p className="text-white mt-1">IIT MADRAS</p>
               </div>
             </div>
-            <div className="text-xl font-semibold mt-1">
+            <div className="text-lg font-semibold mt-1">
               Sensor for Temperature Measurement at Multiple Points
             </div>
-            <div className="text-xs mt-1">11th Oct 2021 </div>
+            <div className="text-xs mt-1 text-[#60646C]">11th Oct 2021 </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
+                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -295,7 +270,7 @@ const Media = () => {
             className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
-              width: "80%",
+              width: "100%",
               margin: "auto",
               marginTop: "5%",
             }}
@@ -308,27 +283,21 @@ const Media = () => {
               ) : (
                 <img src={story} alt="Story" style={{ width: "100%" }} />
               )}
-              <div
-                className="flex gap-4"
-                style={{
-                  position: "absolute",
-                  top: "85%",
-                  left: "32%",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <img src={icon4} alt="Icon 4" style={{ width: "20%" }} />
+              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                <img src={icon4} alt="Icon 4" className="h-[40px]" />
                 <p className="text-white mt-1">YOUR STORY</p>
               </div>
             </div>
-            <div className="text-xl font-semibold mt-1">
+            <div className=" font-semibold mt-1">
               Prioritize Building Valuable Businesses Over Funding, Advises
               Kalaari Capital's Vani Kola
             </div>
-            <div className="text-xs mt-1">Wednesday July 14, 2021</div>
+            <div className="text-xs mt-1 mb-1 text-[#60646C]">
+              Wednesday July 14, 2021
+            </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
+                className="text-white mt-2 text-sm rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -343,7 +312,7 @@ const Media = () => {
             className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
-              width: "80%",
+              width: "100%",
               margin: "auto",
               marginTop: "5%",
             }}
@@ -356,26 +325,20 @@ const Media = () => {
               ) : (
                 <img src={cm} alt="Cm" style={{ width: "100%" }} />
               )}
-              <div
-                className="flex gap-4"
-                style={{
-                  position: "absolute",
-                  top: "85%",
-                  left: "32%",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <img src={icon2} alt="Icon 2" style={{ width: "20%" }} />
+              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                <img src={icon2} alt="Icon 2" className="h-[40px]" />
                 <p className="text-white mt-1">Businessline</p>
               </div>
             </div>
-            <div className="text-xl font-semibold mt-1">
+            <div className="text-lg font-semibold mt-1">
               TN Chief Minister awards cheques worth ₹95 lakh to 19 start-ups
             </div>
-            <div className="text-xs mt-1">Updated - December 23, 2021</div>
+            <div className="text-xs mt-1 text-[#60646C]">
+              Updated - December 23, 2021
+            </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
+                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -390,7 +353,7 @@ const Media = () => {
             className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
-              width: "80%",
+              width: "100%",
               margin: "auto",
               marginTop: "5%",
             }}
@@ -403,26 +366,18 @@ const Media = () => {
               ) : (
                 <img src={smart} alt="Smart" style={{ width: "100%" }} />
               )}
-              <div
-                className="flex gap-4"
-                style={{
-                  position: "absolute",
-                  top: "85%",
-                  left: "32%",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <img src={icon2} alt="Icon 2" style={{ width: "22%" }} />
+              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                <img src={icon2} alt="Icon 2" className="h-[40px]" />
                 <p className="text-white mt-1">Newswires</p>
               </div>
             </div>
-            <div className="text-xl font-semibold mt-1">
+            <div className="text-lg font-semibold mt-1">
               SmartHub.ai and XYMA Partnership Announcement
             </div>
-            <div className="text-xs mt-1">March 01, 2022</div>
+            <div className="text-xs mt-1 text-[#60646C]">March 01, 2022</div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
+                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -437,7 +392,7 @@ const Media = () => {
             className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
-              width: "80%",
+              width: "100%",
               margin: "auto",
               marginTop: "5%",
             }}
@@ -450,26 +405,20 @@ const Media = () => {
               ) : (
                 <img src={pm} alt="Pm" style={{ width: "100%" }} />
               )}
-              <div
-                className="flex gap-4"
-                style={{
-                  position: "absolute",
-                  top: "85%",
-                  left: "36%",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <img src={icon5} alt="Icon 2" style={{ width: "18%" }} />
+              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                <img src={icon5} alt="Icon 2" className="h-[40px]" />
                 <p className="text-white mt-1">ANI Multimedia News</p>
               </div>
             </div>
             <div className="text-xl font-semibold mt-1">
               PM Modi honors Shraddha and RJ Raunac at Bharat Mandapam
             </div>
-            <div className="text-xs mt-1">Updated: Mar 02, 2024</div>
+            <div className="text-xs mt-1 text-[#60646C]">
+              Updated: Mar 02, 2024
+            </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
+                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -482,45 +431,34 @@ const Media = () => {
         </div>
       </section>
 
-      <section className="bg-[#EEF6FF] h-screen mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="relative md:mt-20">
-            <img
-              style={{ width: "8%", marginLeft: "50%", marginTop: "25%" }}
-              src={icon6}
-              alt="Background"
-            />
-            <p
-              className="font-semibold text-4xl"
-              style={{
-                position: "absolute",
-                top: "49%",
-                left: "55%",
-                transform: "translate(-50%, -50%)",
-                textAlign: "center",
-                color: "#013872",
-                width: "70vw",
-                maxWidth: "415px",
-              }}
-            >
-              "Strength lies in togetherness, creativity is embraced with
-              inclusivity, and passion flourishes with freedom."
-            </p>
-          </div>
-
-          <div className="flex ">
-            <div>
-              <VerticalSlider images={images1} />
-            </div>
-            <div>
-              <VerticalSlider images={images2} />
-            </div>
-            <div>
-              <VerticalSlider images={images3} />
-            </div>
+      <div className="h-[90vh] bg-[#EEF6FF] sm:flex mt-20">
+        <div className="h-[30%] sm:h-full w-full sm:w-1/2 flex flex-col items-center justify-center">
+          <img
+            //style={{ width: "8%", marginLeft: "50%", marginTop: "25%" }}
+            src={icon6}
+            alt="Background"
+            className="h-[40px]"
+          />
+          <div
+            className="font-semibold text-xl sm:text-4xl text-[#013872] w-[90%] sm:w-[60%] text-center"
+          >
+            "Strength lies in togetherness, creativity is embraced with
+            inclusivity, and passion flourishes with freedom."
           </div>
         </div>
-      </section>
+
+        <div className="flex w-full sm:w-1/2 h-[70%] sm:h-full overflow-hidden">
+          <div>
+            <VerticalSlider images={images1} />
+          </div>
+          <div>
+            <VerticalSlider images={images2} />
+          </div>
+          <div>
+            <VerticalSlider images={images3} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

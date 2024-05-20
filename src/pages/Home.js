@@ -703,18 +703,28 @@ export const Home = () => {
           }}
         >
           <div className="sliding-text-container ">
-            <div className="mt-2.5 sliding-text text-white w-screen flex items-center gap-4">
-              <div>Continuous Wear Monitoring</div>
-              <img className="w-4 h-4" src={white} alt="BStar logo" />
+            <div className="flex">
+              <div className="mt-2.5 sliding-text text-white gap-1">
+                <div>Continuous Wear Monitoring &#10039;</div>
+                <div>
+                  Continuous Multi-point temperature measurements &#10039;
+                </div>
+                <div>Continuous multi-parameter measurements &#10039;</div>
+                <div>
+                  Continuous contact & non-contact based level
+                  measurement&#10039;
+                </div>
 
-              <div>Continuous Multi-point temperature measurements</div>
-              <img className="w-4 h-4" src={white} alt="BStar logo" />
-
-              <div>Continuous multi-parameter measurements</div>
-              <img className="w-4 h-4" src={white} alt="BStar logo" />
-
-              <div>
-                Continuous contact & non-contact based level measurement
+                {/* duplicate */}
+                <div>Continuous Wear Monitoring &#10039;</div>
+                <div>
+                  Continuous Multi-point temperature measurements &#10039;
+                </div>
+                <div>Continuous multi-parameter measurements &#10039;</div>
+                <div>
+                  Continuous contact & non-contact based level
+                  measurement&#10039;
+                </div>
               </div>
             </div>
           </div>
@@ -760,7 +770,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      
     </div>
   );
 };

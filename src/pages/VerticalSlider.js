@@ -3,7 +3,7 @@ import './Slider.css';
 
 function VerticalLoopSlider({ images }) {
   return (
-    <div className='slider-wrapper'>
+    <div className='w-[80%]'>
       <div className='slider-track'>
         {images.map((image, index) => (
           <img key={index} className='slider-image' src={image} alt={`Image ${index + 1}`} />

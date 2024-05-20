@@ -97,17 +97,22 @@
   width: 100%;
 }
 
+.sliding-text-wrapper {
+  display: flex;
+}
+
 .sliding-text {
-  /* display: inline-block; */
-  animation: slide 15s linear infinite; 
+  display: flex;
+  align-items: center;
+  animation: slide 10s linear infinite;
 }
 
 @keyframes slide {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
