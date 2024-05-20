@@ -44,7 +44,17 @@ const Media = () => {
   const [isHovered5, setIsHovered5] = useState(false);
   const [isHovered6, setIsHovered6] = useState(false);
   const [isHovered7, setIsHovered7] = useState(false);
+  const [loadMore, setLoadMore] = useState(false);
 
+  const handleLoadMore = ()=>
+  {
+    setLoadMore(true);
+  }
+
+  const handleLoadLess = () =>
+  {
+    setLoadMore(false);
+  }
 
   const images3 = [
     image1,
@@ -131,7 +141,7 @@ const Media = () => {
           </div>
         </center>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 mx-4 sm:mx-16">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 mx-4 sm:mx-16">
           <div
             className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
             style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
@@ -227,8 +237,243 @@ const Media = () => {
             </center>
           </div>
 
+          {!loadMore && (
+            <div
+              className="cursor-pointer p-2 sm:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
+              style={{
+                background:
+                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+              }}
+              onClick={handleLoadMore}
+            >
+              Load More
+            </div>
+          )}
+
+          {loadMore && (
+            <div className="sm:hidden">
+              <div
+                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+                style={{
+                  borderRadius: "14px",
+                  width: "100%",
+                  margin: "auto",
+                  marginTop: "5%",
+                }}
+                onMouseEnter={() => setIsHovered3(true)}
+                onMouseLeave={() => setIsHovered3(false)}
+              >
+                <div style={{ position: "relative" }}>
+                  {isHovered3 ? (
+                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
+                  ) : (
+                    <img src={iitm} alt="Iitm" style={{ width: "100%" }} />
+                  )}
+                  <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                    <img src={icon3} alt="Icon 3" className="h-[40px]" />
+                    <p className="text-white mt-1">IIT MADRAS</p>
+                  </div>
+                </div>
+                <div className="text-lg font-semibold mt-1">
+                  Sensor for Temperature Measurement at Multiple Points
+                </div>
+                <div className="text-xs mt-1 text-[#60646C]">
+                  11th Oct 2021{" "}
+                </div>
+                <center>
+                  <button
+                    className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                  >
+                    View More
+                  </button>
+                </center>
+              </div>
+
+              <div
+                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+                style={{
+                  borderRadius: "14px",
+                  width: "100%",
+                  margin: "auto",
+                  marginTop: "5%",
+                }}
+                onMouseEnter={() => setIsHovered4(true)}
+                onMouseLeave={() => setIsHovered4(false)}
+              >
+                <div style={{ position: "relative" }}>
+                  {isHovered4 ? (
+                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
+                  ) : (
+                    <img src={story} alt="Story" style={{ width: "100%" }} />
+                  )}
+                  <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                    <img src={icon4} alt="Icon 4" className="h-[40px]" />
+                    <p className="text-white mt-1">YOUR STORY</p>
+                  </div>
+                </div>
+                <div className=" font-semibold mt-1">
+                  Prioritize Building Valuable Businesses Over Funding, Advises
+                  Kalaari Capital's Vani Kola
+                </div>
+                <div className="text-xs mt-1 mb-1 text-[#60646C]">
+                  Wednesday July 14, 2021
+                </div>
+                <center>
+                  <button
+                    className="text-white mt-2 text-sm rounded-full px-4 py-2 mb-2"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                  >
+                    View More
+                  </button>
+                </center>
+              </div>
+
+              <div
+                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+                style={{
+                  borderRadius: "14px",
+                  width: "100%",
+                  margin: "auto",
+                  marginTop: "5%",
+                }}
+                onMouseEnter={() => setIsHovered5(true)}
+                onMouseLeave={() => setIsHovered5(false)}
+              >
+                <div style={{ position: "relative" }}>
+                  {isHovered5 ? (
+                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
+                  ) : (
+                    <img src={cm} alt="Cm" style={{ width: "100%" }} />
+                  )}
+                  <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                    <img src={icon2} alt="Icon 2" className="h-[40px]" />
+                    <p className="text-white mt-1">Businessline</p>
+                  </div>
+                </div>
+                <div className="text-lg font-semibold mt-1">
+                  TN Chief Minister awards cheques worth ₹95 lakh to 19
+                  start-ups
+                </div>
+                <div className="text-xs mt-1 text-[#60646C]">
+                  Updated - December 23, 2021
+                </div>
+                <center>
+                  <button
+                    className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                  >
+                    View More
+                  </button>
+                </center>
+              </div>
+
+              <div
+                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+                style={{
+                  borderRadius: "14px",
+                  width: "100%",
+                  margin: "auto",
+                  marginTop: "5%",
+                }}
+                onMouseEnter={() => setIsHovered6(true)}
+                onMouseLeave={() => setIsHovered6(false)}
+              >
+                <div style={{ position: "relative" }}>
+                  {isHovered6 ? (
+                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
+                  ) : (
+                    <img src={smart} alt="Smart" style={{ width: "100%" }} />
+                  )}
+                  <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                    <img src={icon2} alt="Icon 2" className="h-[40px]" />
+                    <p className="text-white mt-1">Newswires</p>
+                  </div>
+                </div>
+                <div className="text-lg font-semibold mt-1">
+                  SmartHub.ai and XYMA Partnership Announcement
+                </div>
+                <div className="text-xs mt-1 text-[#60646C]">
+                  March 01, 2022
+                </div>
+                <center>
+                  <button
+                    className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                  >
+                    View More
+                  </button>
+                </center>
+              </div>
+
+              <div
+                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+                style={{
+                  borderRadius: "14px",
+                  width: "100%",
+                  margin: "auto",
+                  marginTop: "5%",
+                }}
+                onMouseEnter={() => setIsHovered7(true)}
+                onMouseLeave={() => setIsHovered7(false)}
+              >
+                <div style={{ position: "relative" }}>
+                  {isHovered7 ? (
+                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
+                  ) : (
+                    <img src={pm} alt="Pm" style={{ width: "100%" }} />
+                  )}
+                  <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                    <img src={icon5} alt="Icon 2" className="h-[40px]" />
+                    <p className="text-white mt-1">ANI Multimedia News</p>
+                  </div>
+                </div>
+                <div className="text-xl font-semibold mt-1">
+                  PM Modi honors Shraddha and RJ Raunac at Bharat Mandapam
+                </div>
+                <div className="text-xs mt-1 text-[#60646C]">
+                  Updated: Mar 02, 2024
+                </div>
+                <center>
+                  <button
+                    className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                  >
+                    View More
+                  </button>
+                </center>
+              </div>
+
+              <div
+                className="cursor-pointer p-2 sm:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+                onClick={handleLoadLess}
+              >
+                Load less
+              </div>
+            </div>
+          )}
+
           <div
-            className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -267,7 +512,7 @@ const Media = () => {
           </div>
 
           <div
-            className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -309,7 +554,7 @@ const Media = () => {
           </div>
 
           <div
-            className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -350,7 +595,7 @@ const Media = () => {
           </div>
 
           <div
-            className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -389,7 +634,7 @@ const Media = () => {
           </div>
 
           <div
-            className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -439,22 +684,20 @@ const Media = () => {
             alt="Background"
             className="h-[40px]"
           />
-          <div
-            className="font-semibold text-xl sm:text-4xl text-[#013872] w-[90%] sm:w-[60%] text-center"
-          >
+          <div className="font-semibold text-xl sm:text-4xl text-[#013872] w-[90%] sm:w-[60%] text-center">
             "Strength lies in togetherness, creativity is embraced with
             inclusivity, and passion flourishes with freedom."
           </div>
         </div>
 
         <div className="flex w-full sm:w-1/2 h-[70%] sm:h-full overflow-hidden">
-          <div>
+          <div className="flex justify-center">
             <VerticalSlider images={images1} />
           </div>
-          <div>
+          <div className="flex justify-center -mt-32">
             <VerticalSlider images={images2} />
           </div>
-          <div>
+          <div className="flex justify-center">
             <VerticalSlider images={images3} />
           </div>
         </div>
