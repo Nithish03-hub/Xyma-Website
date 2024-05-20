@@ -134,59 +134,61 @@ const Product = () => {
      */} </section>
 
 
-    <div className='flex justify-center items-center h-screen'>
-    <div className='grid grid-cols-1 md:grid-cols-2 rounded-lg w-full md:w-[120vh] lg:w-[160vh] shadow-lg border border-gray-200'>
-        <div>
-          <div className='m-10 rounded-lg'style={{ background: 'radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)' }}>
-           <img className='product-image' src={utmap} alt="UTMapS" style={{ width: '100%', height: 'auto' }} />
-           <div style={{ background: 'rgba(255, 255, 255, 0.1)' }}>
-              <div className='ml-4'> 
-                <h2 className="text-bold text-2xl" style={{
-                  background: 'linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                  backgroundColor: 'rgba(255, 255, 255, 1)',
-                  display: 'inline-block'
-                }}>μTMapS</h2>
-                <p className='text-white' style={{width:'90%'}}>A single customizable waveguide can measure temperature at 10 points over 50 meters length.</p>
-              </div> 
-            </div> 
+<div className="flex justify-center items-center h-screen">
+  <div className="grid grid-cols-1 md:grid-cols-2 rounded-lg w-full md:w-[120vh] lg:w-[160vh] shadow-lg border border-gray-200">
+    <div>
+      <div className="m-10 rounded-lg" style={{ background: 'radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #1A1A1A 100%)' }}>
+        <img className="product-image w-full h-auto" src={utmap} alt="UTMapS" />
+        <div className="bg-opacity-10 bg-white">
+          <div className="ml-4">
+            <h2 className="text-bold text-2xl" style={{
+              background: 'linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)',
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
+              display: 'inline-block'
+            }}>μTMapS</h2>
+            <p className="text-white w-[90%]">A single customizable waveguide can measure temperature at 10 points over 50 meters length.</p>
           </div>
-        </div>
-        <div className='mt-8'>
-        <div className='flex flex-col md:flex-row'>
-        <div className='font-semibold text-xl md:text-2xl mt-2' style={{ width: '100%' }}>Multi-Point Temperature Mapping Sensor</div>
-        <button className='flex items-center justify-center bg-[#01285C] rounded-full h-9 md:w-32 p-1 mt-2 md:mt-0 md:ml-auto'>
-          <Icon /><div className='ml-1 text-xs text-white'>Play Video</div>
-        </button>
-      </div>
-             <div className='mt-3'><Badge text="Temperature Range: 25° C to 1600° C "/></div> 
-              <div className='mt-6'>
-                <p className='text-[#60646C] text-sm'style={{width:'90%'}}>µTMapS & µSTMapS are IIoT-enabled temperature measurement and temperature profiling sensors that captures continuous measurements at multiple points with a single customizable waveguide with multiple configurations in contrast to contact based thermocouples/RTDs or contactless IR guns.</p>
-              </div>
-              <div  className='mt-6'style={{ display: 'flex', alignItems: 'center' }}>
-                <div className='flex border border-gray-200 rounded-lg p-3'>
-                  <img className='bg-white w-auto h-auto ' src={isteel} style={{ marginRight: '12px',width:"20%"  }}   />
-                  <span className='text-sm font-semibold mt-1.5'>Steel Manufacturing</span>
-                </div>
-                <div className='flex border border-gray-200 rounded-lg p-3 ml-4'>
-                  <img className='bg-white w-auto h-auto' src={aicon} style={{ marginRight: '12px',width:"45px" }}   />
-                  <span className='text-sm font-semibold mt-2' >Aluminum Manufacturing</span>
-              </div>
-            </div>
-            <div  className='mt-2'style={{ display: 'flex', alignItems: 'center' }}>
-                <div className='flex border border-gray-200 rounded-lg p-3'>
-                  <img className='bg-white w-auto h-auto ' src={semi} style={{ marginRight: '12px',width:"18%"  }}   />
-                  <span className='text-sm font-semibold mt-0 w-32 ml-1'>Semiconductor Manufacturing</span>
-                </div>
-                <div className='flex border border-gray-200 rounded-lg p-3 ml-4' style={{width:'48%'}}>
-                  <img className='bg-white w-auto h-auto  ' src={ref} style={{ marginRight: '12px',width:"40px" }}   />
-                  <span className='text-sm font-semibold mt-1.5' >Refineries</span>
-              </div>
-            </div>
         </div>
       </div>
     </div>
+    <div className="mt-8">
+      <div className="flex flex-col md:flex-row">
+        <div className="font-semibold text-xl md:text-2xl mt-2 w-full">Multi-Point Temperature Mapping Sensor</div>
+        <button className="flex items-center justify-center bg-[#01285C] rounded-full h-9 md:w-32 p-1 mt-2 md:mt-0 md:ml-auto">
+          <Icon /><div className="ml-1 text-xs text-white">Play Video</div>
+        </button>
+      </div>
+      <div className="mt-3">
+        <Badge text="Temperature Range: 25° C to 1600° C " />
+      </div>
+      <div className="mt-6">
+        <p className="text-[#60646C] text-sm w-[90%]">µTMapS & µSTMapS are IIoT-enabled temperature measurement and temperature profiling sensors that capture continuous measurements at multiple points with a single customizable waveguide with multiple configurations in contrast to contact-based thermocouples/RTDs or contactless IR guns.</p>
+      </div>
+      <div className="mt-6 flex items-center">
+        <div className="flex border border-gray-200 rounded-lg p-3">
+          <img className="bg-white w-1/5 h-auto mr-3" src={isteel} alt="Steel Manufacturing" />
+          <span className="text-sm font-semibold mt-1.5">Steel Manufacturing</span>
+        </div>
+        <div className="flex border border-gray-200 rounded-lg p-3 ml-4">
+          <img className="bg-white w-[45px] h-auto mr-3" src={aicon} alt="Aluminum Manufacturing" />
+          <span className="text-sm font-semibold mt-2">Aluminum Manufacturing</span>
+        </div>
+      </div>
+      <div className="mt-2 flex items-center">
+        <div className="flex border border-gray-200 rounded-lg p-3">
+          <img className="bg-white w-1/5 h-auto mr-3" src={semi} alt="Semiconductor Manufacturing" />
+          <span className="text-sm font-semibold mt-0 w-32 ml-1">Semiconductor Manufacturing</span>
+        </div>
+        <div className="flex border border-gray-200 rounded-lg p-3 ml-4 w-[48%]">
+          <img className="bg-white w-[40px] h-auto mr-3" src={ref} alt="Refineries" />
+          <span className="text-sm font-semibold mt-1.5">Refineries</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
     <div className='flex justify-center items-center h-screen'>

@@ -94,116 +94,147 @@ const Resource = () => {
                  </div>
                   <div > 
                   {(selectedWord === 'Aluminum' || selectedWord === 'All') && (
-                         <div className='border border-gray-200 rounded-2xl p-3 flex ' style={{width:'70%',marginLeft:'10%',marginTop:'10%'}}>
-                         <span className='text-xl'>Aluminum</span>
-                         <div style={{ position: 'relative', display: 'inline-block',marginTop:'6%',marginRight:'5%' }}> 
-                           <img style={{ width: '95%' }} src={aluminum} alt="Aluminum Image" />
-                           <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '55%', left: '68%',width:'25%',height:'6%' }} onClick={handleCaseStudyClick}>Case Studies</button>
-                           <p style={{width:'90%',fontSize:'20px',marginTop:'20px'}}>A 10°C temperature deviation reduces efficiency, promotes anode effect, and increases PFC emissions.</p>
+                         <div className="border border-gray-200 rounded-2xl p-3 flex flex-col lg:flex-row lg:w-4/5 mx-auto mt-10">
+                         <span className="text-xl">Aluminum</span>
+                         <div className="relative lg:w-1/2 my-6 lg:my-0 lg:mr-5">
+                             <img className="w-full md:w-80 md:mt-10 md:mr-10" src={aluminum} alt="Aluminum Image" />
+                             <button
+                                 className="bg-white rounded-full text-xs absolute bottom-1/4 left-1/2 w-1/4 h-6 md:w-20 md:mb-14 md:ml-10 mb-8 ml-16"
+                                 onClick={handleCaseStudyClick}
+                             >
+                                 Case Studies
+                             </button>
+                             <p className="text-lg mt-4 lg:w-11/12">
+                                 A 10°C temperature deviation reduces efficiency, promotes anode effect, and increases PFC emissions.
+                             </p>
                          </div>
- 
-                         <div>  
-                           <span className='text-xl'>All</span>
-                           <div className='flex mt-4'>
-                             <div >
-                               <img style={{width:'65%',marginLeft:'25%',marginTop:'6px'}}src={all1}></img>
+                     
+                         <div className="lg:w-1/2">
+                             <span className="text-xl">All</span>
+                             <div className="flex flex-col mt-4">
+                                 <div className="flex items-start mb-4">
+                                     <img className="w-2/5 lg:w-1/4 mr-4" src={all1} alt="All1 Image" />
+                                     <p className="text-lg flex-1">A 10°C shift lowers efficiency, boosts anode effect, and raises PFC emissions.</p>
+                                 </div>
+                                 <hr className="border border-gray-200" />
+                                 <div className="flex items-start mt-4 mb-4">
+                                     <img className="w-2/5 lg:w-1/4 mr-4" src={all2} alt="All2 Image" />
+                                     <p className="text-lg flex-1">Extending the ladle life for one cycle would result in steel production worth $5.1 million.</p>
+                                 </div>
+                                 <hr className="border border-gray-200" />
+                                 <div className="flex items-start mt-4">
+                                     <img className="w-2/5 lg:w-1/4 mr-4" src={all3} alt="All3 Image" />
+                                     <p className="text-lg flex-1">20°C rise halves reformer tube lifespan; design temperature crucial.</p>
+                                 </div>
                              </div>
-                               <p  style={{width:'65%',fontSize:'18px'}}>A 10°C shift lowers efficiency, boosts anode effect, and raises PFC emissions.</p>
-                           </div>
-                                                       
-                          
-                           <div className='flex mt-6'> 
-                             <div>
-                             <hr class="ml-3 mt-2 border border-gray-200" style={{width:'220%'}} />
-                               <img style={{width:'65%',marginLeft:'25%',marginTop:'15px'}}src={all2}></img>
-                             </div>
-                               <p  style={{width:'68%',fontSize:'18px',marginTop:'20px'}}>Extending the ladle life for one cycle would result in steel production worth $5.1 million.</p>
-                           </div>
- 
-                           <div className='flex mt-6'>
-                             <div>
-                             <hr class="ml-2 border border-gray-200" style={{width:'220%'}} />
-                               <img style={{width:'65%',marginLeft:'25%',marginTop:'16px'}}src={all3}></img>
-                             </div>
-                               <p  style={{width:'65%',fontSize:'18px',marginTop:'20px'}}>20°C rise halves reformer tube lifespan; design temperature crucial.</p>
-                           </div>
- 
                          </div>
-                       </div>
+                     </div>
+                     
                     )}
 
                   
                     {(selectedWord === 'Steel' || selectedWord === 'All') && (
-                        <div className='border border-gray-200 rounded-2xl p-3 flex ' style={{width:'70%',marginLeft:'10%',marginTop:'3%'}}>
-                        <div className='text-xl'>Steel</div>
-                        <div style={{ position: 'relative', display: 'inline-block',marginTop:'6%',marginLeft:'5%' }}> 
-                          <img style={{ width: '100%' }} src={steel1} alt="Steel Image" />
-                          <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '38%', left: '70%',width:'25%',height:'7%' }}>Case Studies</button>
-                          <p style={{width:'95%',fontSize:'20px',marginTop:'20px'}}>Extending ladle life for one cycle yields steel worth $5.1M</p>
+                        <div className="border border-gray-200 rounded-2xl p-3 flex flex-col lg:flex-row lg:w-4/5 mx-auto mt-3">
+                        <div className="text-xl mb-6 lg:mb-0 lg:mr-5">Steel</div>
+                        <div className="relative w-full lg:w-1/2 my-6 lg:my-0 lg:mr-5">
+                            <img className="w-full md:w-80 md:mt-14 md:ml-10" src={steel1} alt="Steel Image" />
+                            <button
+                                 className="bg-white rounded-full text-xs absolute bottom-1/4 left-1/2 w-1/4 h-6 md:w-20 md:mb-6 md:ml-18 mb-6 ml-16">
+                                 Case Studies
+                             </button>
+                            <p className="text-lg mt-4 lg:w-11/12 md:ml-10">
+                                Extending ladle life for one cycle yields <br/>steel worth $5.1M
+                            </p>
                         </div>
-
-                        <div>  
-                          <div>
-                            <button className=" text-white py-2 px-3 rounded-full text-xs mt-2" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',marginLeft:'72%'}}>
-                               Read More
-                            </button>
-                          </div>
-                          <div style={{ position: 'relative', display: 'inline-block',marginTop:'0%',marginLeft:'15%' }}> 
-                              <img style={{width:'80%',marginLeft:'10%',marginTop:'2%'}}src={steel2}></img>
-                              <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '37%', left: '62%',width:'22%',height:'7%' }}>Case Studies</button>
-                              <p  style={{width:'95%',fontSize:'20px',marginTop:'10%',marginLeft:'10%'}}>Extending the lifespan of the ladle for one cycle results in producing steel valued at $5.1 million</p>
-                          </div>
+                    
+                        <div className="w-full lg:w-1/2">
+                            <div>
+                                <button className="text-white py-2 px-3 rounded-full text-xs mt-2 mb-4 lg:ml-auto lg:mr-0 mx-auto block" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }}>
+                                    Read More
+                                </button>
+                            </div>
+                            <div className="relative w-full lg:w-4/5 mx-auto">
+                                <img className="w-full" src={steel2} alt="Steel Image" />
+                                <button className="bg-white rounded-full text-xs absolute bottom-1/3 left-2/3 w-1/4 h-7">
+                                    Case Studies
+                                </button>
+                                <p className="text-lg mt-4">
+                                    Extending the lifespan of the ladle for one cycle results in producing steel valued at $5.1 million
+                                </p>
+                            </div>
                         </div>
-                      </div>
+                    </div>
+                    
                     )}
                   
 
                      {(selectedWord === 'Refineries' || selectedWord === 'All') && (
-                         <div className='border border-gray-200 rounded-2xl p-3 flex ' style={{width:'70%',marginLeft:'10%',marginTop:'3%'}}>
-                         <div className='text-xl'>Refineries</div>
-                         <div style={{ position: 'relative', display: 'inline-block',marginTop:'6%' }}> 
-                           <img style={{ width: '85%' }} src={tube1} alt="Tube Image" />
-                           <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '38%', left: '60%',width:'22%',height:'7%' }}>Case Studies</button>
-                           <p style={{width:'95%',fontSize:'20px',marginTop:'20px'}}>A 20°C temperature rise cuts reformer tube lifespan by half</p>
-                         </div>
- 
-                         <div>  
-                           <div>
-                             <button className=" text-white py-2 px-1 rounded-full text-xs mt-2" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',marginLeft:'70%',width:'25%',height:'25%'}}>
-                                Read More
+                         <div className="border border-gray-200 rounded-2xl p-3 flex flex-col lg:flex-row lg:w-4/5 mx-auto mt-3">
+                         <div className="text-xl mb-6 lg:mb-0 lg:mr-5">Refineries</div>
+                         <div className="relative w-full lg:w-1/2 my-6 lg:my-0 lg:mr-5">
+                             <img className="w-full md:w-80 md:mt-12" src={tube1} alt="Tube Image" />
+                             <button
+                                 className="bg-white rounded-full text-xs absolute bottom-1/4 left-1/2 w-1/4 h-6 md:w-20 md:mb-1 md:ml-10 mb-5 ml-16">
+                                 Case Studies
                              </button>
-                           </div>
-                           <div style={{ position: 'relative', display: 'inline-block',marginTop:'0%',marginLeft:'1%' }}> 
-                               <img style={{width:'85%',marginLeft:'8%',marginTop:'2%'}}src={tube2}></img>
-                               <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '37%', left: '65%',width:'22%',height:'7%' }}>Case Studies</button>
-                               <p  style={{width:'95%',fontSize:'20px',marginTop:'8%',marginLeft:'6%'}}>A 20°C temperature increase halves the lifespan of reformer tubes</p>
-                           </div>
+                             <p className="text-lg mt-4 lg:w-11/12">
+                                 A 20°C temperature rise cuts reformer <br/>tube lifespan by half.
+                             </p>
                          </div>
-                       </div>
+                     
+                         <div className="w-full lg:w-1/2">
+                             <div>
+                                 <button className="text-white py-2 px-3 rounded-full text-xs mt-2 mb-4 lg:ml-auto lg:mr-0 mx-auto block" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }}>
+                                     Read More
+                                 </button>
+                             </div>
+                             <div className="relative w-full lg:w-4/5 mx-auto">
+                                 <img className="w-full" src={tube2} alt="Tube Image" />
+                                 <button
+                                 className="bg-white rounded-full text-xs absolute bottom-1/4 left-1/2 w-1/4 h-6 md:w-20 md:mb-4 md:ml-14 mb-5 ml-16">
+                                 Case Studies
+                             </button>
+                                 <p className="text-lg mt-4">
+                                     A 20°C temperature increase halves the lifespan of reformer tubes.
+                                 </p>
+                             </div>
+                         </div>
+                     </div>
+                     
                     )}
                     
                      {(selectedWord === 'Lubricants' || selectedWord === 'All') && (
-                         <div className='border border-gray-200 rounded-2xl p-3 flex ' style={{width:'70%',marginLeft:'10%',marginTop:'3%'}}>
-                         <div className='text-xl'>Lubricants</div>
-                         <div style={{ position: 'relative', display: 'inline-block',marginTop:'6%' }}> 
-                           <img style={{ width: '85%' }} src={oil1} alt="Oil Image" />
-                           <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '43%', left: '60%',width:'22%',height:'7%' }}>Case Studies</button>
-                           <p style={{width:'95%',fontSize:'20px',marginTop:'20px'}}>30% of maintenance budget influenced by lubricants, highlighting their significant role in operational expenses</p>
-                         </div>
- 
-                         <div>  
-                           <div>
-                             <button className=" text-white py-2 px-1 rounded-full text-xs mt-2" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',marginLeft:'70%',width:'26%',height:'25%'}}>
-                                Read More
+                         <div className="border border-gray-200 rounded-2xl p-3 flex flex-col lg:flex-row lg:w-4/5 mx-auto mt-3">
+                         <div className="text-xl mb-6 lg:mb-0 lg:mr-5">Lubricants</div>
+                         <div className="relative w-full lg:w-1/2 my-6 lg:my-0 lg:mr-5">
+                             <img className="w-full md:w-80 md:mt-11" src={oil1} alt="Oil Image" />
+                             <button
+                                 className="bg-white rounded-full text-xs absolute bottom-1/4 left-1/2 w-1/4 h-6 md:w-20 md:mb-6 md:ml-10 mb-14 ml-16">
+                                 Case Studies
                              </button>
-                           </div>
-                           <div style={{ position: 'relative', display: 'inline-block',marginTop:'0%', }}> 
-                               <img style={{width:'95%',marginLeft:'1%',marginTop:'4%'}}src={oil2}></img>
-                               <button className='bg-white rounded-full text-xs' style={{ position: 'absolute', bottom: '37%', left: '70%',width:'24%',height:'7%' }}>Case Studies</button>
-                               <p  style={{width:'95%',fontSize:'20px',marginTop:'6.5%',marginLeft:'1%'}}>Lubricants significantly affect operational costs, accounting for 30% of the maintenance budget</p>
-                           </div>
+                             <p className="text-lg mt-4 lg:w-11/12">
+                                 30% of maintenance budget influenced by lubricants, highlighting their significant role in operational expenses.
+                             </p>
                          </div>
-                       </div>
+                     
+                         <div className="w-full lg:w-1/2">
+                             <div className="mb-4 lg:mb-0">
+                             <button className="text-white py-2 px-3 rounded-full text-xs mt-2 mb-4 lg:ml-auto lg:mr-0 mx-auto block" style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }}>
+                                     Read More
+                                 </button>
+                             </div>
+                             <div className="relative w-full lg:w-4/5 mx-auto">
+                                 <img className="w-full" src={oil2} alt="Oil Image" />
+                                 <button className="bg-white rounded-full text-xs absolute bottom-1/4 left-1/2 w-1/4 h-6 md:w-20 md:mb-10 md:ml-14 mb-8 ml-16" >
+                                 Case Studies
+                             </button>
+                                 <p className="text-lg mt-4">
+                                     Lubricants significantly affect operational costs, accounting for 30% of the maintenance budget.
+                                 </p>
+                             </div>
+                         </div>
+                     </div>
+                     
                     )}
                     </div> 
                 </div>

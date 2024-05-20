@@ -34,7 +34,7 @@ const CaseStudy = () => {
   return (
    <div>
      <section>
-      <div className="flex flex-col md:flex-row items-center" style={{ marginTop: '10%', marginLeft: '8%' }}>
+      <div className="flex items-center " style={{ marginTop: '15%', marginLeft: '8%' }}>
         <div className="ml-10 md:ml-0 md:mr-4 mt-2 text-xl" onClick={handleBack}>
           <HiChevronLeft />
         </div>
@@ -45,18 +45,22 @@ const CaseStudy = () => {
       </div>
 
       <div className="flex flex-col md:flex-row items-center" style={{ marginTop: '5%', marginLeft: '8%' }}>
-        <div className="md:mr-4">
-          <img style={{ maxWidth: '140%' }} src={aluminum} alt="Aluminum Image" />
-          <button className="bg-white rounded-full text-xs absolute bottom-96 md:bottom-40 left-96 w-20 h-6 md:left-96">Case Studies</button>
-        </div>
+  <div className="relative md:mr-4">
+    <img className="max-w-full md:max-w-none md:w-[140%]" src={aluminum} alt="Aluminum Image" />
+    <button className="bg-white rounded-full text-xs absolute bottom-4 md:bottom-3 left-80 transform -translate-x-1/2 w-1/4 h-6 md:w-20 md:left-80">Case Studies</button>
+  </div>
 
-        <div className="mt-4 md:mt-0 ">
-          <div className="bg-gray-200 w-20 text-xs text-gray-500 rounded-2xl px-2 py-1 mb-2 md:mb-0 md:mr-8 md:ml-32">4 Min Read</div>
-          <div className="text-lg md:ml-32 lg:w-full" style={{width:'55%'}}>
-            A 10°C temperature deviation diminishes efficiency, intensifies anode effect, and raises PFC emissions, underscoring the significance of meticulous temperature control in industrial processes to optimize performance and reduce environmental impact
-          </div>
-        </div>
-      </div>
+  <div className="mt-4 md:mt-0 flex flex-col items-center md:items-start">
+  <div className="bg-gray-200 text-xs text-gray-500 rounded-2xl px-2 py-1 mb-2 md:mb-0 md:ml-40">
+    4 Min Read
+  </div>
+  <div className="text-lg md:ml-40 text-left w-full md:w-3/4 lg:w-2/3 xl:w-1/2">
+    A 10°C temperature deviation diminishes efficiency, intensifies anode effect, and raises PFC emissions, underscoring the significance of meticulous temperature control in industrial processes to optimize performance and reduce environmental impact.
+  </div> 
+</div>
+
+</div>
+
   
       <center>
          <div className='bg-gray-300'style={{width:'85%',height:'0.5px',marginTop:'5%'}}/>
@@ -74,7 +78,7 @@ const CaseStudy = () => {
                 </ul>
           </div>
           
-          <img src={aluminum2} style={{ width: '60%', maxWidth: '100%', height: 'auto', marginLeft: '5%',marginTop:'2%' }} />
+          <img src={aluminum2} className="w-3/5 max-w-full h-auto ml-10 md:ml-10 mt-4" alt="Aluminum Image" />
 
           <div className='mt-6'>
              <span className='text-xl font-semibold ml-12' > 2.Efficiency Reduction:</span>
