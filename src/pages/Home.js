@@ -1,27 +1,19 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { TiStarburst } from "react-icons/ti";
-import Badge from './Badge';
 import aluminum from '../Assets/aluminum.png';
 import steel from '../Assets/steel.png';
 import reformerTubes from '../Assets/reformerTubes.png'
 import lubricants from '../Assets/lubricants.png';
 import oilRecovery from '../Assets/oilRecovery.png'
 import paints from '../Assets/paints.png'
-import product from '../Assets/product.png';
 import utmaps from '../Assets/newut.jpeg';
-import utmap1 from '../Assets/maps1.png';
-import utmap2 from '../Assets/maps2.png';
-import utmap3 from '../Assets/maps3.png';
-import video from '../Assets/xymavideo.mp4';
+import ports from "../Assets/ports.png";
+import ztar from "../Assets/Ztar.png";
 import newpage from '../Assets/newpage.png';
 import trophy from '../Assets/trophy.png';
 import client from '../Assets/client.png';
 import real from '../Assets/real.png';
 import solution from '../Assets/solution.png';
 import time from '../Assets/time.png';
-import bstar from '../Assets/bstar.png';
-import white from '../Assets/white.png'
 import sg from '../Brand/sg.png';
 import tata from '../Brand/tata.png';
 import lam from '../Brand/lam.png';
@@ -37,9 +29,8 @@ import reliance from '../Brand/reliance.png';
 import newline from '../Assets/newline.png';
 import second from '../Assets/secondline.png';
 import old from '../Assets/old.png';
-import newbg from '../Assets/newbg.png';
+import newbgcropped from '../Assets/newbgcropped.png';
 import sensor from '../Assets/sensor.png';
-import curve from '../Assets/Vectorcurve.png';
 import iot from '../Assets/iot.png';
 import grp from '../Assets/Group.png';
 import zero from '../Assets/zero.png';
@@ -62,17 +53,51 @@ export const Home = () => {
       "Batch non-homogeneity due to unavailability of continuous viscosity measurement technique.",
   };
   
-  // const phrase = "Prevent Unplanned Downtime";
-  // const wordsArray = phrase.split(" ");
   const [clickedImage, setClickedImage] = useState(aluminum);
   const [imageDesc, setImageDesc] = useState(imageDescription.Aluminum);
   const [imageName, setImageName] = useState('ALUMINUM');
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [overlay, setOverlay] = useState(false);
+  const [utmapsBadge, setUtmapsBadge] = useState(false);
+  const [portsBadge, setPortsBadge] = useState(false);
+  const [ztarBadge, setZtarBadge] = useState(false);
+
+  const handleOverlayEnter = () =>
+  {
+    setOverlay(true);
+  }
+
+  const handleOverlayLeave = () => {
+    setOverlay(false);
+  };
+
+  const handleUtmapsBadgeEnter = () =>
+  {
+    setUtmapsBadge(true);
+  };
+
+  const handleUtmapsBadgeLeave = () => {
+    setUtmapsBadge(false);
+  };
+
+  const handlePortsBadgeEnter = () => {
+    setPortsBadge(true);
+  };
+
+  const handlePortsBadgeLeave = () => {
+    setPortsBadge(false);
+  };
+
+  const handleZtarBadgeEnter = () => {
+    setZtarBadge(true);
+  };
+
+  const handleZtarBadgeLeave = () => {
+    setZtarBadge(false);
+  };
 
   const handleImageChange = (event) => {
-    //const clickedImageId = event.target.id;
- 
-    //let imageUrl = null;
+    
     switch (event.target.id) {
       case "aluminum":
         setClickedImage(aluminum);
@@ -113,30 +138,7 @@ export const Home = () => {
       default:
         break;
     }
-
-    // setClickedImage(imageUrl);
-    // setSelectedWord(clickedWordId);
   };
-
-  // const getImageSizeClass = (word) => {
-  //   switch (word) {
-  //     case 'Aluminum':
-  //       return 'image-aluminum';
-  //     case 'Steel':
-  //       return 'image-steel';
-  //     case 'Reformer Tube':
-  //       return 'image-reformer-tube';
-  //     case 'Lubricant':
-  //       return 'image-lubricant';
-  //     case 'EOR':
-  //       return 'image-eor';
-  //     case 'Paints':
-  //       return 'image-paints';
-  //     default:
-  //       return;
-  //   }
-  // };
-  
 
   return (
     <div className="w-full">
@@ -263,7 +265,7 @@ export const Home = () => {
                 {clickedImage === oilRecovery && (
                   <div className="invisible sm:visible border border-blue-800"></div>
                 )}
-                <div className="ml-1 -z-10">OilRecovery</div>
+                <div className="ml-1 -z-10">Oil&nbsp;Recovery</div>
               </div>
               {clickedImage === oilRecovery && (
                 <div className="border border-blue-800 sm:hidden" />
@@ -324,8 +326,14 @@ export const Home = () => {
       </div>
 
       {/* semi circle component */}
-      <section className="bg-white flex flex-col items-center justify-center h-[90vh] mt-8">
-        <div className="text-xl sm:text-3xl font-semibold relative 2xl:text-5xl w-full text-center">
+      <section className="flex flex-col items-center justify-center h-[90vh] mt-8 relative">
+        <div
+          className={`h-full w-full bg-black absolute transition-opacity duration-500 ${
+            overlay ? "opacity-60" : "opacity-0"
+          }`}
+        ></div>
+
+        <div className="text-xl sm:text-3xl font-semibold relative 2xl:text-5xl w-full text-center -z-10">
           <p>
             Patented Ultrasonic Waveguide Sensors:
             <img
@@ -335,235 +343,287 @@ export const Home = () => {
             <p style={{ textAlign: "center" }}>Xyma Analytics</p>
           </p>
         </div>
-        <div className="mt-3">
-          <div className="px-4 sm:px-0 sm:flex gap-2">
-            <div className="mb-2">
-              <Badge
-                text="Multi-Point Temperature "
-                color="#FFF6EA"
-                imageUrl={utmaps}
-                hoverImageUrl={utmap1}
-                hoverText="μTMapS & μSTMapS are IIoT-enabled temperature measurement temperature profiling sensors that captures continuos measurements at multiple points with asingle customized waveguide with multiple configurations in contrast to based thermocouples/RTDs or contactless IR guns"
-                hoverHeading="μTMapS & μSTMapS"
-              />
+        <div className="mt-3 px-4 sm:px-0 sm:flex gap-2 text-[#FE7D18]">
+          <div>
+            <div
+              className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
+              onMouseEnter={() => {
+                handleOverlayEnter();
+                handleUtmapsBadgeEnter();
+              }}
+              onMouseLeave={() => {
+                handleOverlayLeave();
+                handleUtmapsBadgeLeave();
+              }}
+            >
+              <div>
+                <img
+                  className="object-cover object-top rounded-full w-6 h-6"
+                  src={utmaps}
+                />
+              </div>
+              <div className="text-sm font-medium">
+                μTMapS: Multi-Point Temperature
+              </div>
             </div>
-            <div className="mb-2">
-              <Badge
-                text="Multi-Parameter Viscosity, Density and Temperature"
-                color="#FFF6EA"
-                imageUrl={utmaps}
-                hoverImageUrl={utmap2}
-                hoverText="PoRTS is an invasive/non-invasive based IIoT-enabled rheology and temperature mesurement sensor that continuously captures multiple parameters such as viscosity, density and temperature with a single waveguide unlike discrete measurement with thermocouple/RTDs or discrete measurements with sampling from viscometer and density meter."
-                hoverHeading="PoRTS"
-              />
+            {utmapsBadge && (
+              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] sm:w-[500px] z-10 text-gray-500 sm:flex">
+                <div className="bg-white rounded-t-xl sm:rounded-l-xl h-[150px] w-full sm:w-[40%] p-1">
+                  <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                    <img
+                      className="object-cover object-top rounded-xl w-[50%] sm:w-[75%] h-full"
+                      src={utmaps}
+                    />
+                  </div>
+                </div>
+                <div className="bg-white w-full sm:w-[60%] p-1 rounded-b-xl sm:rounded-r-xl">
+                  <div className="text-base font-bold text-black mb-1">
+                    μTMapS & μSTMapS
+                  </div>
+                  <div className="text-xs text-justify">
+                    μTMapS & μSTMapS are IIoT-enabled temperature measurement
+                    temperature profiling sensors that captures continuos
+                    measurements at multiple points with asingle customized
+                    waveguide with multiple configurations in contrast to based
+                    thermocouples/RTDs or contactless IR guns
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div>
+            <div
+              className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
+              onMouseEnter={() => {
+                handleOverlayEnter();
+                handlePortsBadgeEnter();
+              }}
+              onMouseLeave={() => {
+                handleOverlayLeave();
+                handlePortsBadgeLeave();
+              }}
+            >
+              <div>
+                <img
+                  className="object-cover object-top rounded-full w-6 h-6 bg-black"
+                  src={ports}
+                />
+              </div>
+              <div className="text-sm font-medium">
+                PoRTS: Multi-Parameter Viscosity, Density and Temperature
+              </div>
             </div>
-            <div>
-              <Badge
-                text="Contact/Non-contact based Level"
-                color="#FFF6EA"
-                imageUrl={utmaps}
-                hoverImageUrl={utmap3}
-                hoverText="Ztar is a contact/contactless IIoT-enabled level that captures continuous level across any hazardous environment with accuracy in contrast to radar-based level measurement sensors."
-                hoverHeading="Ztar"
-              />
+            {portsBadge && (
+              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] sm:w-[500px] z-10  text-gray-500 sm:flex">
+                <div className="bg-white rounded-t-xl sm:rounded-l-xl h-[150px] w-full sm:w-[40%] p-1">
+                  <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                    <img
+                      className="object-cover object-top rounded-xl w-[50%] sm:w-[75%] h-full"
+                      src={ports}
+                    />
+                  </div>
+                </div>
+                <div className="bg-white w-full sm:w-[60%] p-1 rounded-b-xl sm:rounded-r-xl">
+                  <div className="text-base font-bold text-black mb-1">
+                    PoRTS
+                  </div>
+                  <div className="text-xs text-justify">
+                    PoRTS is an invasive/non-invasive based IIoT-enabled
+                    rheology and temperature mesurement sensor that continuously
+                    captures multiple parameters such as viscosity, density and
+                    temperature with a single waveguide unlike discrete
+                    measurement with thermocouple/RTDs or discrete measurements
+                    with sampling from viscometer and density meter.
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            <div
+              className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
+              onMouseEnter={() => {
+                handleOverlayEnter();
+                handleZtarBadgeEnter();
+              }}
+              onMouseLeave={() => {
+                handleOverlayLeave();
+                handleZtarBadgeLeave();
+              }}
+            >
+              <div>
+                <img
+                  className="object-cover object-top rounded-full w-6 h-6 bg-black"
+                  src={ztar}
+                />
+              </div>
+              <div className="text-sm font-medium">
+                Ztar: Contact/Non-contact based Level
+              </div>
             </div>
+            {ztarBadge && (
+              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] sm:w-[350px] z-10 text-gray-500 sm:flex">
+                <div className="bg-white rounded-t-xl sm:rounded-l-xl h-[150px] w-full sm:w-[40%] p-1">
+                  <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                    <img
+                      className="object-cover object-top rounded-xl w-[50%] sm:w-[75%] h-full"
+                      src={ztar}
+                    />
+                  </div>
+                </div>
+                <div className="bg-white w-full sm:w-[60%] p-1 rounded-b-xl sm:rounded-r-xl">
+                  <div className="text-base font-bold text-black mb-1">
+                    Ztar
+                  </div>
+                  <div className="text-xs text-justify">
+                    Ztar is a contact/contactless IIoT-enabled level that
+                    captures continuous level across any hazardous environment
+                    with accuracy in contrast to radar-based level measurement
+                    sensors.
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
-        <div className="relative block w-[70%] h-[50%] sm:w-[45%] sm:h-[60%] mt-[40px] 2xl:w-[50%]">
+        <div className="relative block w-[90%] h-[45%] sm:w-[45%] sm:h-[65%] mt-[40px] 2xl:w-[50%]">
           <img
-            src={newbg}
-            style={{
-              width: "100%",
-              height: "100%",
-            }}
+            className="absolute w-full h-full -z-10"
+            src={newbgcropped}
             alt="Background Image"
           />
-          <div className="text-right">
-            <img
-              className="w-20 h-20"
-              src={sensor}
-              style={{
-                position: "absolute",
-                top: "75%",
-                left: "2%",
-                transform: "translate(-50%, -50%)",
-              }}
-              alt="Sensor Image"
-              onMouseEnter={() => {
-                setHoveredItem("sensor");
-              }}
-              onMouseLeave={() => {
-                setHoveredItem(null);
-              }}
-            />
+          <div className="absolute flex text-right top-[65%] -left-[1%] rounded-2xl cursor-pointer">
+            <div>
+              <img
+                className="w-12 h-12"
+                src={sensor}
+                alt="Sensor Image"
+                onMouseEnter={() => {
+                  setHoveredItem("sensor");
+                  handleOverlayEnter();
+                }}
+                onMouseLeave={() => {
+                  setHoveredItem(null);
+                  handleOverlayLeave();
+                }}
+              />
+            </div>
             {hoveredItem === "sensor" && (
-              <p
-                className="text-[10px] sm:text-base"
-                style={{
-                  position: "absolute",
-                  top: "68%",
-                  right: "102%",
-                  backgroundColor: "white",
-                  padding: "5px",
-                  width: "25%",
-                }}
-              >
-                Sensor life up to 50,000 hrs
-              </p>
+              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] sm:left-auto sm:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
+                Sensor&nbsp;Life&nbsp;up&nbsp;to 50,000 hrs
+              </div>
             )}
           </div>
-          <div className="text-right">
-            <img
-              className="w-20 h-20"
-              src={iot}
-              style={{
-                position: "absolute",
-                top: "40%",
-                left: "5%",
-                transform: "translate(-50%, -50%)",
-              }}
-              alt="Sensor"
-              onMouseEnter={() => setHoveredItem("iot")}
-              onMouseLeave={() => setHoveredItem(null)}
-            />
+          <div className="absolute flex text-right top-[30%] left-[4%] rounded-2xl cursor-pointer">
+            <div>
+              <img
+                className="w-12 h-12"
+                src={iot}
+                alt="Sensor"
+                onMouseEnter={() => {
+                  setHoveredItem("iot");
+                  handleOverlayEnter();
+                }}
+                onMouseLeave={() => {
+                  setHoveredItem(null);
+                  handleOverlayLeave();
+                }}
+              />
+            </div>
             {hoveredItem === "iot" && (
-              <p
-                className="text-[10px] sm:text-base"
-                style={{
-                  position: "absolute",
-                  top: "33%",
-                  right: "100%",
-                  backgroundColor: "white",
-                  padding: "5px",
-                }}
-              >
-                Multi - point Measurement
-              </p>
+              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] sm:left-auto sm:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
+                Multi - Point Measurement
+              </div>
             )}
           </div>
-          <div className="text-right">
-            <img
-              className="w-20 h-20"
-              src={grp}
-              style={{
-                position: "absolute",
-                top: "12%",
-                left: "20%",
-                transform: "translate(-50%, -50%)",
-              }}
-              alt="Sensor Image"
-              onMouseEnter={() => {
-                setHoveredItem("grp");
-              }}
-              onMouseLeave={() => {
-                setHoveredItem(null);
-              }}
-            />
+          <div className="absolute flex text-right top-[3%] left-[20%] rounded-2xl cursor-pointer">
+            <div>
+              <img
+                className="w-12 h-12"
+                src={grp}
+                alt="Sensor Image"
+                onMouseEnter={() => {
+                  setHoveredItem("grp");
+                  handleOverlayEnter();
+                }}
+                onMouseLeave={() => {
+                  setHoveredItem(null);
+                  handleOverlayLeave();
+                }}
+              />
+            </div>
             {hoveredItem === "grp" && (
-              <p
-                className="text-[10px] sm:text-base"
-                style={{
-                  position: "absolute",
-                  top: "6%",
-                  right: "85%",
-                  backgroundColor: "white",
-                  padding: "5px",
-                  width: "35%",
-                }}
-              >
-                Energy Management System-IoT
-              </p>
+              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] sm:left-auto sm:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
+                Energy&nbsp;Management System-IoT
+              </div>
             )}
           </div>
-          <div>
-            <img
-              className="w-20 h-20"
-              src={zero}
-              style={{
-                position: "absolute",
-                top: "12%",
-                left: "75%",
-                transform: "translate(-50%, -50%)",
-              }}
-              alt="Sensor Image"
-              onMouseEnter={() => setHoveredItem("zero")}
-              onMouseLeave={() => setHoveredItem(null)}
-            />
+          <div className="absolute flex text-right top-[3%] right-[20%] rounded-2xl cursor-pointer">
+            <div>
+              <img
+                className="w-12 h-12"
+                src={zero}
+                alt="Sensor Image"
+                onMouseEnter={() => {
+                  setHoveredItem("zero");
+                  handleOverlayEnter();
+                }}
+                onMouseLeave={() => {
+                  setHoveredItem(null);
+                  handleOverlayLeave();
+                }}
+              />
+            </div>
             {hoveredItem === "zero" && (
-              <p
-                className="text-[10px] sm:text-base"
-                style={{
-                  position: "absolute",
-                  top: "5%",
-                  right: "-5%",
-                  backgroundColor: "white",
-                  padding: "5px",
-                  width: "25%",
-                }}
-              >
-                Zero Manual Intervention
-              </p>
+              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] sm:right-auto sm:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
+                Zero&nbsp;Manual Intervention
+              </div>
             )}
           </div>
-          <div>
-            <img
-              className="w-20 h-20"
-              src={ai}
-              style={{
-                position: "absolute",
-                top: "40%",
-                left: "89%",
-                transform: "translate(-50%, -50%)",
-              }}
-              alt="Sensor Image"
-              onMouseEnter={() => setHoveredItem("ai")}
-              onMouseLeave={() => setHoveredItem(null)}
-            />
+          <div className="absolute flex text-right top-[30%] right-[4%] rounded-2xl cursor-pointer">
+            <div>
+              <img
+                className="w-12 h-12"
+                src={ai}
+                alt="Sensor Image"
+                onMouseEnter={() => {
+                  setHoveredItem("ai");
+                  handleOverlayEnter();
+                }}
+                onMouseLeave={() => {
+                  setHoveredItem(null);
+                  handleOverlayLeave();
+                }}
+              />
+            </div>
             {hoveredItem === "ai" && (
-              <p
-                className="text-[10px] sm:text-base"
-                style={{
-                  position: "absolute",
-                  top: "33%",
-                  right: "-19%",
-                  backgroundColor: "white",
-                  padding: "5px",
-                  width: "25%",
-                }}
-              >
-                AI Enable Corrective Actions
-              </p>
+              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] sm:right-auto sm:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
+                AI&nbsp;Enable&nbsp;Corrective Actions
+              </div>
             )}
           </div>
-          <div>
-            <img
-              className="w-20 h-20"
-              src={tool}
-              style={{
-                position: "absolute",
-                top: "75%",
-                left: "92%",
-                transform: "translate(-50%, -50%)",
-              }}
-              alt="Sensor Image"
-              onMouseEnter={() => setHoveredItem("tool")}
-              onMouseLeave={() => setHoveredItem(null)}
-            />
-            {hoveredItem === "tool" && (
-              <p
-                className="text-[10px] sm:text-base"
-                style={{
-                  position: "absolute",
-                  top: "67.5%",
-                  right: "-8%",
-                  backgroundColor: "white",
-                  padding: "5px",
-                  width: "10%",
+          <div className="absolute flex text-right top-[65%] -right-[1%] rounded-2xl cursor-pointer">
+            <div>
+              <img
+                className="w-12 h-12"
+                src={tool}
+                alt="Sensor Image"
+                onMouseEnter={() => {
+                  setHoveredItem("tool");
+                  handleOverlayEnter();
                 }}
-              >
+                onMouseLeave={() => {
+                  setHoveredItem(null);
+                  handleOverlayLeave();
+                }}
+              />
+            </div>
+            {hoveredItem === "tool" && (
+              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] sm:right-auto sm:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
                 Retrofit Benifits
-              </p>
+              </div>
             )}
           </div>
         </div>
