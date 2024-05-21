@@ -64,14 +64,15 @@
   margin-left: 90px;
 } */
 
-.product-image {
+/*.product-image {
   
   width: 100%; 
   height: auto;
   max-width: 260px; 
   max-height: 380px; 
   margin: auto;
-}
+  
+}*/
 
 .position-relative {
   position: relative;

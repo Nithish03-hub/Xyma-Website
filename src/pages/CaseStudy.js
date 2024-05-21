@@ -106,7 +106,7 @@ const CaseStudy = () => {
                 </ul>
           </div>
 
-          <img src={alum} style={{ width: '60%', maxWidth: '100%', height: 'auto', marginLeft: '5%',marginTop:'2%' }} />
+          <img src={alum} className="w-3/5 max-w-full h-auto ml-10 md:ml-10 mt-4" alt="Aluminum Image" />
      
           <div className='mt-6'>
              <span className='text-xl font-semibold ml-12' > 5.Environmental Implications:</span>
