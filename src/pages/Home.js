@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import aluminum from '../Assets/aluminum.png';
 import steel from '../Assets/steel.png';
 import reformerTubes from '../Assets/reformerTubes.png'
@@ -36,6 +36,8 @@ import grp from '../Assets/Group.png';
 import zero from '../Assets/zero.png';
 import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Home = () => {
 
@@ -140,8 +142,12 @@ export const Home = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init({duration: 1500});
+  },[]);
+
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <div className="h-[10vh]">{/* space for navbar */}</div>
       {/* cover image */}
       <div className="relative h-[60vh] sm:h-[90vh] w-full shadow-white shadow-2xl">
@@ -151,10 +157,13 @@ export const Home = () => {
           className="absolute w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl sm:text-6xl text-white font-semibold ml-12 sm:ml-24 gap-2 2xl:text-8xl">
-          <div>Prevent</div>
-          <div>Unplanned</div>
-          <div>Downtime</div>
-          <div className="text-xs sm:text-sm mt-2 2xl:text-base">
+          <div data-aos="slide-right">Prevent</div>
+          <div data-aos="slide-right">Unplanned</div>
+          <div data-aos="slide-right">Downtime</div>
+          <div
+            className="text-xs sm:text-sm mt-2 2xl:text-base"
+            data-aos="slide-right"
+          >
             "The Disruptive Ultrasonic Waveguide Technology"
           </div>
         </div>
@@ -163,10 +172,12 @@ export const Home = () => {
       <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px]">
         XYMA ANALYTICS
       </div>
-
       {/* text with underline */}
       <div className="flex justify-center items-center mt-4 sm:mt-20 2xl:mt-28 h-[10vh]">
-        <div className="text-xl sm:text-3xl 2xl:text-5xl font-semibold text-center">
+        <div
+          className="text-xl sm:text-3xl 2xl:text-5xl font-semibold text-center"
+          data-aos="zoom-in-up"
+        >
           Impact of discrete inaccurate Process parameter measurements
           <img
             className="w-[200px] sm:w-auto 2xl:w-[800px] h-2 ml-[30%] sm:ml-96 2xl:ml-[600px]"
@@ -174,6 +185,7 @@ export const Home = () => {
           ></img>
         </div>
       </div>
+      \
       <div className="w-full h-[80vh]">
         {/* elements cards */}
         <div className="h-[80vh] sm:h-[60vh] 2xl:h-[70vh] sm:flex pt-8 sm:px-36 2xl:px-16">
@@ -182,7 +194,7 @@ export const Home = () => {
             className="w-full overflow-auto sm:p-4 sm:w-[15%] h-[8%] sm:h-full text-gray-500 2xl:text-3xl flex items-center sm:items-start sm:justify-start sm:flex-col"
             style={{ scrollbarWidth: "none" }}
           >
-            <div>
+            <div data-aos="zoom-in-up">
               <div
                 className={`sm:w-full cursor-pointer p-1 mb-1 flex ${
                   clickedImage === aluminum && "text-[#013872] font-medium"
@@ -200,7 +212,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div>
+            <div data-aos="zoom-in-up">
               <div
                 className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === steel && "text-[#013872] font-medium"
@@ -218,7 +230,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div>
+            <div data-aos="zoom-in-up">
               <div
                 className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === reformerTubes && "text-[#013872] font-medium"
@@ -236,7 +248,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div>
+            <div data-aos="zoom-in-up">
               <div
                 className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === lubricants && "text-[#013872] font-medium"
@@ -254,7 +266,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div>
+            <div data-aos="zoom-in-up">
               <div
                 className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === oilRecovery && "text-[#013872] font-medium"
@@ -272,7 +284,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div>
+            <div data-aos="zoom-in-up">
               <div
                 className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === paints && "text-[#013872] font-medium"
@@ -291,7 +303,10 @@ export const Home = () => {
             </div>
           </div>
           {/* element images */}
-          <div className="w-full sm:w-[45%] 2xl:w-[50%] h-[61%] sm:h-full">
+          <div
+            className="w-full sm:w-[45%] 2xl:w-[50%] h-[61%] sm:h-full"
+            data-aos="slide-right"
+          >
             {clickedImage && (
               <div className="flex items-center justify-center h-full">
                 <img
@@ -306,7 +321,11 @@ export const Home = () => {
             </div>
           </div>
           {/* elements description */}
-          <div className="w-full mt-4 sm:w-[40%] 2xl:w-[35%] h-[31%] sm:h-full flex items-center justify-center p-4">
+          <div
+            className="w-full mt-4 sm:w-[40%] 2xl:w-[35%] h-[31%] sm:h-full flex items-center justify-center p-4"
+            // data-aos={window.innerWidth <= 640 ? "slide-up" : "slide-left"}
+            data-aos="slide-left"
+          >
             {clickedImage && (
               <div
                 className="text-2xl sm:text-3xl 2xl:text-5xl font-semibold text-center"
@@ -324,16 +343,18 @@ export const Home = () => {
           </div>
         </div>
       </div>
-
       {/* semi circle component */}
       <section className="flex flex-col items-center justify-center h-[90vh] mt-8 relative">
         <div
           className={`h-full w-full bg-black absolute transition-opacity duration-500 ${
-            overlay ? "opacity-60" : "opacity-0"
+            overlay ? "opacity-40" : "opacity-0"
           }`}
         ></div>
 
-        <div className="text-xl sm:text-3xl font-semibold relative 2xl:text-5xl w-full text-center -z-10">
+        <div
+          className="text-xl sm:text-3xl font-semibold relative 2xl:text-5xl w-full text-center -z-10"
+          data-aos="zoom-in-up"
+        >
           <p>
             Patented Ultrasonic Waveguide Sensors:
             <img
@@ -347,6 +368,7 @@ export const Home = () => {
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
+              data-aos="slide-right"
               onMouseEnter={() => {
                 handleOverlayEnter();
                 handleUtmapsBadgeEnter();
@@ -395,6 +417,7 @@ export const Home = () => {
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
+              data-aos="zoom-in-up"
               onMouseEnter={() => {
                 handleOverlayEnter();
                 handlePortsBadgeEnter();
@@ -443,6 +466,7 @@ export const Home = () => {
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
+              data-aos="slide-left"
               onMouseEnter={() => {
                 handleOverlayEnter();
                 handleZtarBadgeEnter();
@@ -491,6 +515,7 @@ export const Home = () => {
         <div className="relative block w-[90%] h-[45%] sm:w-[45%] sm:h-[65%] mt-[40px] 2xl:w-[50%]">
           <img
             className="absolute w-full h-full -z-10"
+            data-aos="zoom-in-up"
             src={newbgcropped}
             alt="Background Image"
           />
@@ -498,6 +523,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
+                data-aos="zoom-in-right"
                 src={sensor}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -520,6 +546,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
+                data-aos="zoom-in-right"
                 src={iot}
                 alt="Sensor"
                 onMouseEnter={() => {
@@ -542,6 +569,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
+                data-aos="zoom-in-right"
                 src={grp}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -564,6 +592,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
+                data-aos="zoom-in-left"
                 src={zero}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -586,6 +615,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
+                data-aos="zoom-in-left"
                 src={ai}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -608,6 +638,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
+                data-aos="zoom-in-left"
                 src={tool}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -628,7 +659,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
       {/* grid card section */}
       <section>
         <div
@@ -637,7 +667,10 @@ export const Home = () => {
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4">
+          <div
+            className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4"
+            data-aos="zoom-in-up"
+          >
             <p className="text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-4xl font-semibold text-center">
               Making a difference with the approach
               <img
@@ -651,6 +684,7 @@ export const Home = () => {
             <div className="w-full sm:w-[35%] p-4">
               <div
                 className="h-full w-full rounded-lg p-4"
+                data-aos="slide-right"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -679,7 +713,10 @@ export const Home = () => {
               </div>
             </div>
             <div className="w-full sm:w-[65%] flex flex-col sm:grid grid-cols-2 p-4 gap-4">
-              <div className="rounded-lg bg-white px-4 p-4 sm:p-0">
+              <div
+                className="rounded-lg bg-white px-4 p-4 sm:p-0"
+                data-aos="zoom-in-up"
+              >
                 <div className="hidden sm:block h-1/4"></div>
                 <div className="h-1/2 sm:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
@@ -699,7 +736,10 @@ export const Home = () => {
                 </div>
               </div>
 
-              <div className="rounded-lg bg-white px-4 p-4 sm:p-0">
+              <div
+                className="rounded-lg bg-white px-4 p-4 sm:p-0"
+                data-aos="slide-left"
+              >
                 <div className="hidden sm:block h-1/4"></div>
                 <div className="h-1/2 sm:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
@@ -720,7 +760,10 @@ export const Home = () => {
                 </div>
               </div>
 
-              <div className="rounded-lg bg-white px-4 p-4 sm:p-0">
+              <div
+                className="rounded-lg bg-white px-4 p-4 sm:p-0"
+                data-aos="zoom-in-up"
+              >
                 <div className="hidden sm:block h-1/4"></div>
                 <div className="h-1/2 sm:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
@@ -736,7 +779,10 @@ export const Home = () => {
                 </div>
               </div>
 
-              <div className="rounded-lg bg-white px-4 p-4 sm:p-0">
+              <div
+                className="rounded-lg bg-white px-4 p-4 sm:p-0"
+                data-aos="slide-left"
+              >
                 <div className="hidden sm:block h-1/4"></div>
                 <div className="h-1/2 sm:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
@@ -754,7 +800,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
       <section>
         <div
           className="h-12 w-full"
@@ -762,7 +807,7 @@ export const Home = () => {
             background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
           }}
         >
-          <div className="sliding-text-container ">
+          <div className="sliding-text-container " data-aos="slide-left">
             <div className="flex">
               <div className="mt-2.5 sliding-text text-white gap-1">
                 <div>Continuous Wear Monitoring &#10039;</div>
@@ -791,10 +836,16 @@ export const Home = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center mt-20">
-          <div className="text-2xl font-semibold text-center">
+          <div
+            className="text-2xl font-semibold text-center"
+            data-aos="zoom-in-up"
+          >
             Xyma Analytics' Clients
           </div>
-          <div className="flex justify-center items-center mt-3 text-center text-gray-600 w-full px-4">
+          <div
+            className="flex justify-center items-center mt-3 text-center text-gray-600 w-full px-4"
+            data-aos="zoom-in-up"
+          >
             Committed to client satisfaction with constant support at all
             stages, our aim is to aid Industry 4.0 transformation while reducing
             environmental impact, increasing cost savings, and enhancing process
@@ -807,26 +858,71 @@ export const Home = () => {
             class="max-w-full overflow-x-auto flex justify-center items-center "
             style={{ scrollbarWidth: "none" }}
           >
-            <img src={sg} style={{ maxWidth: "200px", height: "auto" }} />
-            <img src={tata} style={{ maxWidth: "200px", height: "auto" }} />
-            <img src={lam} style={{ maxWidth: "200px", height: "auto" }} />
-            <img src={ind} style={{ maxWidth: "200px", height: "auto" }} />
-            <img src={bharat} style={{ maxWidth: "200px", height: "auto" }} />
-            <img src={ved} style={{ maxWidth: "200px", height: "auto" }} />
+            <img
+              src={sg}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="slide-right"
+            />
+            <img
+              src={tata}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="slide-right"
+            />
+            <img
+              src={lam}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="zoom-in-up"
+            />
+            <img
+              src={ind}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="zoom-in-up"
+            />
+            <img
+              src={bharat}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="slide-left"
+            />
+            <img
+              src={ved}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="slide-left"
+            />
           </div>
           <div
             class="max-w-full overflow-x-auto mt-2 flex justify-center items-center "
             style={{ scrollbarWidth: "none" }}
           >
-            <img src={drdo} style={{ maxWidth: "200px", height: "auto" }} />
-            <img src={cumi} style={{ maxWidth: "200px", height: "auto" }} />
-            <img src={epri} style={{ maxWidth: "200px", height: "auto" }} />
-            <img src={skf} style={{ maxWidth: "200px", height: "auto" }} />
+            <img
+              src={drdo}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="slide-right"
+            />
+            <img
+              src={cumi}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="slide-right"
+            />
+            <img
+              src={epri}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="zoom-in-up"
+            />
+            <img
+              src={skf}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="zoom-in-up"
+            />
             <img
               src={schneider}
               style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="slide-left"
             />
-            <img src={reliance} style={{ maxWidth: "200px", height: "auto" }} />
+            <img
+              src={reliance}
+              style={{ maxWidth: "200px", height: "auto" }}
+              data-aos="slide-left"
+            />
           </div>
         </div>
       </section>
