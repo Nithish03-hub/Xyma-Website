@@ -65,7 +65,7 @@ const Career = () => {
         <img
           src={newframe}
           alt="Frame Image"
-          className="w-full h-[80vh] object-cover object-top"
+          className="w-full h-[60vh] sm:h-[90vh] object-cover"
         />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center">
           <div className="text-white text-4xl sm:text-5xl font-semibold sm:font-bold ">
@@ -91,7 +91,7 @@ const Career = () => {
       </section>
 
       {/* bottom text */}
-      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[25px] sm:-mt-[50px] 2xl:-mt-[65px] mb-[50px] sm:mb-[70px]">
+      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[25px] sm:-mt-[50px] 2xl:-mt-[65px] mb-[30px] sm:mb-[70px]">
         WORK AT XYMA
       </div>
 

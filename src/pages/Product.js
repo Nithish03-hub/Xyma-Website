@@ -69,7 +69,7 @@ const Product = () => {
             className={`${index === currentIndex ? "block" : "hidden"} w-full`}
           >
             <img
-              className="w-full h-[80vh] object-cover object-right-top"
+              className="w-full h-[60vh] sm:h-[90vh] object-cover object-right-top"
               src={item.src}
               alt={`Slide ${index + 1}`}
               //style={{ ...imageStyle }}

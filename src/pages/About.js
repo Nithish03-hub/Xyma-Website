@@ -17,18 +17,7 @@ import c6 from '../Assets/Framec6.png';
 import ceo2 from '../Assets/Frameceo2.png';
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
-import logo from '../Assets/logo.png';
-import twitter from '../Assets/twitter.png';
-import linkedin from '../Assets/linkedin.png';
-import share from '../Assets/share.png';
-import arrow from '../Assets/arrow.png';
-import vector from '../Assets/Vector.png';
-import line from '../Assets/line.png';
-
-
-
- 
-
+import Xarrow from "react-xarrows";
 
 const About = () => {
   
@@ -41,287 +30,261 @@ const About = () => {
   
   return (
     <div>
-      <section>
-        <div style={{ position: "relative", textAlign: "center" }}>
-          <img style={{ marginTop: "4%" }} src={iit} alt="Frame Image" />
-          <div
-            style={{
-              position: "absolute",
-              top: "35%",
-              left: "40%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "left",
-            }}
-          >
-            <h1 className="text-white text-6xl font-bold mt-24">2019</h1>
-            <p
-              className="text-white mt-5 text-3xl font-semibold"
-              style={{ width: "56%", textAlign: "left" }}
-            >
-              Founded through the CNDE, IIT Madras, and incubated at IIT Madras
-              Incubation Cell
-            </p>
-          </div>
-          <div
-            className="text-white text-5xl font-semibold"
-            style={{
-              position: "absolute",
-              top: "15%",
-              left: "85%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "left",
-            }}
-          >
-            20+
-          </div>
-          <div
-            className="text-white text-sm font-semibold"
-            style={{
-              position: "absolute",
-              top: "25%",
-              left: "85%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "left",
-            }}
-          >
-            Years of R&D
-          </div>
-          <div
-            className="text-white text-5xl font-semibold"
-            style={{
-              position: "absolute",
-              top: "35%",
-              left: "85%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "left",
-            }}
-          >
-            18+
-          </div>
-          <div
-            className="text-white text-sm font-semibold"
-            style={{
-              position: "absolute",
-              top: "45%",
-              left: "85%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "left",
-            }}
-          >
-            Intellectual
-            <br /> Properties
-          </div>
-          <div
-            className="text-white text-5xl font-semibold"
-            style={{
-              position: "absolute",
-              top: "55%",
-              left: "85%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "left",
-            }}
-          >
-            35+
-          </div>
-          <div
-            className="text-white text-sm font-semibold"
-            style={{
-              position: "absolute",
-              top: "65%",
-              left: "85%",
-              transform: "translate(-50%, -50%)",
-              textAlign: "left",
-            }}
-          >
-            Publications
-          </div>
-        </div>
-      </section>
-
-      {/*<div className="leading-5 text-grey text-7xl font-semibold text-center text-gray-300">ABOUT US</div>*/}
-
-      <section>
-        <center>
-          <div className="text-4xl font-semibold " style={{ marginTop: "5%" }}>
-            About XYMA
-            <img
-              style={{ width: "12%", marginLeft: "20px" }}
-              src={second}
-            ></img>
-          </div>
-          <div
-            className="text-[#60646C] "
-            style={{ width: "85%", marginTop: "14px" }}
-          >
-            "XYMA Analytics is a deep-tech company started from IIT Madras,
-            serving 15+ MNCs globally now to provide them with accurate
-            multi-point temperature and multi-parameter measurements through
-            patented ultrasonic waveguide technology."
-          </div>
-        </center>
-
-        <div className="grid grid-cols-2">
-          <div
-            className="mt-20 ml-14 border border-gray-300 p-6"
-            style={{ borderRadius: "14px", width: "70%", height: "75%" }}
-          >
-            <button className="bg-[#FEE1B7]  rounded-full w-36 h-10 md:w-16 md:h-8">
-              2020
-            </button>
-            <div>
-              <p
-                className="mt-4  font-semibold text-lg"
-                style={{ width: "75%" }}
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
-              </p>
+      <div className=" relative mt-[10vh] shadow-white shadow-2xl">
+        <img
+          className="h-[65vh] sm:h-[90vh] w-full object-cover"
+          src={iit}
+          alt="Frame Image"
+        />
+        <div className="absolute h-full w-full inset-0 p-8 sm:p-16 text-white">
+          <div className="w-full h-full sm:flex">
+            <div className="w-full sm:w-[90%] h-[70%] sm:h-full flex flex-col gap-4 justify-center text-center sm:text-left">
+              <div className="text-4xl sm:text-6xl font-semibold sm:font-bold">
+                2019
+              </div>
+              <div className="text-xs sm:text-4xl">
+                Founded through the CNDE, IIT <br /> Madras, and incubated at
+                IIT Madras <br /> Incubation Cell
+              </div>
             </div>
-            <div>
-              <p
-                className="mt-4  text-[#60646C] text-sm "
-                style={{ width: "100%" }}
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the make a type specimen book.
-              </p>
-            </div>
-            <button
-              className="mt-4 text-white text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
-              style={{
-                background:
-                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-              }}
-            >
-              View More
-            </button>
-          </div>
-
-          <div>
-            <div>
-              <p
-                className="text-[#1C2024] font-semibold"
-                style={{ width: "58%", marginTop: "22%", marginLeft: "22%" }}
-              >
-                Lorem Ipsum has been the industry's standard dummy text when an
-                unknown printer took a galley of type and scrambled it to make a
-                type specimen book.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <p
-                className="text-[#1C2024] font-semibold"
-                style={{ width: "58%", marginTop: "25%", marginLeft: "10%" }}
-              >
-                Lorem Ipsum has been the industry's standard dummy text when an
-                unknown printer took a galley of type and scrambled it to make a
-                type specimen book.
-              </p>
-            </div>
-          </div>
-
-          <div
-            className=" ml-14 border border-gray-300 p-6"
-            style={{
-              borderRadius: "14px",
-              width: "70%",
-              height: "75%",
-              marginLeft: "20%",
-              marginTop: "10%",
-            }}
-          >
-            <button className="bg-[#FEE1B7]  rounded-full w-36 h-10 md:w-16 md:h-8">
-              2020
-            </button>
-            <div>
-              <p
-                className="mt-4  font-semibold text-lg"
-                style={{ width: "75%" }}
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
-              </p>
-            </div>
-            <div>
-              <p
-                className="mt-4  text-[#60646C] text-sm "
-                style={{ width: "100%" }}
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the make a type specimen book.
-              </p>
-            </div>
-            <button
-              className="mt-4 text-white text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
-              style={{
-                background:
-                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-              }}
-            >
-              View More
-            </button>
-          </div>
-          <div
-            className=" ml-14 border border-gray-300 p-6"
-            style={{
-              borderRadius: "14px",
-              width: "70%",
-              height: "75%",
-              marginTop: "10%",
-            }}
-          >
-            <button className="bg-[#FEE1B7]  rounded-full w-36 h-10 md:w-16 md:h-8">
-              2020
-            </button>
-            <div>
-              <p
-                className="mt-4  font-semibold text-lg"
-                style={{ width: "75%" }}
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
-              </p>
-            </div>
-            <div>
-              <p
-                className="mt-4  text-[#60646C] text-sm "
-                style={{ width: "100%" }}
-              >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the make a type specimen book.
-              </p>
-            </div>
-            <button
-              className="mt-4 text-white text-sm rounded-full w-36 h-10 md:w-24 md:h-9"
-              style={{
-                background:
-                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-              }}
-            >
-              View More
-            </button>
-          </div>
-
-          <div>
-            <div>
-              <p
-                className="text-[#1C2024] font-semibold"
-                style={{ width: "58%", marginTop: "22%", marginLeft: "22%" }}
-              >
-                Lorem Ipsum has been the industry's standard dummy text when an
-                unknown printer took a galley of type and scrambled it to make a
-                type specimen book.
-              </p>
+            <div className="w-full sm:w-[10%] h-[30%] sm:h-full flex sm:flex-col justify-evenly">
+              <div>
+                <div className="text-4xl sm:text-6xl font-bold mb-2">20+</div>
+                <div className="text-xs sm:text-sm">Years of R&D</div>
+              </div>
+              <div>
+                <div className="text-4xl sm:text-6xl font-bold mb-2">18+</div>
+                <div className="text-xs sm:text-sm">
+                  Intellectual
+                  <br />
+                  Properties
+                </div>
+              </div>
+              <div>
+                <div className="text-4xl sm:text-6xl font-bold mb-2">35+</div>
+                <div className="text-xs sm:text-sm">Publications</div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      {/* bottom text */}
+      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px] mb-[20px] sm:mb-[70px]">
+        ABOUT US
+      </div>
+
+      <div className="mt-10 mx-[5%]">
+        <div className="text-center flex justify-center">
+          <div className="text-3xl font-semibold flex flex-col w-[200px]">
+            <div>About XYMA</div>
+            <img className="object-cover" src={second} />
+          </div>
+        </div>
+        <div className="text-[#60646C] text-center mt-2">
+          "XYMA Analytics is a deep-tech company started from IIT Madras,
+          serving 15+ MNCs globally now to provide them with accurate
+          multi-point temperature and multi-parameter measurements through
+          patented ultrasonic waveguide technology."
+        </div>
+      </div>
+
+      {/* arrow box */}
+      <div className="sm:h-[120vh] mt-8 mx-[5%]">
+        <Xarrow
+          start="box1"
+          end="box2"
+          dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+          color="gray"
+          strokeWidth={1}
+          headSize={10}
+          curveness={1.2}
+          showTail={true}
+          tailShape="circle"
+        />
+        <Xarrow
+          start="box3"
+          end="box4"
+          dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+          color="gray"
+          strokeWidth={1}
+          headSize={10}
+          curveness={1.2}
+          showTail={true}
+          tailShape="circle"
+        />
+        <Xarrow
+          start="box5"
+          end="box6"
+          startAnchor="bottom"
+          endAnchor="top"
+          dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+          color="gray"
+          strokeWidth={1}
+          headSize={10}
+          curveness={1.2}
+          showTail={true}
+          tailShape="circle"
+        />
+        <Xarrow
+          start="box7"
+          end="box8"
+          startAnchor="bottom"
+          endAnchor="top"
+          dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+          color="gray"
+          strokeWidth={1}
+          headSize={10}
+          curveness={1.2}
+          showTail={true}
+          tailShape="circle"
+        />
+        <div className="sm:h-1/3 sm:flex justify-between">
+          {/* box 1 */}
+          <div
+            className="relative border border-[#CDCED6] w-full sm:w-[35%] p-4 rounded-2xl mb-4 sm:mb-0"
+            id="box1"
+          >
+            <div className="w-full h-full">
+              <div className="sm:h-[20%] flex items-center mb-2 sm:mb-0">
+                <span className="rounded-full px-2 py-1 text-xs bg-[#FEE1B7] font-medium">
+                  2020
+                </span>
+              </div>
+              <div className="sm:h-[30%] font-semibold mb-2 sm:mb-0">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+              </div>
+              <div className="sm:h-[30%] text-xs text-[#60646C] mb-2 sm:mb-0">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the make a type specimen book.
+              </div>
+              <div className="sm:h-[20%] flex items-center">
+                <span
+                  className="text-xs rounded-full p-2 text-white"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                >
+                  View More
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* empty div for arrow - small screen */}
+          <div
+            className="absolute -mt-10 border border-black w-4 right-20 sm:hidden"
+            id="box5"
+          />
+
+          {/* text 1 */}
+          <div className="relative w-[60%] sm:w-[30%] text-sm font-medium flex items-center text-left mb-4 sm:mb-0">
+            Lorem Ipsum has been the industry's standard dummy text when an
+            unknown printer took a galley of type and scrambled it to make a
+            type specimen book.
+          </div>
+
+          {/* empty div for arrow - small screen */}
+          <div
+            className="absolute border border-black w-4 right-40 mt-6 sm:hidden"
+            id="box6"
+          />
+        </div>
+        <div className="sm:h-1/3 flex flex-col-reverse sm:flex-row justify-between">
+          {/* text 2 */}
+          <div className="w-[60%] sm:w-[30%] text-sm font-medium flex items-center text-left mb-4 sm:mb-0">
+            Lorem Ipsum has been the industry's standard dummy text when an
+            unknown printer took a galley of type and scrambled it to make a
+            type specimen book.
+          </div>
+          {/* box 2 */}
+          <div className="relative border border-[#CDCED6] w-full sm:w-[35%] rounded-2xl mb-4 sm:mb-0 py-4">
+            <div className="w-full h-full">
+              <div className="sm:h-[20%] flex items-center px-4 mb-2 sm:mb-0">
+                <span className="rounded-full px-2 py-1 text-xs bg-[#FEE1B7] font-medium">
+                  2020
+                </span>
+              </div>
+              <div className="sm:h-[30%] font-semibold px-4 mb-2 sm:mb-0">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+                {/* empty div for arrow */}
+                <div className="-ml-4 mt-2" id="box2"></div>
+              </div>
+              {/* empty div for arrow */}
+              <div id="box3"></div>
+              <div className="sm:h-[30%] text-xs text-[#60646C] px-4 mb-2 sm:mb-0">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the make a type specimen book.
+              </div>
+              <div className="sm:h-[20%] flex items-center px-4 mb-2 sm:mb-0">
+                <span
+                  className="text-xs rounded-full p-2 text-white"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                >
+                  View&nbsp;More
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* empty div for arrow - small screen */}
+          <div
+            className="absolute border border-black w-4 right-40 sm:hidden"
+            id="box8"
+          />
+        </div>
+        {/* empty div for arrow - small screen */}
+        <div
+          className="absolute border border-black w-4 right-20 -mt-32 sm:hidden"
+          id="box7"
+        />
+        <div className="sm:h-1/3 sm:flex justify-between">
+          {/* box 3 */}
+          <div
+            className="border border-[#CDCED6] w-full sm:w-[35%] p-4 rounded-2xl mb-4 sm:mb-0"
+            id="box4"
+          >
+            <div className="w-full h-full">
+              <div className="sm:h-[20%] flex items-center mb-2 sm:mb-0">
+                <span className="rounded-full px-2 py-1 text-xs bg-[#FEE1B7] font-medium">
+                  2020
+                </span>
+              </div>
+              <div className="sm:h-[30%] font-semibold mb-2 sm:mb-0">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+              </div>
+              <div className="sm:h-[30%] text-xs text-[#60646C] mb-2 sm:mb-0">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the make a type specimen book.
+              </div>
+              <div className="sm:h-[20%] flex items-center mb-2 sm:mb-0">
+                <span
+                  className="text-xs rounded-full p-2 text-white"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                >
+                  View More
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* text 3 */}
+          <div className="w-full sm:w-[30%] text-sm font-medium flex items-center text-left mb-4 sm:mb-0">
+            Lorem Ipsum has been the industry's standard dummy text when an
+            unknown printer took a galley of type and scrambled it to make a
+            type specimen book.
+          </div>
+        </div>
+      </div>
 
       <section>
         <center>

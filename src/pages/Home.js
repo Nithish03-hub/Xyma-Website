@@ -144,11 +144,11 @@ export const Home = () => {
     <div className="w-full">
       <div className="h-[10vh]">{/* space for navbar */}</div>
       {/* cover image */}
-      <div className="relative h-[80vh] w-full shadow-white shadow-2xl">
+      <div className="relative h-[60vh] sm:h-[90vh] w-full shadow-white shadow-2xl">
         <img
           src={newpage}
           alt="cover image"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl sm:text-6xl text-white font-semibold ml-12 sm:ml-24 gap-2 2xl:text-8xl">
           <div>Prevent</div>

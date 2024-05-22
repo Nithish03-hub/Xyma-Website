@@ -117,7 +117,7 @@ const Media = () => {
           <img
             src={media}
             alt="media"
-            className="w-full h-[90vh] object-cover sm:object-fill "
+            className="w-full h-[60vh] sm:h-[90vh] object-cover sm:object-fill "
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
             <div className="text-white text-3xl sm:text-5xl font-semibold sm:font-bold ">
