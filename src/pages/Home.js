@@ -38,6 +38,7 @@ import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import stephen from "../Assets/stephen.jpg";
 
 export const Home = () => {
 
@@ -176,7 +177,7 @@ export const Home = () => {
       <div className="flex justify-center items-center mt-4 sm:mt-20 2xl:mt-28 h-[10vh]">
         <div
           className="text-xl sm:text-3xl 2xl:text-5xl font-semibold text-center"
-          data-aos="zoom-in-up"
+          //data-aos="zoom-in-up"
         >
           Impact of discrete inaccurate Process parameter measurements
           <img
@@ -185,7 +186,7 @@ export const Home = () => {
           ></img>
         </div>
       </div>
-      \
+
       <div className="w-full h-[80vh]">
         {/* elements cards */}
         <div className="h-[80vh] sm:h-[60vh] 2xl:h-[70vh] sm:flex pt-8 sm:px-36 2xl:px-16">
@@ -353,7 +354,7 @@ export const Home = () => {
 
         <div
           className="text-xl sm:text-3xl font-semibold relative 2xl:text-5xl w-full text-center -z-10"
-          data-aos="zoom-in-up"
+          //data-aos="zoom-in-up"
         >
           <p>
             Patented Ultrasonic Waveguide Sensors:
@@ -368,7 +369,7 @@ export const Home = () => {
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
-              data-aos="slide-right"
+              data-aos="flip-right"
               onMouseEnter={() => {
                 handleOverlayEnter();
                 handleUtmapsBadgeEnter();
@@ -417,7 +418,7 @@ export const Home = () => {
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
-              data-aos="zoom-in-up"
+              data-aos="flip-right"
               onMouseEnter={() => {
                 handleOverlayEnter();
                 handlePortsBadgeEnter();
@@ -466,7 +467,7 @@ export const Home = () => {
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
-              data-aos="slide-left"
+              data-aos="flip-right"
               onMouseEnter={() => {
                 handleOverlayEnter();
                 handleZtarBadgeEnter();
@@ -523,7 +524,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
-                data-aos="zoom-in-right"
+                data-aos="slide-right"
                 src={sensor}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -546,7 +547,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
-                data-aos="zoom-in-right"
+                data-aos="slide-right"
                 src={iot}
                 alt="Sensor"
                 onMouseEnter={() => {
@@ -569,7 +570,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
-                data-aos="zoom-in-right"
+                data-aos="slide-right"
                 src={grp}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -592,7 +593,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
-                data-aos="zoom-in-left"
+                data-aos="slide-left"
                 src={zero}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -615,7 +616,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
-                data-aos="zoom-in-left"
+                data-aos="slide-left"
                 src={ai}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -638,7 +639,7 @@ export const Home = () => {
             <div>
               <img
                 className="w-12 h-12"
-                data-aos="zoom-in-left"
+                data-aos="slide-left"
                 src={tool}
                 alt="Sensor Image"
                 onMouseEnter={() => {
@@ -669,7 +670,7 @@ export const Home = () => {
         >
           <div
             className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4"
-            data-aos="zoom-in-up"
+            //data-aos="zoom-in-up"
           >
             <p className="text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-4xl font-semibold text-center">
               Making a difference with the approach
@@ -684,7 +685,8 @@ export const Home = () => {
             <div className="w-full sm:w-[35%] p-4">
               <div
                 className="h-full w-full rounded-lg p-4"
-                data-aos="slide-right"
+                data-aos="flip-right"
+                data-aos-duration="500"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -715,7 +717,7 @@ export const Home = () => {
             <div className="w-full sm:w-[65%] flex flex-col sm:grid grid-cols-2 p-4 gap-4">
               <div
                 className="rounded-lg bg-white px-4 p-4 sm:p-0"
-                data-aos="zoom-in-up"
+                data-aos="flip-up"
               >
                 <div className="hidden sm:block h-1/4"></div>
                 <div className="h-1/2 sm:h-1/4 flex">
@@ -738,7 +740,7 @@ export const Home = () => {
 
               <div
                 className="rounded-lg bg-white px-4 p-4 sm:p-0"
-                data-aos="slide-left"
+                data-aos="flip-up"
               >
                 <div className="hidden sm:block h-1/4"></div>
                 <div className="h-1/2 sm:h-1/4 flex">
@@ -762,7 +764,7 @@ export const Home = () => {
 
               <div
                 className="rounded-lg bg-white px-4 p-4 sm:p-0"
-                data-aos="zoom-in-up"
+                data-aos="flip-up"
               >
                 <div className="hidden sm:block h-1/4"></div>
                 <div className="h-1/2 sm:h-1/4 flex">
@@ -781,7 +783,7 @@ export const Home = () => {
 
               <div
                 className="rounded-lg bg-white px-4 p-4 sm:p-0"
-                data-aos="slide-left"
+                data-aos="flip-up"
               >
                 <div className="hidden sm:block h-1/4"></div>
                 <div className="h-1/2 sm:h-1/4 flex">
@@ -838,13 +840,13 @@ export const Home = () => {
         <div className="flex flex-col justify-center items-center mt-20">
           <div
             className="text-2xl font-semibold text-center"
-            data-aos="zoom-in-up"
+            //data-aos="zoom-in-up"
           >
             Xyma Analytics' Clients
           </div>
           <div
             className="flex justify-center items-center mt-3 text-center text-gray-600 w-full px-4"
-            data-aos="zoom-in-up"
+            //data-aos="zoom-in-up"
           >
             Committed to client satisfaction with constant support at all
             stages, our aim is to aid Industry 4.0 transformation while reducing

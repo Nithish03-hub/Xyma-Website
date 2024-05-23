@@ -18,6 +18,7 @@ import ceo2 from '../Assets/Frameceo2.png';
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
 import Xarrow from "react-xarrows";
+import useWindowSize from "react-use/lib/useWindowSize";
 
 const About = () => {
   
@@ -27,6 +28,9 @@ const About = () => {
     
     navigate('/contact');
   };
+
+  const { width } = useWindowSize();
+  const isLargeScreen = width >= 640;
   
   return (
     <div>
@@ -73,7 +77,7 @@ const About = () => {
         ABOUT US
       </div>
 
-      <div className="mt-10 mx-[5%]">
+      <div className="mt-8 mx-[5%]">
         <div className="text-center flex justify-center">
           <div className="text-3xl font-semibold flex flex-col w-[200px]">
             <div>About XYMA</div>
@@ -90,54 +94,62 @@ const About = () => {
 
       {/* arrow box */}
       <div className="sm:h-[120vh] mt-8 mx-[5%]">
-        <Xarrow
-          start="box1"
-          end="box2"
-          dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
-          color="gray"
-          strokeWidth={1}
-          headSize={10}
-          curveness={1.2}
-          showTail={true}
-          tailShape="circle"
-        />
-        <Xarrow
-          start="box3"
-          end="box4"
-          dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
-          color="gray"
-          strokeWidth={1}
-          headSize={10}
-          curveness={1.2}
-          showTail={true}
-          tailShape="circle"
-        />
-        <Xarrow
-          start="box5"
-          end="box6"
-          startAnchor="bottom"
-          endAnchor="top"
-          dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
-          color="gray"
-          strokeWidth={1}
-          headSize={10}
-          curveness={1.2}
-          showTail={true}
-          tailShape="circle"
-        />
-        <Xarrow
-          start="box7"
-          end="box8"
-          startAnchor="bottom"
-          endAnchor="top"
-          dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
-          color="gray"
-          strokeWidth={1}
-          headSize={10}
-          curveness={1.2}
-          showTail={true}
-          tailShape="circle"
-        />
+        {isLargeScreen ? (
+          <>
+            <Xarrow
+              start="box1"
+              end="box2"
+              dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+              color="gray"
+              strokeWidth={1}
+              headSize={10}
+              curveness={1.2}
+              showTail={true}
+              tailShape="circle"
+            />
+            <Xarrow
+              start="box3"
+              end="box4"
+              dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+              color="gray"
+              strokeWidth={1}
+              headSize={10}
+              curveness={1.2}
+              showTail={true}
+              tailShape="circle"
+            />
+          </>
+        ) : (
+          <>
+            <Xarrow
+              start="box5"
+              end="box6"
+              startAnchor="bottom"
+              endAnchor="top"
+              dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+              color="gray"
+              strokeWidth={1}
+              headSize={10}
+              curveness={1.2}
+              showTail={true}
+              tailShape="circle"
+            />
+            <Xarrow
+              start="box7"
+              end="box8"
+              startAnchor="bottom"
+              endAnchor="top"
+              dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+              color="gray"
+              strokeWidth={1}
+              headSize={10}
+              curveness={1.2}
+              showTail={true}
+              tailShape="circle"
+            />
+          </>
+        )}
+
         <div className="sm:h-1/3 sm:flex justify-between">
           {/* box 1 */}
           <div
@@ -171,12 +183,9 @@ const About = () => {
                 </span>
               </div>
             </div>
+            {/* empty div for arrow 1 - small screen*/}
+            <div className="absolute w-4 bottom-0 right-[10%]" id="box5" />
           </div>
-          {/* empty div for arrow - small screen */}
-          <div
-            className="absolute -mt-10 border border-black w-4 right-20 sm:hidden"
-            id="box5"
-          />
 
           {/* text 1 */}
           <div className="relative w-[60%] sm:w-[30%] text-sm font-medium flex items-center text-left mb-4 sm:mb-0">
@@ -184,12 +193,6 @@ const About = () => {
             unknown printer took a galley of type and scrambled it to make a
             type specimen book.
           </div>
-
-          {/* empty div for arrow - small screen */}
-          <div
-            className="absolute border border-black w-4 right-40 mt-6 sm:hidden"
-            id="box6"
-          />
         </div>
         <div className="sm:h-1/3 flex flex-col-reverse sm:flex-row justify-between">
           {/* text 2 */}
@@ -227,26 +230,20 @@ const About = () => {
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
                 >
-                  View&nbsp;More
+                  View More
                 </span>
               </div>
             </div>
+            {/* empty div for arrow 1 - small screen*/}
+            <div className="absolute w-4 top-[10%] right-[30%]" id="box6" />
+            {/* empty div for arrow 2 - small screen */}
+            <div className="absolute w-4 bottom-0 right-[10%]" id="box7" />
           </div>
-          {/* empty div for arrow - small screen */}
-          <div
-            className="absolute border border-black w-4 right-40 sm:hidden"
-            id="box8"
-          />
         </div>
-        {/* empty div for arrow - small screen */}
-        <div
-          className="absolute border border-black w-4 right-20 -mt-32 sm:hidden"
-          id="box7"
-        />
         <div className="sm:h-1/3 sm:flex justify-between">
           {/* box 3 */}
           <div
-            className="border border-[#CDCED6] w-full sm:w-[35%] p-4 rounded-2xl mb-4 sm:mb-0"
+            className="relative border border-[#CDCED6] w-full sm:w-[35%] p-4 rounded-2xl mb-4 sm:mb-0"
             id="box4"
           >
             <div className="w-full h-full">
@@ -276,6 +273,8 @@ const About = () => {
                 </span>
               </div>
             </div>
+            {/* empty div for arrow 2 - small screen*/}
+            <div className="absolute w-4 top-[10%] right-[30%]" id="box8" />
           </div>
           {/* text 3 */}
           <div className="w-full sm:w-[30%] text-sm font-medium flex items-center text-left mb-4 sm:mb-0">
@@ -286,148 +285,123 @@ const About = () => {
         </div>
       </div>
 
-      <section>
+      <section className="mx-[5%] mt-10">
         <center>
-          <div className="text-3xl font-semibold " style={{ marginTop: "10%" }}>
+          <div className="text-3xl font-semibold">
             The Team <img className="w-36" src={second}></img>
           </div>
-          <img style={{ width: "85%", marginTop: "60px" }} src={group1}></img>
+          <img className="mt-4" src={group1}></img>
         </center>
       </section>
 
-      <section>
-        <center>
-          <div className="text-3xl font-semibold" style={{ marginTop: "10%" }}>
+      <section className="mx-[5%] mt-10">
+        <div className="flex justify-center">
+          <div className="text-3xl font-semibold">
             The Vision <img className="w-36" src={second} alt="Second Image" />
           </div>
-          <p className="mt-6" style={{ width: "64%" }}>
-            Our vision is to provide reliable measurements at the most
-            unreliable times. Democratize sensor-based process efficiency in
-            Industries by enabling them with rich data sets of process
-            parameters. Provide plant-wide distributed and concurrent sensing
-            solutions for disruptive data-driven decision making with enhanced
-            sustainability.
-          </p>
-          <div
-            className="flex flex-wrap gap-5 mt-8"
-            style={{ maxWidth: "100%", justifyContent: "center" }}
-          >
-            <img style={{ width: "20%" }} src={frame1} alt="Frame 1" />
-            <img style={{ width: "20%" }} src={frame21} alt="Frame 2" />
-            <img style={{ width: "20%" }} src={frame3} alt="Frame 3" />
-            <img style={{ width: "20%" }} src={frame4} alt="Frame 4" />
-          </div>
-        </center>
+        </div>
+        <div className="mt-4 text-[#60646C] text-center text-sm sm:text-base">
+          Our vision is to provide reliable measurements at the most unreliable
+          times. Democratize sensor-based process efficiency in Industries by
+          enabling them with rich data sets of process parameters. Provide
+          plant-wide distributed and concurrent sensing solutions for disruptive
+          data-driven decision making with enhanced sustainability.
+        </div>
+        <div className="grid grid-cols-2 sm:flex gap-4 py-2">
+          <img
+            className="w-[100%] sm:w-[24%] sm:h-[50%]"
+            src={frame1}
+            alt="Frame 1"
+          />
+          <img
+            className="w-[100%] sm:w-[24%] sm:h-[50%]"
+            src={frame21}
+            alt="Frame 2"
+          />
+          <img
+            className="w-[100%] sm:w-[24%] sm:h-[50%]"
+            src={frame3}
+            alt="Frame 3"
+          />
+          <img
+            className="w-[100%] sm:w-[24%] sm:h-[50%]"
+            src={frame4}
+            alt="Frame 4"
+          />
+        </div>
       </section>
 
-      <section>
-        <center>
-          <div className="text-3xl font-semibold" style={{ marginTop: "10%" }}>
+      <section className="mx-[5%] mt-10">
+        <div className="flex justify-center">
+          <div className="text-3xl font-semibold">
             Key Values
             <img className="w-36" src={second} alt="Second Image" />
           </div>
-          <div
-            className="flex gap-16 mt-12"
-            style={{ width: "70%", justifyContent: "center" }}
-          >
-            <div>
-              <img src={c1}></img>
-              <div className="font-semibold" style={{ marginTop: "10%" }}>
-                Key Values
-              </div>
-            </div>
-            <div>
-              <img src={c2}></img>
-              <div className="font-semibold" style={{ marginTop: "10%" }}>
-                Key Values
-              </div>
-            </div>
-            <div>
-              <img src={c3}></img>
-              <div className="font-semibold" style={{ marginTop: "10%" }}>
-                Key Values
-              </div>
-            </div>
-            <div>
-              <img src={c4}></img>
-              <div className="font-semibold" style={{ marginTop: "10%" }}>
-                Key Values
-              </div>
-            </div>
-            <div>
-              <img src={c5}></img>
-              <div className="font-semibold" style={{ marginTop: "10%" }}>
-                Key Values
-              </div>
-            </div>
-            <div>
-              <img src={c6}></img>
-              <div className="font-semibold" style={{ marginTop: "10%" }}>
-                Key Values
-              </div>
-            </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4 sm:flex justify-evenly mt-4 mx-[15%] sm:mx-0 text-center">
+          <div className="flex flex-col items-center">
+            <img className="w-auto sm:w-[60%]" src={c1}></img>
+            <div className="font-semibold mt-2">Key Value</div>
           </div>
-        </center>
+          <div className="flex flex-col items-center">
+            <img className="w-auto sm:w-[60%]" src={c2}></img>
+            <div className="font-semibold mt-2">Key Value</div>
+          </div>
+          <div className="flex flex-col items-center">
+            <img className="w-auto sm:w-[60%]" src={c3}></img>
+            <div className="font-semibold mt-2">Key Value</div>
+          </div>
+          <div className="flex flex-col items-center">
+            <img className="w-auto sm:w-[60%]" src={c4}></img>
+            <div className="font-semibold mt-2">Key Value</div>
+          </div>
+          <div className="flex flex-col items-center">
+            <img className="w-auto sm:w-[60%]" src={c5}></img>
+            <div className="font-semibold mt-2">Key Value</div>
+          </div>
+          <div className="flex flex-col items-center">
+            <img className="w-auto sm:w-[60%]" src={c6}></img>
+            <div className="font-semibold mt-2">Key Value</div>
+          </div>
+        </div>
 
-        <div className="grid grid-cols-2">
-          <div>
-            <img
-              style={{ width: "65%", marginTop: "10%", marginLeft: "30%" }}
-              src={ceo2}
-            ></img>
+        <div className="sm:flex mt-4">
+          <div className="w-full sm:w-1/2 p-8">
+            <img src={ceo2}></img>
           </div>
-          <div
-            className="text-center text-[#60646C]"
-            style={{ width: "55%", marginTop: "20%", marginLeft: "10%" }}
-          >
-            <span className="font-semibold text-xl text-[#1C2024]">
-              The Mission{" "}
-            </span>
-            <br /> Our mission is to increase efficiency in operations through
-            IIoT-enabled process parameter monitoring and AI-based predictive
-            maintenance to enhance asset life and prevent unplanned downtime
-            with Ultrasonic Waveguide Technology.
+          <div className="w-full sm:w-1/2 flex flex-col justify-center p-8">
+            <div className="text-center font-semibold text-xl text-[#1C2024]">
+              The Mission
+            </div>
+            <div className="text-center text-[#60646C] mt-2">
+              Our mission is to increase efficiency in operations through
+              IIoT-enabled process parameter monitoring and AI-based predictive
+              maintenance to enhance asset life and prevent unplanned downtime
+              with Ultrasonic Waveguide Technology.
+            </div>
           </div>
         </div>
       </section>
 
-      <section style={{ textAlign: "center" }}>
-        <div className="relative">
-          <img
-            style={{ width: "5%", marginTop: "10%", marginLeft: "48%" }}
-            src={framevector}
-            alt="Frame Vector"
-          />
-          <p
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#60646C] font-semibold"
-            style={{
-              width: "66%",
-              fontSize: "20px",
-              textAlign: "center",
-              marginTop: "4%",
-            }}
-          >
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries.
-          </p>
+      <section className="mx-[5%] mt-4">
+        <div className="flex justify-center">
+          <img className="h-12" src={framevector}></img>
+        </div>
+        <div className="text-[#60646C] text-center px-1  sm:px-24 text-sm sm:text-base font-semibold">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries.
         </div>
 
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <img
-            className="w-20"
-            style={{ marginTop: "10%" }}
-            src={photo}
-            alt="Photo"
-          />
+        <div className="flex flex-col items-center mt-8">
+          <img className="w-20" src={photo} alt="Photo" />
+          <div className="text-[#1C2024] font-semibold mt-2">
+            Dr. Nishanth Raja
+          </div>
+          <div className="text-[#60646C] text-xs">C.E.O. and Co-founder</div>
         </div>
-
-        <div className="text-[#1C2024] font-semibold mt-2">
-          Dr. Nishanth Raja
-        </div>
-        <div className="text-[#60646C] text-xs">C.E.O. and Co-founder</div>
       </section>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import cs from '../Assets/cs.png';
 import all1 from '../Images/all1.png';
 import all2 from '../Images/all2.png';
@@ -10,20 +10,15 @@ import tube1 from '../Images/tube1.png';
 import tube2 from '../Images/tube2.png';
 import oil1 from '../Images/oil1.png';
 import oil2 from '../Images/oil2.png';
-import twitter from '../Assets/twitter.png';
-import linkedin from '../Assets/linkedin.png';
-import logo from '../Assets/logo.png';
-import share from '../Assets/share.png';
-import line from '../Assets/line.png';
-import arrow from '../Assets/arrow.png';
-import vector from '../Assets/Vector.png';
 import { useNavigate } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Resource = () => {
-  const [selectedWord, setSelectedWord] = useState('All');
+  const [selectedContent, setSelectedContent] = useState('All');
 
   const toggleContent = (word) => {
-      setSelectedWord(word);
+      setSelectedContent(word);
   };
 
   const navigate= useNavigate();
@@ -34,30 +29,336 @@ const Resource = () => {
     navigate('/casestudy');
   }
   
-
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
 
     return (
-      <div>
-        <section>
-          <div>
-            <img src={cs} alt="Case Studies" />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-              <div className="text-white text-5xl font-bold mt-4 sm:mt-24">
-                Case Studies
-              </div>
-              <div
-                className="text-sm text-white mt-5 ml-12"
-                style={{ width: "88%" }}
-              >
-                Xyma Analytics Case Studies are documented examples illustrating
-                the application and effectiveness of Xyma Analytics' solutions
-                in real-world scenarios
-              </div>
+      <div className="overflow-hidden">
+        <section className="mt-[10vh] h-[60vh] sm:h-[90vh] relative shadow-white shadow-xl">
+          <img
+            className="h-full w-full object-cover"
+            src={cs}
+            alt="Case Studies"
+          />
+          <div className="absolute inset-0 text-white flex flex-col items-center justify-center">
+            <div className="text-4xl sm:text-5xl font-semibold sm:font-bold">
+              Case Studies
+            </div>
+            <div className="text-sm text-center mt-4 mx-[20%] sm:mx-[30%]">
+              Xyma Analytics Case Studies are documented examples illustrating
+              the application and effectiveness of Xyma Analytics' solutions in
+              real-world scenarios
             </div>
           </div>
         </section>
 
-        <section>
+        {/* bottom text */}
+        <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px] mb-[20px] sm:mb-[70px]">
+          CASE STUDIES
+        </div>
+
+        <div className="border border-black mx-[5%] sm:flex justify-end">
+          <div
+            className="flex sm:flex-col gap-2 border border-black w-full sm:w-[15%] font-semibold p-6 overflow-auto"
+            style={{ scrollbarWidth: "none" }}
+          >
+            <div
+              onClick={() => toggleContent("All")}
+              className={`${
+                selectedContent === "All" ? "text-[#013872]" : "text-[gray]"
+              } cursor-pointer`}
+            >
+              All
+            </div>
+            <div
+              onClick={() => toggleContent("Aluminum")}
+              className={`${
+                selectedContent === "Aluminum"
+                  ? "text-[#013872]"
+                  : "text-[gray]"
+              } cursor-pointer`}
+            >
+              Aluminum
+            </div>
+            <div
+              onClick={() => toggleContent("Steel")}
+              className={`${
+                selectedContent === "Steel" ? "text-[#013872]" : "text-[gray]"
+              } cursor-pointer`}
+            >
+              Steel
+            </div>
+            <div
+              onClick={() => toggleContent("Refiniries")}
+              className={`${
+                selectedContent === "Refiniries"
+                  ? "text-[#013872]"
+                  : "text-[gray]"
+              } cursor-pointer`}
+            >
+              Refiniries
+            </div>
+            <div
+              onClick={() => toggleContent("Lubricants")}
+              className={`${
+                selectedContent === "Lubricants"
+                  ? "text-[#013872]"
+                  : "text-[gray]"
+              } cursor-pointer`}
+            >
+              Lubricants
+            </div>
+            <div
+              onClick={() => toggleContent("OilRecovery")}
+              className={`${
+                selectedContent === "OilRecovery"
+                  ? "text-[#013872]"
+                  : "text-[gray]"
+              } cursor-pointer`}
+            >
+              Oil&nbsp;Recovery
+            </div>
+            <div
+              onClick={() => toggleContent("Paints")}
+              className={`${
+                selectedContent === "Paints" ? "text-[#013872]" : "text-[gray]"
+              } cursor-pointer`}
+            >
+              Paints
+            </div>
+          </div>
+          <div className="border border-black w-full sm:w-[80%]">
+            {/* aluminium content */}
+            {(selectedContent === "Aluminum" || selectedContent === "All") && (
+              <div
+                className="sm:flex rounded-2xl mb-4 border border-gray-600"
+                data-aos="slide-left"
+              >
+                <div className="border border-black w-full sm:w-1/2 p-4">
+                  <div className="font-semibold text-2xl sm:text-3xl mb-4">
+                    Aluminum
+                  </div>
+                  <div className="mb-4 relative">
+                    <img src={aluminum} />
+                    <span
+                      className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer"
+                      onClick={handleCaseStudyClick}
+                    >
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-lg sm:text-xl">
+                    A 10°C temperature deviation reduces efficiency, promotes
+                    anode effect, and increases PFC emissions.
+                  </div>
+                </div>
+                <div className="border border-black w-full sm:w-1/2 p-4">
+                  <div className="font-semibold text-2xl sm:text-3xl mb-4">
+                    All
+                  </div>
+                  <div className="border border-black flex p-4">
+                    <div className="border border-black w-[30%] flex items-center justify-center">
+                      <img src={all1} />
+                    </div>
+                    <div className="w-[70%] px-2 text-sm sm:text-xl">
+                      A 10°C shift lowers efficiency, boosts anode effect, and
+                      raises PFC emissions.
+                    </div>
+                  </div>
+                  <div className="border border-black flex p-4">
+                    <div className="border border-black w-[30%]">
+                      <img src={all2} />
+                    </div>
+                    <div className="w-[70%] px-2 text-sm sm:text-xl">
+                      Extending the ladle life for one cycle would result in
+                      steel production worth $5.1 million.
+                    </div>
+                  </div>
+                  <div className="border border-black flex p-4">
+                    <div className="border border-black w-[30%]">
+                      <img src={all3} />
+                    </div>
+                    <div className="w-[70%] px-2 text-sm sm:text-xl">
+                      20°C rise halves reformer tube lifespan; design
+                      temperature crucial.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* steel content */}
+            {(selectedContent === "Steel" || selectedContent === "All") && (
+              <div
+                className="sm:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                data-aos="slide-left"
+              >
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="font-semibold text-3xl mb-4 flex justify-between">
+                    <div>Steel</div>
+                    <span
+                      className="sm:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-4">
+                    <img src={steel1} />
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    Extending ladle life for one cycle yields steel worth $5.1M
+                  </div>
+                </div>
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="flex justify-end mb-4">
+                    <span
+                      className="hidden sm:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-2">
+                    <img src={steel2}></img>
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    Extending the lifespan of the ladle for one cycle results in
+                    producing steel valued at $5.1 million
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* refiniries content */}
+            {(selectedContent === "Refiniries" ||
+              selectedContent === "All") && (
+              <div
+                className="sm:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                data-aos="slide-left"
+              >
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="font-semibold text-3xl mb-4 flex justify-between">
+                    <div>Refiniries</div>
+                    <span
+                      className="sm:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-4">
+                    <img src={tube1} />
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    A 20°C temperature rise cuts reformer tube lifespan by half
+                  </div>
+                </div>
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="flex justify-end mb-4">
+                    <span
+                      className="hidden sm:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-2">
+                    <img src={tube2}></img>
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    A 20°C temperature increase halves the lifespan of reformer
+                    tubes
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* lubricants content */}
+            {(selectedContent === "Lubricants" ||
+              selectedContent === "All") && (
+              <div
+                className="sm:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                data-aos="slide-left"
+              >
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="font-semibold text-3xl mb-4 flex justify-between">
+                    <div>Lubricants</div>
+                    <span
+                      className="sm:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-4">
+                    <img src={oil1} />
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    30% of maintenance budget influenced by lubricants,
+                    highlighting their significant role in operational expenses
+                  </div>
+                </div>
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="flex justify-end mb-4">
+                    <span
+                      className="hidden sm:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-2">
+                    <img src={oil2}></img>
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    Lubricants significantly affect operational costs,
+                    accounting for 30% of the maintenance budget
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* <section>
           <div className="flex">
             <div style={{ width: "20%", marginLeft: "5%", marginTop: "12%" }}>
               <p className="font-semibold">
@@ -150,6 +451,7 @@ const Resource = () => {
                 <div
                   className="border border-gray-200 rounded-2xl p-3 flex "
                   style={{ width: "70%", marginLeft: "10%", marginTop: "10%" }}
+                  data-aos="slide-left"
                 >
                   <span className="text-xl">Aluminum</span>
                   <div
@@ -565,7 +867,7 @@ const Resource = () => {
               )}
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     );
 }
