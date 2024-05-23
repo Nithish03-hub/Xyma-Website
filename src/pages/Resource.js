@@ -10,6 +10,10 @@ import tube1 from '../Images/tube1.png';
 import tube2 from '../Images/tube2.png';
 import oil1 from '../Images/oil1.png';
 import oil2 from '../Images/oil2.png';
+import oilRecovery from "../Assets/oilRecovery.png";
+import oilRecovery2 from '../Assets/oilRecovery3.jpg';
+import paints1 from '../Assets/paintsresized.png';
+import paints2 from '../Assets/paints2.jpg';
 import { useNavigate } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -58,84 +62,151 @@ const Resource = () => {
           CASE STUDIES
         </div>
 
-        <div className="border border-black mx-[5%] sm:flex justify-end">
+        {/* resources title */}
+        <div className="mx-[5%] sm:flex justify-end">
           <div
-            className="flex sm:flex-col gap-2 border border-black w-full sm:w-[15%] font-semibold p-6 overflow-auto"
+            className="flex sm:flex-col gap-2  w-full sm:w-[15%] font-semibold p-6 overflow-auto"
             style={{ scrollbarWidth: "none" }}
           >
-            <div
-              onClick={() => toggleContent("All")}
-              className={`${
-                selectedContent === "All" ? "text-[#013872]" : "text-[gray]"
-              } cursor-pointer`}
-            >
-              All
+            <div>
+              <div
+                onClick={() => toggleContent("All")}
+                className={`${
+                  selectedContent === "All" ? "text-[#013872]" : "text-[gray]"
+                } cursor-pointer flex`}
+              >
+                {selectedContent === "All" && (
+                  <div className="invisible sm:visible border border-[#013872]"></div>
+                )}
+                <div className="sm:ml-1">All</div>
+              </div>
+              {selectedContent === "All" && (
+                <div className="sm:hidden border border-[#013872]"></div>
+              )}
             </div>
-            <div
-              onClick={() => toggleContent("Aluminum")}
-              className={`${
-                selectedContent === "Aluminum"
-                  ? "text-[#013872]"
-                  : "text-[gray]"
-              } cursor-pointer`}
-            >
-              Aluminum
+
+            <div>
+              <div
+                onClick={() => toggleContent("Aluminum")}
+                className={`${
+                  selectedContent === "Aluminum"
+                    ? "text-[#013872]"
+                    : "text-[gray]"
+                } cursor-pointer flex`}
+              >
+                {selectedContent === "Aluminum" && (
+                  <div className="invisible sm:visible border border-[#013872]"></div>
+                )}
+                <div className="sm:ml-1">Aluminum</div>
+              </div>
+              {selectedContent === "Aluminum" && (
+                <div className="sm:hidden border border-[#013872]"></div>
+              )}
             </div>
-            <div
-              onClick={() => toggleContent("Steel")}
-              className={`${
-                selectedContent === "Steel" ? "text-[#013872]" : "text-[gray]"
-              } cursor-pointer`}
-            >
-              Steel
+
+            <div>
+              <div
+                onClick={() => toggleContent("Steel")}
+                className={`${
+                  selectedContent === "Steel" ? "text-[#013872]" : "text-[gray]"
+                } cursor-pointer flex`}
+              >
+                {selectedContent === "Steel" && (
+                  <div className="invisible sm:visible border border-[#013872]"></div>
+                )}
+                <div className="sm:ml-1">Steel</div>
+              </div>
+              {selectedContent === "Steel" && (
+                <div className="sm:hidden border border-[#013872]"></div>
+              )}
             </div>
-            <div
-              onClick={() => toggleContent("Refiniries")}
-              className={`${
-                selectedContent === "Refiniries"
-                  ? "text-[#013872]"
-                  : "text-[gray]"
-              } cursor-pointer`}
-            >
-              Refiniries
+
+            <div>
+              <div
+                onClick={() => toggleContent("Refiniries")}
+                className={`${
+                  selectedContent === "Refiniries"
+                    ? "text-[#013872]"
+                    : "text-[gray]"
+                } cursor-pointer flex`}
+              >
+                {selectedContent === "Refiniries" && (
+                  <div className="invisible sm:visible border border-[#013872]"></div>
+                )}
+                <div className="sm:ml-1">Refiniries</div>
+              </div>
+              {selectedContent === "Refiniries" && (
+                <div className="sm:hidden border border-[#013872]"></div>
+              )}
             </div>
-            <div
-              onClick={() => toggleContent("Lubricants")}
-              className={`${
-                selectedContent === "Lubricants"
-                  ? "text-[#013872]"
-                  : "text-[gray]"
-              } cursor-pointer`}
-            >
-              Lubricants
+
+            <div>
+              <div
+                onClick={() => toggleContent("Lubricants")}
+                className={`${
+                  selectedContent === "Lubricants"
+                    ? "text-[#013872]"
+                    : "text-[gray]"
+                } cursor-pointer flex`}
+              >
+                {selectedContent === "Lubricants" && (
+                  <div className="invisible sm:visible border border-[#013872]"></div>
+                )}
+                <div className="sm:ml-1">Lubricants</div>
+              </div>
+              {selectedContent === "Lubricants" && (
+                <div className="sm:hidden border border-[#013872]"></div>
+              )}
             </div>
-            <div
-              onClick={() => toggleContent("OilRecovery")}
-              className={`${
-                selectedContent === "OilRecovery"
-                  ? "text-[#013872]"
-                  : "text-[gray]"
-              } cursor-pointer`}
-            >
-              Oil&nbsp;Recovery
+
+            <div>
+              <div
+                onClick={() => toggleContent("OilRecovery")}
+                className={`${
+                  selectedContent === "OilRecovery"
+                    ? "text-[#013872]"
+                    : "text-[gray]"
+                } cursor-pointer flex`}
+              >
+                {selectedContent === "OilRecovery" && (
+                  <div className="invisible sm:visible border border-[#013872]"></div>
+                )}
+                <div className="sm:ml-1">Oil&nbsp;Recovery</div>
+              </div>
+              {selectedContent === "OilRecovery" && (
+                <div className="sm:hidden border border-[#013872]"></div>
+              )}
             </div>
-            <div
-              onClick={() => toggleContent("Paints")}
-              className={`${
-                selectedContent === "Paints" ? "text-[#013872]" : "text-[gray]"
-              } cursor-pointer`}
-            >
-              Paints
+
+            <div>
+              <div
+                onClick={() => toggleContent("Paints")}
+                className={`${
+                  selectedContent === "Paints"
+                    ? "text-[#013872]"
+                    : "text-[gray]"
+                } cursor-pointer flex`}
+              >
+                {selectedContent === "Paints" && (
+                  <div className="invisible sm:visible border border-[#013872]"></div>
+                )}
+                <div className="sm:ml-1">Paints</div>
+              </div>
+              {selectedContent === "Paints" && (
+                <div className="sm:hidden border border-[#013872]"></div>
+              )}
             </div>
           </div>
-          <div className="border border-black w-full sm:w-[80%]">
+
+          {/* resources content */}
+          <div className="w-full sm:w-[80%]">
             {/* aluminium content */}
             {(selectedContent === "Aluminum" || selectedContent === "All") && (
               <div
-                className="sm:flex rounded-2xl mb-4 border border-gray-600"
+                className="sm:flex rounded-2xl mb-4 border border-[#CDCED6]"
                 data-aos="slide-left"
               >
-                <div className="border border-black w-full sm:w-1/2 p-4">
+                <div className="w-full sm:w-1/2 p-4">
                   <div className="font-semibold text-2xl sm:text-3xl mb-4">
                     Aluminum
                   </div>
@@ -153,12 +224,14 @@ const Resource = () => {
                     anode effect, and increases PFC emissions.
                   </div>
                 </div>
-                <div className="border border-black w-full sm:w-1/2 p-4">
+                {/* empty line */}
+                <div className="border border-[#CDCED6] my-[10%]" />
+                <div className="w-full sm:w-1/2 p-4">
                   <div className="font-semibold text-2xl sm:text-3xl mb-4">
                     All
                   </div>
-                  <div className="border border-black flex p-4">
-                    <div className="border border-black w-[30%] flex items-center justify-center">
+                  <div className="flex p-4">
+                    <div className="w-[30%] flex items-center justify-center">
                       <img src={all1} />
                     </div>
                     <div className="w-[70%] px-2 text-sm sm:text-xl">
@@ -166,8 +239,10 @@ const Resource = () => {
                       raises PFC emissions.
                     </div>
                   </div>
-                  <div className="border border-black flex p-4">
-                    <div className="border border-black w-[30%]">
+                  {/* empty line */}
+                  <div className="border border-[#CDCED6] mx-[5%]" />
+                  <div className="flex p-4">
+                    <div className="w-[30%]">
                       <img src={all2} />
                     </div>
                     <div className="w-[70%] px-2 text-sm sm:text-xl">
@@ -175,8 +250,10 @@ const Resource = () => {
                       steel production worth $5.1 million.
                     </div>
                   </div>
-                  <div className="border border-black flex p-4">
-                    <div className="border border-black w-[30%]">
+                  {/* empty line */}
+                  <div className="border border-[#CDCED6] mx-[5%]" />
+                  <div className="flex p-4">
+                    <div className="w-[30%]">
                       <img src={all3} />
                     </div>
                     <div className="w-[70%] px-2 text-sm sm:text-xl">
@@ -229,7 +306,7 @@ const Resource = () => {
                       Read More
                     </span>
                   </div>
-                  <div className="relative mb-2">
+                  <div className="relative mb-4">
                     <img src={steel2}></img>
                     <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
                       Case Studies
@@ -285,7 +362,7 @@ const Resource = () => {
                       Read More
                     </span>
                   </div>
-                  <div className="relative mb-2">
+                  <div className="relative mb-4">
                     <img src={tube2}></img>
                     <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
                       Case Studies
@@ -342,7 +419,7 @@ const Resource = () => {
                       Read More
                     </span>
                   </div>
-                  <div className="relative mb-2">
+                  <div className="relative mb-4">
                     <img src={oil2}></img>
                     <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
                       Case Studies
@@ -351,6 +428,121 @@ const Resource = () => {
                   <div className="text-xl">
                     Lubricants significantly affect operational costs,
                     accounting for 30% of the maintenance budget
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* oil recovery content */}
+            {(selectedContent === "OilRecovery" ||
+              selectedContent === "All") && (
+              <div
+                className="sm:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                data-aos="slide-left"
+              >
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="font-semibold text-3xl mb-4 flex justify-between">
+                    <div>Oil Recovery</div>
+                    <span
+                      className="sm:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-4">
+                    <img className="rounded-2xl" src={oilRecovery} />
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    1.3 lakhs/day would be the worth of injection polymer of
+                    unknown viscosity flooded in EOR due to unavailability of
+                    continuous viscosity measurement technique.
+                  </div>
+                </div>
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="flex justify-end mb-4">
+                    <span
+                      className="hidden sm:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-4">
+                    <img className="rounded-2xl" src={oilRecovery2}></img>
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    Enhanced oil recovery 'EOR' techniques can improve recovery
+                    rates from 20-40% to 30-60% of the original oil in place.
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* paints content */}
+            {(selectedContent === "Paints" || selectedContent === "All") && (
+              <div
+                className="sm:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                data-aos="slide-left"
+              >
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="font-semibold text-3xl mb-4 flex justify-between">
+                    <div>Paints</div>
+                    <span
+                      className="sm:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-4">
+                    <img className="rounded-2xl" src={paints1} />
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    Water-based paints account for about 80% of all paints sold
+                    in the residential market.
+                  </div>
+                </div>
+                <div className="w-full sm:w-1/2 p-4">
+                  <div className="flex justify-end mb-4">
+                    <span
+                      className="hidden sm:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Read More
+                    </span>
+                  </div>
+                  <div className="relative mb-4">
+                    <img className="rounded-2xl" src={paints2}></img>
+                    <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
+                      Case Studies
+                    </span>
+                  </div>
+                  <div className="text-xl">
+                    The use of low-VOC (volatile organic compounds) paints has
+                    increased by over 50% in the past decade due to
+                    environmental regulations and consumer demand.
                   </div>
                 </div>
               </div>
