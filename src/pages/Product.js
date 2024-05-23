@@ -95,16 +95,17 @@ const Product = () => {
               width: '100%', 
             }}
           >
-            <img src={item.src} alt={`Slide ${index + 1}`} style={{ ...imageStyle }} />
+            <div className='relative h-[95vh] w-full mt-[70px]'>
+            <img className=" absolute inset-0 w-full h-full object-right-top" src={item.src} alt={`Slide ${index + 1}`} style={{ ...imageStyle }} /></div>
             <div style={textStyle} >
-              <h2 style={{width:'40%'}}>{item.title}</h2>
+              <h2 className='md:text-5xl text-2xl'>{item.title}</h2>
               <p style={{background: 'linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)',
                   WebkitBackgroundClip: 'text',
                   color: 'transparent',
                   backgroundColor: 'rgba(255, 255, 255, 1)',
                   display: 'inline-block',
-                  width:'55%'}}>{item.text1}</p>
-              <p className='text-sm font-semibold'>{item.text}</p>    
+                  }} className='md:text-3xl text-3xl'>{item.text1}</p>
+              <p className='md:text-sm text-sm font-semibold'>{item.text}</p>    
             </div>
           </div>
         ))}

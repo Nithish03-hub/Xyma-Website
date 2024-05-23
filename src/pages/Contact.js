@@ -36,53 +36,23 @@ const ContactPage = () => {
   return (
     <div>
       <section>
-        <div className="relative overflow-hidden mt-18">
-         
+      <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
           <video
-            src={video2}
-            autoPlay
-            className="shadow-lg"
-            style={{ width: '100%', height: 'auto', zIndex: 1 }}
-          />
-
-        
-          <div
-            className="absolute top-0 left-0 w-full h-full bg-black opacity-50"
-            style={{ zIndex: 2 }}
-          />
-
-     
-          <div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            style={{ zIndex: 3 }}
-          >
-            <img src={black} alt="Overlay Image" style={{ width: '55%', maxWidth: '300px', marginBottom: '60%',marginLeft:'50%' }} />
-          </div>
-
-         
-          <div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center"
-            style={{ zIndex: 4 }}
-          >
-            <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-4xl font-semibold" style={{width:'120%'}}>Unlock Insights, Elevate Performance - Reach Out to XYMA Analytics Today</h1>
-          </div>
-          <div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center"
-            style={{ zIndex: 5 }}
-          >
-          <button 
-            className="text-white py-2 px-3 rounded-full text-xs" 
-            style={{ 
-              background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)',
-              marginLeft: '5rem',
-              marginTop:'80%'
-            }}
-           onClick={handleButtonClick}
-          >
-            Get in Touch
-          </button>
-          </div>
-        </div>
+           src={video2} autoPlay
+           alt="cover image"
+           className="absolute inset-0 w-full h-full object-cover"
+         />
+       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50" style={{ zIndex: 2 }} /> 
+         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ zIndex: 3 }} >           
+           <img src={black} alt="Overlay Image" style={{ width: '55%', maxWidth: '300px', marginBottom: '60%',marginLeft:'50%' }} />
+         </div> 
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center" style={{ zIndex: 4 }} > 
+           <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-4xl font-semibold" style={{width:'120%'}}>Unlock Insights, Elevate Performance - Reach Out to XYMA Analytics Today</h1>
+            </div> 
+             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center" style={{ zIndex: 5 }}>           
+               <button className="text-white py-2 px-3 rounded-full text-xs"  style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)', marginLeft: '5rem',marginTop:'80%'}}onClick={handleButtonClick}>Get in Touch</button>
+             </div>
+      </div>
       </section>
 
       <section ref={sectionRef} style={{marginTop:'5%'}}>

@@ -41,35 +41,40 @@ const About = () => {
   
   return (
    <div>
-   <section >  
-     <div style={{ position: 'relative', textAlign: 'center' }}>
-       <img style={{ marginTop: '4%' }} src={iit} alt="Frame Image" />
-       <div style={{ position: 'absolute', top: '35%', left: '40%', transform: 'translate(-50%, -50%)', textAlign: 'left' }}>
-         <h1 className="text-white text-6xl font-bold mt-24">2019</h1>
-         <p className='text-white mt-5 text-3xl font-semibold' style={{ width: '56%', textAlign: 'left' }}>
-           Founded through the CNDE, IIT Madras, and incubated at IIT Madras Incubation Cell
-         </p>
-       </div>
-       <div className='text-white text-5xl font-semibold' style={{ position: 'absolute', top: '15%', left: '85%', transform: 'translate(-50%, -50%)', textAlign: 'left' }} >
-         20+
-       </div>
-       <div className='text-white text-sm font-semibold' style={{ position: 'absolute', top: '25%', left: '85%', transform: 'translate(-50%, -50%)', textAlign: 'left' }} >
-         Years of R&D
-       </div>
-       <div className='text-white text-5xl font-semibold' style={{ position: 'absolute', top: '35%', left: '85%', transform: 'translate(-50%, -50%)', textAlign: 'left' }} >
-         18+
-       </div>
-       <div className='text-white text-sm font-semibold' style={{ position: 'absolute', top: '45%', left: '85%', transform: 'translate(-50%, -50%)', textAlign: 'left' }} >
-         Intellectual<br/> Properties
-       </div>
-       <div className='text-white text-5xl font-semibold' style={{ position: 'absolute', top: '55%', left: '85%', transform: 'translate(-50%, -50%)', textAlign: 'left' }} >
-         35+
-       </div>
-       <div className='text-white text-sm font-semibold' style={{ position: 'absolute', top: '65%', left: '85%', transform: 'translate(-50%, -50%)', textAlign: 'left' }} >
-         Publications
-       </div>
-     </div>
-   </section> 
+    <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+        <img
+          src={iit}
+          alt="cover image"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 flex flex-col items-start mt-28 text-5xl sm:text-6xl text-white font-semibold ml-24 gap-2 2xl:text-8xl">
+          <div className='mt-20'>2019</div>
+          <div className="text-sm md:text-left sm:text-3xl mt-2 2xl:text-base md:w-[33rem] md:mr-0 mr-2">
+          Founded through the CNDE, IIT Madras, and incubated at IIT Madras Incubation Cell
+          </div>
+          <div className="text-white text-5xl font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left md:top-1/5 sm:top-1/5 md:mt-20 md:left-[85%] mt-80">
+             20+
+          </div>
+
+          <div className=" text-white text-sm font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left top-1/4 lg:top-1/6 md:left-[85%] md:mt-0 mt-44">
+            Years of R&D
+          </div>
+
+          <div className="text-white text-5xl font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left md:top-1/4 sm:top-1/5 md:mt-14 md:left-[85%] md:ml-0 ml-32 mt-80">
+             18+
+          </div>
+          <div className=" text-white text-sm font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left top-1/4 lg:top-1/6 md:left-[85%] md:mt-24 mt-44 md:ml-0 ml-32">
+            Intellectual
+            <br /> Properties
+          </div>
+          <div className="text-white text-5xl font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left md:top-1/5 sm:top-1/5 md:mt-72 md:left-[85%] mt-80 md:ml-0 ml-[16rem]">
+            35+
+          </div>
+          <div className=" text-white text-sm font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left top-1/4 lg:top-1/6 md:left-[85%] md:mt-[13rem] mt-44 md:ml-0 ml-[15rem]">
+            Publications
+          </div>
+        </div>
+      </div>
  
       {/*<div className="leading-5 text-grey text-7xl font-semibold text-center text-gray-300">ABOUT US</div>*/}
 

@@ -115,13 +115,22 @@ const Media = () => {
   return (
     <div>
       <section>
-        <div style={{ marginTop: '4.5%' }} className="relative">
-          <img src={media} alt="media" className="w-full" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <h1 className="text-white text-5xl font-bold mt-4 sm:mt-24">News Room</h1>
-            <p className='text-white mt-2 sm:mt-5 text-sm'>Spotlight on XYMA Analytics</p>
-          </div>
-        </div>
+      <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+          <img
+           src={media}
+           alt="cover image"
+           className="absolute inset-0 w-full h-full object-cover"
+         />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4">      
+           <h1 className="text-white text-5xl sm:text-5xl font-bold mt-4 sm:mt-24">         
+           News Room      
+           </h1>  
+           <p className="text-white mt-2 sm:mt-5 text-xs sm:text-sm">      
+           Spotlight on XYMA Analytics     
+           </p>   
+            
+         </div>
+      </div>
         {/*<div className="leading-5 text-grey text-7xl font-semibold text-center text-gray-300">XYMA NEWS</div>*/}
       </section>
 

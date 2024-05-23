@@ -58,25 +58,26 @@ const Career = () => {
   return (
     <div>
      <section className="relative">
-  <div className="relative">
-    <img className="w-full h-auto" style={{ marginTop: '4%' }} src={frame} alt="Frame Image" />
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4">
-      <h1 className="text-white text-xl sm:text-5xl font-bold mt-4 sm:mt-24">
-        "Together,<br />we shine"
-      </h1>
-      <p className="text-white mt-2 sm:mt-5 text-xs sm:text-sm">
-        We help you grow along with us
-      </p>
-      <button
-        className="text-white text-xs py-2 px-5 mt-3 rounded-full"
-        style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }}
-        onClick={handleButtonClick}
-      >
-        Know More
-      </button>
-    </div>
-  </div>
-</section>
+       <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+          <img
+           src={frame}
+           alt="cover image"
+           className="absolute inset-0 w-full h-full object-cover"
+         />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4">      
+           <h1 className="text-white text-5xl sm:text-5xl font-bold mt-4 sm:mt-24">         
+             "Together,<br />we shine"      
+           </h1>  
+           <p className="text-white mt-2 sm:mt-5 text-xs sm:text-sm">      
+             We help you grow along with us     
+           </p>   
+           <button className="text-white text-xs py-2 px-5 mt-3 rounded-full"    
+             style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)' }} onClick={handleButtonClick}  >
+              Know More
+           </button>   
+         </div>
+      </div>
+     </section>
 
 
 -      <section className="text-center">

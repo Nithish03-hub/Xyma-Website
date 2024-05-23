@@ -39,17 +39,23 @@ const Resource = () => {
     return (
         <div>
             <section>
-                <div>
-                    <img src={cs} alt="Case Studies" />
-                    <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
-                        <div className='text-white text-5xl font-bold mt-4 sm:mt-24'>
-                            Case Studies
-                        </div>
-                        <div className='text-sm text-white mt-5 ml-12' style={{ width: '88%' }}>
-                            Xyma Analytics Case Studies are documented examples illustrating the application and effectiveness of Xyma Analytics' solutions in real-world scenarios
-                        </div>
-                    </div>
-                </div>
+            <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+          <img
+           src={cs}
+           alt="cover image"
+           className="absolute inset-0 w-full h-full object-cover"
+         />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4">      
+           <h1 className="text-white text-5xl sm:text-5xl font-bold mt-4 sm:mt-24">         
+           Case Studies     
+           </h1>  
+           <p className="text-white mt-2 sm:mt-5 text-xs sm:text-sm">      
+           Xyma Analytics Case Studies are documented examples illustrating the application and effectiveness of 
+           Xyma Analytics' solutions in real-world scenarios     
+           </p>   
+            
+         </div>
+      </div>
             </section>
 
             <section>
