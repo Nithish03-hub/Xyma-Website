@@ -22,26 +22,26 @@ const Footer = () => {
     >
       <div className="flex justify-center items-center">
         <div
-          className="mt-[-50px] rounded-3xl w-full sm:w-[90%]"
+          className="mt-[-50px] rounded-3xl w-full lg:w-[90%]"
           style={{
             background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
           }}
         >
           <div
-            className="flex flex-col md:flex-row items-center justify-between"
+            className="flex flex-col lg:flex-row items-center justify-between"
             style={{ marginBottom: "20px" }}
           >
-            <div className="md:ml-10 mt-3.5 text-white text-lg sm:text-xl md:text-3xl text-center sm:text-left w-full">
+            <div className="lg:ml-10 mt-3.5 text-white text-lg lg:text-3xl text-center lg:text-left w-full">
               Enhance Process Efficiency through
               <br />
               XYMA Analytics' Innovations
               <img
-                className="mb-1 w-[250px] md:w-40 mx-auto md:ml-40"
+                className="mb-1 w-[250px] lg:w-40 mx-auto lg:ml-40"
                 src={vector}
                 alt="Vector Image"
               />
             </div>
-            <div className="md:mr-10 md:mt-5 text-xs mt-5 md:text-right flex gap-2">
+            <div className="lg:mr-10 lg:mt-5 text-xs mt-5 lg:text-right flex gap-2">
               <button
                 className="bg-[#01285C] text-white rounded-full p-4 w-40"
                 onClick={handleContactClick}
@@ -56,10 +56,10 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full flex flex-col items-center mt-12">
-        <div className="w-[90%] text-white flex flex-col sm:flex-row gap-2">
-          <div className="w-full sm:w-[25%] flex flex-col items-center md:items-start">
+        <div className="w-[90%] text-white flex flex-col lg:flex-row gap-2">
+          <div className="w-full lg:w-[25%] flex flex-col items-center lg:items-start">
             <img className="w-32 h-14" src={logo} alt="Logo"></img>
-            <div className="text-white text-xs w-full sm:w-[80%] mt-2 text-center sm:text-left">
+            <div className="text-white text-xs w-full lg:w-[80%] mt-2 text-center lg:text-left">
               Patented Ultrasonic Waveguide based sensors for preventing
               unplanned downtime and enhancing process efficiency.
             </div>
@@ -70,7 +70,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full sm:w-[50%] flex">
+          <div className="w-full lg:w-[50%] flex">
             <div className="text-xs w-1/3">
               <div className="font-semibold mb-5 text-sm">
                 Quick Links <img className="mt-1 h-0.5 w-5" src={line} />
@@ -100,8 +100,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full sm:w-[25%] flex items-start justify-center">
-            <div className="flex flex-col items-start p-2.5 gap-2.5 w-full h-full sm:h-[50%] bg-black/40 rounded-[10px]">
+          <div className="w-full lg:w-[25%] flex items-start justify-center">
+            <div className="flex flex-col items-start p-2.5 gap-2.5 w-full h-full lg:h-[50%] bg-black/40 rounded-[10px]">
               <div>Subscribe Now</div>
               <form class="flex items-center justify-between w-full">
                 <input
@@ -117,15 +117,15 @@ const Footer = () => {
         </div>
         <div className="h-0.5 mt-4 mb-4 w-[90%] bg-[#013872]" />
         {/* footer */}
-        <div className="sm:flex justify-between text-white text-xs w-[90%] mb-4 font-light">
-          <div className="sm:flex text-center gap-1 justify-center">
+        <div className="lg:flex justify-between text-white text-xs w-[90%] mb-4 font-light">
+          <div className="lg:flex text-center gap-1 justify-center">
             <div className='flex justify-center'>
               <div className='mr-1'>© 2022 XYMA Analytics Inc.</div>
               <div className='text-gray-400'>IIT Madras Research Park, </div>
             </div>
             <div className="text-gray-400">Chennai, 600113</div>
           </div>
-          <div className="flex gap-8 justify-center mt-4 sm:mt-0 mb-4 sm:mb-0">
+          <div className="flex gap-8 justify-center mt-4 lg:mt-0 mb-4 lg:mb-0">
             <div>Terms & Conditions</div>
             <div>Privacy Policy</div>
           </div>

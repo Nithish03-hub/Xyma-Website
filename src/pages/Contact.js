@@ -35,7 +35,7 @@ const ContactPage = () => {
   return (
     <div className="mt-[10vh]">
       <section>
-        <div className=" relative h-[60vh] sm:h-[90vh] shadow-white shadow-2xl">
+        <div className=" relative h-[60vh] lg:h-[90vh] shadow-white shadow-2xl">
           <video
             src={video2}
             autoPlay
@@ -67,17 +67,17 @@ const ContactPage = () => {
       </section>
 
       {/* bottom text */}
-      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[25px] sm:-mt-[50px] 2xl:-mt-[65px] mb-[30px] sm:mb-[70px]">
+      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] lg:text-[90px] 2xl:text-[120px] -mt-[25px] lg:-mt-[50px] 2xl:-mt-[65px] mb-[30px] lg:mb-[70px]">
         CONTACT US
       </div>
 
       <section
         ref={sectionRef}
-        className="mx-[5%] sm:mx-[20%] sm:h-[90vh] mb-6  flex items-center justify-center"
+        className="mx-[5%] lg:mx-[20%] lg:h-[90vh] mb-6  flex items-center justify-center"
       >
         <div className="">
           <div className="flex justify-center">
-            <div className="flex gap-2 text-2xl sm:text-4xl font-semibold">
+            <div className="flex gap-2 text-2xl lg:text-4xl font-semibold">
               <div>Get</div>
               <div className="w-[100px]">
                 <div>In&nbsp;Touch</div>
@@ -86,15 +86,15 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="text-[#60646C] text-sm sm:text-base text-center mt-2 mb-2">
+          <div className="text-[#60646C] text-sm lg:text-base text-center mt-2 mb-2">
             Our attention is fully focused on You. Do not hesitate to contact us
             at any time
           </div>
 
           <div className=" mb-4">
-            <form onSubmit={handleFormSubmit} className="text-sm sm:text-base">
-              <div className="sm:flex gap-4">
-                <div className=" w-full sm:w-1/2 mb-2">
+            <form onSubmit={handleFormSubmit} className="text-sm lg:text-base">
+              <div className="lg:flex gap-4">
+                <div className=" w-full lg:w-1/2 mb-2">
                   <label
                     className="block font-semibold mb-1"
                     htmlFor="username"
@@ -108,7 +108,7 @@ const ContactPage = () => {
                     placeholder="Enter your name"
                   />
                 </div>
-                <div className=" w-full sm:w-1/2 mb-2">
+                <div className=" w-full lg:w-1/2 mb-2">
                   <label className="block font-semibold mb-1" htmlFor="email">
                     Business Email <span className="text-[#CE2C31]">*</span>
                   </label>
@@ -121,19 +121,19 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              <div className="sm:flex gap-4">
-                <div className=" w-full sm:w-1/2 mb-2">
+              <div className="lg:flex gap-4">
+                <div className=" w-full lg:w-1/2 mb-2">
                   <label className="block font-semibold mb-1" htmlFor="job">
                     Job Title <span className="text-[#CE2C31]">*</span>
                   </label>
                   <input
-                    className="appearance-none leading-tight w-full sm:w-full border border-gray-400 rounded-lg p-2 text-gray-800 focus:outline-none focus:border-gray-600"
+                    className="appearance-none leading-tight w-full lg:w-full border border-gray-400 rounded-lg p-2 text-gray-800 focus:outline-none focus:border-gray-600"
                     id="job"
                     type="text"
                     placeholder="Enter your Job Title"
                   />
                 </div>
-                <div className=" w-full sm:w-1/2 mb-2">
+                <div className=" w-full lg:w-1/2 mb-2">
                   <label className="block font-semibold mb-1" htmlFor="company">
                     Company <span className="text-[#CE2C31]">*</span>
                   </label>
@@ -171,7 +171,7 @@ const ContactPage = () => {
                   <span className="text-[#CE2C31]">*</span>
                 </label>
                 <textarea
-                  className="w-full appearance-none border border-gray-400 rounded-lg p-2 text-gray-800 leading-tight focus:outline-none focus:border-gray-600 h-16 sm:h-20"
+                  className="w-full appearance-none border border-gray-400 rounded-lg p-2 text-gray-800 leading-tight focus:outline-none focus:border-gray-600 h-16 lg:h-20"
                   id="detail"
                   type="text"
                   placeholder="Enter your requirements"
@@ -179,7 +179,7 @@ const ContactPage = () => {
               </div>
 
               <div className="flex justify-center">
-                <div className="block sm:w-full">
+                <div className="block lg:w-full">
                   <button
                     style={{
                       background:
@@ -199,26 +199,26 @@ const ContactPage = () => {
 
       <section className=" mb-10">
         <div className="flex justify-center">
-          <div className="sm:flex gap-2 text-2xl sm:text-4xl font-semibold">
+          <div className="lg:flex gap-2 text-2xl lg:text-4xl font-semibold">
             <div className="">Around the world:</div>
-            <div className="w-[200px] sm:w-[280px] text-center">
+            <div className="w-[200px] lg:w-[280px] text-center">
               <div className="">XYMA&nbsp;Analytics</div>
               <img className="w-full object-cover" src={second} />
             </div>
           </div>
         </div>
-        <div className="text-[#60646C] text-sm sm:text-base text-center mt-2">
+        <div className="text-[#60646C] text-sm lg:text-base text-center mt-2">
           Installations of Ultrasonic Waveguide Sensors in different countries
         </div>
-        <div className=" h-[200px] sm:h-auto">
+        <div className=" h-[200px] lg:h-auto">
           <img className="object-cover w-full h-full" src={map}></img>
         </div>
       </section>
 
       
         <center className='mb-4'>
-          <div className=" w-[100px] sm:w-[200px]">
-            <div className=" text-xl sm:text-4xl font-semibold">
+          <div className=" w-[100px] lg:w-[200px]">
+            <div className=" text-xl lg:text-4xl font-semibold">
               Location
             </div>
             <div className="">
@@ -227,8 +227,8 @@ const ContactPage = () => {
           </div>
         </center>
 
-      <div className="sm:flex justify-center  mx-[5%]">
-          <div className="w-full sm:w-1/2 h-[300px] sm:h-[400px]  p-4">
+      <div className="lg:flex justify-center  mx-[5%]">
+          <div className="w-full lg:w-1/2 h-[300px] lg:h-[400px]  p-4">
             <iframe
               className="rounded-2xl"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6996041325237!2d80.24036047361022!3d12.991055214454398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526789b9607537%3A0x961343cab532a48d!2sXYMA%20Analytics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1714978751471!5m2!1sen!2sin"
@@ -242,7 +242,7 @@ const ContactPage = () => {
           </div>
 
           <div
-            className="w-full sm:w-1/2 p-4 flex items-center  text-sm sm:text-base"
+            className="w-full lg:w-1/2 p-4 flex items-center  text-sm lg:text-base"
           >
             <div className="flex flex-col">
               <div className="flex border border-gray-300 rounded-xl p-2">

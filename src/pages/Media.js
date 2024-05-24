@@ -117,19 +117,19 @@ const Media = () => {
           <img
             src={media}
             alt="media"
-            className="w-full h-[60vh] sm:h-[90vh] object-cover sm:object-fill "
+            className="w-full h-[60vh] lg:h-[90vh] object-cover lg:object-fill "
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <div className="text-white text-3xl sm:text-5xl font-semibold sm:font-bold ">
+            <div className="text-white text-3xl lg:text-5xl font-semibold lg:font-bold ">
               News Room
             </div>
-            <div className="text-white mt-2 sm:mt-5 text-xs sm:text-sm sm:font-semibold">
+            <div className="text-white mt-2 lg:mt-5 text-xs lg:text-sm lg:font-semibold">
               Spotlight on XYMA Analytics
             </div>
           </div>
         </div>
         {/* bottom text */}
-        <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px] mb-[20px] sm:mb-[70px]">
+        <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] lg:text-[90px] 2xl:text-[120px] -mt-[20px] lg:-mt-[50px] 2xl:-mt-[65px] mb-[20px] lg:mb-[70px]">
           XYMA NEWS
         </div>
       </section>
@@ -141,7 +141,7 @@ const Media = () => {
           </div>
         </center>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 mx-4 sm:mx-16">
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4 mx-4 lg:mx-16">
           <div
             className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
             style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
@@ -239,7 +239,7 @@ const Media = () => {
 
           {!loadMore && (
             <div
-              className="cursor-pointer p-2 sm:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
+              className="cursor-pointer p-2 lg:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
               style={{
                 background:
                   "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -251,7 +251,7 @@ const Media = () => {
           )}
 
           {loadMore && (
-            <div className="sm:hidden">
+            <div className="lg:hidden">
               <div
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
@@ -460,7 +460,7 @@ const Media = () => {
               </div>
 
               <div
-                className="cursor-pointer p-2 sm:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
+                className="cursor-pointer p-2 lg:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -473,7 +473,7 @@ const Media = () => {
           )}
 
           <div
-            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden lg:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -512,7 +512,7 @@ const Media = () => {
           </div>
 
           <div
-            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden lg:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -554,7 +554,7 @@ const Media = () => {
           </div>
 
           <div
-            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden lg:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -595,7 +595,7 @@ const Media = () => {
           </div>
 
           <div
-            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden lg:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -634,7 +634,7 @@ const Media = () => {
           </div>
 
           <div
-            className="hidden sm:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            className="hidden lg:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
@@ -676,21 +676,21 @@ const Media = () => {
         </div>
       </section>
 
-      <div className="h-[90vh] bg-[#EEF6FF] sm:flex mt-20">
-        <div className="h-[30%] sm:h-full w-full sm:w-1/2 flex flex-col items-center justify-center">
+      <div className="h-[90vh] bg-[#EEF6FF] lg:flex mt-20">
+        <div className="h-[30%] lg:h-full w-full lg:w-1/2 flex flex-col items-center justify-center">
           <img
             //style={{ width: "8%", marginLeft: "50%", marginTop: "25%" }}
             src={icon6}
             alt="Background"
             className="h-[40px]"
           />
-          <div className="font-semibold text-xl sm:text-4xl text-[#013872] w-[90%] sm:w-[60%] text-center">
+          <div className="font-semibold text-xl lg:text-4xl text-[#013872] w-[90%] lg:w-[60%] text-center">
             "Strength lies in togetherness, creativity is embraced with
             inclusivity, and passion flourishes with freedom."
           </div>
         </div>
 
-        <div className="flex w-full sm:w-1/2 h-[70%] sm:h-full overflow-hidden">
+        <div className="flex w-full lg:w-1/2 h-[70%] lg:h-full overflow-hidden">
           <div className="flex justify-center">
             <VerticalSlider images={images1} />
           </div>

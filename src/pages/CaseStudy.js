@@ -22,7 +22,7 @@ const CaseStudy = () => {
   return (
     <div className=" mx-[5%]">
       <div className="h-[10vh]">{/* navbar space */}</div>
-      <div className="flex gap-2 mt-10 sm:mt-16 text-2xl font-semibold">
+      <div className="flex gap-2 mt-10 lg:mt-16 text-2xl font-semibold">
         <div className="cursor-pointer  flex items-center" onClick={handleBack}>
           <HiChevronLeft size={25} />
         </div>
@@ -33,16 +33,16 @@ const CaseStudy = () => {
         </div>
       </div>
 
-      <div className="sm:flex ">
-        <div className=" w-full sm:w-1/2 p-4 sm:p-8">
+      <div className="lg:flex ">
+        <div className=" w-full lg:w-1/2 p-4 lg:p-8">
           <img src={aluminum} alt="Aluminum Image" />
         </div>
 
-        <div className=" w-full sm:w-1/2 p-4 sm:p-8">
+        <div className=" w-full lg:w-1/2 p-4 lg:p-8">
           <span className="bg-gray-200 text-xs text-gray-500 rounded-2xl p-1 px-2">
             4 Min Read
           </span>
-          <div className="text-base sm:text-xl  mt-4">
+          <div className="text-base lg:text-xl  mt-4">
             A 10°C temperature deviation diminishes efficiency, intensifies
             anode effect, and raises PFC emissions, underscoring the
             significance of meticulous temperature control in industrial
@@ -51,19 +51,19 @@ const CaseStudy = () => {
         </div>
       </div>
 
-      <div className="border border-gray-200 sm:mx-[10%] mt-4 mb-4" />
+      <div className="border border-gray-200 lg:mx-[10%] mt-4 mb-4" />
 
-      <div className="sm:flex ">
-        <div className=" w-full sm:w-[70%]">
+      <div className="lg:flex ">
+        <div className=" w-full lg:w-[70%]">
           {/* points */}
           <div className=" mx-2">
             {/* 1st point */}
             <div>
-              <div className="text-lg sm:text-xl font-semibold mb-2">
+              <div className="text-lg lg:text-xl font-semibold mb-2">
                 1. Temperature Sensitivity:
               </div>
               <ul
-                className=" text-[#60646C] text-sm sm:text-base ml-4 "
+                className=" text-[#60646C] text-sm lg:text-base ml-4 "
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -79,18 +79,18 @@ const CaseStudy = () => {
                   efficiency and productivity.
                 </li>
               </ul>
-              <div className=" p-2 sm:p-8">
+              <div className=" p-2 lg:p-8">
                 <img src={aluminum2} />
               </div>
             </div>
 
             {/* 2nd point */}
             <div className="mb-4">
-              <div className="text-lg sm:text-xl font-semibold mb-2">
+              <div className="text-lg lg:text-xl font-semibold mb-2">
                 2. Efficiency Reduction:
               </div>
               <ul
-                className="text-[#60646C] text-sm sm:text-base ml-4"
+                className="text-[#60646C] text-sm lg:text-base ml-4"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -110,11 +110,11 @@ const CaseStudy = () => {
 
             {/* 3rd point */}
             <div className="mb-4">
-              <div className="text-lg sm:text-xl font-semibold mb-2">
+              <div className="text-lg lg:text-xl font-semibold mb-2">
                 3. Promotion of Anode Effect:
               </div>
               <ul
-                className=" text-[#60646C] text-sm sm:text-base ml-4"
+                className=" text-[#60646C] text-sm lg:text-base ml-4"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -135,11 +135,11 @@ const CaseStudy = () => {
 
             {/* 4th point */}
             <div>
-              <div className="text-lg sm:text-xl font-semibold mb-2">
+              <div className="text-lg lg:text-xl font-semibold mb-2">
                 4. Promotion of Anode Effect:
               </div>
               <ul
-                className=" text-[#60646C] text-sm sm:text-base ml-4"
+                className=" text-[#60646C] text-sm lg:text-base ml-4"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -151,18 +151,18 @@ const CaseStudy = () => {
                   poses significant environmental concerns.
                 </li>
               </ul>
-              <div className="p-2 sm:p-8">
+              <div className="p-2 lg:p-8">
                 <img src={alum} />
               </div>
             </div>
 
             {/* 5th point */}
             <div className="mb-4">
-              <div className="text-lg sm:text-xl font-semibold mb-2">
+              <div className="text-lg lg:text-xl font-semibold mb-2">
                 5. Environmental Implications:
               </div>
               <ul
-                className="text-[#60646C] text-sm sm:text-base ml-4"
+                className="text-[#60646C] text-sm lg:text-base ml-4"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -184,11 +184,11 @@ const CaseStudy = () => {
 
             {/* 6th point */}
             <div className="mb-4">
-              <div className="text-lg sm:text-xl font-semibold mb-2">
+              <div className="text-lg lg:text-xl font-semibold mb-2">
                 6. Importance of Temperature Control:
               </div>
               <ul
-                className=" text-[#60646C] text-sm sm:text-base ml-4"
+                className=" text-[#60646C] text-sm lg:text-base ml-4"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -209,7 +209,7 @@ const CaseStudy = () => {
           </div>
 
           {/* conclusion */}
-          <div className=" text-[#60646C] text-sm sm:text-base  mb-4 mr-2">
+          <div className=" text-[#60646C] text-sm lg:text-base  mb-4 mr-2">
             In conclusion, the impact of temperature fluctuations on industrial
             processes is multifaceted, affecting efficiency, environmental
             sustainability, and overall performance. Addressing temperature
@@ -225,50 +225,50 @@ const CaseStudy = () => {
           </div>
         </div>
 
-        <div className="border border-gray-200 mt-2 mb-2 sm:my-[15%]" />
+        <div className="border border-gray-200 mt-2 mb-2 lg:my-[15%]" />
 
-        <div className=" w-full sm:w-[30%] sm:px-6">
+        <div className=" w-full lg:w-[30%] lg:px-6">
           <div className=" mb-4">
-            <div className="text-lg sm:text-xl font-semibold mb-2">
+            <div className="text-lg lg:text-xl font-semibold mb-2">
               Reformer Tube
             </div>
             <div className="relative  mb-2">
-              <img src={tube1} />
+              <img className="w-full h-full" src={tube1} />
               <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
                 Read More
               </span>
             </div>
-            <div className="font-semibold text-sm sm:text-base">
+            <div className="font-semibold text-sm lg:text-base">
               A 20°C increase in temperature reduces the lifespan of reformer
               tubes by half
             </div>
           </div>
 
           <div className=" mb-4">
-            <div className="text-lg sm:text-xl font-semibold mb-2">
+            <div className="text-lg lg:text-xl font-semibold mb-2">
               Lubricant
             </div>
             <div className="relative  mb-2">
-              <img src={oil1} />
+              <img className="w-full h-full" src={oil1} />
               <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
                 Read More
               </span>
             </div>
-            <div className="font-semibold text-sm sm:text-base">
+            <div className="font-semibold text-sm lg:text-base">
               30% of maintenance budget influenced by lubricants, highlighting
               their significant role in operational expenses
             </div>
           </div>
 
           <div className="">
-            <div className="text-lg sm:text-xl font-semibold mb-2">Steel</div>
+            <div className="text-lg lg:text-xl font-semibold mb-2">Steel</div>
             <div className="relative  mb-2">
-              <img src={steel1} />
+              <img className="w-full h-full" src={steel1} />
               <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
                 Read More
               </span>
             </div>
-            <div className="font-semibold text-sm sm:text-base">
+            <div className="font-semibold text-sm lg:text-base">
               Extending ladle life for one cycle yields steel worth $5.1M
             </div>
           </div>

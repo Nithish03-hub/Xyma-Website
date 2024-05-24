@@ -150,18 +150,18 @@ export const Home = () => {
     <div className="w-full overflow-hidden">
       <div className="h-[10vh]">{/* space for navbar */}</div>
       {/* cover image */}
-      <div className="relative h-[60vh] sm:h-[90vh] w-full shadow-white shadow-2xl">
+      <div className="relative h-[60vh] lg:h-[90vh] w-full shadow-white shadow-2xl">
         <img
           src={newpage}
           alt="cover image"
           className="absolute w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl sm:text-6xl text-white font-semibold ml-12 sm:ml-24 gap-2 2xl:text-8xl">
+        <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl lg:text-6xl text-white font-semibold ml-12 lg:ml-24 gap-2 2xl:text-8xl">
           <div data-aos="slide-right">Prevent</div>
           <div data-aos="slide-right">Unplanned</div>
           <div data-aos="slide-right">Downtime</div>
           <div
-            className="text-xs sm:text-sm mt-2 2xl:text-base"
+            className="text-xs lg:text-sm mt-2 2xl:text-base"
             data-aos="slide-right"
           >
             "The Disruptive Ultrasonic Waveguide Technology"
@@ -169,18 +169,18 @@ export const Home = () => {
         </div>
       </div>
       {/* bottom text */}
-      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px]">
+      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] lg:text-[90px] 2xl:text-[120px] -mt-[20px] lg:-mt-[50px] 2xl:-mt-[65px]">
         XYMA ANALYTICS
       </div>
       {/* text with underline */}
-      <div className="flex justify-center items-center mt-4 sm:mt-20 2xl:mt-28 h-[10vh]">
+      <div className="flex justify-center items-center mt-4 lg:mt-20 2xl:mt-28 h-[10vh]">
         <div
-          className="text-xl sm:text-3xl 2xl:text-5xl font-semibold text-center"
+          className="text-xl lg:text-3xl 2xl:text-5xl font-semibold text-center"
           //data-aos="zoom-in-up"
         >
           Impact of discrete inaccurate Process parameter measurements
           <img
-            className="w-[200px] sm:w-auto 2xl:w-[800px] h-2 ml-[30%] sm:ml-96 2xl:ml-[600px]"
+            className="w-[200px] lg:w-auto 2xl:w-[800px] h-2 ml-[30%] lg:ml-96 2xl:ml-[600px]"
             src={newline}
           ></img>
         </div>
@@ -188,123 +188,123 @@ export const Home = () => {
 
       <div className="w-full h-[80vh]">
         {/* elements cards */}
-        <div className="h-[80vh] sm:h-[60vh] 2xl:h-[70vh] sm:flex pt-8 sm:px-36 2xl:px-16">
+        <div className="h-[80vh] lg:h-[60vh] 2xl:h-[70vh] lg:flex pt-8 lg:px-36 2xl:px-16">
           {/* list of elements */}
           <div
-            className="w-full overflow-auto sm:p-4 sm:w-[15%] h-[8%] sm:h-full text-gray-500 2xl:text-3xl flex items-center sm:items-start sm:justify-start sm:flex-col"
+            className="w-full overflow-auto lg:p-4 lg:w-[15%] h-[8%] lg:h-full text-gray-500 2xl:text-3xl flex items-center lg:items-start lg:justify-start lg:flex-col"
             style={{ scrollbarWidth: "none" }}
           >
             <div data-aos="zoom-in-up">
               <div
-                className={`sm:w-full cursor-pointer p-1 mb-1 flex ${
+                className={`lg:w-full cursor-pointer p-1 mb-1 flex ${
                   clickedImage === aluminum && "text-[#013872] font-medium"
                 }`}
                 id="aluminum"
                 onClick={handleImageChange}
               >
                 {clickedImage === aluminum && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible lg:visible border border-blue-800"></div>
                 )}
                 <div className="ml-1 -z-10">Aluminum</div>
               </div>
               {clickedImage === aluminum && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-blue-800 lg:hidden" />
               )}
             </div>
 
             <div data-aos="zoom-in-up">
               <div
-                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === steel && "text-[#013872] font-medium"
                 }`}
                 id="steel"
                 onClick={handleImageChange}
               >
                 {clickedImage === steel && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible lg:visible border border-blue-800"></div>
                 )}
                 <div className="ml-1 -z-10">Steel</div>
               </div>
               {clickedImage === steel && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-blue-800 lg:hidden" />
               )}
             </div>
 
             <div data-aos="zoom-in-up">
               <div
-                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === reformerTubes && "text-[#013872] font-medium"
                 }`}
                 id="refiniries"
                 onClick={handleImageChange}
               >
                 {clickedImage === reformerTubes && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible lg:visible border border-blue-800"></div>
                 )}
                 <div className="ml-1 -z-10">Refiniries</div>
               </div>
               {clickedImage === reformerTubes && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-blue-800 lg:hidden" />
               )}
             </div>
 
             <div data-aos="zoom-in-up">
               <div
-                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === lubricants && "text-[#013872] font-medium"
                 }`}
                 id="lubricants"
                 onClick={handleImageChange}
               >
                 {clickedImage === lubricants && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible lg:visible border border-blue-800"></div>
                 )}
                 <div className="ml-1 -z-10">Lubricants</div>
               </div>
               {clickedImage === lubricants && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-blue-800 lg:hidden" />
               )}
             </div>
 
             <div data-aos="zoom-in-up">
               <div
-                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === oilRecovery && "text-[#013872] font-medium"
                 }`}
                 id="oilRecovery"
                 onClick={handleImageChange}
               >
                 {clickedImage === oilRecovery && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible lg:visible border border-blue-800"></div>
                 )}
                 <div className="ml-1 -z-10">Oil&nbsp;Recovery</div>
               </div>
               {clickedImage === oilRecovery && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-blue-800 lg:hidden" />
               )}
             </div>
 
             <div data-aos="zoom-in-up">
               <div
-                className={`sm:w-full flex p-1 mb-1 cursor-pointer ${
+                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === paints && "text-[#013872] font-medium"
                 }`}
                 id="paints"
                 onClick={handleImageChange}
               >
                 {clickedImage === paints && (
-                  <div className="invisible sm:visible border border-blue-800"></div>
+                  <div className="invisible lg:visible border border-blue-800"></div>
                 )}
                 <div className="ml-1 -z-10">Paints</div>
               </div>
               {clickedImage === paints && (
-                <div className="border border-blue-800 sm:hidden" />
+                <div className="border border-blue-800 lg:hidden" />
               )}
             </div>
           </div>
           {/* element images */}
           <div
-            className="w-full sm:w-[45%] 2xl:w-[50%] h-[61%] sm:h-full"
+            className="w-full lg:w-[45%] 2xl:w-[50%] h-[61%] lg:h-full"
             data-aos="slide-right"
           >
             {clickedImage && (
@@ -322,13 +322,13 @@ export const Home = () => {
           </div>
           {/* elements description */}
           <div
-            className="w-full mt-4 sm:w-[40%] 2xl:w-[35%] h-[31%] sm:h-full flex items-center justify-center p-4"
+            className="w-full mt-4 lg:w-[40%] 2xl:w-[35%] h-[31%] lg:h-full flex items-center justify-center p-4"
             // data-aos={window.innerWidth <= 640 ? "slide-up" : "slide-left"}
             data-aos="slide-left"
           >
             {clickedImage && (
               <div
-                className="text-2xl sm:text-3xl 2xl:text-5xl font-semibold text-center"
+                className="text-2xl lg:text-3xl 2xl:text-5xl font-semibold text-center"
                 style={{
                   color: "transparent",
                   background:
@@ -352,19 +352,19 @@ export const Home = () => {
         ></div>
 
         <div
-          className="text-xl sm:text-3xl font-semibold relative 2xl:text-5xl w-full text-center -z-10"
+          className="text-xl lg:text-3xl font-semibold relative 2xl:text-5xl w-full text-center -z-10"
           //data-aos="zoom-in-up"
         >
           <p>
             Patented Ultrasonic Waveguide Sensors:
             <img
-              className="w-[175px] sm:w-64 h-2 ml-44 sm:ml-[500px] 2xl:ml-[530px] 2xl:w-[500px]"
+              className="w-[175px] lg:w-64 h-2 ml-44 lg:ml-[500px] 2xl:ml-[530px] 2xl:w-[500px]"
               src={old}
             ></img>
             <p style={{ textAlign: "center" }}>Xyma Analytics</p>
           </p>
         </div>
-        <div className="mt-3 px-4 sm:px-0 sm:flex gap-2 text-[#FE7D18]">
+        <div className="mt-3 px-4 lg:px-0 lg:flex gap-2 text-[#FE7D18]">
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
@@ -389,16 +389,16 @@ export const Home = () => {
               </div>
             </div>
             {utmapsBadge && (
-              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] sm:w-[500px] z-10 text-gray-500 sm:flex">
-                <div className="bg-white rounded-t-xl sm:rounded-l-xl h-[150px] w-full sm:w-[40%] p-1">
+              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] lg:w-[500px] z-10 text-gray-500 lg:flex">
+                <div className="bg-white rounded-t-xl lg:rounded-l-xl h-[150px] w-full lg:w-[40%] p-1">
                   <div className="w-full h-full bg-black rounded-xl flex justify-center ">
                     <img
-                      className="object-cover object-top rounded-xl w-[50%] sm:w-[75%] h-full"
+                      className="object-cover object-top rounded-xl w-[50%] lg:w-[75%] h-full"
                       src={utmaps}
                     />
                   </div>
                 </div>
-                <div className="bg-white w-full sm:w-[60%] p-1 rounded-b-xl sm:rounded-r-xl">
+                <div className="bg-white w-full lg:w-[60%] p-1 rounded-b-xl lg:rounded-r-xl">
                   <div className="text-base font-bold text-black mb-1">
                     μTMapS & μSTMapS
                   </div>
@@ -438,16 +438,16 @@ export const Home = () => {
               </div>
             </div>
             {portsBadge && (
-              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] sm:w-[500px] z-10  text-gray-500 sm:flex">
-                <div className="bg-white rounded-t-xl sm:rounded-l-xl h-[150px] w-full sm:w-[40%] p-1">
+              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] lg:w-[500px] z-10  text-gray-500 lg:flex">
+                <div className="bg-white rounded-t-xl lg:rounded-l-xl h-[150px] w-full lg:w-[40%] p-1">
                   <div className="w-full h-full bg-black rounded-xl flex justify-center ">
                     <img
-                      className="object-cover object-top rounded-xl w-[50%] sm:w-[75%] h-full"
+                      className="object-cover object-top rounded-xl w-[50%] lg:w-[75%] h-full"
                       src={ports}
                     />
                   </div>
                 </div>
-                <div className="bg-white w-full sm:w-[60%] p-1 rounded-b-xl sm:rounded-r-xl">
+                <div className="bg-white w-full lg:w-[60%] p-1 rounded-b-xl lg:rounded-r-xl">
                   <div className="text-base font-bold text-black mb-1">
                     PoRTS
                   </div>
@@ -487,16 +487,16 @@ export const Home = () => {
               </div>
             </div>
             {ztarBadge && (
-              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] sm:w-[350px] z-10 text-gray-500 sm:flex">
-                <div className="bg-white rounded-t-xl sm:rounded-l-xl h-[150px] w-full sm:w-[40%] p-1">
+              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] lg:w-[350px] z-10 text-gray-500 lg:flex">
+                <div className="bg-white rounded-t-xl lg:rounded-l-xl h-[150px] w-full lg:w-[40%] p-1">
                   <div className="w-full h-full bg-black rounded-xl flex justify-center ">
                     <img
-                      className="object-cover object-top rounded-xl w-[50%] sm:w-[75%] h-full"
+                      className="object-cover object-top rounded-xl w-[50%] lg:w-[75%] h-full"
                       src={ztar}
                     />
                   </div>
                 </div>
-                <div className="bg-white w-full sm:w-[60%] p-1 rounded-b-xl sm:rounded-r-xl">
+                <div className="bg-white w-full lg:w-[60%] p-1 rounded-b-xl lg:rounded-r-xl">
                   <div className="text-base font-bold text-black mb-1">
                     Ztar
                   </div>
@@ -512,7 +512,7 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="relative block w-[90%] h-[45%] sm:w-[45%] sm:h-[65%] mt-[40px] 2xl:w-[50%]">
+        <div className="relative block w-[90%] h-[45%] lg:w-[45%] lg:h-[65%] mt-[40px] 2xl:w-[50%]">
           <img
             className="absolute w-full h-full -z-10"
             data-aos="zoom-in-up"
@@ -537,7 +537,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "sensor" && (
-              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] sm:left-auto sm:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
+              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] lg:left-auto lg:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
                 Sensor&nbsp;Life&nbsp;up&nbsp;to 50,000 hrs
               </div>
             )}
@@ -560,7 +560,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "iot" && (
-              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] sm:left-auto sm:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
+              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] lg:left-auto lg:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
                 Multi - Point Measurement
               </div>
             )}
@@ -583,7 +583,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "grp" && (
-              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] sm:left-auto sm:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
+              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] lg:left-auto lg:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
                 Energy&nbsp;Management System-IoT
               </div>
             )}
@@ -606,7 +606,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "zero" && (
-              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] sm:right-auto sm:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
+              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] lg:right-auto lg:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
                 Zero&nbsp;Manual Intervention
               </div>
             )}
@@ -629,7 +629,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "ai" && (
-              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] sm:right-auto sm:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
+              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] lg:right-auto lg:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
                 AI&nbsp;Enable&nbsp;Corrective Actions
               </div>
             )}
@@ -652,7 +652,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "tool" && (
-              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] sm:right-auto sm:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
+              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] lg:right-auto lg:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
                 Retrofit Benifits
               </div>
             )}
@@ -662,7 +662,7 @@ export const Home = () => {
       {/* grid card section */}
       <section>
         <div
-          className="text-white py-16 h-auto sm:h-[100vh]"
+          className="text-white py-16 h-auto lg:h-[100vh]"
           style={{
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
@@ -671,17 +671,17 @@ export const Home = () => {
             className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4"
             //data-aos="zoom-in-up"
           >
-            <p className="text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-4xl font-semibold text-center">
+            <p className="text-xl lg:text-2xl xl:text-4xl font-semibold text-center">
               Making a difference with the approach
               <img
-                className="w-[100px] md:w-40 ml-[125px] sm:ml-24 lg:ml-auto"
+                className="w-[100px] md:w-40 ml-[125px] lg:ml-24"
                 src={second}
                 alt="Approach Image"
               />
             </p>
           </div>
-          <div className="h-[90%] mt-4 mx-4 sm:mx-20 2xl:mx-10 sm:flex p-4">
-            <div className="w-full sm:w-[35%] p-4">
+          <div className="h-[90%] mt-4 mx-4 lg:mx-20 2xl:mx-10 lg:flex p-4">
+            <div className="w-full lg:w-[35%] p-4">
               <div
                 className="h-full w-full rounded-lg p-4"
                 data-aos="flip-right"
@@ -698,7 +698,7 @@ export const Home = () => {
                     alt="Trophy icon"
                   />
                 </div>
-                <div className="h-[20%] text-2xl sm:text-3xl font-semibold">
+                <div className="h-[20%] text-2xl lg:text-3xl font-semibold">
                   <div className="h-1/2 flex items-center justify-center">
                     Award Winning
                   </div>
@@ -713,13 +713,13 @@ export const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full sm:w-[65%] flex flex-col sm:grid grid-cols-2 p-4 gap-4">
+            <div className="w-full lg:w-[65%] flex flex-col lg:grid grid-cols-2 p-4 gap-4">
               <div
-                className="rounded-lg bg-white px-4 p-4 sm:p-0"
+                className="rounded-lg bg-white px-4 p-4 lg:p-0"
                 data-aos="flip-up"
               >
-                <div className="hidden sm:block h-1/4"></div>
-                <div className="h-1/2 sm:h-1/4 flex">
+                <div className="hidden lg:block h-1/4"></div>
+                <div className="h-1/2 lg:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
                     <img
                       className="w-[45px] h-[45px]"
@@ -738,11 +738,11 @@ export const Home = () => {
               </div>
 
               <div
-                className="rounded-lg bg-white px-4 p-4 sm:p-0"
+                className="rounded-lg bg-white px-4 p-4 lg:p-0"
                 data-aos="flip-up"
               >
-                <div className="hidden sm:block h-1/4"></div>
-                <div className="h-1/2 sm:h-1/4 flex">
+                <div className="hidden lg:block h-1/4"></div>
+                <div className="h-1/2 lg:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
                     <img
                       className="w-[45px] h-[45px]"
@@ -762,11 +762,11 @@ export const Home = () => {
               </div>
 
               <div
-                className="rounded-lg bg-white px-4 p-4 sm:p-0"
+                className="rounded-lg bg-white px-4 p-4 lg:p-0"
                 data-aos="flip-up"
               >
-                <div className="hidden sm:block h-1/4"></div>
-                <div className="h-1/2 sm:h-1/4 flex">
+                <div className="hidden lg:block h-1/4"></div>
+                <div className="h-1/2 lg:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
                     <img className="w-[45px] h-[45px]" src={real} alt="real" />
                   </div>
@@ -781,11 +781,11 @@ export const Home = () => {
               </div>
 
               <div
-                className="rounded-lg bg-white px-4 p-4 sm:p-0"
+                className="rounded-lg bg-white px-4 p-4 lg:p-0"
                 data-aos="flip-up"
               >
-                <div className="hidden sm:block h-1/4"></div>
-                <div className="h-1/2 sm:h-1/4 flex">
+                <div className="hidden lg:block h-1/4"></div>
+                <div className="h-1/2 lg:h-1/4 flex">
                   <div className="w-[20%] h-full flex items-center justify-center">
                     <img className="w-[45px] h-[45px]" src={time} alt="time" />
                   </div>

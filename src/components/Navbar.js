@@ -36,7 +36,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50">
       <div className="h-[10vh]">
         <div className="bg-[#122e4b] h-[9vh] flex items-center px-4">
-          <div className=" flex items-center text-white md:justify-around justify-between w-full 2xl:text-lg">
+          <div className=" flex items-center text-white lg:justify-around justify-between w-full 2xl:text-lg">
             <div>
               <img className="mr-4 h-10" src={xyma} alt="Logo" />
             </div>
@@ -94,7 +94,7 @@ const Navbar = () => {
       </div>
 
       {burgerMenuOpen && (
-        <div className="bg-white h-[90vh] w-full sm:hidden">
+        <div className="bg-white h-[90vh] w-full lg:hidden">
           <div className="h-[60%]">
             {HeaderData.map((item, index) => (
               <div
