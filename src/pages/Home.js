@@ -38,7 +38,6 @@ import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import stephen from "../Assets/stephen.jpg";
 
 export const Home = () => {
 

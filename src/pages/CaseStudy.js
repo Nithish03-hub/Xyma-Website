@@ -12,10 +12,6 @@ import steel1 from '../Images/steel1.png';
 import { useNavigate } from 'react-router-dom';
 
 
-
-
-
-
 const CaseStudy = () => {
 
   const navigate = useNavigate();
@@ -24,141 +20,261 @@ const CaseStudy = () => {
   } 
 
   return (
-   <div>
-     <section>
-      <div className="flex flex-col md:flex-row items-center" style={{ marginTop: '10%', marginLeft: '8%' }}>
-        <div className="ml-10 md:ml-0 md:mr-4 mt-2 text-xl" onClick={handleBack}>
-          <HiChevronLeft />
+    <div className=" mx-[5%]">
+      <div className="h-[10vh]">{/* navbar space */}</div>
+      <div className="flex gap-2 mt-10 sm:mt-16 text-2xl font-semibold">
+        <div className="cursor-pointer  flex items-center" onClick={handleBack}>
+          <HiChevronLeft size={25} />
         </div>
-        <div className="text-2xl font-semibold mt-2">
-          Aluminum Case Studies
-          <img src={second} className="mt-4 md:mt-0 ml-auto md:w-32" alt="Second" />
+        <div>Aluminium</div>
+        <div className=" w-[150px]">
+          <div>Case Studies</div>
+          <img className="object-cover" src={second} />
+        </div>
+      </div>
+
+      <div className="sm:flex ">
+        <div className=" w-full sm:w-1/2 p-4 sm:p-8">
+          <img src={aluminum} alt="Aluminum Image" />
+        </div>
+
+        <div className=" w-full sm:w-1/2 p-4 sm:p-8">
+          <span className="bg-gray-200 text-xs text-gray-500 rounded-2xl p-1 px-2">
+            4 Min Read
+          </span>
+          <div className="text-base sm:text-xl  mt-4">
+            A 10°C temperature deviation diminishes efficiency, intensifies
+            anode effect, and raises PFC emissions, underscoring the
+            significance of meticulous temperature control in industrial
+            processes to optimize performance and reduce environmental impact
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center" style={{ marginTop: '5%', marginLeft: '8%' }}>
-        <div className="md:mr-4">
-          <img style={{ maxWidth: '140%' }} src={aluminum} alt="Aluminum Image" />
-          <button className="bg-white rounded-full text-xs absolute bottom-96 md:bottom-40 left-96 w-20 h-6 md:left-96">Case Studies</button>
-        </div>
+      <div className="border border-gray-200 sm:mx-[10%] mt-4 mb-4" />
 
-        <div className="mt-4 md:mt-0 ">
-          <div className="bg-gray-200 w-20 text-xs text-gray-500 rounded-2xl px-2 py-1 mb-2 md:mb-0 md:mr-8 md:ml-32">4 Min Read</div>
-          <div className="text-lg md:ml-32 lg:w-full" style={{width:'55%'}}>
-            A 10°C temperature deviation diminishes efficiency, intensifies anode effect, and raises PFC emissions, underscoring the significance of meticulous temperature control in industrial processes to optimize performance and reduce environmental impact
+      <div className="sm:flex ">
+        <div className=" w-full sm:w-[70%]">
+          {/* points */}
+          <div className=" mx-2">
+            {/* 1st point */}
+            <div>
+              <div className="text-lg sm:text-xl font-semibold mb-2">
+                1. Temperature Sensitivity:
+              </div>
+              <ul
+                className=" text-[#60646C] text-sm sm:text-base ml-4 "
+                style={{ listStyleType: "disc" }}
+              >
+                <li>
+                  Industrial processes are highly sensitive to temperature
+                  changes.
+                </li>
+                <li>
+                  Even a minor deviation, such as 10°C, can significantly impact
+                  process performance.
+                </li>
+                <li>
+                  Precise temperature control is essential to maintain optimal
+                  efficiency and productivity.
+                </li>
+              </ul>
+              <div className=" p-2 sm:p-8">
+                <img src={aluminum2} />
+              </div>
+            </div>
+
+            {/* 2nd point */}
+            <div className="mb-4">
+              <div className="text-lg sm:text-xl font-semibold mb-2">
+                2. Efficiency Reduction:
+              </div>
+              <ul
+                className="text-[#60646C] text-sm sm:text-base ml-4"
+                style={{ listStyleType: "disc" }}
+              >
+                <li>
+                  A 10°C temperature deviation leads to a reduction in process
+                  efficiency.
+                </li>
+                <li>
+                  This reduction implies decreased productivity, increased
+                  production costs, or longer processing times.
+                </li>
+                <li>
+                  Maintaining stable temperatures is critical to ensure
+                  consistent and efficient operations.{" "}
+                </li>
+              </ul>
+            </div>
+
+            {/* 3rd point */}
+            <div className="mb-4">
+              <div className="text-lg sm:text-xl font-semibold mb-2">
+                3. Promotion of Anode Effect:
+              </div>
+              <ul
+                className=" text-[#60646C] text-sm sm:text-base ml-4"
+                style={{ listStyleType: "disc" }}
+              >
+                <li>
+                  Temperature fluctuations can promote the occurrence of the
+                  anode effect within industrial processes.
+                </li>
+                <li>
+                  The anode effect is an undesirable phenomenon that can lead to
+                  increased energy consumption and equipment degradation.
+                </li>
+                <li>
+                  It is essential to control temperature variations to prevent
+                  or minimize the occurrence of the anode effect and its
+                  associated negative impacts.
+                </li>
+              </ul>
+            </div>
+
+            {/* 4th point */}
+            <div>
+              <div className="text-lg sm:text-xl font-semibold mb-2">
+                4. Promotion of Anode Effect:
+              </div>
+              <ul
+                className=" text-[#60646C] text-sm sm:text-base ml-4"
+                style={{ listStyleType: "disc" }}
+              >
+                <li>
+                  Temperature fluctuations can promote the occurrence of the
+                  anode effect within industrial processes.
+                </li>
+                <li>
+                  Any rise in PFC emissions due to temperature fluctuations
+                  poses significant environmental concerns.
+                </li>
+              </ul>
+              <div className="p-2 sm:p-8">
+                <img src={alum} />
+              </div>
+            </div>
+
+            {/* 5th point */}
+            <div className="mb-4">
+              <div className="text-lg sm:text-xl font-semibold mb-2">
+                5. Environmental Implications:
+              </div>
+              <ul
+                className="text-[#60646C] text-sm sm:text-base ml-4"
+                style={{ listStyleType: "disc" }}
+              >
+                <li>
+                  The increase in PFC emissions highlights the environmental
+                  implications of temperature variations in industrial
+                  processes.
+                </li>
+                <li>
+                  Industrial activities play a significant role in environmental
+                  pollution and climate change.
+                </li>
+                <li>
+                  Temperature regulation is crucial not only for process
+                  efficiency but also for reducing the environmental footprint
+                  of industrial operations.
+                </li>
+              </ul>
+            </div>
+
+            {/* 6th point */}
+            <div className="mb-4">
+              <div className="text-lg sm:text-xl font-semibold mb-2">
+                6. Importance of Temperature Control:
+              </div>
+              <ul
+                className=" text-[#60646C] text-sm sm:text-base ml-4"
+                style={{ listStyleType: "disc" }}
+              >
+                <li>
+                  Precise temperature control is vital for maintaining optimal
+                  process performance and sustainability.
+                </li>
+                <li>
+                  Precise temperature control is vital for maintaining optimal
+                  process performance and sustainability.
+                </li>
+                <li>
+                  Implementing effective temperature control measures is
+                  essential for the long-term success and sustainability of
+                  industrial operations.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* conclusion */}
+          <div className=" text-[#60646C] text-sm sm:text-base  mb-4 mr-2">
+            In conclusion, the impact of temperature fluctuations on industrial
+            processes is multifaceted, affecting efficiency, environmental
+            sustainability, and overall performance. Addressing temperature
+            sensitivity through precise control measures is essential for
+            optimizing operations and mitigating environmental impact. Through
+            innovation, collaboration, and proactive management, industries can
+            navigate the challenges posed by temperature variability and strive
+            towards more sustainable and efficient industrial practices.
+          </div>
+          <div className="flex justify-end gap-2 mr-2">
+            <img className="h-8" src={share}></img>
+            <img className="h-8" src={copy}></img>
           </div>
         </div>
-      </div>
-  
-      <center>
-         <div className='bg-gray-300'style={{width:'85%',height:'0.5px',marginTop:'5%'}}/>
-      </center>
 
-      
-      <div className='flex flex-col md:flex-row ml-20'>
-        <div>
-          <div className='mt-10'>
-           <span className='text-xl font-semibold ml-12'> 1.Temperature Sensitivity:</span>
-                <ul className=' text-[#60646C] mt-4' style={{ listStyleType: 'disc',marginLeft:'5%' }}>
-                    <li>Industrial processes are highly sensitive to temperature changes.</li>
-                    <li>Even a minor deviation, such as 10°C, can significantly impact process performance.</li>
-                    <li>Precise temperature control is essential to maintain optimal efficiency and productivity.</li>
-                </ul>
-          </div>
-          
-          <img src={aluminum2} style={{ width: '60%', maxWidth: '100%', height: 'auto', marginLeft: '5%',marginTop:'2%' }} />
+        <div className="border border-gray-200 mt-2 mb-2 sm:my-[15%]" />
 
-          <div className='mt-6'>
-             <span className='text-xl font-semibold ml-12' > 2.Efficiency Reduction:</span>
-                <ul className=' text-[#60646C] mt-4' style={{ listStyleType: 'disc',marginLeft:'5%' }}>
-                    <li>A 10°C temperature deviation leads to a reduction in process efficiency.</li>
-                    <li style={{width:'80%'}}>This reduction implies decreased productivity, increased production costs, or longer processing times.</li>
-                    <li >Maintaining stable temperatures is critical to ensure consistent and efficient operations. </li>
-                </ul>
-           </div>  
-
-           <div className='mt-6'>
-             <span className='text-xl font-semibold ml-12 '> 3.Promotion of Anode Effect:</span>
-                <ul className=' text-[#60646C] mt-4' style={{ listStyleType: 'disc',marginLeft:'5%' }}>
-                  <li>Temperature fluctuations can promote the occurrence of the anode effect within industrial processes.</li>
-                  <li style={{width:'85%'}}>The anode effect is an undesirable phenomenon that can lead to increased energy consumption and equipment degradation.</li>
-                  <li style={{width:'85%'}}>It is essential to control temperature variations to prevent or minimize the occurrence of the anode effect and its associated negative impacts.</li>
-                </ul>
-          </div>
-
-          <div className='mt-6'>
-             <span className='text-xl font-semibold ml-12'> 4.Promotion of Anode Effect:</span>
-                <ul className=' text-[#60646C] mt-4' style={{ listStyleType: 'disc',marginLeft:'5%' }}>
-                  <li>Temperature fluctuations can promote the occurrence of the anode effect within industrial processes.</li>
-                  <li>Any rise in PFC emissions due to temperature fluctuations poses significant environmental concerns.</li>
-                </ul>
-          </div>
-
-          <img src={alum} style={{ width: '60%', maxWidth: '100%', height: 'auto', marginLeft: '5%',marginTop:'2%' }} />
-     
-          <div className='mt-6'>
-             <span className='text-xl font-semibold ml-12' > 5.Environmental Implications:</span>
-                <ul className=' text-[#60646C] mt-4' style={{ listStyleType: 'disc',marginLeft:'5%' }}>
-                    <li style={{width:'85%'}}>The increase in PFC emissions highlights the environmental implications of temperature variations in industrial processes.</li>
-                    <li>Industrial activities play a significant role in environmental pollution and climate change.</li>
-                    <li style={{width:'75%'}}>Temperature regulation is crucial not only for process efficiency but also for reducing the environmental footprint of industrial operations.</li>
-                </ul>
-           </div>  
-
-
-           <div className='mt-6'>
-             <span className='text-xl font-semibold ml-12' > 6.Importance of Temperature Control:</span>
-                <ul className=' text-[#60646C] mt-4' style={{ listStyleType: 'disc',marginLeft:'5%' }}>
-                    <li>Precise temperature control is vital for maintaining optimal process performance and sustainability.</li>
-                    <li>Precise temperature control is vital for maintaining optimal process performance and sustainability.</li>
-                    <li style={{width:'80%'}}>Implementing effective temperature control measures is essential for the long-term success and sustainability of industrial operations.</li>
-                </ul>
-           </div>  
-
-           <p className=' text-[#60646C] mt-4' style={{marginLeft:'5%',width:'80%' }}>In conclusion, the impact of temperature fluctuations on industrial processes is multifaceted, affecting efficiency, environmental sustainability, and overall performance.
-            Addressing temperature sensitivity through precise control measures is essential for optimizing operations and mitigating environmental impact.
-            Through innovation, collaboration, and proactive management, industries can navigate the challenges posed by temperature variability and strive towards more sustainable and efficient industrial practices.
-            </p>
-            <span className='flex mt-6'><img src={share} style={{width:'3%',marginLeft:'78%'}}></img><img className='ml-1'src={copy} style={{width:'3%'}}></img></span>
-            
-        </div>
-
-
-        <div className='mr-40 mt-10'>
-          <div>
-             <div className='text-xl font-semibold'>
+        <div className=" w-full sm:w-[30%] sm:px-6">
+          <div className=" mb-4">
+            <div className="text-lg sm:text-xl font-semibold mb-2">
               Reformer Tube
-                <div>
-                   <img src={tube1} style={{maxWidth:'120%',marginTop:'5%'}}/>
-                </div>
-             </div>
-             <p className='mt-4' style={{width:'120%'}}>A 20°C increase in temperature reduces the lifespan of reformer tubes by half</p>
+            </div>
+            <div className="relative  mb-2">
+              <img src={tube1} />
+              <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
+                Read More
+              </span>
+            </div>
+            <div className="font-semibold text-sm sm:text-base">
+              A 20°C increase in temperature reduces the lifespan of reformer
+              tubes by half
+            </div>
           </div>
 
-          <div>
-             <div className='text-xl font-semibold mt-6'>
-             Lubricant
-                <div>
-                   <img src={oil1} style={{maxWidth:'120%',marginTop:'5%'}}/>
-                </div>
-             </div>
-             <p className='mt-4' style={{width:'125%'}}>30% of maintenance budget influenced by lubricants, highlighting their significant role in operational expenses</p>
+          <div className=" mb-4">
+            <div className="text-lg sm:text-xl font-semibold mb-2">
+              Lubricant
+            </div>
+            <div className="relative  mb-2">
+              <img src={oil1} />
+              <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
+                Read More
+              </span>
+            </div>
+            <div className="font-semibold text-sm sm:text-base">
+              30% of maintenance budget influenced by lubricants, highlighting
+              their significant role in operational expenses
+            </div>
           </div>
 
-          <div>
-             <div className='text-xl font-semibold mt-6'>
-             Steel
-                <div>
-                   <img src={steel1} style={{maxWidth:'120%',marginTop:'5%'}}/>
-                </div>
-             </div>
-             <p className='mt-4' style={{width:'110%'}}>Extending ladle life for one cycle yields steel worth $5.1M</p>
+          <div className="">
+            <div className="text-lg sm:text-xl font-semibold mb-2">Steel</div>
+            <div className="relative  mb-2">
+              <img src={steel1} />
+              <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
+                Read More
+              </span>
+            </div>
+            <div className="font-semibold text-sm sm:text-base">
+              Extending ladle life for one cycle yields steel worth $5.1M
+            </div>
           </div>
         </div>
       </div>
-
-    </section>
-  </div>
+    </div>
   );
 };
 

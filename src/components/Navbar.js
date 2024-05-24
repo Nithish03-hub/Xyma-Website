@@ -40,7 +40,7 @@ const Navbar = () => {
             <div>
               <img className="mr-4 h-10" src={xyma} alt="Logo" />
             </div>
-            <div className="hidden md:flex gap-8 items-center">
+            <div className="hidden lg:flex gap-8 items-center">
               {HeaderData.map((item, index) => (
                 <div key={index} className="">
                   <NavLink
@@ -58,7 +58,7 @@ const Navbar = () => {
               ))}
             </div>
             <div
-              className="hidden md:block text-white py-3 px-4 rounded-full cursor-pointer"
+              className="hidden lg:block text-white py-3 px-4 rounded-full cursor-pointer"
               style={{
                 background:
                   "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -69,7 +69,7 @@ const Navbar = () => {
             </div>
             {!burgerMenuOpen && (
               <div
-                className="flex items-center justify-center md:hidden cursor-pointer"
+                className="flex items-center justify-center lg:hidden cursor-pointer"
                 onClick={handleBurgerMenu}
               >
                 <IoMenu size={30} />
@@ -77,7 +77,7 @@ const Navbar = () => {
             )}
             {burgerMenuOpen && (
               <div
-                className="flex items-center justify-center md:hidden cursor-pointer"
+                className="flex items-center justify-center lg:hidden cursor-pointer"
                 onClick={handleBurgerMenu}
               >
                 <IoCloseSharp size={30} />
