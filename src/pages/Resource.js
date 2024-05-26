@@ -39,17 +39,17 @@ const Resource = () => {
 
     return (
       <div className="overflow-hidden">
-        <section className="mt-[10vh] h-[60vh] lg:h-[90vh] relative shadow-white shadow-xl">
+        <section className="mt-[10vh] h-[60vh] md:h-[70vh] xl:h-[90vh] relative shadow-white shadow-xl">
           <img
             className="h-full w-full object-cover"
             src={cs}
             alt="Case Studies"
           />
           <div className="absolute inset-0 text-white flex flex-col items-center justify-center">
-            <div className="text-4xl lg:text-5xl font-semibold lg:font-bold">
+            <div className="text-4xl md:text-5xl font-semibold md:font-bold">
               Case Studies
             </div>
-            <div className="text-sm text-center mt-4 mx-[20%] lg:mx-[30%]">
+            <div className="text-sm text-center mt-4 mx-[20%] md:mx-[30%]">
               Xyma Analytics Case Studies are documented examples illustrating
               the application and effectiveness of Xyma Analytics' solutions in
               real-world scenarios
@@ -58,14 +58,14 @@ const Resource = () => {
         </section>
 
         {/* bottom text */}
-        <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] lg:text-[90px] 2xl:text-[120px] -mt-[20px] lg:-mt-[50px] 2xl:-mt-[65px] mb-[20px] lg:mb-[70px]">
+        <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px] mb-[20px] md:mb-[70px]">
           CASE STUDIES
         </div>
 
         {/* resources title */}
-        <div className="mx-[5%] lg:flex justify-end">
+        <div className="mx-[5%] md:flex justify-end">
           <div
-            className="flex lg:flex-col gap-2  w-full lg:w-[15%] font-semibold p-6 overflow-auto"
+            className="flex md:flex-col gap-2  w-full md:w-[15%] font-semibold p-6 overflow-auto"
             style={{ scrollbarWidth: "none" }}
           >
             <div>
@@ -76,12 +76,12 @@ const Resource = () => {
                 } cursor-pointer flex`}
               >
                 {selectedContent === "All" && (
-                  <div className="invisible lg:visible border border-[#013872]"></div>
+                  <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="lg:ml-1">All</div>
+                <div className="md:ml-1">All</div>
               </div>
               {selectedContent === "All" && (
-                <div className="lg:hidden border border-[#013872]"></div>
+                <div className="md:hidden border border-[#013872]"></div>
               )}
             </div>
 
@@ -95,12 +95,12 @@ const Resource = () => {
                 } cursor-pointer flex`}
               >
                 {selectedContent === "Aluminum" && (
-                  <div className="invisible lg:visible border border-[#013872]"></div>
+                  <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="lg:ml-1">Aluminum</div>
+                <div className="md:ml-1">Aluminum</div>
               </div>
               {selectedContent === "Aluminum" && (
-                <div className="lg:hidden border border-[#013872]"></div>
+                <div className="md:hidden border border-[#013872]"></div>
               )}
             </div>
 
@@ -112,12 +112,12 @@ const Resource = () => {
                 } cursor-pointer flex`}
               >
                 {selectedContent === "Steel" && (
-                  <div className="invisible lg:visible border border-[#013872]"></div>
+                  <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="lg:ml-1">Steel</div>
+                <div className="md:ml-1">Steel</div>
               </div>
               {selectedContent === "Steel" && (
-                <div className="lg:hidden border border-[#013872]"></div>
+                <div className="md:hidden border border-[#013872]"></div>
               )}
             </div>
 
@@ -131,12 +131,12 @@ const Resource = () => {
                 } cursor-pointer flex`}
               >
                 {selectedContent === "Refiniries" && (
-                  <div className="invisible lg:visible border border-[#013872]"></div>
+                  <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="lg:ml-1">Refiniries</div>
+                <div className="md:ml-1">Refiniries</div>
               </div>
               {selectedContent === "Refiniries" && (
-                <div className="lg:hidden border border-[#013872]"></div>
+                <div className="md:hidden border border-[#013872]"></div>
               )}
             </div>
 
@@ -150,12 +150,12 @@ const Resource = () => {
                 } cursor-pointer flex`}
               >
                 {selectedContent === "Lubricants" && (
-                  <div className="invisible lg:visible border border-[#013872]"></div>
+                  <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="lg:ml-1">Lubricants</div>
+                <div className="md:ml-1">Lubricants</div>
               </div>
               {selectedContent === "Lubricants" && (
-                <div className="lg:hidden border border-[#013872]"></div>
+                <div className="md:hidden border border-[#013872]"></div>
               )}
             </div>
 
@@ -169,12 +169,12 @@ const Resource = () => {
                 } cursor-pointer flex`}
               >
                 {selectedContent === "OilRecovery" && (
-                  <div className="invisible lg:visible border border-[#013872]"></div>
+                  <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="lg:ml-1">Oil&nbsp;Recovery</div>
+                <div className="md:ml-1">Oil&nbsp;Recovery</div>
               </div>
               {selectedContent === "OilRecovery" && (
-                <div className="lg:hidden border border-[#013872]"></div>
+                <div className="md:hidden border border-[#013872]"></div>
               )}
             </div>
 
@@ -188,26 +188,26 @@ const Resource = () => {
                 } cursor-pointer flex`}
               >
                 {selectedContent === "Paints" && (
-                  <div className="invisible lg:visible border border-[#013872]"></div>
+                  <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="lg:ml-1">Paints</div>
+                <div className="md:ml-1">Paints</div>
               </div>
               {selectedContent === "Paints" && (
-                <div className="lg:hidden border border-[#013872]"></div>
+                <div className="md:hidden border border-[#013872]"></div>
               )}
             </div>
           </div>
 
           {/* resources content */}
-          <div className="w-full lg:w-[80%]">
+          <div className="w-full md:w-[80%]">
             {/* aluminium content */}
             {(selectedContent === "Aluminum" || selectedContent === "All") && (
               <div
-                className="lg:flex rounded-2xl mb-4 border border-[#CDCED6]"
+                className="md:flex rounded-2xl mb-4 border border-[#CDCED6]"
                 data-aos="slide-left"
               >
-                <div className="w-full lg:w-1/2 p-4">
-                  <div className="font-semibold text-2xl lg:text-3xl mb-4">
+                <div className="w-full md:w-1/2 p-4">
+                  <div className="font-semibold text-2xl md:text-3xl mb-4">
                     Aluminum
                   </div>
                   <div className="mb-4 relative">
@@ -219,22 +219,22 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-lg lg:text-xl">
+                  <div className="text-lg md:text-xl">
                     A 10°C temperature deviation reduces efficiency, promotes
                     anode effect, and increases PFC emissions.
                   </div>
                 </div>
                 {/* empty line */}
                 <div className="border border-[#CDCED6] my-[10%]" />
-                <div className="w-full lg:w-1/2 p-4">
-                  <div className="font-semibold text-2xl lg:text-3xl mb-4">
+                <div className="w-full md:w-1/2 p-4">
+                  <div className="font-semibold text-2xl md:text-3xl mb-4">
                     All
                   </div>
                   <div className="flex p-4">
                     <div className="w-[30%] flex items-center justify-center">
                       <img src={all1} />
                     </div>
-                    <div className="w-[70%] px-2 text-sm lg:text-xl">
+                    <div className="w-[70%] px-2 text-sm md:text-xl">
                       A 10°C shift lowers efficiency, boosts anode effect, and
                       raises PFC emissions.
                     </div>
@@ -245,7 +245,7 @@ const Resource = () => {
                     <div className="w-[30%]">
                       <img src={all2} />
                     </div>
-                    <div className="w-[70%] px-2 text-sm lg:text-xl">
+                    <div className="w-[70%] px-2 text-sm md:text-xl">
                       Extending the ladle life for one cycle would result in
                       steel production worth $5.1 million.
                     </div>
@@ -256,7 +256,7 @@ const Resource = () => {
                     <div className="w-[30%]">
                       <img src={all3} />
                     </div>
-                    <div className="w-[70%] px-2 text-sm lg:text-xl">
+                    <div className="w-[70%] px-2 text-sm md:text-xl">
                       20°C rise halves reformer tube lifespan; design
                       temperature crucial.
                     </div>
@@ -268,14 +268,14 @@ const Resource = () => {
             {/* steel content */}
             {(selectedContent === "Steel" || selectedContent === "All") && (
               <div
-                className="lg:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
                 data-aos="slide-left"
               >
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="font-semibold text-3xl mb-4 flex justify-between">
                     <div>Steel</div>
                     <span
-                      className="lg:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -294,10 +294,10 @@ const Resource = () => {
                     Extending ladle life for one cycle yields steel worth $5.1M
                   </div>
                 </div>
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="flex justify-end mb-4">
                     <span
-                      className="hidden lg:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -324,14 +324,14 @@ const Resource = () => {
             {(selectedContent === "Refiniries" ||
               selectedContent === "All") && (
               <div
-                className="lg:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
                 data-aos="slide-left"
               >
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="font-semibold text-3xl mb-4 flex justify-between">
                     <div>Refiniries</div>
                     <span
-                      className="lg:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -350,10 +350,10 @@ const Resource = () => {
                     A 20°C temperature rise cuts reformer tube lifespan by half
                   </div>
                 </div>
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="flex justify-end mb-4">
                     <span
-                      className="hidden lg:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -380,14 +380,14 @@ const Resource = () => {
             {(selectedContent === "Lubricants" ||
               selectedContent === "All") && (
               <div
-                className="lg:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
                 data-aos="slide-left"
               >
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="font-semibold text-3xl mb-4 flex justify-between">
                     <div>Lubricants</div>
                     <span
-                      className="lg:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -407,10 +407,10 @@ const Resource = () => {
                     highlighting their significant role in operational expenses
                   </div>
                 </div>
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="flex justify-end mb-4">
                     <span
-                      className="hidden lg:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -437,14 +437,14 @@ const Resource = () => {
             {(selectedContent === "OilRecovery" ||
               selectedContent === "All") && (
               <div
-                className="lg:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
                 data-aos="slide-left"
               >
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="font-semibold text-3xl mb-4 flex justify-between">
                     <div>Oil Recovery</div>
                     <span
-                      className="lg:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -468,10 +468,10 @@ const Resource = () => {
                     continuous viscosity measurement technique.
                   </div>
                 </div>
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="flex justify-end mb-4">
                     <span
-                      className="hidden lg:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -500,14 +500,14 @@ const Resource = () => {
             {/* paints content */}
             {(selectedContent === "Paints" || selectedContent === "All") && (
               <div
-                className="lg:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
                 data-aos="slide-left"
               >
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="font-semibold text-3xl mb-4 flex justify-between">
                     <div>Paints</div>
                     <span
-                      className="lg:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -527,10 +527,10 @@ const Resource = () => {
                     in the residential market.
                   </div>
                 </div>
-                <div className="w-full lg:w-1/2 p-4">
+                <div className="w-full md:w-1/2 p-4">
                   <div className="flex justify-end mb-4">
                     <span
-                      className="hidden lg:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                      className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
                         background:
                           "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",

@@ -62,24 +62,24 @@ const Product = () => {
   return (
     <div className="relative">
       <div className="h-[10vh]">{/* navbar space */}</div>
-      <section className="relative shadow-white shadow-2xl">
+      <div className="h-[60vh] md:h-[70vh] xl:h-[90vh] relative shadow-white shadow-2xl">
         {images.map((item, index) => (
           <div
             key={index}
-            className={`${index === currentIndex ? "block" : "hidden"} w-full`}
+            className={`${index === currentIndex ? "block" : "hidden"} w-full h-full`}
           >
             <img
-              className="w-full h-[60vh] lg:h-[90vh] object-cover object-right-top"
+              className="w-full h-full object-cover object-right-top"
               src={item.src}
               alt={`Slide ${index + 1}`}
               //style={{ ...imageStyle }}
             />
-            <div className="h-[45%] w-[90%] lg:h-[60%] lg:w-[30%] flex flex-col gap-4 absolute bottom-[25%] text-white p-[1%] px-[2%] rounded-md text-[2.5vw] font-medium lg:font-bold mx-[20px] lg:mx-[75px]">
-              <div className="text-2xl lg:text-5xl text-center lg:text-left">
+            <div className="h-[45%] w-[90%] md:h-[60%] md:w-[30%] flex flex-col gap-4 absolute bottom-[25%] text-white p-[1%] px-[2%] rounded-md text-[2.5vw] font-medium md:font-bold mx-[20px] md:mx-[75px]">
+              <div className="text-2xl md:text-5xl text-center md:text-left">
                 {item.title}
               </div>
               <div
-                className="text-2xl lg:text-3xl p-1 text-center lg:text-left font-bold"
+                className="text-2xl md:text-3xl p-1 text-center md:text-left font-bold"
                 style={{
                   background:
                     "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
@@ -92,13 +92,13 @@ const Product = () => {
               >
                 {item.text1}
               </div>
-              <div className="text-sm font-light text-center lg:text-left">
+              <div className="text-sm font-light text-center md:text-left">
                 {item.text}
               </div>
             </div>
           </div>
         ))}
-        <div className="absolute bottom-[65px] lg:left-[50px] flex lg:justify-start items-center gap-2 w-[90%] mx-[20px] lg:mx-[50px] justify-center">
+        {/* <div className="border border-red-500 absolute bottom-[65px] md:left-[50px] flex md:justify-start items-center gap-2 w-[90%] mx-[20px] md:mx-[50px] justify-center">
           {images.map((_, index) => (
             <div
               key={index}
@@ -108,20 +108,20 @@ const Product = () => {
               } rounded-full`}
             />
           ))}
-        </div>
-      </section>
+        </div> */}
+      </div>
 
       {/* bottom text */}
-      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] lg:text-[90px] 2xl:text-[120px] -mt-[20px] lg:-mt-[50px] 2xl:-mt-[65px] mb-[20px] lg:mb-[70px]">
+      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px] mb-[20px] md:mb-[70px]">
         XYMA PRODUCTS
       </div>
 
       {/* product cards */}
 
-      <div className="p-4 lg:p-8 lg:px-28">
+      <div className="p-4 md:p-8 md:px-28">
         {/* utmaps */}
-        <div className="lg:h-[70vh] lg:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
-          <div className="w-full lg:w-[45%] p-2">
+        <div className="md:h-[70vh] md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+          <div className="w-full md:w-[45%] p-2">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
               style={{
@@ -135,7 +135,7 @@ const Product = () => {
                 alt="UTMapS"
               />
               <div
-                className="h-[45%] lg:h-[20%] absolute bottom-0 w-full px-4 rounded-b-lg"
+                className="h-[45%] md:h-[20%] absolute bottom-0 w-full px-4 rounded-b-lg"
                 style={{
                   background: "rgba(64, 64, 64, 0.5)",
                   backdropFilter: "blur(9px)",
@@ -162,13 +162,13 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-[55%] p-2 lg:p-4">
+          <div className="w-full md:w-[55%] p-2 md:p-4">
             <div className="h-1/3">
-              <div className="h-[65%] lg:flex">
-                <div className="w-full lg:w-[80%] text-xl lg:text-3xl font-semibold">
+              <div className="h-[65%] md:flex">
+                <div className="w-full md:w-[80%] text-xl md:text-3xl font-semibold">
                   Multi-Point Temperature Mapping Sensor
                 </div>
-                <div className="w-full lg:w-[20%] py-1">
+                <div className="w-full md:w-[20%] py-1">
                   <div className="flex rounded-full items-center justify-center gap-1 p-1 bg-[#01285C]">
                     <div className="text-[#FE9D1C]">
                       <RiPlayCircleFill size={20} />
@@ -180,53 +180,53 @@ const Product = () => {
                 </div>
               </div>
               <div className="h-[35%]">
-                <div className="w-full lg:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center">
+                <div className="w-full md:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center">
                   Temperature Range: 25° C to 1600° C
                 </div>
               </div>
             </div>
-            <div className="h-1/3 text-[#60646C] py-2 text-sm lg:py-0 lg:text-base">
+            <div className="h-1/3 text-[#60646C] py-2 text-sm md:py-0 md:text-base">
               µTMapS & µSTMapS are IIoT-enabled temperature measurement and
               temperature profiling sensors that captures continuous
               measurements at multiple points with a single customizable
               waveguide with multiple configurations in contrast to contact
               based thermocouples/RTDs or contactless IR guns.
             </div>
-            <div className="h-1/3 flex flex-col gap-1 text-sm lg:text-base">
-              <div className="h-1/2 flex flex-col lg:flex-row gap-1">
-                <div className="rounded-lg w-full lg:w-1/2 flex border border-[#D9D9E0] bg-white">
+            <div className="h-1/3 flex flex-col gap-1 text-sm md:text-base">
+              <div className="h-1/2 flex flex-col md:flex-row gap-1">
+                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
                   <div className="w-[20%] h-full p-2 flex items-center justify-center">
                     <img src={isteel} />
                   </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 lg:p-2">
+                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
                     Steel Manufacturing
                   </div>
                 </div>
 
-                <div className="rounded-lg w-full lg:w-1/2 flex border border-[#D9D9E0] bg-white">
+                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
                   <div className="w-[20%] h-full p-2 flex items-center justify-center">
                     <img src={aicon} />
                   </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 lg:p-2">
+                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
                     Aluminium Manufacturing
                   </div>
                 </div>
               </div>
-              <div className="h-1/2 flex flex-col lg:flex-row gap-1">
-                <div className="rounded-lg w-full lg:w-1/2 flex border border-[#D9D9E0] bg-white">
+              <div className="h-1/2 flex flex-col md:flex-row gap-1">
+                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
                   <div className="w-[20%] h-full p-2 flex items-center justify-center">
                     <img src={semi} />
                   </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 lg:p-2">
+                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
                     Semiconductor Manufacturing
                   </div>
                 </div>
 
-                <div className="rounded-lg w-full lg:w-1/2 flex border border-[#D9D9E0] bg-white">
+                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
                   <div className="w-[20%] h-full p-2 flex items-center justify-center">
                     <img src={ref} />
                   </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 lg:p-2">
+                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
                     Refineries
                   </div>
                 </div>
@@ -236,8 +236,8 @@ const Product = () => {
         </div>
 
         {/* ports */}
-        <div className="lg:h-[70vh] lg:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
-          <div className="w-full lg:w-[45%] p-2">
+        <div className="md:h-[70vh] md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+          <div className="w-full md:w-[45%] p-2">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
               style={{
@@ -251,7 +251,7 @@ const Product = () => {
                 alt="PoRTS"
               />
               <div
-                className="h-[45%] lg:h-[20%] absolute bottom-0 w-full px-4 rounded-b-lg"
+                className="h-[45%] md:h-[20%] absolute bottom-0 w-full px-4 rounded-b-lg"
                 style={{
                   background: "rgba(64, 64, 64, 0.5)",
                   backdropFilter: "blur(9px)",
@@ -278,13 +278,13 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-[55%] p-2 lg:p-4">
+          <div className="w-full md:w-[55%] p-2 md:p-4">
             <div className="h-[40%]">
-              <div className="h-[55%] lg:flex">
-                <div className="w-full lg:w-[80%] text-xl lg:text-3xl font-semibold pr-2">
+              <div className="h-[55%] md:flex">
+                <div className="w-full md:w-[80%] text-xl md:text-3xl font-semibold pr-2">
                   Multi-Parameter Measurement Sensor
                 </div>
-                <div className="w-full lg:w-[20%] py-1">
+                <div className="w-full md:w-[20%] py-1">
                   <div className="flex rounded-full items-center justify-center gap-1 p-1 bg-[#01285C]">
                     <div className="text-[#FE9D1C]">
                       <RiPlayCircleFill size={20} />
@@ -296,20 +296,20 @@ const Product = () => {
                 </div>
               </div>
               <div className="h-[45%]">
-                <div className="lg:flex gap-2 w-full">
-                  <div className="w-full lg:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] mb-1 lg:mb-0 text-center">
+                <div className="md:flex gap-2 w-full">
+                  <div className="w-full md:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] mb-1 md:mb-0 text-center">
                     Viscosity: 50 cP - 15000 cP
                   </div>
-                  <div className="w-full lg:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center">
+                  <div className="w-full md:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center">
                     Density: 700 kg/m³ to 1200 kg/m³
                   </div>
                 </div>
-                <div className="w-full lg:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] mt-1 text-center">
+                <div className="w-full md:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] mt-1 text-center">
                   Temperature: 20° C to 400° C
                 </div>
               </div>
             </div>
-            <div className="h-[30%] text-[#60646C] py-2 text-sm lg:py-0 lg:[12px]">
+            <div className="h-[30%] text-[#60646C] py-2 text-sm md:py-0 md:[12px]">
               PoRTS is an invasive/non-invasive based IIoT-enabled rheology and
               temperature measurement sensor that continuously captures multiple
               parameters such as viscosity, density and temperature with a
@@ -317,32 +317,32 @@ const Product = () => {
               thermocouple/RTDs or discrete measurements with sampling from
               viscometer and density meter.
             </div>
-            <div className="h-[30%] flex flex-col gap-1 text-sm lg:text-base">
-              <div className="h-1/2 flex flex-col lg:flex-row gap-1">
-                <div className="rounded-lg w-full lg:w-1/2 flex border border-[#D9D9E0] bg-white">
+            <div className="h-[30%] flex flex-col gap-1 text-sm md:text-base">
+              <div className="h-1/2 flex flex-col md:flex-row gap-1">
+                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
                   <div className="w-[20%] h-full p-2 flex items-center justify-center">
                     <img src={paint} />
                   </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 lg:p-2">
+                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
                     Paint Manufacturing
                   </div>
                 </div>
 
-                <div className="rounded-lg w-full lg:w-1/2 flex border border-[#D9D9E0] bg-white">
+                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
                   <div className="w-[20%] h-full p-2 flex items-center justify-center">
                     <img src={luboil} />
                   </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 lg:p-2">
+                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
                     Lubrication Oil
                   </div>
                 </div>
               </div>
-              <div className="h-1/2 flex flex-col lg:flex-row gap-1">
-                <div className="rounded-lg w-full lg:w-1/2 flex border border-[#D9D9E0] bg-white">
+              <div className="h-1/2 flex flex-col md:flex-row gap-1">
+                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
                   <div className="w-[20%] h-full p-2 flex items-center justify-center">
                     <img src={eor} />
                   </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 lg:p-2">
+                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
                     E.O.R.
                   </div>
                 </div>
@@ -352,8 +352,8 @@ const Product = () => {
         </div>
 
         {/* ztar */}
-        <div className="lg:h-[70vh] lg:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
-          <div className="w-full lg:w-[45%] p-2">
+        <div className="md:h-[70vh] md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+          <div className="w-full md:w-[45%] p-2">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
               style={{
@@ -367,7 +367,7 @@ const Product = () => {
                 alt="ztar"
               />
               <div
-                className="h-[45%] lg:h-[20%] absolute bottom-0 w-full px-4 rounded-b-lg"
+                className="h-[45%] md:h-[20%] absolute bottom-0 w-full px-4 rounded-b-lg"
                 style={{
                   background: "rgba(64, 64, 64, 0.5)",
                   backdropFilter: "blur(9px)",
@@ -394,14 +394,14 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-[55%] p-2 lg:p-4">
+          <div className="w-full md:w-[55%] p-2 md:p-4">
             <div className="h-[40%]">
-              <div className="h-[75%] lg:flex">
-                <div className="w-full lg:w-[80%] text-xl lg:text-3xl font-semibold">
+              <div className="h-[75%] md:flex">
+                <div className="w-full md:w-[80%] text-xl md:text-3xl font-semibold">
                   Ultrasonic contact & <br /> non-contact based level
                   measurement sensor
                 </div>
-                <div className="w-full lg:w-[20%] py-1">
+                <div className="w-full md:w-[20%] py-1">
                   <div className="flex rounded-full items-center justify-center gap-1 p-1 bg-[#01285C]">
                     <div className="text-[#FE9D1C]">
                       <RiPlayCircleFill size={20} />
@@ -413,33 +413,33 @@ const Product = () => {
                 </div>
               </div>
               <div className="h-[25%]">
-                <div className="w-full lg:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center">
+                <div className="w-full md:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center">
                   Level: 0.03 m to 10 m
                 </div>
               </div>
             </div>
-            <div className="h-[25%] text-[#60646C] py-2 text-sm lg:py-0 lg:text-base flex items-center">
+            <div className="h-[25%] text-[#60646C] py-2 text-sm md:py-0 md:text-base flex items-center">
               Ztar is a contact/contactless IIoT-enabled level measurement
               sensor that captures continuous level across any hazardous
               environment with accuracy in contrast to radar-based level
               measurement sensors.
             </div>
-            <div className="h-[35%] flex flex-col gap-1 text-sm lg:text-base">
-              <div className="h-1/2 flex flex-col lg:flex-row gap-1">
-                <div className="rounded-lg w-full lg:w-1/2 flex border border-[#D9D9E0] bg-white">
+            <div className="h-[35%] flex flex-col gap-1 text-sm md:text-base">
+              <div className="h-1/2 flex flex-col md:flex-row gap-1">
+                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
                   <div className="w-[20%] h-full p-2 flex items-center justify-center">
                     <img src={metal} />
                   </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 lg:p-2">
+                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
                     Metal Manufacturing
                   </div>
                 </div>
 
-                <div className="rounded-lg w-full lg:w-1/2 flex border border-[#D9D9E0] bg-white">
+                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
                   <div className="w-[20%] h-full p-2 flex items-center justify-center">
                     <img src={refrigerant} />
                   </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 lg:p-2">
+                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
                     Refrigerants
                   </div>
                 </div>

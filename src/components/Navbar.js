@@ -6,6 +6,8 @@ import { HeaderData } from "../data/HeaderData";
 import CircleComponent from "../CircleComponent";
 import { IoMenu, IoCloseSharp } from "react-icons/io5";
 import { FiArrowUpRight } from "react-icons/fi";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = () => {
   //const navigate = useNavigate();
@@ -94,7 +96,7 @@ const Navbar = () => {
       </div>
 
       {burgerMenuOpen && (
-        <div className="bg-white h-[90vh] w-full lg:hidden">
+        <div className="bg-white h-[90vh] w-full lg:hidden" data-aos="slide-left">
           <div className="h-[60%]">
             {HeaderData.map((item, index) => (
               <div

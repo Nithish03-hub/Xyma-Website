@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import aluminum from '../Assets/aluminum.png';
-import steel from '../Assets/steel.png';
-import reformerTubes from '../Assets/reformerTubes.png'
-import lubricants from '../Assets/lubricants.png';
-import oilRecovery from '../Assets/oilRecovery.png'
-import paints from '../Assets/paints.png'
+// import aluminum from '../Assets/aluminum.png';
+// import aluminum from '../Assets/reAluminum.png'
+// import aluminum from '../Assets//newAluminum.png'
+import aluminum from '../Images/al1.png';
+import steel from '../Assets/steelHome.png';
+import reformerTubes from '../Assets/reformerTubesHome.png'
+import lubricants from '../Assets/lubricantsHome.png';
+import oilRecovery from '../Assets/oilRecoveryHome.png'
+import paints from '../Assets/paintsHome.jpg'
 import utmaps from '../Assets/newut.jpeg';
 import ports from "../Assets/ports.png";
 import ztar from "../Assets/Ztar.png";
@@ -36,6 +39,7 @@ import grp from '../Assets/Group.png';
 import zero from '../Assets/zero.png';
 import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
+import line from '../Assets/underline.png'
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -128,7 +132,7 @@ export const Home = () => {
       case "oilRecovery":
         setClickedImage(oilRecovery);
         setImageDesc(imageDescription.OilRecovery);
-        setImageName("OIL RECOVERY");
+        setImageName("OIL\u00A0RECOVERY");
         break;
 
       case "paints":
@@ -150,18 +154,18 @@ export const Home = () => {
     <div className="w-full overflow-hidden">
       <div className="h-[10vh]">{/* space for navbar */}</div>
       {/* cover image */}
-      <div className="relative h-[60vh] lg:h-[90vh] w-full shadow-white shadow-2xl">
+      <div className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] w-full shadow-white shadow-2xl">
         <img
           src={newpage}
           alt="cover image"
           className="absolute w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl lg:text-6xl text-white font-semibold ml-12 lg:ml-24 gap-2 2xl:text-8xl">
+        <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl md:text-6xl text-white font-semibold ml-12 md:ml-24 gap-2 2xl:text-8xl">
           <div data-aos="slide-right">Prevent</div>
           <div data-aos="slide-right">Unplanned</div>
           <div data-aos="slide-right">Downtime</div>
           <div
-            className="text-xs lg:text-sm mt-2 2xl:text-base"
+            className="text-xs md:text-sm mt-2 2xl:text-base"
             data-aos="slide-right"
           >
             "The Disruptive Ultrasonic Waveguide Technology"
@@ -169,202 +173,210 @@ export const Home = () => {
         </div>
       </div>
       {/* bottom text */}
-      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] lg:text-[90px] 2xl:text-[120px] -mt-[20px] lg:-mt-[50px] 2xl:-mt-[65px]">
+      <div className="text-center text-gray-300 font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]">
         XYMA ANALYTICS
       </div>
+
       {/* text with underline */}
-      <div className="flex justify-center items-center mt-4 lg:mt-20 2xl:mt-28 h-[10vh]">
+      <div className="flex justify-center items-center  mt-12 mb-12">
+        <div className=" md:flex gap-2 text-xl md:text-2xl xl:text-3xl 2xl:text-5xl font-semibold text-center">
+          <div className="">
+            Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate
+          </div>
+          <div className="">
+            <div className="">
+              Process&nbsp;parameter&nbsp;measurements
+            </div>
+            <img className=" w-full h-2" src={line}></img>
+          </div>
+        </div>
+      </div>
+
+      {/* elements cards */}
+      <div className=" md:flex mx-[5%] xl:mx-[8%] mb-24">
+        {/* list of elements */}
         <div
-          className="text-xl lg:text-3xl 2xl:text-5xl font-semibold text-center"
-          //data-aos="zoom-in-up"
+          className="w-full overflow-auto md:w-[14%] text-gray-500  2xl:text-2xl flex items-center md:items-start md:justify-start md:flex-col"
+          style={{ scrollbarWidth: "none" }}
         >
-          Impact of discrete inaccurate Process parameter measurements
-          <img
-            className="w-[200px] lg:w-auto 2xl:w-[800px] h-2 ml-[30%] lg:ml-96 2xl:ml-[600px]"
-            src={newline}
-          ></img>
-        </div>
-      </div>
-
-      <div className="w-full h-[80vh]">
-        {/* elements cards */}
-        <div className="h-[80vh] lg:h-[60vh] 2xl:h-[70vh] lg:flex pt-8 lg:px-36 2xl:px-16">
-          {/* list of elements */}
-          <div
-            className="w-full overflow-auto lg:p-4 lg:w-[15%] h-[8%] lg:h-full text-gray-500 2xl:text-3xl flex items-center lg:items-start lg:justify-start lg:flex-col"
-            style={{ scrollbarWidth: "none" }}
-          >
-            <div data-aos="zoom-in-up">
-              <div
-                className={`lg:w-full cursor-pointer p-1 mb-1 flex ${
-                  clickedImage === aluminum && "text-[#013872] font-medium"
-                }`}
-                id="aluminum"
-                onClick={handleImageChange}
-              >
-                {clickedImage === aluminum && (
-                  <div className="invisible lg:visible border border-blue-800"></div>
-                )}
-                <div className="ml-1 -z-10">Aluminum</div>
-              </div>
+          <div data-aos="zoom-in-up">
+            <div
+              className={`md:w-full cursor-pointer p-1 mb-1 flex ${
+                clickedImage === aluminum && "text-[#013872] font-medium"
+              }`}
+              id="aluminum"
+              onClick={handleImageChange}
+            >
               {clickedImage === aluminum && (
-                <div className="border border-blue-800 lg:hidden" />
+                <div className="invisible md:visible border border-blue-800"></div>
               )}
+              <div className="ml-1 -z-10">Aluminum</div>
             </div>
-
-            <div data-aos="zoom-in-up">
-              <div
-                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
-                  clickedImage === steel && "text-[#013872] font-medium"
-                }`}
-                id="steel"
-                onClick={handleImageChange}
-              >
-                {clickedImage === steel && (
-                  <div className="invisible lg:visible border border-blue-800"></div>
-                )}
-                <div className="ml-1 -z-10">Steel</div>
-              </div>
-              {clickedImage === steel && (
-                <div className="border border-blue-800 lg:hidden" />
-              )}
-            </div>
-
-            <div data-aos="zoom-in-up">
-              <div
-                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
-                  clickedImage === reformerTubes && "text-[#013872] font-medium"
-                }`}
-                id="refiniries"
-                onClick={handleImageChange}
-              >
-                {clickedImage === reformerTubes && (
-                  <div className="invisible lg:visible border border-blue-800"></div>
-                )}
-                <div className="ml-1 -z-10">Refiniries</div>
-              </div>
-              {clickedImage === reformerTubes && (
-                <div className="border border-blue-800 lg:hidden" />
-              )}
-            </div>
-
-            <div data-aos="zoom-in-up">
-              <div
-                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
-                  clickedImage === lubricants && "text-[#013872] font-medium"
-                }`}
-                id="lubricants"
-                onClick={handleImageChange}
-              >
-                {clickedImage === lubricants && (
-                  <div className="invisible lg:visible border border-blue-800"></div>
-                )}
-                <div className="ml-1 -z-10">Lubricants</div>
-              </div>
-              {clickedImage === lubricants && (
-                <div className="border border-blue-800 lg:hidden" />
-              )}
-            </div>
-
-            <div data-aos="zoom-in-up">
-              <div
-                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
-                  clickedImage === oilRecovery && "text-[#013872] font-medium"
-                }`}
-                id="oilRecovery"
-                onClick={handleImageChange}
-              >
-                {clickedImage === oilRecovery && (
-                  <div className="invisible lg:visible border border-blue-800"></div>
-                )}
-                <div className="ml-1 -z-10">Oil&nbsp;Recovery</div>
-              </div>
-              {clickedImage === oilRecovery && (
-                <div className="border border-blue-800 lg:hidden" />
-              )}
-            </div>
-
-            <div data-aos="zoom-in-up">
-              <div
-                className={`lg:w-full flex p-1 mb-1 cursor-pointer ${
-                  clickedImage === paints && "text-[#013872] font-medium"
-                }`}
-                id="paints"
-                onClick={handleImageChange}
-              >
-                {clickedImage === paints && (
-                  <div className="invisible lg:visible border border-blue-800"></div>
-                )}
-                <div className="ml-1 -z-10">Paints</div>
-              </div>
-              {clickedImage === paints && (
-                <div className="border border-blue-800 lg:hidden" />
-              )}
-            </div>
-          </div>
-          {/* element images */}
-          <div
-            className="w-full lg:w-[45%] 2xl:w-[50%] h-[61%] lg:h-full"
-            data-aos="slide-right"
-          >
-            {clickedImage && (
-              <div className="flex items-center justify-center h-full">
-                <img
-                  src={clickedImage}
-                  alt="Clicked Image"
-                  className="rounded-2xl h-[90%] w-[90%] shadow-white shadow-2xl z-10"
-                />
-              </div>
+            {clickedImage === aluminum && (
+              <div className="border border-blue-800 md:hidden" />
             )}
-            <div className="text-center text-4xl 2xl:text-6xl font-bold text-gray-400 -mt-7 2xl:-mt-14">
-              {imageName}
-            </div>
           </div>
-          {/* elements description */}
-          <div
-            className="w-full mt-4 lg:w-[40%] 2xl:w-[35%] h-[31%] lg:h-full flex items-center justify-center p-4"
-            // data-aos={window.innerWidth <= 640 ? "slide-up" : "slide-left"}
-            data-aos="slide-left"
-          >
-            {clickedImage && (
-              <div
-                className="text-2xl lg:text-3xl 2xl:text-5xl font-semibold text-center"
-                style={{
-                  color: "transparent",
-                  background:
-                    "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
-                  backgroundClip: "text",
-                  width: "100%",
-                }}
-              >
-                {imageDesc}
-              </div>
+
+          <div data-aos="zoom-in-up">
+            <div
+              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                clickedImage === steel && "text-[#013872] font-medium"
+              }`}
+              id="steel"
+              onClick={handleImageChange}
+            >
+              {clickedImage === steel && (
+                <div className="invisible md:visible border border-blue-800"></div>
+              )}
+              <div className="ml-1 -z-10">Steel</div>
+            </div>
+            {clickedImage === steel && (
+              <div className="border border-blue-800 md:hidden" />
+            )}
+          </div>
+
+          <div data-aos="zoom-in-up">
+            <div
+              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                clickedImage === reformerTubes && "text-[#013872] font-medium"
+              }`}
+              id="refiniries"
+              onClick={handleImageChange}
+            >
+              {clickedImage === reformerTubes && (
+                <div className="invisible md:visible border border-blue-800"></div>
+              )}
+              <div className="ml-1 -z-10">Refiniries</div>
+            </div>
+            {clickedImage === reformerTubes && (
+              <div className="border border-blue-800 md:hidden" />
+            )}
+          </div>
+
+          <div data-aos="zoom-in-up">
+            <div
+              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                clickedImage === lubricants && "text-[#013872] font-medium"
+              }`}
+              id="lubricants"
+              onClick={handleImageChange}
+            >
+              {clickedImage === lubricants && (
+                <div className="invisible md:visible border border-blue-800"></div>
+              )}
+              <div className="ml-1 -z-10">Lubricants</div>
+            </div>
+            {clickedImage === lubricants && (
+              <div className="border border-blue-800 md:hidden" />
+            )}
+          </div>
+
+          <div data-aos="zoom-in-up">
+            <div
+              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                clickedImage === oilRecovery && "text-[#013872] font-medium"
+              }`}
+              id="oilRecovery"
+              onClick={handleImageChange}
+            >
+              {clickedImage === oilRecovery && (
+                <div className="invisible md:visible border border-blue-800"></div>
+              )}
+              <div className="ml-1 -z-10">Oil&nbsp;Recovery</div>
+            </div>
+            {clickedImage === oilRecovery && (
+              <div className="border border-blue-800 md:hidden" />
+            )}
+          </div>
+
+          <div data-aos="zoom-in-up">
+            <div
+              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                clickedImage === paints && "text-[#013872] font-medium"
+              }`}
+              id="paints"
+              onClick={handleImageChange}
+            >
+              {clickedImage === paints && (
+                <div className="invisible md:visible border border-blue-800"></div>
+              )}
+              <div className="ml-1 -z-10">Paints</div>
+            </div>
+            {clickedImage === paints && (
+              <div className="border border-blue-800 md:hidden" />
             )}
           </div>
         </div>
-      </div>
-      {/* semi circle component */}
-      <section className="flex flex-col items-center justify-center h-[90vh] mt-8 relative">
+        {/* element images */}
         <div
-          className={`h-full w-full bg-black absolute transition-opacity duration-500 ${
+          className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+          data-aos="slide-right"
+        >
+          {clickedImage && (
+            <div className="">
+              <img
+                src={clickedImage}
+                alt="Clicked Image"
+                className="shadow-white shadow-2xl rounded-2xl object-cover"
+              />
+            </div>
+          )}
+          <div
+            className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-5xl 2xl:text-6xl font-bold text-gray-400 text-center"
+            style={{
+              backgroundImage: "linear-gradient(to bottom, white, lightGray)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            {imageName}
+          </div>
+        </div>
+        {/* elements description */}
+        <div
+          className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+          // data-aos={window.innerWidth <= 640 ? "slide-up" : "slide-left"}
+          data-aos="slide-left"
+        >
+          {clickedImage && (
+            <div
+              className=" text-lg lg:text-2xl xl:text-3xl font-semibold text-center"
+              style={{
+                color: "transparent",
+                background:
+                  "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                backgroundClip: "text",
+                width: "100%",
+              }}
+            >
+              {imageDesc}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* semi circle component */}
+      <section className="flex flex-col items-center justify-center mt-8 relative  mb-8">
+        <div
+          className={`w-full h-full bg-black absolute transition-opacity duration-500 ${
             overlay ? "opacity-40" : "opacity-0"
           }`}
         ></div>
 
-        <div
-          className="text-xl lg:text-3xl font-semibold relative 2xl:text-5xl w-full text-center -z-10"
-          //data-aos="zoom-in-up"
-        >
-          <p>
-            Patented Ultrasonic Waveguide Sensors:
-            <img
-              className="w-[175px] lg:w-64 h-2 ml-44 lg:ml-[500px] 2xl:ml-[530px] 2xl:w-[500px]"
-              src={old}
-            ></img>
-            <p style={{ textAlign: "center" }}>Xyma Analytics</p>
-          </p>
+        <div className="flex justify-center text-xl md:text-3xl font-semibold relative 2xl:text-5xl w-full text-center mb-2">
+          <div className="flex flex-wrap justify-center gap-2 ">
+            <div className="">Patented</div>
+            <div className="">
+              <div>Ultrasonic Waveguide Sensors:</div>
+              <img className=" w-full h-2" src={line}></img>
+            </div>
+          </div>
         </div>
-        <div className="mt-3 px-4 lg:px-0 lg:flex gap-2 text-[#FE7D18]">
+        <div className="text-center text-xl md:text-3xl font-semibold">
+          Xyma Analytics
+        </div>
+
+        <div className=" mt-3 px-4 md:px-0 md:flex flex-wrap justify-center gap-2 text-[#FE7D18]">
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
@@ -389,16 +401,16 @@ export const Home = () => {
               </div>
             </div>
             {utmapsBadge && (
-              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] lg:w-[500px] z-10 text-gray-500 lg:flex">
-                <div className="bg-white rounded-t-xl lg:rounded-l-xl h-[150px] w-full lg:w-[40%] p-1">
+              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] md:w-[500px] z-10 text-gray-500 md:flex">
+                <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
                   <div className="w-full h-full bg-black rounded-xl flex justify-center ">
                     <img
-                      className="object-cover object-top rounded-xl w-[50%] lg:w-[75%] h-full"
+                      className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                       src={utmaps}
                     />
                   </div>
                 </div>
-                <div className="bg-white w-full lg:w-[60%] p-1 rounded-b-xl lg:rounded-r-xl">
+                <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
                   <div className="text-base font-bold text-black mb-1">
                     μTMapS & μSTMapS
                   </div>
@@ -438,16 +450,16 @@ export const Home = () => {
               </div>
             </div>
             {portsBadge && (
-              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] lg:w-[500px] z-10  text-gray-500 lg:flex">
-                <div className="bg-white rounded-t-xl lg:rounded-l-xl h-[150px] w-full lg:w-[40%] p-1">
+              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] md:w-[500px] z-10  text-gray-500 md:flex">
+                <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
                   <div className="w-full h-full bg-black rounded-xl flex justify-center ">
                     <img
-                      className="object-cover object-top rounded-xl w-[50%] lg:w-[75%] h-full"
+                      className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                       src={ports}
                     />
                   </div>
                 </div>
-                <div className="bg-white w-full lg:w-[60%] p-1 rounded-b-xl lg:rounded-r-xl">
+                <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
                   <div className="text-base font-bold text-black mb-1">
                     PoRTS
                   </div>
@@ -487,16 +499,16 @@ export const Home = () => {
               </div>
             </div>
             {ztarBadge && (
-              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] lg:w-[350px] z-10 text-gray-500 lg:flex">
-                <div className="bg-white rounded-t-xl lg:rounded-l-xl h-[150px] w-full lg:w-[40%] p-1">
+              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] md:w-[350px] z-10 text-gray-500 md:flex">
+                <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
                   <div className="w-full h-full bg-black rounded-xl flex justify-center ">
                     <img
-                      className="object-cover object-top rounded-xl w-[50%] lg:w-[75%] h-full"
+                      className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                       src={ztar}
                     />
                   </div>
                 </div>
-                <div className="bg-white w-full lg:w-[60%] p-1 rounded-b-xl lg:rounded-r-xl">
+                <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
                   <div className="text-base font-bold text-black mb-1">
                     Ztar
                   </div>
@@ -512,9 +524,9 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="relative block w-[90%] h-[45%] lg:w-[45%] lg:h-[65%] mt-[40px] 2xl:w-[50%]">
+        <div className="relative block w-[90%] md:w-[45%] mt-2 2xl:w-[50%] ">
           <img
-            className="absolute w-full h-full -z-10"
+            className="w-full -z-10"
             data-aos="zoom-in-up"
             src={newbgcropped}
             alt="Background Image"
@@ -537,7 +549,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "sensor" && (
-              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] lg:left-auto lg:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
+              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] md:left-auto md:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
                 Sensor&nbsp;Life&nbsp;up&nbsp;to 50,000 hrs
               </div>
             )}
@@ -560,7 +572,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "iot" && (
-              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] lg:left-auto lg:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
+              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] md:left-auto md:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
                 Multi - Point Measurement
               </div>
             )}
@@ -583,7 +595,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "grp" && (
-              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] lg:left-auto lg:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
+              <div className="text-[10px] text-xs absolute top-1/2 left-[105%] md:left-auto md:right-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full">
                 Energy&nbsp;Management System-IoT
               </div>
             )}
@@ -606,7 +618,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "zero" && (
-              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] lg:right-auto lg:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
+              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] md:right-auto md:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
                 Zero&nbsp;Manual Intervention
               </div>
             )}
@@ -629,7 +641,7 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "ai" && (
-              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] lg:right-auto lg:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
+              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] md:right-auto md:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
                 AI&nbsp;Enable&nbsp;Corrective Actions
               </div>
             )}
@@ -652,149 +664,135 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "tool" && (
-              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] lg:right-auto lg:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
+              <div className="text-[10px] text-xs absolute top-1/2 right-[105%] md:right-auto md:left-[105%] transform -translate-y-1/2 bg-white p-2 rounded-full text-left">
                 Retrofit Benifits
               </div>
             )}
           </div>
         </div>
       </section>
+
       {/* grid card section */}
       <section>
         <div
-          className="text-white py-16 h-auto lg:h-[100vh]"
+          className="text-white py-4 md:py-20"
           style={{
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          <div
-            className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4"
-            //data-aos="zoom-in-up"
-          >
-            <p className="text-xl lg:text-2xl xl:text-4xl font-semibold text-center">
-              Making a difference with the approach
-              <img
-                className="w-[100px] md:w-40 ml-[125px] lg:ml-24"
-                src={second}
-                alt="Approach Image"
-              />
-            </p>
-          </div>
-          <div className="h-[90%] mt-4 mx-4 lg:mx-20 2xl:mx-10 lg:flex p-4">
-            <div className="w-full lg:w-[35%] p-4">
-              <div
-                className="h-full w-full rounded-lg p-4"
-                data-aos="flip-right"
-                data-aos-duration="500"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-              >
-                <div className="h-[40%] flex items-end justify-center">
-                  <img
-                    className="w-[75px] h-[75px]"
-                    src={trophy}
-                    alt="Trophy icon"
-                  />
-                </div>
-                <div className="h-[20%] text-2xl lg:text-3xl font-semibold">
-                  <div className="h-1/2 flex items-center justify-center">
-                    Award Winning
-                  </div>
-                  <div className="h-1/2 flex items-center justify-center">
-                    Technology
-                  </div>
-                </div>
-                <div className="h-[40%] flex justify-center text-[10px] mx-4 text-center">
-                  The team leverages state-of-the-art, award-winning, ultrasonic
-                  waveguide technology developed through 25+ years of research
-                  and development.
-                </div>
+          <div className=" flex justify-center items-center mx-[5%] xl:mx-[8%]">
+            <div className="md:flex gap-2 text-xl md:text-3xl 2xl:text-5xl font-semibold text-center">
+              <div>Making a difference with</div>
+              <div className="mx-[8%] md:mx-0 flex flex-col items-center">
+                <div>the Approach</div>
+                <img className="w-full h-2" src={line}></img>
               </div>
             </div>
-            <div className="w-full lg:w-[65%] flex flex-col lg:grid grid-cols-2 p-4 gap-4">
-              <div
-                className="rounded-lg bg-white px-4 p-4 lg:p-0"
-                data-aos="flip-up"
-              >
-                <div className="hidden lg:block h-1/4"></div>
-                <div className="h-1/2 lg:h-1/4 flex">
-                  <div className="w-[20%] h-full flex items-center justify-center">
-                    <img
-                      className="w-[45px] h-[45px]"
-                      src={client}
-                      alt="Client icon"
-                    />
+          </div>
+
+          <div className=" mt-4 mx-[5%] xl:mx-[8%] flex flex-col md:flex-row p-4 gap-3">
+            <div
+              className="w-full md:w-[35%] p-4  rounded-lg flex flex-col gap-2 text-center py-16"
+              data-aos="flip-right"
+              style={{
+                background:
+                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+              }}
+            >
+              <div className=" flex justify-center">
+                <img className="w-[75px]" src={trophy} alt="Trophy icon" />
+              </div>
+              <div className="text-3xl font-semibold">
+                <div className="">Award Winning</div>
+                <div className="">Technology</div>
+              </div>
+
+              <div className=" text-xs">
+                The team leverages state-of-the-art, award-winning, ultrasonic
+                waveguide technology developed through 25+ years of research and
+                development.
+              </div>
+            </div>
+
+            <div className=" w-full md:w-[65%] flex flex-col gap-3">
+              <div className=" flex flex-col md:flex-row gap-3 h-auto md:h-1/2">
+                {/* white box 1 */}
+                <div
+                  className=" rounded-lg bg-white w-full md:w-1/2 p-2 py-4 flex flex-col gap-2"
+                  data-aos="flip-up"
+                >
+                  <div className="flex gap-2 ">
+                    <div className=" flex items-center justify-center">
+                      <img className="w-12 " src={client} alt="Client icon" />
+                    </div>
+                    <div className=" flex items-center text-lg text-black font-semibold">
+                      Client-Centric
+                    </div>
                   </div>
-                  <div className="w-[80%] flex items-center text-lg font-[635] text-black">
-                    Client-Centric
+                  <div className=" text-[#60646C] text-left text-sm">
+                    The Solution is provided based on in-depth understanding of
+                    clients needs addressing the relevant challenges.
                   </div>
                 </div>
-                <div className="h-1/2 text-[#60646C] text-left text-sm p-2">
-                  The Solution is provided based on in-depth understanding of
-                  clients needs addressing the relevant challenges.
+
+                {/* white box 2 */}
+                <div
+                  className=" rounded-lg bg-white w-full md:w-1/2 p-2 py-4 flex flex-col gap-2"
+                  data-aos="flip-up"
+                >
+                  <div className="flex gap-2 ">
+                    <div className=" flex items-center justify-center">
+                      <img className="w-12 " src={solution} alt="solution" />
+                    </div>
+                    <div className=" flex items-center text-lg text-black font-semibold">
+                      Customization for Solutions
+                    </div>
+                  </div>
+                  <div className=" text-[#60646C] text-left text-sm">
+                    Gain immediate access to valuable data through the
+                    technology's adaptability with material selection and
+                    configuration for waveguides.
+                  </div>
                 </div>
               </div>
 
-              <div
-                className="rounded-lg bg-white px-4 p-4 lg:p-0"
-                data-aos="flip-up"
-              >
-                <div className="hidden lg:block h-1/4"></div>
-                <div className="h-1/2 lg:h-1/4 flex">
-                  <div className="w-[20%] h-full flex items-center justify-center">
-                    <img
-                      className="w-[45px] h-[45px]"
-                      src={solution}
-                      alt="solution"
-                    />
+              <div className=" flex flex-col md:flex-row gap-3 h-auto md:h-1/2">
+                {/* white box 3 */}
+                <div
+                  className=" rounded-lg bg-white w-full md:w-1/2 p-2 py-4 flex flex-col gap-2"
+                  data-aos="flip-up"
+                >
+                  <div className="flex gap-2 ">
+                    <div className=" flex items-center justify-center">
+                      <img className="w-12 " src={real} alt="real" />
+                    </div>
+                    <div className=" flex items-center text-lg text-black font-semibold">
+                      Real-Time Insights
+                    </div>
                   </div>
-                  <div className="w-[80%] flex items-center text-lg font-[635] text-black">
-                    Customization for Solutions
+                  <div className=" text-[#60646C] text-left text-sm">
+                    Gain immediate access to valuable data through our
+                    supervised sensing capabilities, empowering informed
+                    decision-making.
                   </div>
                 </div>
-                <div className="h-1/2 text-[#60646C] text-left text-sm p-2">
-                  Gain immediate access to valuable data through the
-                  technology's adaptability with material selection and
-                  configuration for waveguides.
-                </div>
-              </div>
 
-              <div
-                className="rounded-lg bg-white px-4 p-4 lg:p-0"
-                data-aos="flip-up"
-              >
-                <div className="hidden lg:block h-1/4"></div>
-                <div className="h-1/2 lg:h-1/4 flex">
-                  <div className="w-[20%] h-full flex items-center justify-center">
-                    <img className="w-[45px] h-[45px]" src={real} alt="real" />
+                {/* white box 4 */}
+                <div
+                  className=" rounded-lg bg-white w-full md:w-1/2 p-2 py-4 flex flex-col gap-2"
+                  data-aos="flip-up"
+                >
+                  <div className="flex gap-2 ">
+                    <div className=" flex items-center justify-center">
+                      <img className="w-12 " src={time} alt="time" />
+                    </div>
+                    <div className=" flex items-center text-lg text-black font-semibold">
+                      On-Time Delivery
+                    </div>
                   </div>
-                  <div className="w-[80%] flex items-center text-lg font-[635] text-black">
-                    Real-Time Insights
+                  <div className=" text-[#60646C] text-left text-sm">
+                    Committed to adhering to project timelines and satisfaction.
                   </div>
-                </div>
-                <div className="h-1/2 text-[#60646C] text-left text-sm p-2">
-                  Gain immediate access to valuable data through our supervised
-                  sensing capabilities, empowering informed decision-making.
-                </div>
-              </div>
-
-              <div
-                className="rounded-lg bg-white px-4 p-4 lg:p-0"
-                data-aos="flip-up"
-              >
-                <div className="hidden lg:block h-1/4"></div>
-                <div className="h-1/2 lg:h-1/4 flex">
-                  <div className="w-[20%] h-full flex items-center justify-center">
-                    <img className="w-[45px] h-[45px]" src={time} alt="time" />
-                  </div>
-                  <div className="w-[80%] flex items-center text-lg font-[635] text-black">
-                    On-Time Delivery
-                  </div>
-                </div>
-                <div className="h-1/2 text-[#60646C] text-left text-sm p-2">
-                  Committed to adhering to project timelines and satisfaction.
                 </div>
               </div>
             </div>
