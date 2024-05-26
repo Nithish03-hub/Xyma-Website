@@ -66,7 +66,9 @@ const Product = () => {
         {images.map((item, index) => (
           <div
             key={index}
-            className={`${index === currentIndex ? "block" : "hidden"} w-full h-full`}
+            className={`${
+              index === currentIndex ? "block" : "hidden"
+            } w-full h-full`}
           >
             <img
               className="w-full h-full object-cover object-right-top"
@@ -118,10 +120,10 @@ const Product = () => {
 
       {/* product cards */}
 
-      <div className="p-4 md:p-8 md:px-28">
+      <div className=" mx-[5%] xl:mx-[8%]">
         {/* utmaps */}
-        <div className="md:h-[70vh] md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
-          <div className="w-full md:w-[45%] p-2">
+        <div className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+          <div className="w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
               style={{
@@ -135,7 +137,7 @@ const Product = () => {
                 alt="UTMapS"
               />
               <div
-                className="h-[45%] md:h-[20%] absolute bottom-0 w-full px-4 rounded-b-lg"
+                className="absolute bottom-0 w-full px-4 rounded-b-lg p-4"
                 style={{
                   background: "rgba(64, 64, 64, 0.5)",
                   backdropFilter: "blur(9px)",
@@ -143,7 +145,7 @@ const Product = () => {
                 }}
               >
                 <div
-                  className="text-2xl font-semibold h-[45%]"
+                  className=" text-xl md:text-2xl font-semibold mb-2"
                   style={{
                     background:
                       "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
@@ -155,81 +157,73 @@ const Product = () => {
                 >
                   μTMapS
                 </div>
-                <div className="h-[55%] text-white text-[12px]">
+                <div className=" text-white text-xs md:text-base">
                   A single customizable waveguide can measure temperature at 10
                   points over 50 meters length.
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-full md:w-[55%] p-2 md:p-4">
-            <div className="h-1/3">
-              <div className="h-[65%] md:flex">
-                <div className="w-full md:w-[80%] text-xl md:text-3xl font-semibold">
-                  Multi-Point Temperature Mapping Sensor
-                </div>
-                <div className="w-full md:w-[20%] py-1">
-                  <div className="flex rounded-full items-center justify-center gap-1 p-1 bg-[#01285C]">
-                    <div className="text-[#FE9D1C]">
-                      <RiPlayCircleFill size={20} />
-                    </div>
-                    <div className="text-sm mb-[2px] text-white">
-                      Play Video
-                    </div>
-                  </div>
-                </div>
+          <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
+            {/* heading and play button */}
+            <div className=" md:flex mb-2">
+              <div className=" text-base md:text-lg xl:text-3xl font-semibold">
+                Multi-Point Temperature Mapping Sensor
               </div>
-              <div className="h-[35%]">
-                <div className="w-full md:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center">
-                  Temperature Range: 25° C to 1600° C
+              <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
+                <div className="text-[#FE9D1C]">
+                  <RiPlayCircleFill size={20} />
+                </div>
+                <div className="text-sm mb-[2px] text-white">
+                  Play&nbsp;Video
                 </div>
               </div>
             </div>
-            <div className="h-1/3 text-[#60646C] py-2 text-sm md:py-0 md:text-base">
+
+            {/* orange tab */}
+            <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+              Temperature Range: 25° C to 1600° C
+            </div>
+
+            {/* description */}
+            <div className=" text-[#60646C] text-xs xl:text-sm mb-2">
               µTMapS & µSTMapS are IIoT-enabled temperature measurement and
               temperature profiling sensors that captures continuous
               measurements at multiple points with a single customizable
               waveguide with multiple configurations in contrast to contact
               based thermocouples/RTDs or contactless IR guns.
             </div>
-            <div className="h-1/3 flex flex-col gap-1 text-sm md:text-base">
-              <div className="h-1/2 flex flex-col md:flex-row gap-1">
-                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
-                  <div className="w-[20%] h-full p-2 flex items-center justify-center">
-                    <img src={isteel} />
-                  </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
-                    Steel Manufacturing
-                  </div>
-                </div>
 
-                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
-                  <div className="w-[20%] h-full p-2 flex items-center justify-center">
-                    <img src={aicon} />
-                  </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
-                    Aluminium Manufacturing
-                  </div>
+            {/* cards */}
+            <div className="md:flex gap-2 mb-2 text-xs xl:text-base">
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={isteel} />
                 </div>
+                <div className="font-semibold">Steel Manufacturing</div>
               </div>
-              <div className="h-1/2 flex flex-col md:flex-row gap-1">
-                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
-                  <div className="w-[20%] h-full p-2 flex items-center justify-center">
-                    <img src={semi} />
-                  </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
-                    Semiconductor Manufacturing
-                  </div>
-                </div>
 
-                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
-                  <div className="w-[20%] h-full p-2 flex items-center justify-center">
-                    <img src={ref} />
-                  </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
-                    Refineries
-                  </div>
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={aicon} />
                 </div>
+                <div className="font-semibold">Aluminium Manufacturing</div>
+              </div>
+            </div>
+
+            <div className="md:flex gap-2  mb-2 text-xs xl:text-base">
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={semi} />
+                </div>
+                <div className="font-semibold">Semiconductor Manufacturing</div>
+              </div>
+
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={ref} />
+                </div>
+                <div className="font-semibold">Refiniries</div>
               </div>
             </div>
           </div>
