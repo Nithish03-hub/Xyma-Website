@@ -73,7 +73,15 @@ const About = () => {
         </div>
       </div>
       {/* bottom text */}
-      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px] mb-[20px] md:mb-[70px]">
+      <div
+        className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px] mb-[20px] md:mb-[70px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
         ABOUT US
       </div>
 
@@ -93,7 +101,7 @@ const About = () => {
       </div>
 
       {/* arrow box */}
-      <div className="md:h-[120vh] mt-8 mx-[5%]">
+      <div className=" mt-8 mx-[5%]">
         {isLargeScreen ? (
           <>
             <Xarrow
@@ -103,7 +111,7 @@ const About = () => {
               color="gray"
               strokeWidth={1}
               headSize={10}
-              curveness={0.8}
+              curveness={1.2}
               showTail={true}
               tailShape="circle"
             />
@@ -114,7 +122,7 @@ const About = () => {
               color="gray"
               strokeWidth={1}
               headSize={10}
-              curveness={0.8}
+              curveness={1.2}
               showTail={true}
               tailShape="circle"
             />
@@ -150,28 +158,28 @@ const About = () => {
           </>
         )}
 
-        <div className="md:h-1/3 md:flex justify-between">
+        <div className=" md:flex justify-between mb-2">
           {/* box 1 */}
           <div
             className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0"
             id="box1"
           >
-            <div className="w-full h-full">
-              <div className="md:h-[20%] flex items-center mb-2 md:mb-0">
+            <div className=" w-full h-full">
+              <div className=" flex items-center mb-2">
                 <span className="rounded-full px-2 py-1 text-xs bg-[#FEE1B7] font-medium">
                   2020
                 </span>
               </div>
-              <div className="md:h-[30%] font-semibold mb-2 md:mb-0">
+              <div className=" font-semibold mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry
               </div>
-              <div className="md:h-[30%] text-xs text-[#60646C] mb-2 md:mb-0">
+              <div className=" text-xs text-[#60646C] mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the make a type specimen book.
               </div>
-              <div className="md:h-[20%] flex items-center">
+              <div className=" flex items-center mb-2">
                 <span
                   className="text-xs rounded-full p-2 text-white"
                   style={{
@@ -184,17 +192,18 @@ const About = () => {
               </div>
             </div>
             {/* empty div for arrow 1 - small screen*/}
-            <div className="absolute w-4 bottom-0 right-[10%]" id="box5" />
+            <div className=" absolute w-4 bottom-0 right-[10%]" id="box5" />
           </div>
 
           {/* text 1 */}
-          <div className="relative w-[60%] md:w-[30%] text-sm font-medium flex items-center text-left mb-4 md:mb-0">
+          <div className=" relative w-[60%] md:w-[30%] text-sm font-medium flex items-center text-left mb-4 md:mb-0">
             Lorem Ipsum has been the industry's standard dummy text when an
             unknown printer took a galley of type and scrambled it to make a
             type specimen book.
           </div>
         </div>
-        <div className="md:h-1/3 flex flex-col-reverse md:flex-row justify-between">
+
+        <div className=" flex flex-col-reverse md:flex-row justify-between mb-2">
           {/* text 2 */}
           <div className="w-[60%] md:w-[30%] text-sm font-medium flex items-center text-left mb-4 md:mb-0">
             Lorem Ipsum has been the industry's standard dummy text when an
@@ -203,26 +212,26 @@ const About = () => {
           </div>
           {/* box 2 */}
           <div className="relative border border-[#CDCED6] w-full md:w-[35%] rounded-2xl mb-4 md:mb-0 py-4">
-            <div className="w-full h-full">
-              <div className="md:h-[20%] flex items-center px-4 mb-2 md:mb-0">
+            <div className=" w-full">
+              <div className="flex items-center px-4 mb-2">
                 <span className="rounded-full px-2 py-1 text-xs bg-[#FEE1B7] font-medium">
                   2020
                 </span>
               </div>
-              <div className="md:h-[30%] font-semibold px-4 mb-2 md:mb-0">
+              <div className="font-semibold px-4 mb-1">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry
                 {/* empty div for arrow */}
-                <div className="-ml-4 mt-2" id="box2"></div>
+                <div className="-ml-4 mt-2 h-1" id="box2"></div>
               </div>
               {/* empty div for arrow */}
-              <div id="box3"></div>
-              <div className="md:h-[30%] text-xs text-[#60646C] px-4 mb-2 md:mb-0">
+              <div className='' id="box3"></div>
+              <div className="text-xs text-[#60646C] px-4 mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the make a type specimen book.
               </div>
-              <div className="md:h-[20%] flex items-center px-4 mb-2 md:mb-0">
+              <div className="flex items-center px-4 mb-2">
                 <span
                   className="text-xs rounded-full p-2 text-white"
                   style={{
@@ -240,28 +249,28 @@ const About = () => {
             <div className="absolute w-4 bottom-0 right-[10%]" id="box7" />
           </div>
         </div>
-        <div className="md:h-1/3 md:flex justify-between">
+        <div className=" md:flex justify-between">
           {/* box 3 */}
           <div
             className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0"
             id="box4"
           >
-            <div className="w-full h-full">
-              <div className="md:h-[20%] flex items-center mb-2 md:mb-0">
+            <div className=" w-full">
+              <div className="flex items-center mb-2">
                 <span className="rounded-full px-2 py-1 text-xs bg-[#FEE1B7] font-medium">
                   2020
                 </span>
               </div>
-              <div className="md:h-[30%] font-semibold mb-2 md:mb-0">
+              <div className="font-semibold mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry
               </div>
-              <div className="md:h-[30%] text-xs text-[#60646C] mb-2 md:mb-0">
+              <div className="text-xs text-[#60646C] mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the make a type specimen book.
               </div>
-              <div className="md:h-[20%] flex items-center mb-2 md:mb-0">
+              <div className="flex items-center mb-2">
                 <span
                   className="text-xs rounded-full p-2 text-white"
                   style={{

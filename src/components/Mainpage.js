@@ -10,7 +10,7 @@ const Mainpage = () => {
 
     <React.Fragment>
       <ScrollToTop/>
-        <section >
+        <section className=' font-satoshi'>
             <div>
               <Navbar/>
             </div>

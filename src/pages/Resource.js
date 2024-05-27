@@ -39,14 +39,14 @@ const Resource = () => {
 
     return (
       <div className="overflow-hidden">
-        <section className="mt-[10vh] h-[60vh] md:h-[70vh] xl:h-[90vh] relative shadow-white shadow-xl">
+        <section className="mt-[10vh] h-[60vh] md:h-[70vh] xl:h-[90vh] relative shadow-white shadow-2xl">
           <img
             className="h-full w-full object-cover"
             src={cs}
             alt="Case Studies"
           />
           <div className="absolute inset-0 text-white flex flex-col items-center justify-center">
-            <div className="text-4xl md:text-5xl font-semibold md:font-bold">
+            <div className="text-4xl md:text-5xl font-semibold">
               Case Studies
             </div>
             <div className="text-sm text-center mt-4 mx-[20%] md:mx-[30%]">
@@ -58,14 +58,22 @@ const Resource = () => {
         </section>
 
         {/* bottom text */}
-        <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px] mb-[20px] md:mb-[70px]">
+        <div
+          className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
           CASE STUDIES
         </div>
 
         {/* resources title */}
-        <div className="mx-[5%] md:flex justify-end">
+        <div className=" mx-[5%] lg:mx-[8%]  md:flex justify-center mt-8">
           <div
-            className="flex md:flex-col gap-2  w-full md:w-[15%] font-semibold p-6 overflow-auto"
+            className=" flex md:flex-col gap-2 w-full md:w-[20%] font-semibold py-6 px-4 overflow-auto"
             style={{ scrollbarWidth: "none" }}
           >
             <div>
@@ -219,7 +227,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-lg md:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     A 10°C temperature deviation reduces efficiency, promotes
                     anode effect, and increases PFC emissions.
                   </div>
@@ -232,9 +240,12 @@ const Resource = () => {
                   </div>
                   <div className="flex p-4">
                     <div className="w-[30%] flex items-center justify-center">
-                      <img src={all1} />
+                      <img
+                        className="border border-gray-300 rounded-lg"
+                        src={all1}
+                      />
                     </div>
-                    <div className="w-[70%] px-2 text-sm md:text-xl">
+                    <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl">
                       A 10°C shift lowers efficiency, boosts anode effect, and
                       raises PFC emissions.
                     </div>
@@ -242,10 +253,13 @@ const Resource = () => {
                   {/* empty line */}
                   <div className="border border-[#CDCED6] mx-[5%]" />
                   <div className="flex p-4">
-                    <div className="w-[30%]">
-                      <img src={all2} />
+                    <div className="w-[30%] flex items-center justify-center">
+                      <img
+                        className="border border-gray-300 rounded-lg"
+                        src={all2}
+                      />
                     </div>
-                    <div className="w-[70%] px-2 text-sm md:text-xl">
+                    <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl">
                       Extending the ladle life for one cycle would result in
                       steel production worth $5.1 million.
                     </div>
@@ -253,10 +267,13 @@ const Resource = () => {
                   {/* empty line */}
                   <div className="border border-[#CDCED6] mx-[5%]" />
                   <div className="flex p-4">
-                    <div className="w-[30%]">
-                      <img src={all3} />
+                    <div className="w-[30%] flex items-center justify-center">
+                      <img
+                        className="border border-gray-300 rounded-lg "
+                        src={all3}
+                      />
                     </div>
-                    <div className="w-[70%] px-2 text-sm md:text-xl">
+                    <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl">
                       20°C rise halves reformer tube lifespan; design
                       temperature crucial.
                     </div>
@@ -290,7 +307,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     Extending ladle life for one cycle yields steel worth $5.1M
                   </div>
                 </div>
@@ -312,7 +329,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     Extending the lifespan of the ladle for one cycle results in
                     producing steel valued at $5.1 million
                   </div>
@@ -346,7 +363,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     A 20°C temperature rise cuts reformer tube lifespan by half
                   </div>
                 </div>
@@ -368,7 +385,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     A 20°C temperature increase halves the lifespan of reformer
                     tubes
                   </div>
@@ -402,7 +419,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     30% of maintenance budget influenced by lubricants,
                     highlighting their significant role in operational expenses
                   </div>
@@ -425,7 +442,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     Lubricants significantly affect operational costs,
                     accounting for 30% of the maintenance budget
                   </div>
@@ -462,7 +479,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     1.3 lakhs/day would be the worth of injection polymer of
                     unknown viscosity flooded in EOR due to unavailability of
                     continuous viscosity measurement technique.
@@ -489,7 +506,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     Enhanced oil recovery 'EOR' techniques can improve recovery
                     rates from 20-40% to 30-60% of the original oil in place.
                   </div>
@@ -522,7 +539,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
+                  <div className="text-base md:text-lg lg:text-xl">
                     Water-based paints account for about 80% of all paints sold
                     in the residential market.
                   </div>
@@ -548,10 +565,10 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-xl">
-                    The use of low-VOC (volatile organic compounds) paints has
-                    increased by over 50% in the past decade due to
-                    environmental regulations and consumer demand.
+                  <div className="text-base md:text-lg lg:text-xl">
+                    The use of low-VOC paints has increased by over 50% in the
+                    past decade due to environmental regulations and consumer
+                    demand.
                   </div>
                 </div>
               </div>

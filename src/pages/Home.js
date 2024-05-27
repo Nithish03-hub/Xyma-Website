@@ -160,12 +160,14 @@ export const Home = () => {
           alt="cover image"
           className="absolute w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl md:text-6xl text-white font-semibold ml-12 md:ml-24 gap-2 2xl:text-8xl">
-          <div data-aos="slide-right">Prevent</div>
-          <div data-aos="slide-right">Unplanned</div>
+        <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl lg:text-7xl xl:text-6xl text-white font-medium md:font-semibold xl:font-bold gap-2 items-center justify-center xl:items-start xl:justify-start 2xl:text-8xl m-[8%]">
+          <div className='flex xl:flex-col gap-2 md:gap-4'>
+            <div data-aos="slide-right">Prevent</div>
+            <div data-aos="slide-right">Unplanned</div>
+          </div>
           <div data-aos="slide-right">Downtime</div>
           <div
-            className="text-xs md:text-sm mt-2 2xl:text-base"
+            className="text-xs md:text-lg lg:text-2xl xl:text-base text 2xl:text-xl mt-2 font-normal md:font-medium"
             data-aos="slide-right"
           >
             "The Disruptive Ultrasonic Waveguide Technology"
@@ -173,20 +175,24 @@ export const Home = () => {
         </div>
       </div>
       {/* bottom text */}
-      <div className="text-center text-gray-300 font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]">
+      <div
+        className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
         XYMA ANALYTICS
       </div>
 
       {/* text with underline */}
       <div className="flex justify-center items-center  mt-12 mb-12">
         <div className=" md:flex gap-2 text-xl md:text-2xl xl:text-3xl 2xl:text-5xl font-semibold text-center">
+          <div className="">Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
           <div className="">
-            Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate
-          </div>
-          <div className="">
-            <div className="">
-              Process&nbsp;parameter&nbsp;measurements
-            </div>
+            <div className="">Process&nbsp;parameter&nbsp;measurements</div>
             <img className=" w-full h-2" src={line}></img>
           </div>
         </div>
@@ -322,9 +328,10 @@ export const Home = () => {
             </div>
           )}
           <div
-            className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-5xl 2xl:text-6xl font-bold text-gray-400 text-center"
+            className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-5xl 2xl:text-6xl font-bold text-center"
             style={{
-              backgroundImage: "linear-gradient(to bottom, white, lightGray)",
+              backgroundImage:
+                "linear-gradient(to bottom, white, rgb(209, 213, 219))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -380,7 +387,6 @@ export const Home = () => {
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
-              data-aos="flip-right"
               onMouseEnter={() => {
                 handleOverlayEnter();
                 handleUtmapsBadgeEnter();
@@ -429,7 +435,6 @@ export const Home = () => {
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
-              data-aos="flip-right"
               onMouseEnter={() => {
                 handleOverlayEnter();
                 handlePortsBadgeEnter();
@@ -478,7 +483,6 @@ export const Home = () => {
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
-              data-aos="flip-right"
               onMouseEnter={() => {
                 handleOverlayEnter();
                 handleZtarBadgeEnter();

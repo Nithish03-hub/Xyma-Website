@@ -68,7 +68,7 @@ const Career = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center">
-          <div className="text-white text-4xl md:text-5xl font-semibold md:font-bold ">
+          <div className="text-white text-4xl md:text-5xl font-semibold">
             <div>"Together,</div>
             <div className="ml-6">we shine"</div>
           </div>
@@ -91,11 +91,19 @@ const Career = () => {
       </section>
 
       {/* bottom text */}
-      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[25px] md:-mt-[50px] 2xl:-mt-[65px] mb-[30px] md:mb-[70px]">
+      <div
+        className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
         WORK AT XYMA
       </div>
 
-      <div className="md:h-[90vh] flex items-center">
+      <div className="flex items-center mb-16 mt-10">
         <div className="w-full flex flex-col items-center">
           <div>
             <img className="h-[50px] w-[65px]" src={framevector} alt="quote" />
@@ -125,7 +133,7 @@ const Career = () => {
           </div>
         </div>
         <div
-          className="mt-8 font-semibold flex gap-2 md:gap-4 md:justify-center overflow-auto text-xs md:text-base mx-2 md:mx-0"
+          className="mt-8 mx-[5%] xl:mx-[8%] font-semibold flex gap-2 md:gap-4 overflow-auto text-xs md:text-base lg:justify-center"
           style={{ scrollbarWidth: "none" }}
         >
           <Badge2
@@ -155,8 +163,8 @@ const Career = () => {
           />
         </div>
 
-        <div className="flex justify-center items-center">
-          <div className="mt-4 md:mt-12 border border-gray-200 p-4 rounded-xl w-[85%]">
+        <div className="mx-[5%] xl:mx-[8%]">
+          <div className="mt-4 md:mt-12 border border-gray-200 p-4 rounded-xl">
             <div className="text-[#60646C] text-sm md:text-base">
               Department Name
             </div>
@@ -203,10 +211,8 @@ const Career = () => {
               )}
             </div>
           </div>
-        </div>
 
-        <div className="flex justify-center items-center">
-          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl">
             <div className="text-[#60646C] text-sm md:text-base">
               Department Name
             </div>
@@ -253,10 +259,8 @@ const Career = () => {
               )}
             </div>
           </div>
-        </div>
 
-        <div className="flex justify-center items-center">
-          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl">
             <div className="text-[#60646C] text-sm md:text-base">
               Department Name
             </div>
@@ -303,10 +307,8 @@ const Career = () => {
               )}
             </div>
           </div>
-        </div>
 
-        <div className="flex justify-center items-center">
-          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl">
             <div className="text-[#60646C] text-sm md:text-base">
               Department Name
             </div>
@@ -353,10 +355,8 @@ const Career = () => {
               )}
             </div>
           </div>
-        </div>
 
-        <div className="flex justify-center items-center">
-          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl">
             <div className="text-[#60646C] text-sm md:text-base">
               Department Name
             </div>
@@ -403,10 +403,8 @@ const Career = () => {
               )}
             </div>
           </div>
-        </div>
 
-        <div className="flex justify-center items-center">
-          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl">
             <div className="text-[#60646C] text-sm md:text-base">
               Department Name
             </div>
@@ -453,10 +451,8 @@ const Career = () => {
               )}
             </div>
           </div>
-        </div>
 
-        <div className="flex justify-center items-center">
-          <div className="mt-4 border border-gray-200 p-4 rounded-xl w-[85%]">
+          <div className="mt-4 border border-gray-200 p-4 rounded-xl">
             <div className="text-[#60646C] text-sm md:text-base">
               Department Name
             </div>
@@ -507,7 +503,7 @@ const Career = () => {
       </section>
 
       <div className="mt-4 w-full flex justify-center">
-        <p className="text-[#60646C] md:font-semibold w-[80%] text-xl md:text-2xl text-center">
+        <p className="text-[#60646C] md:font-semibold w-[80%] text-sm md:text-xl xl:text-2xl text-center">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and

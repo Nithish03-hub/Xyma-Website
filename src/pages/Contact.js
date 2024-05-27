@@ -44,7 +44,7 @@ const ContactPage = () => {
             className="h-full w-full object-cover"
           />
 
-          <div className="absolute inset-0 text-white text-3xl font-semibold flex flex-col gap-4 justify-center items-center mx-[15%] text-center">
+          <div className="absolute inset-0 text-white text-xl md:text-3xl font-semibold flex flex-col gap-4 justify-center items-center mx-[15%] text-center">
             <div>
               Unlock Insights, Elevate Performance - Reach Out to XYMA Analytics
               Today
@@ -67,13 +67,21 @@ const ContactPage = () => {
       </section>
 
       {/* bottom text */}
-      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[25px] md:-mt-[50px] 2xl:-mt-[65px] mb-[30px] md:mb-[70px]">
+      <div
+        className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[25px] md:-mt-[50px] 2xl:-mt-[65px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
         CONTACT US
       </div>
 
       <section
         ref={sectionRef}
-        className="mx-[5%] md:mx-[20%] md:h-[90vh] mb-6  flex items-center justify-center"
+        className="mx-[5%] md:mx-[20%] mt-6 mb-10 flex items-center justify-center"
       >
         <div className="">
           <div className="flex justify-center">

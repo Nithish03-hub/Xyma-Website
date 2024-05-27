@@ -37,7 +37,12 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
       <div className="h-[10vh]">
-        <div className="bg-[#122e4b] h-[9vh] flex items-center px-4">
+        <div
+          className="h-[9vh] flex items-center px-4"
+          style={{
+            background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
+          }}
+        >
           <div className=" flex items-center text-white lg:justify-around justify-between w-full 2xl:text-lg">
             <div>
               <img className="mr-4 h-10" src={xyma} alt="Logo" />
@@ -96,7 +101,11 @@ const Navbar = () => {
       </div>
 
       {burgerMenuOpen && (
-        <div className="bg-white h-[90vh] w-full lg:hidden" data-aos="slide-left">
+        <div
+          className="bg-white h-[90vh] w-full lg:hidden"
+          data-aos="slide-down"
+          data-aos-duration="1000"
+        >
           <div className="h-[60%]">
             {HeaderData.map((item, index) => (
               <div

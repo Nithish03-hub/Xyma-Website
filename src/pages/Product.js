@@ -76,7 +76,7 @@ const Product = () => {
               alt={`Slide ${index + 1}`}
               //style={{ ...imageStyle }}
             />
-            <div className="h-[45%] w-[90%] md:h-[60%] md:w-[30%] flex flex-col gap-4 absolute bottom-[25%] text-white p-[1%] px-[2%] rounded-md text-[2.5vw] font-medium md:font-bold mx-[20px] md:mx-[75px]">
+            <div className="h-[45%] w-[90%] md:h-[60%] md:w-[30%] flex flex-col gap-4 absolute bottom-[25%] text-white p-[1%] px-[2%] rounded-md text-[2.5vw] font-semibold mx-[20px] md:mx-[75px]">
               <div className="text-2xl md:text-5xl text-center md:text-left">
                 {item.title}
               </div>
@@ -100,21 +100,29 @@ const Product = () => {
             </div>
           </div>
         ))}
-        {/* <div className="border border-red-500 absolute bottom-[65px] md:left-[50px] flex md:justify-start items-center gap-2 w-[90%] mx-[20px] md:mx-[50px] justify-center">
+        <div className="absolute w-full flex gap-2 bottom-[10%] p-2 md:px-20 justify-center md:justify-normal">
           {images.map((_, index) => (
             <div
               key={index}
               onClick={() => handleDotClick(index)}
-              className={`w-[30px] h-[3px] cursor-pointer ${
+              className={`w-16 h-1 cursor-pointer  ${
                 index === currentIndex ? "bg-black" : "bg-gray-300"
               } rounded-full`}
             />
           ))}
-        </div> */}
+        </div>
       </div>
 
       {/* bottom text */}
-      <div className="w-full h-[10vh] text-center text-gray-300 font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px] mb-[20px] md:mb-[70px]">
+      <div
+        className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
         XYMA PRODUCTS
       </div>
 
@@ -137,7 +145,7 @@ const Product = () => {
                 alt="UTMapS"
               />
               <div
-                className="absolute bottom-0 w-full px-4 rounded-b-lg p-4"
+                className="absolute bottom-0 w-full px-4 rounded-b-lg py-2"
                 style={{
                   background: "rgba(64, 64, 64, 0.5)",
                   backdropFilter: "blur(9px)",
@@ -145,7 +153,7 @@ const Product = () => {
                 }}
               >
                 <div
-                  className=" text-xl md:text-2xl font-semibold mb-2"
+                  className=" text-xl md:text-2xl font-semibold mb-1"
                   style={{
                     background:
                       "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
@@ -166,8 +174,8 @@ const Product = () => {
           </div>
           <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
             {/* heading and play button */}
-            <div className=" md:flex mb-2">
-              <div className=" text-base md:text-lg xl:text-3xl font-semibold">
+            <div className=" md:flex gap-2 mb-2">
+              <div className=" text-base mb-2 md:mb-0 md:text-lg xl:text-3xl font-semibold">
                 Multi-Point Temperature Mapping Sensor
               </div>
               <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
@@ -196,7 +204,7 @@ const Product = () => {
 
             {/* cards */}
             <div className="md:flex gap-2 mb-2 text-xs xl:text-base">
-              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2">
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={isteel} />
                 </div>
@@ -212,7 +220,7 @@ const Product = () => {
             </div>
 
             <div className="md:flex gap-2  mb-2 text-xs xl:text-base">
-              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white mb-2 md:mb-0">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={semi} />
                 </div>
@@ -230,8 +238,8 @@ const Product = () => {
         </div>
 
         {/* ports */}
-        <div className="md:h-[70vh] md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
-          <div className="w-full md:w-[45%] p-2">
+        <div className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+          <div className="w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
               style={{
@@ -240,12 +248,12 @@ const Product = () => {
               }}
             >
               <img
-                className="w-[50%] h-[95%] object-cover object-top"
+                className="w-[50%] h-[70%] lg:w-[45%] lg:h-[95%] object-cover object-top"
                 src={ports}
-                alt="PoRTS"
+                alt="ports"
               />
               <div
-                className="h-[45%] md:h-[20%] absolute bottom-0 w-full px-4 rounded-b-lg"
+                className="absolute bottom-0 w-full px-4 rounded-b-lg py-2"
                 style={{
                   background: "rgba(64, 64, 64, 0.5)",
                   backdropFilter: "blur(9px)",
@@ -253,7 +261,7 @@ const Product = () => {
                 }}
               >
                 <div
-                  className="text-2xl font-semibold h-[45%]"
+                  className=" text-xl md:text-2xl font-semibold mb-1"
                   style={{
                     background:
                       "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
@@ -265,45 +273,46 @@ const Product = () => {
                 >
                   PoRTS
                 </div>
-                <div className="h-[55%] text-white text-[12px]">
+                <div className=" text-white text-xs md:text-base">
                   A single customizable wavelength can measure viscosity,
                   density & Temperature continuously.
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-full md:w-[55%] p-2 md:p-4">
-            <div className="h-[40%]">
-              <div className="h-[55%] md:flex">
-                <div className="w-full md:w-[80%] text-xl md:text-3xl font-semibold pr-2">
-                  Multi-Parameter Measurement Sensor
-                </div>
-                <div className="w-full md:w-[20%] py-1">
-                  <div className="flex rounded-full items-center justify-center gap-1 p-1 bg-[#01285C]">
-                    <div className="text-[#FE9D1C]">
-                      <RiPlayCircleFill size={20} />
-                    </div>
-                    <div className="text-sm mb-[2px] text-white">
-                      Play Video
-                    </div>
-                  </div>
-                </div>
+          <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
+            {/* heading and play button */}
+            <div className=" md:flex gap-2 mb-2">
+              <div className=" text-base mb-2 md:mb-0 md:text-lg xl:text-3xl font-semibold">
+                Multi-Parameter Measurement Sensor
               </div>
-              <div className="h-[45%]">
-                <div className="md:flex gap-2 w-full">
-                  <div className="w-full md:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] mb-1 md:mb-0 text-center">
-                    Viscosity: 50 cP - 15000 cP
-                  </div>
-                  <div className="w-full md:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center">
-                    Density: 700 kg/m³ to 1200 kg/m³
-                  </div>
+              <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
+                <div className="text-[#FE9D1C]">
+                  <RiPlayCircleFill size={20} />
                 </div>
-                <div className="w-full md:w-auto inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] mt-1 text-center">
-                  Temperature: 20° C to 400° C
+                <div className="text-sm mb-[2px] text-white">
+                  Play&nbsp;Video
                 </div>
               </div>
             </div>
-            <div className="h-[30%] text-[#60646C] py-2 text-sm md:py-0 md:[12px]">
+
+            {/* orange tab */}
+            <div className="md:flex flex-wrap lg:gap-2">
+              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
+                Viscosity: 50 cP - 15000 cP
+              </div>
+
+              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
+                Density: 700 kg/m³ to 1200 kg/m³
+              </div>
+
+              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+                Temperature: 20° C to 400° C
+              </div>
+            </div>
+
+            {/* description */}
+            <div className=" text-[#60646C] text-xs xl:text-sm mb-2">
               PoRTS is an invasive/non-invasive based IIoT-enabled rheology and
               temperature measurement sensor that continuously captures multiple
               parameters such as viscosity, density and temperature with a
@@ -311,42 +320,143 @@ const Product = () => {
               thermocouple/RTDs or discrete measurements with sampling from
               viscometer and density meter.
             </div>
-            <div className="h-[30%] flex flex-col gap-1 text-sm md:text-base">
-              <div className="h-1/2 flex flex-col md:flex-row gap-1">
-                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
-                  <div className="w-[20%] h-full p-2 flex items-center justify-center">
-                    <img src={paint} />
-                  </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
-                    Paint Manufacturing
-                  </div>
-                </div>
 
-                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
-                  <div className="w-[20%] h-full p-2 flex items-center justify-center">
-                    <img src={luboil} />
-                  </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
-                    Lubrication Oil
-                  </div>
+            {/* cards */}
+            <div className="md:flex gap-2 mb-2 text-xs xl:text-base">
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={paint} />
                 </div>
+                <div className="font-semibold">Paint Manufacturing</div>
               </div>
-              <div className="h-1/2 flex flex-col md:flex-row gap-1">
-                <div className="rounded-lg w-full md:w-1/2 flex border border-[#D9D9E0] bg-white">
-                  <div className="w-[20%] h-full p-2 flex items-center justify-center">
-                    <img src={eor} />
-                  </div>
-                  <div className="w-[80%] font-semibold flex items-center p-1 md:p-2">
-                    E.O.R.
-                  </div>
+
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={luboil} />
                 </div>
+                <div className="font-semibold">Lubrication Oil</div>
+              </div>
+            </div>
+
+            <div className="md:flex gap-2  mb-2 text-xs xl:text-base">
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={eor} />
+                </div>
+                <div className="font-semibold">E.O.R.</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* ztar */}
-        <div className="md:h-[70vh] md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+        <div className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+          <div className="w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
+            <div
+              className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
+              style={{
+                background:
+                  "radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)",
+              }}
+            >
+              <img
+                className="w-[50%] h-[75%] lg:w-[45%] lg:h-[95%] object-cover object-top"
+                src={ztar}
+                alt="ztar"
+              />
+              <div
+                className="absolute bottom-0 w-full px-4 rounded-b-lg py-2"
+                style={{
+                  background: "rgba(64, 64, 64, 0.5)",
+                  backdropFilter: "blur(9px)",
+                  WebkitBackdropFilter: "blur(10px)",
+                }}
+              >
+                <div
+                  className=" text-xl md:text-2xl font-semibold mb-1"
+                  style={{
+                    background:
+                      "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
+                    WebkitBackgroundClip: "text",
+                    color: "transparent",
+                    backgroundColor: "rgba(255, 255, 255, 1)",
+                    display: "inline-block",
+                  }}
+                >
+                  Ztar
+                </div>
+                <div className=" text-white text-xs md:text-base">
+                  A single wavelength can measure viscosity, density &
+                  Temperature continuously.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
+            {/* heading and play button */}
+            <div className=" md:flex gap-2 mb-2">
+              <div className=" text-base mb-2 md:mb-0 md:text-lg xl:text-3xl font-semibold">
+                Ultrasonic contact & non-contact based level measurement sensor
+              </div>
+              <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
+                <div className="text-[#FE9D1C]">
+                  <RiPlayCircleFill size={20} />
+                </div>
+                <div className="text-sm mb-[2px] text-white">
+                  Play&nbsp;Video
+                </div>
+              </div>
+            </div>
+
+            {/* orange tab */}
+            <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+              Level: 0.03 m to 10 m
+            </div>
+
+            {/* description */}
+            <div className=" text-[#60646C] text-xs xl:text-sm mb-2">
+              Ztar is a contact/contactless IIoT-enabled level measurement
+              sensor that captures continuous level across any hazardous
+              environment with accuracy in contrast to radar-based level
+              measurement sensors.
+            </div>
+
+            {/* cards */}
+            <div className="md:flex gap-2 mb-2 md:mb-20 text-xs xl:text-base">
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={metal} />
+                </div>
+                <div className="font-semibold">Metal Manufacturing</div>
+              </div>
+
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={refrigerant} />
+                </div>
+                <div className="font-semibold">Refrigerants</div>
+              </div>
+            </div>
+
+            {/* <div className="md:flex gap-2  mb-2 text-xs xl:text-base">
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white mb-2 md:mb-0">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={semi} />
+                </div>
+                <div className="font-semibold">Semiconductor Manufacturing</div>
+              </div>
+
+              <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
+                <div className="flex items-center justify-center">
+                  <img className="w-10" src={ref} />
+                </div>
+                <div className="font-semibold">Refiniries</div>
+              </div>
+            </div> */}
+          </div>
+        </div>
+
+        {/* <div className="md:h-[70vh] md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
           <div className="w-full md:w-[45%] p-2">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
@@ -440,7 +550,7 @@ const Product = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
