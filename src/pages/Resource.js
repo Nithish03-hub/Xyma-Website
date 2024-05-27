@@ -39,14 +39,14 @@ const Resource = () => {
     return (
         <div>
             <section>
-            <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+            <div className="relative md:h-[95vh] h-[60vh] w-full mt-[70px] shadow-2xl">
           <img
            src={cs}
            alt="cover image"
-           className="absolute inset-0 w-full h-full object-cover"
+           className="absolute inset-0 w-full md:h-full h-[60vh] object-cover"
          />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4">      
-           <h1 className="text-white text-5xl sm:text-5xl font-bold mt-4 sm:mt-24">         
+           <h1 className="text-white text-5xl sm:text-5xl md:font-bold font-semibold mt-4 sm:mt-24 ">         
            Case Studies     
            </h1>  
            <p className="text-white mt-2 sm:mt-5 text-xs sm:text-sm">      
@@ -55,6 +55,9 @@ const Resource = () => {
            </p>   
             
          </div>
+      </div>
+      <div className="w-full text-center text-gray-300 font-semibold text-[50px] sm:text-[90px] 2xl:text-[120px] -mt-[23px] sm:-mt-[50px] 2xl:-mt-[65px]">
+      CASE STUDIES
       </div>
             </section>
 

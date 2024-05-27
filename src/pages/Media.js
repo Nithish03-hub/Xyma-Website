@@ -90,7 +90,8 @@ const Media = () => {
     image9,
     image11,
     image2,
-    image1
+    image1,
+    
   ]
 
 
@@ -115,14 +116,14 @@ const Media = () => {
   return (
     <div>
       <section>
-      <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+      <div className="relative md:h-[95vh] h-[60vh] w-full mt-[70px] shadow-2xl">
           <img
            src={media}
            alt="cover image"
-           className="absolute inset-0 w-full h-full object-cover"
+           className=" w-full h-[60vh] md:h-full object-cover"
          />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4">      
-           <h1 className="text-white text-5xl sm:text-5xl font-bold mt-4 sm:mt-24">         
+           <h1 className="text-white text-5xl sm:text-5xl md:font-bold font-semibold sm:mt-2">         
            News Room      
            </h1>  
            <p className="text-white mt-2 sm:mt-5 text-xs sm:text-sm">      
@@ -131,13 +132,15 @@ const Media = () => {
             
          </div>
       </div>
-        {/*<div className="leading-5 text-grey text-7xl font-semibold text-center text-gray-300">XYMA NEWS</div>*/}
+      <div className="w-full text-center text-gray-300 font-semibold text-[50px] sm:text-[90px] 2xl:text-[120px] -mt-[23px] sm:-mt-[50px] 2xl:-mt-[65px]">
+         Work AT XYMA
+      </div>
       </section>
 
 
       <section>
         <center>
-          <div  className="text-3xl font-semibold " style={{marginTop:'10%'}}>
+          <div  className="text-3xl font-semibold " style={{marginTop:'7%'}}>
            Highlights  <img className="w-44 mt-1"src={second}></img>
           </div>
         </center>
@@ -314,28 +317,32 @@ const Media = () => {
 
 
       <section className='bg-[#EEF6FF] h-screen mt-20'>
-        <div className='grid grid-cols-1 md:grid-cols-2'>
-           <div className="relative md:mt-20 flex justify-center items-center">
-  <img className="w-1/12 mt-20 md:mt-0 mx-auto" src={icon6} alt="Background" />
-  <p className="font-semibold text-2xl md:text-4xl text-center text-[#013872] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-8/12 lg:w-1/2 max-w-lg">
-    "Strength lies in togetherness, creativity is embraced with inclusivity, and passion flourishes with freedom."
-  </p>
-</div>
+      <div className="h-[90vh] bg-[#EEF6FF] sm:flex mt-20">
+        <div className="h-[30%] sm:h-full w-full sm:w-1/2 flex flex-col items-center justify-center">
+          <img
+            //style={{ width: "8%", marginLeft: "50%", marginTop: "25%" }}
+            src={icon6}
+            alt="Background"
+            className="h-[40px]"
+          />
+          <div className="font-semibold text-xl sm:text-4xl text-[#013872] w-[90%] sm:w-[60%] text-center">
+            "Strength lies in togetherness, creativity is embraced with
+            inclusivity, and passion flourishes with freedom."
+          </div>
+        </div>
 
-
-<div className="flex justify-center items-center mt-10 md:mt-0 gap-4">
-  <div className="flex flex-col items-center">
-    <VerticalSlider images={images1} />
-  </div>
-  <div className="flex flex-col items-center">
-    <VerticalSlider images={images2} />
-  </div>
-  <div className="flex flex-col items-center">
-    <VerticalSlider images={images3} />
-  </div>
-</div>
-
-         </div>
+        <div className="flex w-full sm:w-1/2 h-[75vh] md:gap-0 gap-4 sm:h-[100vh] overflow-hidden">
+          <div className="flex justify-center">
+            <VerticalSlider images={images1} />
+          </div>
+          <div className="flex justify-center -mt-28">
+            <VerticalSlider images={images2} />
+          </div>
+          <div className="flex justify-center">
+            <VerticalSlider images={images3} />
+          </div>
+        </div>
+      </div>
       </section>
 
       <div

@@ -154,11 +154,11 @@ export const Home = () => {
   return (
     <div className="w-full">
       {/* cover image */}
-      <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+      <div className="relative md:h-[95vh] h-[60vh] w-full mt-[70px] shadow-2xl">
         <img
           src={newpage}
           alt="cover image"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full md:h-full h-[60vh] object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-start mt-28 text-4xl sm:text-6xl text-white font-semibold ml-24 gap-2 2xl:text-8xl">
           <div>Prevent</div>
@@ -170,7 +170,7 @@ export const Home = () => {
         </div>
       </div>
       {/* bottom text */}
-      <div className="w-full text-center text-gray-300 font-semibold text-[30px] sm:text-[90px] 2xl:text-[120px] -mt-[20px] sm:-mt-[50px] 2xl:-mt-[65px]">
+      <div className="w-full text-center text-gray-300 font-semibold text-[50px] sm:text-[90px] 2xl:text-[120px] -mt-[23px] sm:-mt-[50px] 2xl:-mt-[65px]">
         XYMA ANALYTICS
       </div>
 

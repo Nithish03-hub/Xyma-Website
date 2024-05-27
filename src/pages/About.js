@@ -41,18 +41,18 @@ const About = () => {
   
   return (
    <div>
-    <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+    <div className="relative md:h-[95vh] h-[60vh] w-full mt-[70px] shadow-2xl">
         <img
           src={iit}
           alt="cover image"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full md:h-full h-[60vh] object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-start mt-28 text-5xl sm:text-6xl text-white font-semibold ml-24 gap-2 2xl:text-8xl">
           <div className='mt-20'>2019</div>
           <div className="text-sm md:text-left sm:text-3xl mt-2 2xl:text-base md:w-[33rem] md:mr-0 mr-2">
           Founded through the CNDE, IIT Madras, and incubated at IIT Madras Incubation Cell
           </div>
-          <div className="text-white text-5xl font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left md:top-1/5 sm:top-1/5 md:mt-20 md:left-[85%] mt-80">
+          <div className="text-white text-5xl font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left md:top-1/5 sm:top-1/5 md:mt-20 md:left-[85%]  mt-[21rem]">
              20+
           </div>
 
@@ -60,14 +60,14 @@ const About = () => {
             Years of R&D
           </div>
 
-          <div className="text-white text-5xl font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left md:top-1/4 sm:top-1/5 md:mt-14 md:left-[85%] md:ml-0 ml-32 mt-80">
+          <div className="text-white text-5xl font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left md:top-1/4 sm:top-1/5 md:mt-14 md:left-[85%] md:ml-0 ml-32 mt-[21rem]">
              18+
           </div>
           <div className=" text-white text-sm font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left top-1/4 lg:top-1/6 md:left-[85%] md:mt-24 mt-44 md:ml-0 ml-32">
             Intellectual
             <br /> Properties
           </div>
-          <div className="text-white text-5xl font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left md:top-1/5 sm:top-1/5 md:mt-72 md:left-[85%] mt-80 md:ml-0 ml-[16rem]">
+          <div className="text-white text-5xl font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left md:top-1/5 sm:top-1/5 md:mt-72 md:left-[85%]  mt-[21rem] md:ml-0 ml-[16rem]">
             35+
           </div>
           <div className=" text-white text-sm font-semibold absolute transform -translate-x-1/2 -translate-y-1/2 text-left top-1/4 lg:top-1/6 md:left-[85%] md:mt-[13rem] mt-44 md:ml-0 ml-[15rem]">
@@ -76,13 +76,14 @@ const About = () => {
         </div>
       </div>
  
-      {/*<div className="leading-5 text-grey text-7xl font-semibold text-center text-gray-300">ABOUT US</div>*/}
-
+      <div className="w-full text-center text-gray-300 font-semibold text-[50px] sm:text-[90px] 2xl:text-[120px] -mt-[23px] sm:-mt-[50px] 2xl:-mt-[65px]">
+      ABOUT US
+      </div>
       <section>
   <center>
     <div className="text-4xl font-semibold mt-8 md:mt-12 lg:mt-16 xl:mt-20">
       About XYMA
-      <img className="w-12 md:w-16 lg:w-20 xl:w-24 ml-5" src={second} alt="XYMA Logo" />
+      <img className="w-44 md:w-16 lg:w-20 xl:w-24 ml-5" src={second} alt="XYMA Logo" />
     </div>
     <div className="text-[#60646C] w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 mt-4 mx-auto">
       "XYMA Analytics is a deep-tech company started from IIT Madras, serving 15+ MNCs globally now to provide them with accurate multi-point temperature and multi-parameter measurements through patented ultrasonic waveguide technology."

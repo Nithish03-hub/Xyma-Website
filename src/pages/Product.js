@@ -43,7 +43,7 @@ const Product = () => {
   const images = [
     { src: image1, title: "Multi-point temperature measurements", text1:'Up to 1600° C', text:'“The Disruptive Ultrasonic Waveguide Technology”' },
     { src: image2, title: "Multi - Parameter Measurements", text1:'Viscosity, Density, Temperature', text:'“The Disruptive Ultrasonic Waveguide Technology”'},
-    { src: image3, title: "Powered by AI",text1:'IIoT Enabled, Data Analytics, Anomaly Detection, Predictive Maintenance' }
+    { src: image3, title: "Powered by AI",text1:'IoT Enabled, Data Analytics, Anomaly Detection, Predictive Maintenance' }
   ];
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const Product = () => {
 
   const textStyle = {
     position: 'absolute',
-    bottom: '35%',
+    bottom: '50%',
     left: '2%',
     color: '#fff',
     padding: '1% 2%',
@@ -95,38 +95,33 @@ const Product = () => {
               width: '100%', 
             }}
           >
-            <div className='relative h-[95vh] w-full mt-[70px]'>
-            <img className=" absolute inset-0 w-full h-full object-right-top" src={item.src} alt={`Slide ${index + 1}`} style={{ ...imageStyle }} /></div>
+            <div className='relative md:h-[95vh] h-[60vh] w-full mt-[70px] shadow-2xl'>
+            <img className=" absolute inset-0 w-full md:h-full h-[60vh] object-right-top" src={item.src} alt={`Slide ${index + 1}`} style={{ ...imageStyle }} /></div>
             <div style={textStyle} >
-              <h2 className='md:text-5xl text-2xl'>{item.title}</h2>
+              <h2 className='md:text-5xl text-2xl font-semibold text-left md:mb-0 mb-10'>{item.title}</h2>
               <p style={{background: 'linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)',
                   WebkitBackgroundClip: 'text',
                   color: 'transparent',
                   backgroundColor: 'rgba(255, 255, 255, 1)',
                   display: 'inline-block',
-                  }} className='md:text-3xl text-3xl'>{item.text1}</p>
-              <p className='md:text-sm text-sm font-semibold'>{item.text}</p>    
+                  }} className='md:text-3xl text-2xl text-left md:mb-0 mb-10'>{item.text1}</p>
+              <p className='md:text-sm text-sm font-semibold text-left '>{item.text}</p>    
             </div>
           </div>
         ))}
-        <div style={{ position: 'absolute', bottom: '10px', left: '10px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+        <div className="absolute bottom-[10px] left-[10px] flex justify-start items-center">
           {images.map((_, index) => (
             <div 
-              key={index}
-              //onClick={() => handleDotClick(index)}
-              style={{
-                width: '30px',
-                height: '2px',
-                backgroundColor: index === currentIndex ? '#000' : '#ccc',
-                borderRadius: '10px',
-                margin: '0 5px',
-                marginBottom:'44%',
-              }}
-            />
+            key={index}
+            //onClick={() => handleDotClick(index)}
+            className={`w-[30px] h-[2px] ${index === currentIndex ? 'bg-black' : 'bg-gray-300'} rounded-[10px] mx-[5px] mb-[150%] `}
+          />
+          
           ))}
         </div>
-        {/*<div className="font-Satoshi text-grey text-7xl font-semibold leading-7 text-center text-gray-300"> XYMA PRODUCTS </div>
-     */} </section>
+        <div className="w-full text-center text-gray-300 font-semibold text-[50px] sm:text-[90px] 2xl:text-[120px] -mt-[23px] sm:-mt-[50px] 2xl:-mt-[65px]">
+        XYMA PRODUCTS
+      </div>      </section>
 
 
 <div className="flex justify-center items-center h-screen">
@@ -283,7 +278,7 @@ const Product = () => {
                   <span className='text-sm font-semibold mt-1.5'>Metal Manufacturing</span>
                 </div>
                 <div className='flex border border-gray-200 rounded-lg p-3 ml-4'style={{width:'48%'}}>
-                  <img className='bg-white w-auto h-auto  ' src={refrigerant} style={{ marginRight: '12px',width:"40px",marginLeft:'8%'  }}   />
+                  <img className='bg-white w-auto h-auto  ' src={refrigerant} style={{ marginRight: '12px',width:"40px",marginLeft:'2%'  }}   />
                   <span className='text-sm font-semibold mt-1.5' >Refrigerants</span>
               </div>
             </div>

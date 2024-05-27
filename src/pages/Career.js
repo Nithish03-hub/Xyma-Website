@@ -58,14 +58,14 @@ const Career = () => {
   return (
     <div>
      <section className="relative">
-       <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+       <div className="relative md:h-[95vh] h-[60vh] w-full mt-[70px] shadow-2xl">
           <img
            src={frame}
            alt="cover image"
-           className="absolute inset-0 w-full h-full object-cover"
+           className="absolute inset-0 w-full md:h-full h-[61vh] object-cover"
          />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center px-4">      
-           <h1 className="text-white text-5xl sm:text-5xl font-bold mt-4 sm:mt-24">         
+           <h1 className="text-white text-5xl sm:text-5xl md:font-bold font-semibold mt-4 sm:mt-24">         
              "Together,<br />we shine"      
            </h1>  
            <p className="text-white mt-2 sm:mt-5 text-xs sm:text-sm">      
@@ -76,6 +76,9 @@ const Career = () => {
               Know More
            </button>   
          </div>
+      </div>
+      <div className="w-full text-center text-gray-300 font-semibold text-[50px] sm:text-[90px] 2xl:text-[120px] -mt-[23px] sm:-mt-[50px] 2xl:-mt-[65px]">
+        WORK AT XYMA
       </div>
      </section>
 
@@ -100,10 +103,10 @@ const Career = () => {
 
      
       <section ref={sectionRef}>
-      <div className="mt-10 text-center">
-  <div className="text-[#1C2024] text-3xl font-semibold relative inline-block">
-    Opportunities
-    <img className="absolute left-1/2 transform -translate-x-1/2 mt-1 w-1/4 sm:w-1/5 lg:w-1/6" src={uline} alt="Underline" />
+       <div className="mt-10 text-center">
+         <div className="text-[#1C2024] text-3xl font-semibold relative inline-block">
+          Opportunities
+    <img className="absolute left-1/2 transform -translate-x-1/2 mt-1 w-28 sm:w-1/5 lg:w-1/6" style={{width:'80%'}}src={uline} alt="Underline" />
   </div>
   <div className="mt-8 font-semibold flex flex-wrap justify-center gap-1">
     <Badge2 text="All" selected={selectedBadge === 0} onClick={() => handleBadgeClick(0)} />

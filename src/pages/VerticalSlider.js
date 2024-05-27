@@ -1,5 +1,5 @@
 import React from 'react';
-import './Slider.css'; 
+import './Slider.css';
 
 function VerticalLoopSlider({ images }) {
   return (
@@ -8,11 +8,18 @@ function VerticalLoopSlider({ images }) {
         {images.map((image, index) => (
           <img key={index} className='slider-image' src={image} alt={`Image ${index + 1}`} />
         ))}
-
+         {images.map((image, index) => (
+          <img key={index} className='slider-image' src={image} alt={`Image ${index + 1}`} />
+        ))}
         {images.map((image, index) => (
           <img key={index} className='slider-image' src={image} alt={`Image ${index + 1}`} />
         ))}
-
+        {images.map((image, index) => (
+          <img key={index} className='slider-image' src={image} alt={`Image ${index + 1}`} />
+        ))}
+        {images.map((image, index) => (
+          <img key={index} className='slider-image' src={image} alt={`Image ${index + 1}`} />
+        ))}
         {images.map((image, index) => (
           <img key={index} className='slider-image' src={image} alt={`Image ${index + 1}`} />
         ))}

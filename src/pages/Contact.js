@@ -36,11 +36,11 @@ const ContactPage = () => {
   return (
     <div>
       <section>
-      <div className="relative h-[95vh] w-full mt-[70px] shadow-2xl">
+      <div className="relative md:h-[95vh] h-[60vh] w-full mt-[70px] shadow-2xl">
           <video
            src={video2} autoPlay
            alt="cover image"
-           className="absolute inset-0 w-full h-full object-cover"
+           className="absolute inset-0 w-full md:h-full h-[60vh] object-cover"
          />
        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50" style={{ zIndex: 2 }} /> 
          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ zIndex: 3 }} >           
@@ -53,13 +53,16 @@ const ContactPage = () => {
                <button className="text-white py-2 px-3 rounded-full text-xs"  style={{ background: 'linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)', marginLeft: '5rem',marginTop:'80%'}}onClick={handleButtonClick}>Get in Touch</button>
              </div>
       </div>
+      <div className="w-full text-center text-gray-300 font-semibold text-[50px] sm:text-[90px] 2xl:text-[120px] -mt-[23px] sm:-mt-[50px] 2xl:-mt-[65px]">
+      CONTACT US
+      </div>
       </section>
 
       <section ref={sectionRef} style={{marginTop:'5%'}}>
         <div className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-semibold text-center">
           Get In Touch
           <center>
-            <img className=" ml-4 sm:ml-6 md:ml-8 lg:ml-10 " style={{ width: '9%' }} src={second} alt="Second" />
+            <img className=" ml-4 sm:ml-6 md:ml-8 lg:ml-10 md:w-40 w-40"  src={second} alt="Second" />
           </center>
         </div>
 
@@ -165,7 +168,7 @@ const ContactPage = () => {
       <div className='text-3xl font-semibold text-center '>
         Around the world: XYMA Analytics
         <center>
-            <img  style={{ width: '14%',marginLeft:'18%' }} src={second} alt="Second" />
+            <img  className='md:w-40 w-40 md:ml-80' src={second} alt="Second" />
           </center>
       </div>
       <div className='text-[#60646C] text-sm text-center mt-2'>Installations of Ultrasonic Waveguide Sensors in different countries</div>
