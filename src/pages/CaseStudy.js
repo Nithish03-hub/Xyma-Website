@@ -9,6 +9,7 @@ import share from '../Assets/share.png';
 import tube1 from '../Images/tube1.png';
 import oil1 from '../Images/oil1.png';
 import steel1 from '../Images/steel1.png';
+import line from "../Assets/underline.png";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -22,14 +23,52 @@ const CaseStudy = () => {
   return (
     <div className=" mx-[5%]">
       <div className="h-[10vh]">{/* navbar space */}</div>
-      <div className="flex gap-2 mt-10 md:mt-16 text-2xl font-semibold">
-        <div className="cursor-pointer  flex items-center" onClick={handleBack}>
+      {/* <div className="border border-black flex gap-2 mt-10 md:mt-16 mx-[8%] md:mx-0 text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-4xl font-semibold">
+        <div className="cursor-pointer flex items-center" onClick={handleBack}>
           <HiChevronLeft size={25} />
         </div>
         <div>Aluminium</div>
-        <div className=" w-[150px]">
+        <div>
           <div>Case Studies</div>
-          <img className="object-cover" src={second} />
+          <img className="w-full h-2" src={line}></img>
+        </div>
+      </div> */}
+
+      {/* <div className="flex justify-center items-center md:justify-start md:items-start mt-10 md:mt-16">
+        <div className="md:flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center">
+          <div
+            className="cursor-pointer flex items-center"
+            onClick={handleBack}
+          >
+            <HiChevronLeft size={25} />
+          </div>
+          <div>Aluminum</div>
+          <div className='mx-[8%] md:mx-0 flex flex-col items-center"'>
+            Case Studies
+          </div>
+          <img className="w-full h-2" src={line}></img>
+        </div>
+      </div> */}
+
+      <div className="mt-10 md:mt-16">
+        <div className="flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
+          <div
+            className="cursor-pointer md:flex items-center 2xl:hidden"
+            onClick={handleBack}
+          >
+            <HiChevronLeft size={25} />
+          </div>
+          <div
+            className="hidden cursor-pointer 2xl:flex items-center"
+            onClick={handleBack}
+          >
+            <HiChevronLeft size={35} />
+          </div>
+          <div>Aluminum</div>
+          <div className="flex flex-col items-center">
+            <div>Case&nbsp;Studies</div>
+            <img className="w-full h-2" src={line}></img>
+          </div>
         </div>
       </div>
 
@@ -39,10 +78,10 @@ const CaseStudy = () => {
         </div>
 
         <div className=" w-full md:w-1/2 p-4 md:p-8">
-          <span className="bg-gray-200 text-xs text-gray-500 rounded-2xl p-1 px-2">
+          <span className="bg-gray-200 text-xs 2xl:text-sm text-gray-500 rounded-2xl p-1 px-2">
             4 Min Read
           </span>
-          <div className="text-sm lg:text-xl  mt-4">
+          <div className="text-sm lg:text-xl xl:text-2xl 2xl:text-3xl mt-4 font-medium">
             A 10°C temperature deviation diminishes efficiency, intensifies
             anode effect, and raises PFC emissions, underscoring the
             significance of meticulous temperature control in industrial
@@ -59,11 +98,11 @@ const CaseStudy = () => {
           <div className=" mx-2">
             {/* 1st point */}
             <div>
-              <div className="text-lg md:text-xl font-semibold mb-2">
+              <div className="font-semibold text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-4xl mb-2">
                 1. Temperature Sensitivity:
               </div>
               <ul
-                className=" text-[#60646C] text-sm md:text-base ml-4 "
+                className=" text-[#60646C] text-sm md:text-base lg:text-xl xl:text-base 2xl:text-2xl ml-4 lg:ml-5 2xl:ml-6"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -86,11 +125,11 @@ const CaseStudy = () => {
 
             {/* 2nd point */}
             <div className="mb-4">
-              <div className="text-lg md:text-xl font-semibold mb-2">
+              <div className="font-semibold text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-4xl mb-2">
                 2. Efficiency Reduction:
               </div>
               <ul
-                className="text-[#60646C] text-sm md:text-base ml-4"
+                className="text-[#60646C] text-sm md:text-base lg:text-xl xl:text-base 2xl:text-2xl ml-4 lg:ml-5 2xl:ml-6"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -110,11 +149,11 @@ const CaseStudy = () => {
 
             {/* 3rd point */}
             <div className="mb-4">
-              <div className="text-lg md:text-xl font-semibold mb-2">
+              <div className="font-semibold text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-4xl mb-2">
                 3. Promotion of Anode Effect:
               </div>
               <ul
-                className=" text-[#60646C] text-sm md:text-base ml-4"
+                className=" text-[#60646C] text-sm md:text-base lg:text-xl xl:text-base 2xl:text-2xl ml-4 lg:ml-5 2xl:ml-6"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -135,11 +174,11 @@ const CaseStudy = () => {
 
             {/* 4th point */}
             <div>
-              <div className="text-lg md:text-xl font-semibold mb-2">
+              <div className="font-semibold text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-4xl mb-2">
                 4. Promotion of Anode Effect:
               </div>
               <ul
-                className=" text-[#60646C] text-sm md:text-base ml-4"
+                className=" text-[#60646C] text-sm md:text-base lg:text-xl xl:text-base 2xl:text-2xl ml-4 lg:ml-5 2xl:ml-6"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -158,11 +197,11 @@ const CaseStudy = () => {
 
             {/* 5th point */}
             <div className="mb-4">
-              <div className="text-lg md:text-xl font-semibold mb-2">
+              <div className="font-semibold text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-4xl mb-2">
                 5. Environmental Implications:
               </div>
               <ul
-                className="text-[#60646C] text-sm md:text-base ml-4"
+                className="text-[#60646C] text-sm md:text-base lg:text-xl xl:text-base 2xl:text-2xl ml-4 lg:ml-5 2xl:ml-6"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -184,11 +223,11 @@ const CaseStudy = () => {
 
             {/* 6th point */}
             <div className="mb-4">
-              <div className="text-lg md:text-xl font-semibold mb-2">
+              <div className="font-semibold text-lg md:text-xl lg:text-3xl xl:text-2xl 2xl:text-4xl mb-2">
                 6. Importance of Temperature Control:
               </div>
               <ul
-                className=" text-[#60646C] text-sm md:text-base ml-4"
+                className=" text-[#60646C] text-sm md:text-base lg:text-xl xl:text-base 2xl:text-2xl ml-4 lg:ml-5 2xl:ml-6"
                 style={{ listStyleType: "disc" }}
               >
                 <li>
@@ -209,7 +248,7 @@ const CaseStudy = () => {
           </div>
 
           {/* conclusion */}
-          <div className=" text-[#60646C] text-sm md:text-base  mb-4 mr-2">
+          <div className=" text-[#60646C] text-sm md:text-base lg:text-xl xl:text-base 2xl:text-2xl ml-4 lg:ml-5 2xl:ml-6  mb-4 mr-2">
             In conclusion, the impact of temperature fluctuations on industrial
             processes is multifaceted, affecting efficiency, environmental
             sustainability, and overall performance. Addressing temperature
@@ -229,7 +268,7 @@ const CaseStudy = () => {
 
         <div className=" w-full md:w-[30%] md:px-6">
           <div className=" mb-4">
-            <div className="text-lg md:text-xl font-semibold mb-2">
+            <div className="text-lg md:text-xl lg:text-2xl xl:text-xl 2xl:text-3xl font-semibold mb-2">
               Reformer Tube
             </div>
             <div className="relative  mb-2">
@@ -238,14 +277,14 @@ const CaseStudy = () => {
                 Read More
               </span>
             </div>
-            <div className="font-semibold text-sm lg:text-base">
+            <div className="font-semibold text-sm lg:text-base 2xl:text-lg">
               A 20°C increase in temperature reduces the lifespan of reformer
               tubes by half
             </div>
           </div>
 
           <div className=" mb-4">
-            <div className="text-lg md:text-xl font-semibold mb-2">
+            <div className="text-lg md:text-xl lg:text-2xl xl:text-xl 2xl:text-3xl font-semibold mb-2">
               Lubricant
             </div>
             <div className="relative  mb-2">
@@ -254,21 +293,23 @@ const CaseStudy = () => {
                 Read More
               </span>
             </div>
-            <div className="font-semibold text-sm lg:text-base">
+            <div className="font-semibold text-sm lg:text-base 2xl:text-lg">
               30% of maintenance budget influenced by lubricants, highlighting
               their significant role in operational expenses
             </div>
           </div>
 
           <div className="">
-            <div className="text-lg md:text-xl font-semibold mb-2">Steel</div>
+            <div className="text-lg md:text-xl lg:text-2xl xl:text-xl 2xl:text-3xl font-semibold mb-2">
+              Steel
+            </div>
             <div className="relative  mb-2">
               <img className="w-full h-full" src={steel1} />
               <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
                 Read More
               </span>
             </div>
-            <div className="font-semibold text-sm lg:text-base">
+            <div className="font-semibold text-sm lg:text-base 2xl:text-lg">
               Extending ladle life for one cycle yields steel worth $5.1M
             </div>
           </div>

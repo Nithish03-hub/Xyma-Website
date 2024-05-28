@@ -214,12 +214,12 @@ export const Home = () => {
               onClick={handleImageChange}
             >
               {clickedImage === aluminum && (
-                <div className="invisible md:visible border border-blue-800"></div>
+                <div className="invisible md:visible border border-[#013872]"></div>
               )}
               <div className="ml-1 -z-10">Aluminum</div>
             </div>
             {clickedImage === aluminum && (
-              <div className="border border-blue-800 md:hidden" />
+              <div className="border border-[#013872] md:hidden" />
             )}
           </div>
 
@@ -232,12 +232,12 @@ export const Home = () => {
               onClick={handleImageChange}
             >
               {clickedImage === steel && (
-                <div className="invisible md:visible border border-blue-800"></div>
+                <div className="invisible md:visible border border-[#013872]"></div>
               )}
               <div className="ml-1 -z-10">Steel</div>
             </div>
             {clickedImage === steel && (
-              <div className="border border-blue-800 md:hidden" />
+              <div className="border border-[#013872] md:hidden" />
             )}
           </div>
 
@@ -250,12 +250,12 @@ export const Home = () => {
               onClick={handleImageChange}
             >
               {clickedImage === reformerTubes && (
-                <div className="invisible md:visible border border-blue-800"></div>
+                <div className="invisible md:visible border border-[#013872]"></div>
               )}
               <div className="ml-1 -z-10">Refiniries</div>
             </div>
             {clickedImage === reformerTubes && (
-              <div className="border border-blue-800 md:hidden" />
+              <div className="border border-[#013872] md:hidden" />
             )}
           </div>
 
@@ -268,12 +268,12 @@ export const Home = () => {
               onClick={handleImageChange}
             >
               {clickedImage === lubricants && (
-                <div className="invisible md:visible border border-blue-800"></div>
+                <div className="invisible md:visible border border-[#013872]"></div>
               )}
               <div className="ml-1 -z-10">Lubricants</div>
             </div>
             {clickedImage === lubricants && (
-              <div className="border border-blue-800 md:hidden" />
+              <div className="border border-[#013872] md:hidden" />
             )}
           </div>
 
@@ -286,12 +286,12 @@ export const Home = () => {
               onClick={handleImageChange}
             >
               {clickedImage === oilRecovery && (
-                <div className="invisible md:visible border border-blue-800"></div>
+                <div className="invisible md:visible border border-[#013872]"></div>
               )}
               <div className="ml-1 -z-10">Oil&nbsp;Recovery</div>
             </div>
             {clickedImage === oilRecovery && (
-              <div className="border border-blue-800 md:hidden" />
+              <div className="border border-[#013872] md:hidden" />
             )}
           </div>
 
@@ -304,12 +304,12 @@ export const Home = () => {
               onClick={handleImageChange}
             >
               {clickedImage === paints && (
-                <div className="invisible md:visible border border-blue-800"></div>
+                <div className="invisible md:visible border border-[#013872]"></div>
               )}
               <div className="ml-1 -z-10">Paints</div>
             </div>
             {clickedImage === paints && (
-              <div className="border border-blue-800 md:hidden" />
+              <div className="border border-[#013872] md:hidden" />
             )}
           </div>
         </div>
@@ -692,7 +692,7 @@ export const Home = () => {
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          <div className=" flex justify-center items-center mx-[5%] xl:mx-[8%]">
+          <div className=" flex justify-center items-center  xl:mx-[8%]">
             <div className="md:flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
               <div>Making a difference with</div>
               <div className="mx-[8%] md:mx-0 flex flex-col items-center">

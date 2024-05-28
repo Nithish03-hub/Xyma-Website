@@ -96,7 +96,7 @@ const About = () => {
         ABOUT US
       </div>
 
-      <div className="mt-8 mx-[5%]">
+      <div className="mt-8 mx-[5%] mb-8 md:mb-12">
         <div className="text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>About XYMA</div>
@@ -112,7 +112,7 @@ const About = () => {
       </div>
 
       {/* arrow box */}
-      <div className=" mt-8 mx-[5%]">
+      <div className="mx-[5%] mb-8 md:mb-12 2xl:mb-16">
         {isLargeScreen ? (
           <>
             <Xarrow
@@ -305,8 +305,8 @@ const About = () => {
         </div>
       </div>
 
-      <section className="mx-[5%] mt-10">
-        <div className="text-center flex justify-center mb-4">
+      <section className="mx-[5%] mb-8 md:mb-12 2xl:mb-16">
+        <div className="text-center flex justify-center mb-4 md:mb-6 2xl:mb-8">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>The Team</div>
             <img className="w-full h-2" src={line}></img>
@@ -315,14 +315,14 @@ const About = () => {
         <img className="mt-4" src={group1}></img>
       </section>
 
-      <section className="mx-[5%] mt-10">
+      <section className="mx-[5%] mb-8 md:mb-12 2xl:mb-16">
         <div className="text-center flex justify-center">
-          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
+          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mb-4 md:mb-6 2xl:mb-8">
             <div>The Vision</div>
             <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <div className="mt-4 text-[#60646C] text-center text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+        <div className="mb-4 md:mb-6 2xl:mb-8 text-[#60646C] text-center text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
           Our vision is to provide reliable measurements at the most unreliable
           times. Democratize sensor-based process efficiency in Industries by
           enabling them with rich data sets of process parameters. Provide
@@ -353,14 +353,14 @@ const About = () => {
         </div>
       </section>
 
-      <section className="mx-[5%] mt-10">
+      <section className="mx-[5%] mt-10 mb-8 md:mb-12 2xl:mb-16">
         <div className="text-center flex justify-center">
-          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
+          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mb-4 md:mb-6 2xl:mb-8">
             <div>Key Values</div>
             <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 md:flex justify-evenly mt-8 mx-[15%] md:mx-0 text-center lg:text-lg xl:text-base 2xl:text-xl">
+        <div className="grid grid-cols-2 gap-4 md:flex justify-evenly mx-[15%] md:mx-0 text-center lg:text-lg xl:text-base 2xl:text-xl mb-4 md:mb-6 2xl:mb-8">
           <div className="flex flex-col items-center">
             <img className="w-auto md:w-[60%]" src={c1}></img>
             <div className="font-semibold mt-2">Key Value</div>
@@ -405,11 +405,11 @@ const About = () => {
         </div>
       </section>
 
-      <section className="mx-[5%] mt-4">
+      <section className="mx-[5%]">
         <div className="flex justify-center">
           <img className="h-12" src={framevector}></img>
         </div>
-        <div className="text-[#60646C] text-center px-1 md:px-24 text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
+        <div className="text-[#60646C] text-center px-1 md:px-24 text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold mb-4 md:mb-6 2xl:mb-8">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -417,7 +417,7 @@ const About = () => {
           five centuries.
         </div>
 
-        <div className="flex flex-col items-center mt-8">
+        <div className="flex flex-col items-center">
           <img className="w-20" src={photo} alt="Photo" />
           <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
             Dr. Nishanth Raja

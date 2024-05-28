@@ -73,14 +73,16 @@ const Resource = () => {
         {/* resources title */}
         <div className=" mx-[5%] lg:mx-[8%]  md:flex justify-center mt-8">
           <div
-            className=" flex md:flex-col gap-2 w-full md:w-[20%] font-semibold py-6 px-4 overflow-auto"
+            className=" flex md:flex-col gap-2 w-full md:w-[20%] py-6 px-4 overflow-auto text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
             style={{ scrollbarWidth: "none" }}
           >
             <div>
               <div
                 onClick={() => toggleContent("All")}
                 className={`${
-                  selectedContent === "All" ? "text-[#013872]" : "text-[gray]"
+                  selectedContent === "All"
+                    ? "text-[#013872] font-bold"
+                    : "text-[gray]"
                 } cursor-pointer flex`}
               >
                 {selectedContent === "All" && (
@@ -98,7 +100,7 @@ const Resource = () => {
                 onClick={() => toggleContent("Aluminum")}
                 className={`${
                   selectedContent === "Aluminum"
-                    ? "text-[#013872]"
+                    ? "text-[#013872] font-bold"
                     : "text-[gray]"
                 } cursor-pointer flex`}
               >
@@ -116,7 +118,9 @@ const Resource = () => {
               <div
                 onClick={() => toggleContent("Steel")}
                 className={`${
-                  selectedContent === "Steel" ? "text-[#013872]" : "text-[gray]"
+                  selectedContent === "Steel"
+                    ? "text-[#013872] font-bold"
+                    : "text-[gray]"
                 } cursor-pointer flex`}
               >
                 {selectedContent === "Steel" && (
@@ -134,7 +138,7 @@ const Resource = () => {
                 onClick={() => toggleContent("Refiniries")}
                 className={`${
                   selectedContent === "Refiniries"
-                    ? "text-[#013872]"
+                    ? "text-[#013872] font-bold"
                     : "text-[gray]"
                 } cursor-pointer flex`}
               >
@@ -153,7 +157,7 @@ const Resource = () => {
                 onClick={() => toggleContent("Lubricants")}
                 className={`${
                   selectedContent === "Lubricants"
-                    ? "text-[#013872]"
+                    ? "text-[#013872] font-bold"
                     : "text-[gray]"
                 } cursor-pointer flex`}
               >
@@ -172,7 +176,7 @@ const Resource = () => {
                 onClick={() => toggleContent("OilRecovery")}
                 className={`${
                   selectedContent === "OilRecovery"
-                    ? "text-[#013872]"
+                    ? "text-[#013872] font-bold"
                     : "text-[gray]"
                 } cursor-pointer flex`}
               >
@@ -191,7 +195,7 @@ const Resource = () => {
                 onClick={() => toggleContent("Paints")}
                 className={`${
                   selectedContent === "Paints"
-                    ? "text-[#013872]"
+                    ? "text-[#013872] font-bold"
                     : "text-[gray]"
                 } cursor-pointer flex`}
               >
@@ -215,19 +219,19 @@ const Resource = () => {
                 data-aos="slide-left"
               >
                 <div className="w-full md:w-1/2 p-4">
-                  <div className="font-semibold text-2xl md:text-3xl mb-4">
+                  <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl mb-4">
                     Aluminum
                   </div>
                   <div className="mb-4 relative">
                     <img className="w-full h-full" src={aluminum} />
                     <span
-                      className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer"
+                      className="absolute bottom-4 right-4 bg-white text-xs 2xl:text-sm rounded-full p-1 cursor-pointer"
                       onClick={handleCaseStudyClick}
                     >
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl font-medium">
                     A 10°C temperature deviation reduces efficiency, promotes
                     anode effect, and increases PFC emissions.
                   </div>
@@ -235,7 +239,7 @@ const Resource = () => {
                 {/* empty line */}
                 <div className="border border-[#CDCED6] my-[10%]" />
                 <div className="w-full md:w-1/2 p-4">
-                  <div className="font-semibold text-2xl md:text-3xl mb-4">
+                  <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl mb-4">
                     All
                   </div>
                   <div className="flex p-4">
@@ -245,7 +249,7 @@ const Resource = () => {
                         src={all1}
                       />
                     </div>
-                    <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl">
+                    <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl 2xl:text-2xl font-medium">
                       A 10°C shift lowers efficiency, boosts anode effect, and
                       raises PFC emissions.
                     </div>
@@ -259,7 +263,7 @@ const Resource = () => {
                         src={all2}
                       />
                     </div>
-                    <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl">
+                    <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl 2xl:text-2xl font-medium">
                       Extending the ladle life for one cycle would result in
                       steel production worth $5.1 million.
                     </div>
@@ -273,7 +277,7 @@ const Resource = () => {
                         src={all3}
                       />
                     </div>
-                    <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl">
+                    <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl 2xl:text-2xl font-medium">
                       20°C rise halves reformer tube lifespan; design
                       temperature crucial.
                     </div>
@@ -285,12 +289,14 @@ const Resource = () => {
             {/* steel content */}
             {(selectedContent === "Steel" || selectedContent === "All") && (
               <div
-                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
                 data-aos="slide-left"
               >
                 <div className="w-full md:w-1/2 p-4">
-                  <div className="font-semibold text-3xl mb-4 flex justify-between">
-                    <div>Steel</div>
+                  <div className="mb-4 flex justify-between">
+                    <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                      Steel
+                    </div>
                     <span
                       className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
@@ -307,7 +313,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     Extending ladle life for one cycle yields steel worth $5.1M
                   </div>
                 </div>
@@ -329,7 +335,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     Extending the lifespan of the ladle for one cycle results in
                     producing steel valued at $5.1 million
                   </div>
@@ -341,12 +347,14 @@ const Resource = () => {
             {(selectedContent === "Refiniries" ||
               selectedContent === "All") && (
               <div
-                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
                 data-aos="slide-left"
               >
                 <div className="w-full md:w-1/2 p-4">
-                  <div className="font-semibold text-3xl mb-4 flex justify-between">
-                    <div>Refiniries</div>
+                  <div className="mb-4 flex justify-between">
+                    <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                      Refiniries
+                    </div>
                     <span
                       className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
@@ -363,7 +371,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     A 20°C temperature rise cuts reformer tube lifespan by half
                   </div>
                 </div>
@@ -385,7 +393,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     A 20°C temperature increase halves the lifespan of reformer
                     tubes
                   </div>
@@ -397,12 +405,14 @@ const Resource = () => {
             {(selectedContent === "Lubricants" ||
               selectedContent === "All") && (
               <div
-                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
                 data-aos="slide-left"
               >
                 <div className="w-full md:w-1/2 p-4">
-                  <div className="font-semibold text-3xl mb-4 flex justify-between">
-                    <div>Lubricants</div>
+                  <div className="mb-4 flex justify-between">
+                    <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                      Lubricants
+                    </div>
                     <span
                       className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
@@ -419,7 +429,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     30% of maintenance budget influenced by lubricants,
                     highlighting their significant role in operational expenses
                   </div>
@@ -442,7 +452,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     Lubricants significantly affect operational costs,
                     accounting for 30% of the maintenance budget
                   </div>
@@ -454,12 +464,14 @@ const Resource = () => {
             {(selectedContent === "OilRecovery" ||
               selectedContent === "All") && (
               <div
-                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
                 data-aos="slide-left"
               >
                 <div className="w-full md:w-1/2 p-4">
-                  <div className="font-semibold text-3xl mb-4 flex justify-between">
-                    <div>Oil Recovery</div>
+                  <div className="mb-4 flex justify-between">
+                    <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                      Oil Recovery
+                    </div>
                     <span
                       className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
@@ -479,7 +491,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     1.3 lakhs/day would be the worth of injection polymer of
                     unknown viscosity flooded in EOR due to unavailability of
                     continuous viscosity measurement technique.
@@ -506,7 +518,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     Enhanced oil recovery 'EOR' techniques can improve recovery
                     rates from 20-40% to 30-60% of the original oil in place.
                   </div>
@@ -517,12 +529,14 @@ const Resource = () => {
             {/* paints content */}
             {(selectedContent === "Paints" || selectedContent === "All") && (
               <div
-                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6]"
+                className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
                 data-aos="slide-left"
               >
                 <div className="w-full md:w-1/2 p-4">
-                  <div className="font-semibold text-3xl mb-4 flex justify-between">
-                    <div>Paints</div>
+                  <div className="mb-4 flex justify-between">
+                    <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                      Paints
+                    </div>
                     <span
                       className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                       style={{
@@ -539,7 +553,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     Water-based paints account for about 80% of all paints sold
                     in the residential market.
                   </div>
@@ -565,7 +579,7 @@ const Resource = () => {
                       Case Studies
                     </span>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     The use of low-VOC paints has increased by over 50% in the
                     past decade due to environmental regulations and consumer
                     demand.
