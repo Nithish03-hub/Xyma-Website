@@ -6,7 +6,7 @@ import map from '../Images/map.png';
 import call from '../Images/call.png';
 import mail from '../Images/mail.png';
 import location from '../Images/location.png'; 
-import { IoIosArrowDown } from "react-icons/io";
+import { IoChevronDown } from "react-icons/io5";
 
 const ContactPage = () => {
 
@@ -44,24 +44,24 @@ const ContactPage = () => {
             className="h-full w-full object-cover"
           />
 
-          <div className="absolute inset-0 text-white text-xl md:text-3xl font-semibold flex flex-col gap-4 justify-center items-center mx-[15%] text-center">
-            <div>
+          <div className="absolute inset-0 text-white flex flex-col gap-4 justify-center items-center mx-[15%] text-center">
+            <div className="text-xl md:text-4xl lg:text-5xl xl:text-3xl 2xl:text-5xl font-medium md:font-semibold">
               Unlock Insights, Elevate Performance - Reach Out to XYMA Analytics
               Today
             </div>
-            <span
-              className="py-2 px-3 rounded-full text-xs font-normal flex gap-1 cursor-pointer"
+            <button
+              className="text-white text-xs md:text-base lg:text-lg xl:text-xs text 2xl:text-xl font-normal md:font-medium py-2 px-3 md:px-5 mt-3 rounded-full flex items-center gap-1"
               style={{
                 background:
                   "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
               }}
               onClick={handleButtonClick}
             >
-              <div>Get in Touch</div>
-              <div className="flex items-center">
-                <IoIosArrowDown size={15} />
+              <div className="">Get In Touch</div>
+              <div className="mt-0.5">
+                <IoChevronDown size={15} />
               </div>
-            </span>
+            </button>
           </div>
         </div>
       </section>

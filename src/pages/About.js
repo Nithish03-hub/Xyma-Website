@@ -19,6 +19,7 @@ import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
 import Xarrow from "react-xarrows";
 import useWindowSize from "react-use/lib/useWindowSize";
+import line from "../Assets/underline.png";
 
 const About = () => {
   
@@ -41,32 +42,42 @@ const About = () => {
           alt="Frame Image"
         />
         <div className="absolute h-full w-full inset-0 p-8 md:p-16 text-white">
-          <div className="w-full h-full md:flex">
-            <div className="w-full md:w-[90%] h-[70%] md:h-full flex flex-col gap-4 justify-center text-center md:text-left">
-              <div className="text-4xl md:text-6xl font-semibold md:font-bold">
+          <div className="w-full h-full xl:flex">
+            <div className="w-full xl:w-[90%] h-[70%] xl:h-full flex flex-col gap-4 justify-center text-center xl:text-left">
+              <div className="text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-semibold md:font-bold">
                 2019
               </div>
-              <div className="text-xs md:text-4xl">
+              <div className="text-lg md:text-3xl lg:text-5xl xl:text-4xl 2xl:text-6xl font-normal">
                 Founded through the CNDE, IIT <br /> Madras, and incubated at
                 IIT Madras <br /> Incubation Cell
               </div>
             </div>
-            <div className="w-full md:w-[10%] h-[30%] md:h-full flex md:flex-col justify-evenly">
+            <div className="w-full xl:w-[10%] h-[30%] xl:h-full flex xl:flex-col justify-evenly">
               <div>
-                <div className="text-4xl md:text-6xl font-bold mb-2">20+</div>
-                <div className="text-xs md:text-sm">Years of R&D</div>
+                <div className="text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
+                  20+
+                </div>
+                <div className="text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+                  Yearsvof&nbsp;R&D
+                </div>
               </div>
               <div>
-                <div className="text-4xl md:text-6xl font-bold mb-2">18+</div>
-                <div className="text-xs md:text-sm">
+                <div className="text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
+                  18+
+                </div>
+                <div className="text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Intellectual
                   <br />
                   Properties
                 </div>
               </div>
               <div>
-                <div className="text-4xl md:text-6xl font-bold mb-2">35+</div>
-                <div className="text-xs md:text-sm">Publications</div>
+                <div className="text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
+                  35+
+                </div>
+                <div className="text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+                  Publications
+                </div>
               </div>
             </div>
           </div>
@@ -87,12 +98,12 @@ const About = () => {
 
       <div className="mt-8 mx-[5%]">
         <div className="text-center flex justify-center">
-          <div className="text-3xl font-semibold flex flex-col w-[200px]">
+          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>About XYMA</div>
-            <img className="object-cover" src={second} />
+            <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <div className="text-[#60646C] text-center mt-2">
+        <div className="text-[#60646C] text-center text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl mt-2">
           "XYMA Analytics is a deep-tech company started from IIT Madras,
           serving 15+ MNCs globally now to provide them with accurate
           multi-point temperature and multi-parameter measurements through
@@ -166,22 +177,22 @@ const About = () => {
           >
             <div className=" w-full h-full">
               <div className=" flex items-center mb-2">
-                <span className="rounded-full px-2 py-1 text-xs bg-[#FEE1B7] font-medium">
+                <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
                   2020
                 </span>
               </div>
-              <div className=" font-semibold mb-2">
+              <div className="font-semibold lg:text-lg xl:text-base 2xl:text-xl mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry
               </div>
-              <div className=" text-xs text-[#60646C] mb-2">
+              <div className=" text-xs lg:text-sm xl:text-xs 2xl:text-base text-[#60646C] mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the make a type specimen book.
               </div>
               <div className=" flex items-center mb-2">
                 <span
-                  className="text-xs rounded-full p-2 text-white"
+                  className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full p-2 text-white"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -196,7 +207,7 @@ const About = () => {
           </div>
 
           {/* text 1 */}
-          <div className=" relative w-[60%] md:w-[30%] text-sm font-medium flex items-center text-left mb-4 md:mb-0">
+          <div className=" relative w-[60%] md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
             Lorem Ipsum has been the industry's standard dummy text when an
             unknown printer took a galley of type and scrambled it to make a
             type specimen book.
@@ -205,7 +216,7 @@ const About = () => {
 
         <div className=" flex flex-col-reverse md:flex-row justify-between mb-2">
           {/* text 2 */}
-          <div className="w-[60%] md:w-[30%] text-sm font-medium flex items-center text-left mb-4 md:mb-0">
+          <div className="w-[60%] md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
             Lorem Ipsum has been the industry's standard dummy text when an
             unknown printer took a galley of type and scrambled it to make a
             type specimen book.
@@ -214,26 +225,26 @@ const About = () => {
           <div className="relative border border-[#CDCED6] w-full md:w-[35%] rounded-2xl mb-4 md:mb-0 py-4">
             <div className=" w-full">
               <div className="flex items-center px-4 mb-2">
-                <span className="rounded-full px-2 py-1 text-xs bg-[#FEE1B7] font-medium">
+                <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
                   2020
                 </span>
               </div>
-              <div className="font-semibold px-4 mb-1">
+              <div className="font-semibold lg:text-lg xl:text-base 2xl:text-xl px-4 mb-1">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry
                 {/* empty div for arrow */}
                 <div className="-ml-4 mt-2 h-1" id="box2"></div>
               </div>
               {/* empty div for arrow */}
-              <div className='' id="box3"></div>
-              <div className="text-xs text-[#60646C] px-4 mb-2">
+              <div className="" id="box3"></div>
+              <div className="text-xs lg:text-sm xl:text-xs 2xl:text-base text-[#60646C] px-4 mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the make a type specimen book.
               </div>
               <div className="flex items-center px-4 mb-2">
                 <span
-                  className="text-xs rounded-full p-2 text-white"
+                  className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full p-2 text-white"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -257,22 +268,22 @@ const About = () => {
           >
             <div className=" w-full">
               <div className="flex items-center mb-2">
-                <span className="rounded-full px-2 py-1 text-xs bg-[#FEE1B7] font-medium">
+                <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
                   2020
                 </span>
               </div>
-              <div className="font-semibold mb-2">
+              <div className="font-semibold lg:text-lg xl:text-base 2xl:text-xl mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry
               </div>
-              <div className="text-xs text-[#60646C] mb-2">
+              <div className="text-xs lg:text-sm xl:text-xs 2xl:text-base text-[#60646C] mb-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the make a type specimen book.
               </div>
               <div className="flex items-center mb-2">
                 <span
-                  className="text-xs rounded-full p-2 text-white"
+                  className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full p-2 text-white"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -286,7 +297,7 @@ const About = () => {
             <div className="absolute w-4 top-[10%] right-[30%]" id="box8" />
           </div>
           {/* text 3 */}
-          <div className="w-full md:w-[30%] text-sm font-medium flex items-center text-left mb-4 md:mb-0">
+          <div className="w-full md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
             Lorem Ipsum has been the industry's standard dummy text when an
             unknown printer took a galley of type and scrambled it to make a
             type specimen book.
@@ -295,21 +306,23 @@ const About = () => {
       </div>
 
       <section className="mx-[5%] mt-10">
-        <center>
-          <div className="text-3xl font-semibold">
-            The Team <img className="w-36" src={second}></img>
+        <div className="text-center flex justify-center mb-4">
+          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
+            <div>The Team</div>
+            <img className="w-full h-2" src={line}></img>
           </div>
-          <img className="mt-4" src={group1}></img>
-        </center>
+        </div>
+        <img className="mt-4" src={group1}></img>
       </section>
 
       <section className="mx-[5%] mt-10">
-        <div className="flex justify-center">
-          <div className="text-3xl font-semibold">
-            The Vision <img className="w-36" src={second} alt="Second Image" />
+        <div className="text-center flex justify-center">
+          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
+            <div>The Vision</div>
+            <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <div className="mt-4 text-[#60646C] text-center text-sm md:text-base">
+        <div className="mt-4 text-[#60646C] text-center text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
           Our vision is to provide reliable measurements at the most unreliable
           times. Democratize sensor-based process efficiency in Industries by
           enabling them with rich data sets of process parameters. Provide
@@ -341,13 +354,13 @@ const About = () => {
       </section>
 
       <section className="mx-[5%] mt-10">
-        <div className="flex justify-center">
-          <div className="text-3xl font-semibold">
-            Key Values
-            <img className="w-36" src={second} alt="Second Image" />
+        <div className="text-center flex justify-center">
+          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
+            <div>Key Values</div>
+            <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 md:flex justify-evenly mt-4 mx-[15%] md:mx-0 text-center">
+        <div className="grid grid-cols-2 gap-4 md:flex justify-evenly mt-8 mx-[15%] md:mx-0 text-center lg:text-lg xl:text-base 2xl:text-xl">
           <div className="flex flex-col items-center">
             <img className="w-auto md:w-[60%]" src={c1}></img>
             <div className="font-semibold mt-2">Key Value</div>
@@ -379,10 +392,10 @@ const About = () => {
             <img src={ceo2}></img>
           </div>
           <div className="w-full md:w-1/2 flex flex-col justify-center p-8">
-            <div className="text-center font-semibold text-xl text-[#1C2024]">
+            <div className="text-center font-semibold text-lg md:text-2xl lg:text-3xl 2xl:text-4xl text-[#1C2024]">
               The Mission
             </div>
-            <div className="text-center text-[#60646C] mt-2">
+            <div className="text-center text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl mt-2">
               Our mission is to increase efficiency in operations through
               IIoT-enabled process parameter monitoring and AI-based predictive
               maintenance to enhance asset life and prevent unplanned downtime
@@ -396,7 +409,7 @@ const About = () => {
         <div className="flex justify-center">
           <img className="h-12" src={framevector}></img>
         </div>
-        <div className="text-[#60646C] text-center px-1  md:px-24 text-sm md:text-base font-semibold">
+        <div className="text-[#60646C] text-center px-1 md:px-24 text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -406,10 +419,12 @@ const About = () => {
 
         <div className="flex flex-col items-center mt-8">
           <img className="w-20" src={photo} alt="Photo" />
-          <div className="text-[#1C2024] font-semibold mt-2">
+          <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
             Dr. Nishanth Raja
           </div>
-          <div className="text-[#60646C] text-xs">C.E.O. and Co-founder</div>
+          <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
+            C.E.O. and Co-founder
+          </div>
         </div>
       </section>
     </div>

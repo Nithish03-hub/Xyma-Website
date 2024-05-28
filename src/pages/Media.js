@@ -29,6 +29,7 @@ import image10 from '../Images/Image10.png';
 import image11 from '../Images/Image11.png';
 import VerticalSlider from './VerticalSlider';
 import asain2 from '../Assets/asian2.png';
+import line from "../Assets/underline.png";
 
 const Media = () => {
 
@@ -119,11 +120,11 @@ const Media = () => {
             alt="media"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-            <div className="text-white text-3xl md:text-5xl font-semibold">
+          <div className="absolute inset-0 flex flex-col justify-center items-center">
+            <div className="text-white text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
               News Room
             </div>
-            <div className="text-white mt-2 md:mt-5 text-xs md:text-sm">
+            <div className="text-white mt-2 md:mt-5 text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
               Spotlight on XYMA Analytics
             </div>
           </div>
@@ -143,11 +144,12 @@ const Media = () => {
       </section>
 
       <section>
-        <center>
-          <div className="text-3xl font-semibold mt-[10%]">
-            Highlights <img className="w-44 mt-1" src={second}></img>
+        <div className="mt-4 md:mt-10 text-center flex justify-center">
+          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
+            <div>Highlights</div>
+            <img className="w-full h-2" src={line}></img>
           </div>
-        </center>
+        </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 mx-[5%] xl:mx-[8%]">
           <div
@@ -155,13 +157,15 @@ const Media = () => {
             style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
           >
             <img src={asian} alt="Asian" style={{ width: "100%" }} />
-            <div className="text-sm lg:text-lg font-semibold mt-1">
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               Advancing Technology to Foster a Sustainable Energy Landscape
             </div>
-            <div className="text-xs mt-1 text-[#60646C]">February 24, 2024</div>
+            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+              February 24, 2024
+            </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -189,16 +193,16 @@ const Media = () => {
                 <p className="text-white">SAUR ENERGY</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg font-semibold mt-1">
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               Shell Launches 'Digital Track' for Indian Startups under its E4
               Programme
             </div>
-            <div className="text-xs mt-1 text-[#60646C]">
+            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               Updated On Thu, Jul 8th, 2021
             </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -226,15 +230,15 @@ const Media = () => {
                 <p className="text-white mt-1">Businessline</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg font-semibold mt-1">
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               Start-up tech. Remote sensing with XYMA Analytics
             </div>
-            <div className="text-xs mt-1 text-[#60646C]">
+            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               Updated - January 09, 2022
             </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -502,13 +506,15 @@ const Media = () => {
                 <p className="text-white mt-1">IIT MADRAS</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg font-semibold mt-1">
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               Sensor for Temperature Measurement at Multiple Points
             </div>
-            <div className="text-xs mt-1 text-[#60646C]">11th Oct 2021 </div>
+            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+              11th Oct 2021{" "}
+            </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -541,16 +547,16 @@ const Media = () => {
                 <p className="text-white mt-1">YOUR STORY</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg font-semibold mt-1">
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               Prioritize Building Valuable Businesses Over Funding, Advises
               Kalaari Capital's Vani Kola
             </div>
-            <div className="text-xs mt-1 mb-1 text-[#60646C]">
+            <div className="text-xs 2xl:text-sm mt-1 mb-1 text-[#60646C]">
               Wednesday July 14, 2021
             </div>
             <center>
               <button
-                className="text-white mt-2 text-sm rounded-full px-4 py-2 mb-2"
+                className="text-white mt-2 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -583,15 +589,15 @@ const Media = () => {
                 <p className="text-white mt-1">Businessline</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg font-semibold mt-1">
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               TN Chief Minister awards cheques worth ₹95 lakh to 19 start-ups
             </div>
-            <div className="text-xs mt-1 text-[#60646C]">
+            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               Updated - December 23, 2021
             </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -624,13 +630,15 @@ const Media = () => {
                 <p className="text-white mt-1">Newswires</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg font-semibold mt-1">
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               SmartHub.ai and XYMA Partnership Announcement
             </div>
-            <div className="text-xs mt-1 text-[#60646C]">March 01, 2022</div>
+            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+              March 01, 2022
+            </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -663,15 +671,15 @@ const Media = () => {
                 <p className="text-white mt-1">ANI Multimedia News</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg font-semibold mt-1">
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               PM Modi honors Shraddha and RJ Raunac at Bharat Mandapam
             </div>
-            <div className="text-xs mt-1 text-[#60646C]">
+            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               Updated: Mar 02, 2024
             </div>
             <center>
               <button
-                className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
+                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -692,7 +700,7 @@ const Media = () => {
             alt="Background"
             className="h-[40px]"
           />
-          <div className="font-semibold text-xl md:text-3xl lg:text-4xl text-[#013872] w-[90%] md:w-[60%] text-center">
+          <div className="font-semibold text-xl md:text-3xl lg:text-4xl 2xl:text-5xl text-[#013872] w-[90%] md:w-[60%] text-center">
             "Strength lies in togetherness, creativity is embraced with
             inclusivity, and passion flourishes with freedom."
           </div>

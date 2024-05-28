@@ -39,7 +39,7 @@ import grp from '../Assets/Group.png';
 import zero from '../Assets/zero.png';
 import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
-import line from '../Assets/underline.png'
+import line from '../Assets/underline.png';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -160,14 +160,14 @@ export const Home = () => {
           alt="cover image"
           className="absolute w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl lg:text-7xl xl:text-6xl text-white font-medium md:font-semibold xl:font-bold gap-2 items-center justify-center xl:items-start xl:justify-start 2xl:text-8xl m-[8%]">
-          <div className='flex xl:flex-col gap-2 md:gap-4'>
+        <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl text-white font-medium md:font-semibold gap-2 items-center justify-center xl:items-start xl:justify-start m-[8%]">
+          <div className="flex xl:flex-col gap-2 md:gap-4">
             <div data-aos="slide-right">Prevent</div>
             <div data-aos="slide-right">Unplanned</div>
           </div>
           <div data-aos="slide-right">Downtime</div>
           <div
-            className="text-xs md:text-lg lg:text-2xl xl:text-base text 2xl:text-xl mt-2 font-normal md:font-medium"
+            className="text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-xl mt-2 font-normal md:font-medium"
             data-aos="slide-right"
           >
             "The Disruptive Ultrasonic Waveguide Technology"
@@ -188,8 +188,8 @@ export const Home = () => {
       </div>
 
       {/* text with underline */}
-      <div className="flex justify-center items-center  mt-12 mb-12">
-        <div className=" md:flex gap-2 text-xl md:text-2xl xl:text-3xl 2xl:text-5xl font-semibold text-center">
+      <div className="flex justify-center items-center mt-6 mb-4 md:mt-8 md:mb-6 lg:mt-12 lg:mb-16 mx-[5%] md:mx-[8%] xl:mx-[5%]">
+        <div className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
           <div className="">Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
           <div className="">
             <div className="">Process&nbsp;parameter&nbsp;measurements</div>
@@ -199,16 +199,16 @@ export const Home = () => {
       </div>
 
       {/* elements cards */}
-      <div className=" md:flex mx-[5%] xl:mx-[8%] mb-24">
+      <div className="md:flex mx-[5%] xl:mx-[8%] mb-8 md:mb-16 lg:mb-24 2xl:mb-32">
         {/* list of elements */}
         <div
-          className="w-full overflow-auto md:w-[14%] text-gray-500  2xl:text-2xl flex items-center md:items-start md:justify-start md:flex-col"
+          className="w-full overflow-auto md:w-[14%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
           style={{ scrollbarWidth: "none" }}
         >
           <div data-aos="zoom-in-up">
             <div
               className={`md:w-full cursor-pointer p-1 mb-1 flex ${
-                clickedImage === aluminum && "text-[#013872] font-medium"
+                clickedImage === aluminum && "text-[#013872] font-bold"
               }`}
               id="aluminum"
               onClick={handleImageChange}
@@ -226,7 +226,7 @@ export const Home = () => {
           <div data-aos="zoom-in-up">
             <div
               className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === steel && "text-[#013872] font-medium"
+                clickedImage === steel && "text-[#013872] font-bold"
               }`}
               id="steel"
               onClick={handleImageChange}
@@ -244,7 +244,7 @@ export const Home = () => {
           <div data-aos="zoom-in-up">
             <div
               className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === reformerTubes && "text-[#013872] font-medium"
+                clickedImage === reformerTubes && "text-[#013872] font-bold"
               }`}
               id="refiniries"
               onClick={handleImageChange}
@@ -262,7 +262,7 @@ export const Home = () => {
           <div data-aos="zoom-in-up">
             <div
               className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === lubricants && "text-[#013872] font-medium"
+                clickedImage === lubricants && "text-[#013872] font-bold"
               }`}
               id="lubricants"
               onClick={handleImageChange}
@@ -280,7 +280,7 @@ export const Home = () => {
           <div data-aos="zoom-in-up">
             <div
               className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === oilRecovery && "text-[#013872] font-medium"
+                clickedImage === oilRecovery && "text-[#013872] font-bold"
               }`}
               id="oilRecovery"
               onClick={handleImageChange}
@@ -298,7 +298,7 @@ export const Home = () => {
           <div data-aos="zoom-in-up">
             <div
               className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === paints && "text-[#013872] font-medium"
+                clickedImage === paints && "text-[#013872] font-bold"
               }`}
               id="paints"
               onClick={handleImageChange}
@@ -328,7 +328,7 @@ export const Home = () => {
             </div>
           )}
           <div
-            className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-5xl 2xl:text-6xl font-bold text-center"
+            className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
             style={{
               backgroundImage:
                 "linear-gradient(to bottom, white, rgb(209, 213, 219))",
@@ -347,7 +347,7 @@ export const Home = () => {
         >
           {clickedImage && (
             <div
-              className=" text-lg lg:text-2xl xl:text-3xl font-semibold text-center"
+              className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
               style={{
                 color: "transparent",
                 background:
@@ -363,23 +363,23 @@ export const Home = () => {
       </div>
 
       {/* semi circle component */}
-      <section className="flex flex-col items-center justify-center mt-8 relative  mb-8">
+      <section className="flex flex-col items-center justify-center relative  mb-8 xl:h-[95vh]">
         <div
-          className={`w-full h-full bg-black absolute transition-opacity duration-500 ${
+          className={`hidden xl:block w-full h-full bg-black absolute transition-opacity duration-500 ${
             overlay ? "opacity-40" : "opacity-0"
           }`}
         ></div>
 
-        <div className="flex justify-center text-xl md:text-3xl font-semibold relative 2xl:text-5xl w-full text-center mb-2">
-          <div className="flex flex-wrap justify-center gap-2 ">
-            <div className="">Patented</div>
+        <div className="flex justify-center relative text-center mb-1 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mx-[5%]">
+          <div className="flex flex-wrap justify-center gap-1">
+            <div className="">Patented Ultrasonic </div>
             <div className="">
-              <div>Ultrasonic Waveguide Sensors:</div>
+              <div>Waveguide Sensors:</div>
               <img className=" w-full h-2" src={line}></img>
             </div>
           </div>
         </div>
-        <div className="text-center text-xl md:text-3xl font-semibold">
+        <div className="text-center text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-6xl font-semibold mb-2 md:mb-4 2xl:mb-8">
           Xyma Analytics
         </div>
 
@@ -402,34 +402,36 @@ export const Home = () => {
                   src={utmaps}
                 />
               </div>
-              <div className="text-sm font-medium">
+              <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
                 μTMapS: Multi-Point Temperature
               </div>
             </div>
-            {utmapsBadge && (
-              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] md:w-[500px] z-10 text-gray-500 md:flex">
-                <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
-                  <div className="w-full h-full bg-black rounded-xl flex justify-center ">
-                    <img
-                      className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
-                      src={utmaps}
-                    />
+            <div className="flex justify-end md:justify-normal">
+              {utmapsBadge && (
+                <div className="absolute bg-white rounded-xl w-[70%] h-[150px] md:w-[500px] z-10 text-gray-500 md:flex">
+                  <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
+                    <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                      <img
+                        className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
+                        src={utmaps}
+                      />
+                    </div>
+                  </div>
+                  <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
+                    <div className="text-base font-bold text-black mb-1">
+                      μTMapS & μSTMapS
+                    </div>
+                    <div className="text-xs text-justify">
+                      μTMapS & μSTMapS are IIoT-enabled temperature measurement
+                      temperature profiling sensors that captures continuos
+                      measurements at multiple points with asingle customized
+                      waveguide with multiple configurations in contrast to
+                      based thermocouples/RTDs or contactless IR guns
+                    </div>
                   </div>
                 </div>
-                <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
-                  <div className="text-base font-bold text-black mb-1">
-                    μTMapS & μSTMapS
-                  </div>
-                  <div className="text-xs text-justify">
-                    μTMapS & μSTMapS are IIoT-enabled temperature measurement
-                    temperature profiling sensors that captures continuos
-                    measurements at multiple points with asingle customized
-                    waveguide with multiple configurations in contrast to based
-                    thermocouples/RTDs or contactless IR guns
-                  </div>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
 
           <div>
@@ -450,35 +452,38 @@ export const Home = () => {
                   src={ports}
                 />
               </div>
-              <div className="text-sm font-medium">
+              <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
                 PoRTS: Multi-Parameter Viscosity, Density and Temperature
               </div>
             </div>
-            {portsBadge && (
-              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] md:w-[500px] z-10  text-gray-500 md:flex">
-                <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
-                  <div className="w-full h-full bg-black rounded-xl flex justify-center ">
-                    <img
-                      className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
-                      src={ports}
-                    />
+            <div className="flex justify-end md:justify-normal">
+              {portsBadge && (
+                <div className="absolute bg-white rounded-xl w-[70%] h-[150px] md:w-[500px] z-10  text-gray-500 md:flex">
+                  <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
+                    <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                      <img
+                        className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
+                        src={ports}
+                      />
+                    </div>
+                  </div>
+                  <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
+                    <div className="text-base font-bold text-black mb-1">
+                      PoRTS
+                    </div>
+                    <div className="text-xs text-justify">
+                      PoRTS is an invasive/non-invasive based IIoT-enabled
+                      rheology and temperature mesurement sensor that
+                      continuously captures multiple parameters such as
+                      viscosity, density and temperature with a single waveguide
+                      unlike discrete measurement with thermocouple/RTDs or
+                      discrete measurements with sampling from viscometer and
+                      density meter.
+                    </div>
                   </div>
                 </div>
-                <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
-                  <div className="text-base font-bold text-black mb-1">
-                    PoRTS
-                  </div>
-                  <div className="text-xs text-justify">
-                    PoRTS is an invasive/non-invasive based IIoT-enabled
-                    rheology and temperature mesurement sensor that continuously
-                    captures multiple parameters such as viscosity, density and
-                    temperature with a single waveguide unlike discrete
-                    measurement with thermocouple/RTDs or discrete measurements
-                    with sampling from viscometer and density meter.
-                  </div>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
           <div>
             <div
@@ -498,37 +503,40 @@ export const Home = () => {
                   src={ztar}
                 />
               </div>
-              <div className="text-sm font-medium">
+              <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
                 Ztar: Contact/Non-contact based Level
               </div>
             </div>
-            {ztarBadge && (
-              <div className="absolute bg-white rounded-xl w-[92%] h-[150px] md:w-[350px] z-10 text-gray-500 md:flex">
-                <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
-                  <div className="w-full h-full bg-black rounded-xl flex justify-center ">
-                    <img
-                      className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
-                      src={ztar}
-                    />
+
+            <div className="flex justify-end md:justify-normal">
+              {ztarBadge && (
+                <div className="absolute bg-white rounded-xl w-[70%] h-[150px] md:w-[350px] z-10 text-gray-500 md:flex">
+                  <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
+                    <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                      <img
+                        className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
+                        src={ztar}
+                      />
+                    </div>
+                  </div>
+                  <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
+                    <div className="text-base font-bold text-black mb-1">
+                      Ztar
+                    </div>
+                    <div className="text-xs text-justify">
+                      Ztar is a contact/contactless IIoT-enabled level that
+                      captures continuous level across any hazardous environment
+                      with accuracy in contrast to radar-based level measurement
+                      sensors.
+                    </div>
                   </div>
                 </div>
-                <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
-                  <div className="text-base font-bold text-black mb-1">
-                    Ztar
-                  </div>
-                  <div className="text-xs text-justify">
-                    Ztar is a contact/contactless IIoT-enabled level that
-                    captures continuous level across any hazardous environment
-                    with accuracy in contrast to radar-based level measurement
-                    sensors.
-                  </div>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
 
-        <div className="relative block w-[90%] md:w-[45%] mt-2 2xl:w-[50%] ">
+        <div className="relative block w-[90%] md:w-[50%] xl:w-[40%] mt-2 2xl:w-[50%] ">
           <img
             className="w-full -z-10"
             data-aos="zoom-in-up"
@@ -685,7 +693,7 @@ export const Home = () => {
           }}
         >
           <div className=" flex justify-center items-center mx-[5%] xl:mx-[8%]">
-            <div className="md:flex gap-2 text-xl md:text-3xl 2xl:text-5xl font-semibold text-center">
+            <div className="md:flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
               <div>Making a difference with</div>
               <div className="mx-[8%] md:mx-0 flex flex-col items-center">
                 <div>the Approach</div>
@@ -696,7 +704,7 @@ export const Home = () => {
 
           <div className=" mt-4 mx-[5%] xl:mx-[8%] flex flex-col md:flex-row p-4 gap-3">
             <div
-              className="w-full md:w-[35%] p-4  rounded-lg flex flex-col gap-2 text-center py-16"
+              className="w-full md:w-[35%] p-4  rounded-lg flex flex-col gap-2 text-center py-8 md:py-16 lg:py-24 justify-center"
               data-aos="flip-right"
               style={{
                 background:
@@ -706,12 +714,12 @@ export const Home = () => {
               <div className=" flex justify-center">
                 <img className="w-[75px]" src={trophy} alt="Trophy icon" />
               </div>
-              <div className="text-3xl font-semibold">
+              <div className="text-xl md:text-2xl lg:text-4xl 2xl:text-5xl font-semibold">
                 <div className="">Award Winning</div>
                 <div className="">Technology</div>
               </div>
 
-              <div className=" text-xs">
+              <div className="text-xs lg:text-base 2xl:text-lg">
                 The team leverages state-of-the-art, award-winning, ultrasonic
                 waveguide technology developed through 25+ years of research and
                 development.
@@ -729,11 +737,11 @@ export const Home = () => {
                     <div className=" flex items-center justify-center">
                       <img className="w-12 " src={client} alt="Client icon" />
                     </div>
-                    <div className=" flex items-center text-lg text-black font-semibold">
+                    <div className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
                       Client-Centric
                     </div>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm">
+                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-lg">
                     The Solution is provided based on in-depth understanding of
                     clients needs addressing the relevant challenges.
                   </div>
@@ -748,11 +756,11 @@ export const Home = () => {
                     <div className=" flex items-center justify-center">
                       <img className="w-12 " src={solution} alt="solution" />
                     </div>
-                    <div className=" flex items-center text-lg text-black font-semibold">
+                    <div className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
                       Customization for Solutions
                     </div>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm">
+                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-lg">
                     Gain immediate access to valuable data through the
                     technology's adaptability with material selection and
                     configuration for waveguides.
@@ -770,11 +778,11 @@ export const Home = () => {
                     <div className=" flex items-center justify-center">
                       <img className="w-12 " src={real} alt="real" />
                     </div>
-                    <div className=" flex items-center text-lg text-black font-semibold">
+                    <div className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
                       Real-Time Insights
                     </div>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm">
+                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-lg">
                     Gain immediate access to valuable data through our
                     supervised sensing capabilities, empowering informed
                     decision-making.
@@ -790,11 +798,11 @@ export const Home = () => {
                     <div className=" flex items-center justify-center">
                       <img className="w-12 " src={time} alt="time" />
                     </div>
-                    <div className=" flex items-center text-lg text-black font-semibold">
+                    <div className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
                       On-Time Delivery
                     </div>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm">
+                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-lg">
                     Committed to adhering to project timelines and satisfaction.
                   </div>
                 </div>
@@ -838,15 +846,15 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center mt-20">
+        <div className="flex flex-col justify-center items-center mt-8 md:mt-20">
           <div
-            className="text-2xl font-semibold text-center"
+            className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center"
             //data-aos="zoom-in-up"
           >
             Xyma Analytics' Clients
           </div>
           <div
-            className="flex justify-center items-center mt-3 text-center text-gray-600 w-full px-4"
+            className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium"
             //data-aos="zoom-in-up"
           >
             Committed to client satisfaction with constant support at all

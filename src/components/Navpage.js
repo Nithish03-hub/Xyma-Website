@@ -11,17 +11,17 @@ import CaseStudy from '../pages/CaseStudy';
 
 const Navpage = () => {
   return (
-    <div >
-      <section >
+    <div>
+      <section>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Product />} />
           <Route path="/resources" element={<Resource />} />
           <Route path="/media" element={<Media />} />
           <Route path="/careers" element={<Career />} />
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/casestudy" element={<CaseStudy/>}/>
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/resources/casestudy" element={<CaseStudy />} />
         </Routes>
       </section>
     </div>

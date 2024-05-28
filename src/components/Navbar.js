@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import xyma from '../Assets/xymalogo_white.png';
 import { HeaderData } from "../data/HeaderData";
@@ -17,16 +17,17 @@ const Navbar = () => {
   //   navigate('/contact');
   // };
   const navigate = useNavigate();
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  // const [selectedIndex, setSelectedIndex] = useState(0);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const handleNavItemClick = (index) => {
-    setSelectedIndex(index);
-  };
+  // const handleNavItemClick = (index) => {
+  //   setSelectedIndex(index);
+  // };
 
   const handleContactClick = () => {
     navigate("/contact");
-    setSelectedIndex(null);
+    //setSelectedIndex(null);
   };
 
   const handleBurgerMenu = () =>
@@ -43,29 +44,32 @@ const Navbar = () => {
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          <div className=" flex items-center text-white lg:justify-around justify-between w-full 2xl:text-lg">
-            <div>
-              <img className="mr-4 h-10" src={xyma} alt="Logo" />
+          <div className="flex items-center text-white lg:justify-around justify-between w-full h-full text-lg xl:text-sm 2xl:text-lg">
+            <div className='h-full flex items-center'>
+              <img className="h-[65%]" src={xyma} alt="Logo" />
             </div>
             <div className="hidden lg:flex gap-8 items-center">
               {HeaderData.map((item, index) => (
                 <div key={index} className="">
                   <NavLink
                     to={item.path}
+                    // className={`${
+                    //   selectedIndex === index ? "text-orange-400" : ""
+                    // }`}
+                    // onClick={() => handleNavItemClick(index)}
                     className={`${
-                      selectedIndex === index ? "text-orange-400" : ""
+                      location.pathname === item.path && "text-orange-400"
                     }`}
-                    onClick={() => handleNavItemClick(index)}
                   >
                     <span>{item.title}</span>
                   </NavLink>
 
-                  {selectedIndex === index && <CircleComponent />}
+                  {location.pathname === item.path && <CircleComponent />}
                 </div>
               ))}
             </div>
             <div
-              className="hidden lg:block text-white py-3 px-4 rounded-full cursor-pointer"
+              className="hidden lg:block text-white py-3 px-4 xl:py-2 xl:px-3 2xl:py-3 2xl:px-4 rounded-full cursor-pointer"
               style={{
                 background:
                   "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -103,18 +107,18 @@ const Navbar = () => {
       {burgerMenuOpen && (
         <div
           className="bg-white h-[90vh] w-full lg:hidden"
-          data-aos="slide-down"
-          data-aos-duration="1000"
+          // data-aos="slide-down"
+          // data-aos-duration="800"
         >
           <div className="h-[60%]">
             {HeaderData.map((item, index) => (
               <div
                 key={index}
                 className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg  ${
-                  selectedIndex === index ? "text-orange-400" : ""
+                  location.pathname === item.path ? "text-orange-400" : ""
                 }`}
                 onClick={() => {
-                  handleNavItemClick(index);
+                  //handleNavItemClick(index);
                   handleBurgerMenu();
                 }}
               >
@@ -126,7 +130,7 @@ const Navbar = () => {
                   {item.title}
                   <div
                     className={`${
-                      selectedIndex === index
+                      location.pathname === item.path
                         ? "text-orange-400"
                         : "text-gray-400"
                     }`}

@@ -18,6 +18,8 @@ import ref from "../Assets/refineries.png";
 import eor from "../Assets/eor.png";
 import { RiPlayCircleFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 const Product = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,6 +52,10 @@ const Product = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  // useEffect(() => {
+  //   AOS.init({ duration: 1500 });
+  // }, []);
+
   const handleDotClick = (index) => {
     setCurrentIndex(index);
   };
@@ -74,39 +80,38 @@ const Product = () => {
               className="w-full h-full object-cover object-right-top"
               src={item.src}
               alt={`Slide ${index + 1}`}
+              //data-aos="slide-left"
               //style={{ ...imageStyle }}
             />
-            <div className="h-[45%] w-[90%] md:h-[60%] md:w-[30%] flex flex-col gap-4 absolute bottom-[25%] text-white p-[1%] px-[2%] rounded-md text-[2.5vw] font-semibold mx-[20px] md:mx-[75px]">
-              <div className="text-2xl md:text-5xl text-center md:text-left">
+            <div className=" inset-0 xl:w-[32%] 2xl:w-[42%] flex flex-col gap-2 lg:gap-4 absolute m-[8%] text-white  items-center justify-center xl:items-start xl:justify-start">
+              <div className=" text-2xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
                 {item.title}
               </div>
               <div
-                className="text-2xl md:text-3xl p-1 text-center md:text-left font-bold"
+                className=" p-1 text-center xl:text-left text-xl md:text-3xl lg:text-5xl xl:text-4xl 2xl:text-6xl font-medium md:font-semibold"
                 style={{
                   background:
                     "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
                   WebkitBackgroundClip: "text",
                   color: "transparent",
                   backgroundColor: "rgba(255, 255, 255, 1)",
-                  // display: "inline-block",
-                  // width: "55%",
                 }}
               >
                 {item.text1}
               </div>
-              <div className="text-sm font-light text-center md:text-left">
+              <div className=" text-xs md:text-lg lg:text-2xl xl:text-base  2xl:text-xl font-normal md:font-medium text-center xl:text-left">
                 {item.text}
               </div>
             </div>
           </div>
         ))}
-        <div className="absolute w-full flex gap-2 bottom-[10%] p-2 md:px-20 justify-center md:justify-normal">
+        <div className=" absolute w-full flex gap-2 bottom-[10%] p-2 xl:px-[8%] justify-center xl:justify-normal">
           {images.map((_, index) => (
             <div
               key={index}
               onClick={() => handleDotClick(index)}
               className={`w-16 h-1 cursor-pointer  ${
-                index === currentIndex ? "bg-black" : "bg-gray-300"
+                index === currentIndex ? "bg-white" : "bg-white opacity-20"
               } rounded-full`}
             />
           ))}
@@ -153,7 +158,7 @@ const Product = () => {
                 }}
               >
                 <div
-                  className=" text-xl md:text-2xl font-semibold mb-1"
+                  className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-1"
                   style={{
                     background:
                       "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
@@ -165,7 +170,7 @@ const Product = () => {
                 >
                   μTMapS
                 </div>
-                <div className=" text-white text-xs md:text-base">
+                <div className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
                   A single customizable waveguide can measure temperature at 10
                   points over 50 meters length.
                 </div>
@@ -175,7 +180,7 @@ const Product = () => {
           <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
             {/* heading and play button */}
             <div className=" md:flex gap-2 mb-2">
-              <div className=" text-base mb-2 md:mb-0 md:text-lg xl:text-3xl font-semibold">
+              <div className="mb-2 md:mb-0 text-lg lg:text-3xl 2xl:text-4xl font-semibold">
                 Multi-Point Temperature Mapping Sensor
               </div>
               <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
@@ -189,12 +194,12 @@ const Product = () => {
             </div>
 
             {/* orange tab */}
-            <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+            <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm lg:text-lg xl:text-sm 2xl:text-xl font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
               Temperature Range: 25° C to 1600° C
             </div>
 
             {/* description */}
-            <div className=" text-[#60646C] text-xs xl:text-sm mb-2">
+            <div className=" text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-xl mb-2 font-medium">
               µTMapS & µSTMapS are IIoT-enabled temperature measurement and
               temperature profiling sensors that captures continuous
               measurements at multiple points with a single customizable
@@ -203,7 +208,7 @@ const Product = () => {
             </div>
 
             {/* cards */}
-            <div className="md:flex gap-2 mb-2 text-xs xl:text-base">
+            <div className="md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
               <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={isteel} />
@@ -219,7 +224,7 @@ const Product = () => {
               </div>
             </div>
 
-            <div className="md:flex gap-2  mb-2 text-xs xl:text-base">
+            <div className="md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
               <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white mb-2 md:mb-0">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={semi} />
@@ -248,7 +253,7 @@ const Product = () => {
               }}
             >
               <img
-                className="w-[50%] h-[70%] lg:w-[45%] lg:h-[95%] object-cover object-top"
+                className="w-[50%] h-[70%] lg:w-[45%] lg:h-[80%] object-cover object-top"
                 src={ports}
                 alt="ports"
               />
@@ -261,7 +266,7 @@ const Product = () => {
                 }}
               >
                 <div
-                  className=" text-xl md:text-2xl font-semibold mb-1"
+                  className=" text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-1"
                   style={{
                     background:
                       "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
@@ -273,7 +278,7 @@ const Product = () => {
                 >
                   PoRTS
                 </div>
-                <div className=" text-white text-xs md:text-base">
+                <div className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
                   A single customizable wavelength can measure viscosity,
                   density & Temperature continuously.
                 </div>
@@ -283,7 +288,7 @@ const Product = () => {
           <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
             {/* heading and play button */}
             <div className=" md:flex gap-2 mb-2">
-              <div className=" text-base mb-2 md:mb-0 md:text-lg xl:text-3xl font-semibold">
+              <div className="mb-2 md:mb-0 text-lg lg:text-3xl 2xl:text-4xl font-semibold">
                 Multi-Parameter Measurement Sensor
               </div>
               <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
@@ -297,22 +302,22 @@ const Product = () => {
             </div>
 
             {/* orange tab */}
-            <div className="md:flex flex-wrap lg:gap-2">
-              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
+            <div className="md:flex flex-wrap lg:gap-2 text-sm lg:text-lg xl:text-sm 2xl:text-xl font-medium">
+              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
                 Viscosity: 50 cP - 15000 cP
               </div>
 
-              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
+              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
                 Density: 700 kg/m³ to 1200 kg/m³
               </div>
 
-              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
                 Temperature: 20° C to 400° C
               </div>
             </div>
 
             {/* description */}
-            <div className=" text-[#60646C] text-xs xl:text-sm mb-2">
+            <div className=" text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-xl mb-2 font-medium">
               PoRTS is an invasive/non-invasive based IIoT-enabled rheology and
               temperature measurement sensor that continuously captures multiple
               parameters such as viscosity, density and temperature with a
@@ -322,7 +327,7 @@ const Product = () => {
             </div>
 
             {/* cards */}
-            <div className="md:flex gap-2 mb-2 text-xs xl:text-base">
+            <div className="md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
               <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={paint} />
@@ -338,7 +343,7 @@ const Product = () => {
               </div>
             </div>
 
-            <div className="md:flex gap-2  mb-2 text-xs xl:text-base">
+            <div className="md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
               <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={eor} />
@@ -373,7 +378,7 @@ const Product = () => {
                 }}
               >
                 <div
-                  className=" text-xl md:text-2xl font-semibold mb-1"
+                  className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-1"
                   style={{
                     background:
                       "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
@@ -385,7 +390,7 @@ const Product = () => {
                 >
                   Ztar
                 </div>
-                <div className=" text-white text-xs md:text-base">
+                <div className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
                   A single wavelength can measure viscosity, density &
                   Temperature continuously.
                 </div>
@@ -395,7 +400,7 @@ const Product = () => {
           <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
             {/* heading and play button */}
             <div className=" md:flex gap-2 mb-2">
-              <div className=" text-base mb-2 md:mb-0 md:text-lg xl:text-3xl font-semibold">
+              <div className="mb-2 md:mb-0 text-lg lg:text-3xl 2xl:text-4xl font-semibold">
                 Ultrasonic contact & non-contact based level measurement sensor
               </div>
               <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
@@ -409,12 +414,12 @@ const Product = () => {
             </div>
 
             {/* orange tab */}
-            <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+            <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm lg:text-lg xl:text-sm 2xl:text-xl font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
               Level: 0.03 m to 10 m
             </div>
 
             {/* description */}
-            <div className=" text-[#60646C] text-xs xl:text-sm mb-2">
+            <div className=" text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-xl mb-2 font-medium">
               Ztar is a contact/contactless IIoT-enabled level measurement
               sensor that captures continuous level across any hazardous
               environment with accuracy in contrast to radar-based level
@@ -422,7 +427,7 @@ const Product = () => {
             </div>
 
             {/* cards */}
-            <div className="md:flex gap-2 mb-2 md:mb-20 text-xs xl:text-base">
+            <div className="md:flex gap-2 mb-2 md:mb-20 text-sm lg:text-base 2xl:text-xl">
               <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={metal} />
