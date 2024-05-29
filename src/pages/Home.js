@@ -13,7 +13,7 @@ import trophy from '../Assets/trophy.png';
 import client from '../Assets/client.png';
 import real from '../Assets/real.png';
 import solution from '../Assets/solution.png';
-import time from '../Assets/time.png';
+import time from '../Assets/time.png'; 
 import sg from '../Brand/sg.png';
 import tata from '../Brand/tata.png';
 import lam from '../Brand/lam.png';
@@ -34,12 +34,21 @@ import zero from '../Assets/zero.png';
 import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
 import line from '../Assets/underline.png';
+import image1 from "../Assets/image1.png";
+import image2 from "../Assets/image2.png";
+import image3 from "../Assets/image3.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { GiWaterSplash } from "react-icons/gi";
 import { MdOutlineSensors } from "react-icons/md";
 import { SiBlueprint } from "react-icons/si";
 import { HiUserGroup } from "react-icons/hi2";
+import { Swiper, SwiperSlide } from "swiper/react";
+//import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+//import "swiper/css/scrollbar";
 
 export const Home = () => {
 
@@ -238,7 +247,10 @@ export const Home = () => {
     <div className="w-full overflow-hidden">
       <div className="h-[10vh]">{/* space for navbar */}</div>
       {/* cover image */}
-      <section className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] w-full shadow-white shadow-2xl" ref={coverImageRef}>
+      <section
+        className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] w-full shadow-white shadow-2xl"
+        ref={coverImageRef}
+      >
         <img
           src={newpage}
           alt="cover image"
@@ -997,14 +1009,14 @@ export const Home = () => {
           </div>
         </div>
 
-        <div class="mt-16 flex flex-col items-center">
-          <div
-            class="max-w-full overflow-x-auto flex justify-center items-center "
-            style={{ scrollbarWidth: "none" }}
-          >
+        <div
+          className="border border-black mt-16 overflow-x-auto"
+          style={{ scrollbarWidth: "none" }}
+        >
+          <div className="w-full flex border border-black xl:justify-center">
             <img
               src={sg}
-              style={{ maxWidth: "200px", height: "auto" }}
+              style={{ maxWidth: "200px" }}
               data-aos="slide-right"
             />
             <img
@@ -1021,11 +1033,13 @@ export const Home = () => {
               src={ind}
               style={{ maxWidth: "200px", height: "auto" }}
               data-aos="zoom-in-up"
+              className="object-cover"
             />
             <img
               src={bharat}
               style={{ maxWidth: "200px", height: "auto" }}
               data-aos="slide-left"
+              className="object-cover"
             />
             <img
               src={ved}
@@ -1033,10 +1047,7 @@ export const Home = () => {
               data-aos="slide-left"
             />
           </div>
-          <div
-            class="max-w-full overflow-x-auto mt-2 flex justify-center items-center "
-            style={{ scrollbarWidth: "none" }}
-          >
+          <div className="border border-black max-w-full mt-2 flex xl:justify-center">
             <img
               src={drdo}
               style={{ maxWidth: "200px", height: "auto" }}
@@ -1070,6 +1081,32 @@ export const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* <Swiper
+        // modules={[Navigation, Pagination, Scrollbar, A11y]}
+        spaceBetween={50},
+        slidesPerView={2},
+        observer: true,
+        observeParents: true,
+        //navigation
+        //pagination={{ clickable: true }}
+        //scrollbar={{ draggable: true }}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // autoplay={{ delay: 2500, disableOnInteraction: false }}
+        // loop={true}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>
+          <img src={image1} alt="Slide 1" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image2} alt="Slide 2" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image3} alt="Slide 3" />
+        </SwiperSlide>
+      </Swiper> */}
 
       {/* icon menu for mobile screen */}
       <div

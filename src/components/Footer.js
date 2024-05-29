@@ -59,9 +59,30 @@ const Footer = () => {
               unplanned downtime and enhancing process efficiency.
             </div>
             <div className="flex gap-3 mt-4">
-              <img className="w-6 h-6" src={twitter} alt="Twitter"></img>
-              <img className="w-6 h-6" src={linkedin} alt="LinkedIn"></img>
-              <img className="w-6 h-6" src={share} alt="Share"></img>
+              <img
+                className="w-6 h-6 cursor-pointer"
+                onClick={() =>
+                  window.open("https://x.com/analyticsxyma?lang=en", "_blank")
+                }
+                src={twitter}
+                alt="Twitter"
+              ></img>
+              <img
+                className="w-6 h-6 cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/company/xyma-analytics?original_referer=https%3A%2F%2Fwww.xyma.in%2F",
+                    "_blank"
+                  )
+                }
+                src={linkedin}
+                alt="LinkedIn"
+              ></img>
+              <img
+                className="w-6 h-6 cursor-pointer"
+                src={share}
+                alt="Share"
+              ></img>
             </div>
           </div>
 
@@ -70,28 +91,63 @@ const Footer = () => {
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Quick Links <img className="mt-1 h-0.5 w-5" src={line} />
               </div>
-              <div className="mb-3">About Us</div>
-              <div className="mb-3">Career</div>
-              <div className="mb-3">Media</div>
-              <div className="mb-3">Resources</div>
+              <div
+                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                onClick={() => navigate("/about")}
+              >
+                About Us
+              </div>
+              <div
+                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                onClick={() => navigate("/careers")}
+              >
+                Career
+              </div>
+              <div
+                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                onClick={() => navigate("/media")}
+              >
+                Media
+              </div>
+              <div
+                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                onClick={() => navigate("/resources")}
+              >
+                Resources
+              </div>
             </div>
 
             <div className="w-1/3">
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Products <img className="mt-1 h-0.5 w-5" src={line} />
               </div>
-              <div className="mb-3">μTMapS</div>
-              <div className="mb-3">PoRTS</div>
-              <div className="mb-3">Ztar</div>
-              <div className="mb-3">I-PAMS</div>
+              <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
+                μTMapS
+              </div>
+              <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
+                PoRTS
+              </div>
+              <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
+                Ztar
+              </div>
+              <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
+                I-PAMS
+              </div>
             </div>
 
             <div className="w-1/3">
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Support <img className="mt-1 h-0.5 w-5" src={line} />
               </div>
-              <div className="mb-3">Contact Us</div>
-              <div className="mb-3">Contact Sales</div>
+              <div
+                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                onClick={() => navigate("/contact")}
+              >
+                Contact Us
+              </div>
+              <div className="mb-3 cursor-pointer hover:text-orange-500 duration-200">
+                Contact Sales
+              </div>
             </div>
           </div>
 
@@ -131,7 +187,7 @@ const Footer = () => {
         </div>
       </div>
       {/* space for menu icon in small screens */}
-      <div className='h-[6vh] md:hidden'/>
+      <div className="h-[6vh] md:hidden" />
     </div>
   );
 }

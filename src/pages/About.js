@@ -58,7 +58,7 @@ const About = () => {
                   20+
                 </div>
                 <div className="text-xs md:text-lg lg:text-xxl xl:text-base 2xl:text-2xl font-normal md:font-medium">
-                  Yearsvof&nbsp;R&D
+                  Years&nbsp;of&nbsp;R&D
                 </div>
               </div>
               <div>

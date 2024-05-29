@@ -170,6 +170,12 @@ const Media = () => {
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://asiannews.in/accelerating-technology-for-a-cleaner-energy-future/",
+                    "_blank"
+                  )
+                }
               >
                 View More
               </button>
@@ -207,6 +213,12 @@ const Media = () => {
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://www.saurenergy.com/solar-energy-news/shell-launches-digital-track-for-indian-start-ups-under-its-e4-programme",
+                    "_blank"
+                  )
+                }
               >
                 View More
               </button>
@@ -243,6 +255,12 @@ const Media = () => {
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://www.thehindubusinessline.com/business-tech/remote-sensing-with-xyma-analytics/article64577779.ece",
+                    "_blank"
+                  )
+                }
               >
                 View More
               </button>
@@ -289,9 +307,7 @@ const Media = () => {
                 <div className="text-sm font-semibold mt-1">
                   Sensor for Temperature Measurement at Multiple Points
                 </div>
-                <div className="text-xs mt-1 text-[#60646C]">
-                  11th Oct 2021{" "}
-                </div>
+                <div className="text-xs mt-1 text-[#60646C]">11th Oct 2021</div>
                 <center>
                   <button
                     className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
@@ -299,6 +315,12 @@ const Media = () => {
                       background:
                         "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                     }}
+                    onClick={() =>
+                      window.open(
+                        "https://www.iitm.ac.in/happenings/press-releases-and-coverages/remote-sensing-xyma-analytics",
+                        "_blank"
+                      )
+                    }
                   >
                     View More
                   </button>
@@ -341,6 +363,12 @@ const Media = () => {
                       background:
                         "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                     }}
+                    onClick={() =>
+                      window.open(
+                        "https://yourstory.com/herstory/2024/03/kalaari-capital-vani-kola-entrepreneurship-shesparks",
+                        "_blank"
+                      )
+                    }
                   >
                     View More
                   </button>
@@ -383,6 +411,12 @@ const Media = () => {
                       background:
                         "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                     }}
+                    onClick={() =>
+                      window.open(
+                        "https://www.thehindubusinessline.com/companies/tn-chief-minister-awards-cheques-worth-95-lakh-to-19-start-ups/article38020063.ece",
+                        "_blank"
+                      )
+                    }
                   >
                     View More
                   </button>
@@ -424,6 +458,12 @@ const Media = () => {
                       background:
                         "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                     }}
+                    onClick={() =>
+                      window.open(
+                        "https://www.einnews.com/pr_news/564327124/smarthub-ai-and-xyma-partnership-announcement",
+                        "_blank"
+                      )
+                    }
                   >
                     View More
                   </button>
@@ -465,6 +505,12 @@ const Media = () => {
                       background:
                         "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                     }}
+                    onClick={() =>
+                      window.open(
+                        "https://aninews.in/news/national/general-news/pm-modi-presents-most-creative-creator-award-to-shraddha-rj-raunac-at-bharat-mandapam20240308115958/",
+                        "_blank"
+                      )
+                    }
                   >
                     View More
                   </button>
@@ -510,7 +556,7 @@ const Media = () => {
               Sensor for Temperature Measurement at Multiple Points
             </div>
             <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              11th Oct 2021{" "}
+              11th Oct 2021
             </div>
             <center>
               <button
@@ -519,6 +565,12 @@ const Media = () => {
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://www.iitm.ac.in/happenings/press-releases-and-coverages/remote-sensing-xyma-analytics",
+                    "_blank"
+                  )
+                }
               >
                 View More
               </button>
@@ -561,6 +613,12 @@ const Media = () => {
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://yourstory.com/herstory/2024/03/kalaari-capital-vani-kola-entrepreneurship-shesparks",
+                    "_blank"
+                  )
+                }
               >
                 View More
               </button>
@@ -602,6 +660,12 @@ const Media = () => {
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://www.thehindubusinessline.com/companies/tn-chief-minister-awards-cheques-worth-95-lakh-to-19-start-ups/article38020063.ece",
+                    "_blank"
+                  )
+                }
               >
                 View More
               </button>
@@ -643,6 +707,12 @@ const Media = () => {
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://www.einnews.com/pr_news/564327124/smarthub-ai-and-xyma-partnership-announcement",
+                    "_blank"
+                  )
+                }
               >
                 View More
               </button>
@@ -684,6 +754,12 @@ const Media = () => {
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://aninews.in/news/national/general-news/pm-modi-presents-most-creative-creator-award-to-shraddha-rj-raunac-at-bharat-mandapam20240308115958/",
+                    "_blank"
+                  )
+                }
               >
                 View More
               </button>
