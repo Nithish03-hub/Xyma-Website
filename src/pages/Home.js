@@ -160,14 +160,14 @@ export const Home = () => {
           alt="cover image"
           className="absolute w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl text-white font-medium md:font-semibold gap-2 items-center justify-center xl:items-start xl:justify-start m-[8%]">
+        <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl text-white font-medium md:font-semibold gap-2 items-center justify-center xl:items-start xl:justify-start m-[8%]">
           <div className="flex xl:flex-col gap-2 md:gap-4">
             <div data-aos="slide-right">Prevent</div>
             <div data-aos="slide-right">Unplanned</div>
           </div>
           <div data-aos="slide-right">Downtime</div>
           <div
-            className="text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-xl mt-2 font-normal md:font-medium"
+            className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-xl mt-2 font-normal md:font-medium"
             data-aos="slide-right"
           >
             "The Disruptive Ultrasonic Waveguide Technology"
@@ -190,9 +190,9 @@ export const Home = () => {
       {/* text with underline */}
       <div className="flex justify-center items-center mt-6 mb-4 md:mt-8 md:mb-6 lg:mt-12 lg:mb-16 mx-[5%] md:mx-[8%] xl:mx-[5%]">
         <div className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
-          <div className="">Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
-          <div className="">
-            <div className="">Process&nbsp;parameter&nbsp;measurements</div>
+          <div >Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
+          <div >
+            <div >Process&nbsp;parameter&nbsp;measurements</div>
             <img className=" w-full h-2" src={line}></img>
           </div>
         </div>
@@ -319,7 +319,7 @@ export const Home = () => {
           data-aos="slide-right"
         >
           {clickedImage && (
-            <div className="">
+            <div >
               <img
                 src={clickedImage}
                 alt="Clicked Image"
@@ -372,10 +372,10 @@ export const Home = () => {
 
         <div className="flex justify-center relative text-center mb-1 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mx-[5%]">
           <div className="flex flex-wrap justify-center gap-1">
-            <div className="">Patented Ultrasonic </div>
-            <div className="">
+            <div >Patented Ultrasonic </div>
+            <div >
               <div>Waveguide Sensors:</div>
-              <img className=" w-full h-2" src={line}></img>
+              <img className=" w-full h-2 -z-10" src={line}></img>
             </div>
           </div>
         </div>
@@ -408,7 +408,7 @@ export const Home = () => {
             </div>
             <div className="flex justify-end md:justify-normal">
               {utmapsBadge && (
-                <div className="absolute bg-white rounded-xl w-[70%] h-[150px] md:w-[500px] z-10 text-gray-500 md:flex">
+                <div className="absolute bg-white border border-[#FE9D1C] rounded-xl w-[70%] md:w-[500px] z-10 text-gray-500 md:flex">
                   <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
                     <div className="w-full h-full bg-black rounded-xl flex justify-center ">
                       <img
@@ -458,7 +458,7 @@ export const Home = () => {
             </div>
             <div className="flex justify-end md:justify-normal">
               {portsBadge && (
-                <div className="absolute bg-white rounded-xl w-[70%] h-[150px] md:w-[500px] z-10  text-gray-500 md:flex">
+                <div className="absolute bg-white border border-[#FE9D1C] rounded-xl w-[70%] md:w-[500px] z-10  text-gray-500 md:flex">
                   <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
                     <div className="w-full h-full bg-black rounded-xl flex justify-center ">
                       <img
@@ -510,7 +510,7 @@ export const Home = () => {
 
             <div className="flex justify-end md:justify-normal">
               {ztarBadge && (
-                <div className="absolute bg-white rounded-xl w-[70%] h-[150px] md:w-[350px] z-10 text-gray-500 md:flex">
+                <div className="absolute bg-white border border-[#FE9D1C] rounded-xl w-[70%] md:w-[350px] z-10 text-gray-500 md:flex">
                   <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
                     <div className="w-full h-full bg-black rounded-xl flex justify-center ">
                       <img
@@ -715,8 +715,8 @@ export const Home = () => {
                 <img className="w-[75px]" src={trophy} alt="Trophy icon" />
               </div>
               <div className="text-xl md:text-2xl lg:text-4xl 2xl:text-5xl font-semibold">
-                <div className="">Award Winning</div>
-                <div className="">Technology</div>
+                <div >Award Winning</div>
+                <div >Technology</div>
               </div>
 
               <div className="text-xs lg:text-base 2xl:text-lg">

@@ -23,33 +23,6 @@ const CaseStudy = () => {
   return (
     <div className=" mx-[5%]">
       <div className="h-[10vh]">{/* navbar space */}</div>
-      {/* <div className="border border-black flex gap-2 mt-10 md:mt-16 mx-[8%] md:mx-0 text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-4xl font-semibold">
-        <div className="cursor-pointer flex items-center" onClick={handleBack}>
-          <HiChevronLeft size={25} />
-        </div>
-        <div>Aluminium</div>
-        <div>
-          <div>Case Studies</div>
-          <img className="w-full h-2" src={line}></img>
-        </div>
-      </div> */}
-
-      {/* <div className="flex justify-center items-center md:justify-start md:items-start mt-10 md:mt-16">
-        <div className="md:flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center">
-          <div
-            className="cursor-pointer flex items-center"
-            onClick={handleBack}
-          >
-            <HiChevronLeft size={25} />
-          </div>
-          <div>Aluminum</div>
-          <div className='mx-[8%] md:mx-0 flex flex-col items-center"'>
-            Case Studies
-          </div>
-          <img className="w-full h-2" src={line}></img>
-        </div>
-      </div> */}
-
       <div className="mt-10 md:mt-16">
         <div className="flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
           <div

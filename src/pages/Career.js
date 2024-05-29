@@ -74,11 +74,11 @@ const Career = () => {
           className="w-full h-full object-cover object-top"
         />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center">
-          <div className="text-white text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
+          <div className="text-white text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-medium md:font-semibold">
             <div>"Together,</div>
             <div className="ml-6">we shine"</div>
           </div>
-          <div className="text-white mt-3 md:mt-5 text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+          <div className="text-white mt-3 md:mt-5 text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
             We help you grow along with us
           </div>
           <button

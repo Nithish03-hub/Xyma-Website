@@ -44,38 +44,38 @@ const About = () => {
         <div className="absolute h-full w-full inset-0 p-8 md:p-16 text-white">
           <div className="w-full h-full xl:flex">
             <div className="w-full xl:w-[90%] h-[70%] xl:h-full flex flex-col gap-4 justify-center text-center xl:text-left">
-              <div className="text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-semibold md:font-bold">
+              <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold">
                 2019
               </div>
-              <div className="text-lg md:text-3xl lg:text-5xl xl:text-4xl 2xl:text-6xl font-normal">
+              <div className="text-lg md:text-3xl lg:text-4xl 2xl:text-6xl font-normal">
                 Founded through the CNDE, IIT <br /> Madras, and incubated at
                 IIT Madras <br /> Incubation Cell
               </div>
             </div>
             <div className="w-full xl:w-[10%] h-[30%] xl:h-full flex xl:flex-col justify-evenly">
               <div>
-                <div className="text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
+                <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
                   20+
                 </div>
-                <div className="text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+                <div className="text-xs md:text-lg lg:text-xxl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Yearsvof&nbsp;R&D
                 </div>
               </div>
               <div>
-                <div className="text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
+                <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
                   18+
                 </div>
-                <div className="text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+                <div className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Intellectual
                   <br />
                   Properties
                 </div>
               </div>
               <div>
-                <div className="text-3xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
+                <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
                   35+
                 </div>
-                <div className="text-xs md:text-lg lg:text-2xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+                <div className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Publications
                 </div>
               </div>

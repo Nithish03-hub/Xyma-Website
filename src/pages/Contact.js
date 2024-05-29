@@ -6,6 +6,7 @@ import map from '../Images/map.png';
 import call from '../Images/call.png';
 import mail from '../Images/mail.png';
 import location from '../Images/location.png'; 
+import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
 
 const ContactPage = () => {
@@ -45,7 +46,7 @@ const ContactPage = () => {
           />
 
           <div className="absolute inset-0 text-white flex flex-col gap-4 justify-center items-center mx-[15%] text-center">
-            <div className="text-xl md:text-4xl lg:text-5xl xl:text-3xl 2xl:text-5xl font-medium md:font-semibold">
+            <div className="text-xl md:text-4xl xl:text-3xl 2xl:text-5xl font-medium md:font-semibold">
               Unlock Insights, Elevate Performance - Reach Out to XYMA Analytics
               Today
             </div>
@@ -81,26 +82,27 @@ const ContactPage = () => {
 
       <section
         ref={sectionRef}
-        className="mx-[5%] md:mx-[20%] mt-6 mb-10 flex items-center justify-center"
+        className="mx-[5%] md:mx-[20%] mt-6 mb-8 md:mb-12 2xl:mb-16 flex items-center justify-center"
       >
         <div className="">
-          <div className="flex justify-center">
-            <div className="flex gap-2 text-2xl md:text-4xl font-semibold">
-              <div>Get</div>
-              <div className="w-[100px]">
-                <div>In&nbsp;Touch</div>
-                <img className="object-cover" src={second} />
-              </div>
+          <div className="flex justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center">
+            <div>Get</div>
+            <div className="">
+              <div>In&nbsp;Touch</div>
+              <img className="w-full h-2" src={line}></img>
             </div>
           </div>
 
-          <div className="text-[#60646C] text-sm md:text-base text-center mt-2 mb-2">
+          <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center mt-2 mb-2">
             Our attention is fully focused on You. Do not hesitate to contact us
             at any time
           </div>
 
           <div className=" mb-4">
-            <form onSubmit={handleFormSubmit} className="text-sm md:text-base">
+            <form
+              onSubmit={handleFormSubmit}
+              className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl"
+            >
               <div className="md:flex gap-4">
                 <div className=" w-full md:w-1/2 mb-2">
                   <label
@@ -205,17 +207,16 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <section className=" mb-10">
-        <div className="flex justify-center">
-          <div className="md:flex gap-2 text-2xl md:text-4xl font-semibold">
-            <div className="">Around the world:</div>
-            <div className="w-[200px] md:w-[280px] text-center">
-              <div className="">XYMA&nbsp;Analytics</div>
-              <img className="w-full object-cover" src={second} />
-            </div>
+      <section className="mb-8 md:mb-12 2xl:mb-16">
+        <div className="flex justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center">
+          <div>Around the world:</div>
+          <div className="">
+            <div>XYMA&nbsp;Analytics</div>
+            <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <div className="text-[#60646C] text-sm md:text-base text-center mt-2">
+
+        <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center mt-2">
           Installations of Ultrasonic Waveguide Sensors in different countries
         </div>
         <div className=" h-[200px] md:h-auto">
@@ -223,17 +224,15 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <center className="mb-4">
-        <div className=" w-[100px] md:w-[200px]">
-          <div className=" text-xl md:text-4xl font-semibold">Location</div>
-          <div className="">
-            <img src={second} alt="Second" />
-          </div>
+      <div className="text-center flex justify-center">
+        <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold mb-4 md:mb-6 2xl:mb-8">
+          <div>Location</div>
+          <img className="w-full h-2" src={line}></img>
         </div>
-      </center>
+      </div>
 
       <div className="md:flex justify-center  mx-[5%]">
-        <div className="w-full md:w-1/2 h-[300px] md:h-[400px]  p-4">
+        <div className="w-full md:w-1/2 h-[300px] md:h-[400px] 2xl:h-[450px] p-4">
           <iframe
             className="rounded-2xl"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6996041325237!2d80.24036047361022!3d12.991055214454398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526789b9607537%3A0x961343cab532a48d!2sXYMA%20Analytics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1714978751471!5m2!1sen!2sin"
@@ -246,7 +245,7 @@ const ContactPage = () => {
           ></iframe>
         </div>
 
-        <div className="w-full md:w-1/2 p-4 flex items-center  text-sm md:text-base">
+        <div className="w-full md:w-1/2 p-4 flex items-center text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
           <div className="flex flex-col">
             <div className="flex border border-gray-300 rounded-xl p-2">
               <img className="w-7 h-7 mt-0.5" src={call} alt="Call Icon" />

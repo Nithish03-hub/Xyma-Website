@@ -28,7 +28,7 @@ const Footer = () => {
           }}
         >
           <div className=" w-full md:w-[60%] flex flex-col items-center md:items-start">
-            <div>Enhance Process Efficiency through</div>
+            <div>Enhance&nbsp;Process&nbsp;Efficiency&nbsp;through</div>
             <div className="flex gap-2">
               <div>XYMA</div>
               <div>
@@ -37,7 +37,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className=" w-full md:w-[40%] text-xs p-2 md:p-4 flex gap-2 justify-center h-16 md:h-auto mt-2 md:mt-0">
+          <div className=" w-full md:w-[40%] text-xs lg:text-sm xl:text-xs 2xl:text-base p-2 md:p-4 flex gap-2 justify-center h-16 md:h-auto mt-2 md:mt-0">
             <button
               className="bg-[#01285C] text-white rounded-full w-44 px-1"
               onClick={handleContactClick}
@@ -54,7 +54,7 @@ const Footer = () => {
         <div className="w-[90%] text-white flex flex-col md:flex-row gap-2">
           <div className="w-full md:w-[25%] flex flex-col items-center md:items-start">
             <img className="w-32 h-14" src={logo} alt="Logo"></img>
-            <div className="text-white text-xs w-full md:w-[80%] mt-2 text-center md:text-left">
+            <div className="text-white text-xs lg:text-sm xl:text-xs 2xl:text-base w-full md:w-[80%] mt-2 text-center md:text-left">
               Patented Ultrasonic Waveguide based sensors for preventing
               unplanned downtime and enhancing process efficiency.
             </div>
@@ -65,9 +65,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-[50%] flex">
-            <div className="text-xs w-1/3">
-              <div className="font-semibold mb-5 text-sm">
+          <div className="w-full md:w-[50%] flex text-xs lg:text-sm xl:text-xs 2xl:text-base">
+            <div className="w-1/3">
+              <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Quick Links <img className="mt-1 h-0.5 w-5" src={line} />
               </div>
               <div className="mb-3">About Us</div>
@@ -76,8 +76,8 @@ const Footer = () => {
               <div className="mb-3">Resources</div>
             </div>
 
-            <div className="text-xs w-1/3">
-              <div className="font-semibold mb-5 text-sm ">
+            <div className="w-1/3">
+              <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Products <img className="mt-1 h-0.5 w-5" src={line} />
               </div>
               <div className="mb-3">μTMapS</div>
@@ -86,8 +86,8 @@ const Footer = () => {
               <div className="mb-3">I-PAMS</div>
             </div>
 
-            <div className="text-xs w-1/3">
-              <div className="font-semibold mb-5 text-sm ">
+            <div className="w-1/3">
+              <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Support <img className="mt-1 h-0.5 w-5" src={line} />
               </div>
               <div className="mb-3">Contact Us</div>
@@ -96,23 +96,27 @@ const Footer = () => {
           </div>
 
           <div className="w-full md:w-[25%] flex items-start justify-center">
-            <div className="flex flex-col items-start p-2.5 gap-2.5 w-full h-full md:h-[50%] bg-black/40 rounded-[10px]">
-              <div>Subscribe Now</div>
-              <form class="flex items-center justify-between w-full">
+            <div className="flex flex-col items-start p-4 gap-2.5 w-full bg-black/40 rounded-xl">
+              <div className="text-sm lg:text-base xl:text-sm 2xl:text-lg">
+                Subscribe Now
+              </div>
+              <form class="flex gap-2 items-center w-full">
                 <input
                   type="email"
-                  className="text-xs w-[85%] h-7 rounded-md pl-3"
+                  className="text-xs lg:text-sm xl:text-xs 2xl:text-base text-black w-[85%] rounded-sm p-2"
                   placeholder="Enter your email"
                   required
                 />
-                <img class="w-7 h-7" src={arrow} />
+                <div className="w-[15%] flex justify-center">
+                  <img className="h-8 md:h-6 lg:h-8" src={arrow} />
+                </div>
               </form>
             </div>
           </div>
         </div>
         <div className="h-0.5 mt-4 mb-4 w-[90%] bg-[#013872]" />
         {/* footer */}
-        <div className="md:flex justify-between text-white text-xs w-[90%] mb-4 font-light">
+        <div className="md:flex justify-between text-white text-xs lg:text-sm xl:text-xs 2xl:text-base w-[90%] mb-4 font-light">
           <div className="md:flex text-center gap-1 justify-center">
             <div className="flex justify-center">
               <div className="mr-1">© 2022 XYMA Analytics Inc.</div>

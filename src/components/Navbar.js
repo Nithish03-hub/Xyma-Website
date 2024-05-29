@@ -45,7 +45,7 @@ const Navbar = () => {
           }}
         >
           <div className="flex items-center text-white lg:justify-around justify-between w-full h-full text-lg xl:text-sm 2xl:text-lg">
-            <div className='h-full flex items-center'>
+            <div className="h-full flex items-center">
               <img className="h-[65%]" src={xyma} alt="Logo" />
             </div>
             <div className="hidden lg:flex gap-8 items-center">
@@ -104,6 +104,7 @@ const Navbar = () => {
         ></div>
       </div>
 
+      {/* hamburger menu */}
       {burgerMenuOpen && (
         <div
           className="bg-white h-[90vh] w-full lg:hidden"
@@ -114,7 +115,7 @@ const Navbar = () => {
             {HeaderData.map((item, index) => (
               <div
                 key={index}
-                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg  ${
+                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl  ${
                   location.pathname === item.path ? "text-orange-400" : ""
                 }`}
                 onClick={() => {
@@ -143,9 +144,9 @@ const Navbar = () => {
               </div>
             ))}
           </div>
-          <div className="p-3 h-[25%] flex items-end">
+          <div className="p-3 h-[28%] flex items-end">
             <div
-              className="text-white w-[125px] py-3 px-4 rounded-full cursor-pointer"
+              className="text-white py-3 px-4 md:text-lg rounded-full cursor-pointer"
               style={{
                 background:
                   "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -159,17 +160,17 @@ const Navbar = () => {
             </div>
           </div>
           {/* footer */}
-          <div className="h-[15%] px-4 py-2 text-xs border border-t-gray-400">
-            <div className="h-[55%]">
-              <div className="h-1/2 flex gap-1 justify-center">
+          <div className="h-[12%] px-4 py-2 text-xs md:text-base border border-t-gray-400">
+            <div className="h-[55%] flex flex-col justify-center">
+              <div className="flex gap-1 justify-center">
                 <div>© 2022 XYMA Analytics Inc.</div>
                 <div className="text-gray-400">IIT Madras Research Park,</div>
               </div>
-              <div className="h-1/2 text-gray-400 text-center">
+              <div className="text-gray-400 text-center">
                 Chennai, 600113
               </div>
             </div>
-            <div className="h-[45%] flex gap-6 justify-center items-end py-1">
+            <div className="h-[45%] flex gap-6 justify-center items-center py-1">
               <div>Terms & Conditions</div>
               <div>Privacy Policy</div>
             </div>

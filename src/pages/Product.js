@@ -84,11 +84,11 @@ const Product = () => {
               //style={{ ...imageStyle }}
             />
             <div className=" inset-0 xl:w-[32%] 2xl:w-[42%] flex flex-col gap-2 lg:gap-4 absolute m-[8%] text-white  items-center justify-center xl:items-start xl:justify-start">
-              <div className=" text-2xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
+              <div className=" text-2xl md:text-5xl lg:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
                 {item.title}
               </div>
               <div
-                className=" p-1 text-center xl:text-left text-xl md:text-3xl lg:text-5xl xl:text-4xl 2xl:text-6xl font-medium md:font-semibold"
+                className=" p-1 text-center xl:text-left text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-medium md:font-semibold"
                 style={{
                   background:
                     "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
@@ -99,7 +99,7 @@ const Product = () => {
               >
                 {item.text1}
               </div>
-              <div className=" text-xs md:text-lg lg:text-2xl xl:text-base  2xl:text-xl font-normal md:font-medium text-center xl:text-left">
+              <div className=" text-xs md:text-lg lg:text-xl xl:text-base  2xl:text-xl font-normal md:font-medium text-center xl:text-left">
                 {item.text}
               </div>
             </div>
