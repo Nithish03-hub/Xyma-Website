@@ -10,24 +10,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Navbar = () => {
-  //const navigate = useNavigate();
-  //const [menuOpen, setMenuOpen] = useState(false);
-
-  // const handleContactClick = () => {
-  //   navigate('/contact');
-  // };
   const navigate = useNavigate();
-  // const [selectedIndex, setSelectedIndex] = useState(0);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const location = useLocation();
 
-  // const handleNavItemClick = (index) => {
-  //   setSelectedIndex(index);
-  // };
-
   const handleContactClick = () => {
     navigate("/contact");
-    //setSelectedIndex(null);
   };
 
   const handleBurgerMenu = () =>
@@ -53,10 +41,6 @@ const Navbar = () => {
                 <div key={index} className="">
                   <NavLink
                     to={item.path}
-                    // className={`${
-                    //   selectedIndex === index ? "text-orange-400" : ""
-                    // }`}
-                    // onClick={() => handleNavItemClick(index)}
                     className={`${
                       location.pathname === item.path && "text-orange-400"
                     }`}
@@ -107,7 +91,7 @@ const Navbar = () => {
       {/* hamburger menu */}
       {burgerMenuOpen && (
         <div
-          className="bg-white h-[90vh] w-full lg:hidden"
+          className="bg-white h-[84vh] md:h-[90vh] w-full lg:hidden"
           // data-aos="slide-down"
           // data-aos-duration="800"
         >

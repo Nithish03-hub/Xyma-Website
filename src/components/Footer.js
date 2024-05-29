@@ -130,6 +130,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {/* space for menu icon in small screens */}
+      <div className='h-[6vh] md:hidden'/>
     </div>
   );
 }

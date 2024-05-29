@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react';
-// import aluminum from '../Assets/aluminum.png';
-// import aluminum from '../Assets/reAluminum.png'
-// import aluminum from '../Assets//newAluminum.png'
+import React, { useEffect, useState, useRef } from 'react';
 import aluminum from '../Images/al1.png';
 import steel from '../Assets/steelHome.png';
 import reformerTubes from '../Assets/reformerTubesHome.png'
@@ -29,9 +26,6 @@ import epri from '../Brand/epri.png';
 import skf from '../Brand/skf.png';
 import schneider from '../Brand/schneider.png';
 import reliance from '../Brand/reliance.png';
-import newline from '../Assets/newline.png';
-import second from '../Assets/secondline.png';
-import old from '../Assets/old.png';
 import newbgcropped from '../Assets/newbgcropped.png';
 import sensor from '../Assets/sensor.png';
 import iot from '../Assets/iot.png';
@@ -42,6 +36,10 @@ import tool from '../Assets/tool.png';
 import line from '../Assets/underline.png';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { GiWaterSplash } from "react-icons/gi";
+import { MdOutlineSensors } from "react-icons/md";
+import { SiBlueprint } from "react-icons/si";
+import { HiUserGroup } from "react-icons/hi2";
 
 export const Home = () => {
 
@@ -67,7 +65,93 @@ export const Home = () => {
   const [utmapsBadge, setUtmapsBadge] = useState(false);
   const [portsBadge, setPortsBadge] = useState(false);
   const [ztarBadge, setZtarBadge] = useState(false);
+  const [renderIconMenu, setRenderIconMenu] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
 
+  const coverImageRef = useRef(null);
+
+  const sectionRefs = {
+    section1: useRef(null),
+    section2: useRef(null),
+    section3: useRef(null),
+    section4: useRef(null),
+  };
+
+  // condition to display icon menu
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(!entry.isIntersecting)
+        {
+          setRenderIconMenu(true);
+        }
+        else
+        {
+          setRenderIconMenu(false);
+        }
+      });
+    },options);
+
+    observer.observe(coverImageRef.current);
+
+    return () => {
+      observer.disconnect();
+    }
+  }, []);
+
+  // intersection observer, indicates the section in the screen
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    Object.values(sectionRefs).forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      Object.values(sectionRefs).forEach(ref => {
+        if(ref.current)
+        {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, []);
+
+  const handleSectionScroll = (ref) => {
+    scrollToSection(ref);
+  };
+ 
+  const scrollToSection = (ref) => {
+    const navbarHeight = window.innerHeight * 0.1; // 10vh to account for navbar
+    const sectionTop = ref.current.getBoundingClientRect().top + window.scrollY;
+    const scrollPosition = sectionTop - navbarHeight;
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    });
+  };
+  
   const handleOverlayEnter = () =>
   {
     setOverlay(true);
@@ -154,7 +238,7 @@ export const Home = () => {
     <div className="w-full overflow-hidden">
       <div className="h-[10vh]">{/* space for navbar */}</div>
       {/* cover image */}
-      <div className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] w-full shadow-white shadow-2xl">
+      <section className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] w-full shadow-white shadow-2xl" ref={coverImageRef}>
         <img
           src={newpage}
           alt="cover image"
@@ -173,7 +257,7 @@ export const Home = () => {
             "The Disruptive Ultrasonic Waveguide Technology"
           </div>
         </div>
-      </div>
+      </section>
       {/* bottom text */}
       <div
         className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
@@ -187,183 +271,230 @@ export const Home = () => {
         XYMA ANALYTICS
       </div>
 
-      {/* text with underline */}
-      <div className="flex justify-center items-center mt-6 mb-4 md:mt-8 md:mb-6 lg:mt-12 lg:mb-16 mx-[5%] md:mx-[8%] xl:mx-[5%]">
-        <div className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
-          <div >Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
-          <div >
-            <div >Process&nbsp;parameter&nbsp;measurements</div>
-            <img className=" w-full h-2" src={line}></img>
-          </div>
-        </div>
-      </div>
-
-      {/* elements cards */}
-      <div className="md:flex mx-[5%] xl:mx-[8%] mb-8 md:mb-16 lg:mb-24 2xl:mb-32">
-        {/* list of elements */}
+      {/* icon menu */}
+      {renderIconMenu && (
         <div
-          className="w-full overflow-auto md:w-[14%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
-          style={{ scrollbarWidth: "none" }}
+          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-50 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
+          data-aos=""
         >
-          <div data-aos="zoom-in-up">
-            <div
-              className={`md:w-full cursor-pointer p-1 mb-1 flex ${
-                clickedImage === aluminum && "text-[#013872] font-bold"
-              }`}
-              id="aluminum"
-              onClick={handleImageChange}
-            >
-              {clickedImage === aluminum && (
-                <div className="invisible md:visible border border-[#013872]"></div>
-              )}
-              <div className="ml-1 -z-10">Aluminum</div>
-            </div>
-            {clickedImage === aluminum && (
-              <div className="border border-[#013872] md:hidden" />
-            )}
-          </div>
-
-          <div data-aos="zoom-in-up">
-            <div
-              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === steel && "text-[#013872] font-bold"
-              }`}
-              id="steel"
-              onClick={handleImageChange}
-            >
-              {clickedImage === steel && (
-                <div className="invisible md:visible border border-[#013872]"></div>
-              )}
-              <div className="ml-1 -z-10">Steel</div>
-            </div>
-            {clickedImage === steel && (
-              <div className="border border-[#013872] md:hidden" />
-            )}
-          </div>
-
-          <div data-aos="zoom-in-up">
-            <div
-              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === reformerTubes && "text-[#013872] font-bold"
-              }`}
-              id="refiniries"
-              onClick={handleImageChange}
-            >
-              {clickedImage === reformerTubes && (
-                <div className="invisible md:visible border border-[#013872]"></div>
-              )}
-              <div className="ml-1 -z-10">Refiniries</div>
-            </div>
-            {clickedImage === reformerTubes && (
-              <div className="border border-[#013872] md:hidden" />
-            )}
-          </div>
-
-          <div data-aos="zoom-in-up">
-            <div
-              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === lubricants && "text-[#013872] font-bold"
-              }`}
-              id="lubricants"
-              onClick={handleImageChange}
-            >
-              {clickedImage === lubricants && (
-                <div className="invisible md:visible border border-[#013872]"></div>
-              )}
-              <div className="ml-1 -z-10">Lubricants</div>
-            </div>
-            {clickedImage === lubricants && (
-              <div className="border border-[#013872] md:hidden" />
-            )}
-          </div>
-
-          <div data-aos="zoom-in-up">
-            <div
-              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === oilRecovery && "text-[#013872] font-bold"
-              }`}
-              id="oilRecovery"
-              onClick={handleImageChange}
-            >
-              {clickedImage === oilRecovery && (
-                <div className="invisible md:visible border border-[#013872]"></div>
-              )}
-              <div className="ml-1 -z-10">Oil&nbsp;Recovery</div>
-            </div>
-            {clickedImage === oilRecovery && (
-              <div className="border border-[#013872] md:hidden" />
-            )}
-          </div>
-
-          <div data-aos="zoom-in-up">
-            <div
-              className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                clickedImage === paints && "text-[#013872] font-bold"
-              }`}
-              id="paints"
-              onClick={handleImageChange}
-            >
-              {clickedImage === paints && (
-                <div className="invisible md:visible border border-[#013872]"></div>
-              )}
-              <div className="ml-1 -z-10">Paints</div>
-            </div>
-            {clickedImage === paints && (
-              <div className="border border-[#013872] md:hidden" />
-            )}
-          </div>
-        </div>
-        {/* element images */}
-        <div
-          className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
-          data-aos="slide-right"
-        >
-          {clickedImage && (
-            <div >
-              <img
-                src={clickedImage}
-                alt="Clicked Image"
-                className="shadow-white shadow-2xl rounded-2xl object-cover"
-              />
-            </div>
-          )}
           <div
-            className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
-            style={{
-              backgroundImage:
-                "linear-gradient(to bottom, white, rgb(209, 213, 219))",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
+            onClick={() => handleSectionScroll(sectionRefs.section1)}
+            className={`cursor-pointer ${
+              activeSection === "section1" ? "text-orange-400" : "text-gray-400"
+            }`}
           >
-            {imageName}
+            <GiWaterSplash size={25} />
+          </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section2)}
+            className={`cursor-pointer ${
+              activeSection === "section2" ? "text-orange-400" : "text-gray-400"
+            }`}
+          >
+            <MdOutlineSensors size={25} />
+          </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section3)}
+            className={`cursor-pointer ${
+              activeSection === "section3" ? "text-orange-400" : "text-gray-400"
+            }`}
+          >
+            <SiBlueprint size={25} />
+          </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section4)}
+            className={`cursor-pointer ${
+              activeSection === "section4" ? "text-orange-400" : "text-gray-400"
+            }`}
+          >
+            <HiUserGroup size={25} />
           </div>
         </div>
-        {/* elements description */}
-        <div
-          className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
-          // data-aos={window.innerWidth <= 640 ? "slide-up" : "slide-left"}
-          data-aos="slide-left"
-        >
-          {clickedImage && (
+      )}
+
+      {/* elements section */}
+      <section id="section1" ref={sectionRefs.section1} className="pt-1">
+        {/* text with underline */}
+        <div className="flex justify-center items-center mb-4 md:mb-6 mt-4 md:mt-8 lg:mt-12 lg:mb-16 mx-[5%] md:mx-[8%] xl:mx-[5%]">
+          <div className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
+            <div>Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
+            <div>
+              <div>Process&nbsp;parameter&nbsp;measurements</div>
+              <img className=" w-full h-2" src={line}></img>
+            </div>
+          </div>
+        </div>
+        {/* elements cards */}
+        <div className="md:flex mx-[5%] xl:mx-[8%] mb-8 md:mb-16 lg:mb-24 2xl:mb-32">
+          {/* list of elements */}
+          <div
+            className="w-full overflow-auto md:w-[14%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
+            style={{ scrollbarWidth: "none" }}
+          >
+            <div data-aos="zoom-in-up">
+              <div
+                className={`md:w-full cursor-pointer p-1 mb-1 flex ${
+                  clickedImage === aluminum && "text-[#013872] font-bold"
+                }`}
+                id="aluminum"
+                onClick={handleImageChange}
+              >
+                {clickedImage === aluminum && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Aluminum</div>
+              </div>
+              {clickedImage === aluminum && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+
+            <div data-aos="zoom-in-up">
+              <div
+                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === steel && "text-[#013872] font-bold"
+                }`}
+                id="steel"
+                onClick={handleImageChange}
+              >
+                {clickedImage === steel && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Steel</div>
+              </div>
+              {clickedImage === steel && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+
+            <div data-aos="zoom-in-up">
+              <div
+                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === reformerTubes && "text-[#013872] font-bold"
+                }`}
+                id="refiniries"
+                onClick={handleImageChange}
+              >
+                {clickedImage === reformerTubes && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Refiniries</div>
+              </div>
+              {clickedImage === reformerTubes && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+
+            <div data-aos="zoom-in-up">
+              <div
+                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === lubricants && "text-[#013872] font-bold"
+                }`}
+                id="lubricants"
+                onClick={handleImageChange}
+              >
+                {clickedImage === lubricants && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Lubricants</div>
+              </div>
+              {clickedImage === lubricants && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+
+            <div data-aos="zoom-in-up">
+              <div
+                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === oilRecovery && "text-[#013872] font-bold"
+                }`}
+                id="oilRecovery"
+                onClick={handleImageChange}
+              >
+                {clickedImage === oilRecovery && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Oil&nbsp;Recovery</div>
+              </div>
+              {clickedImage === oilRecovery && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+
+            <div data-aos="zoom-in-up">
+              <div
+                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                  clickedImage === paints && "text-[#013872] font-bold"
+                }`}
+                id="paints"
+                onClick={handleImageChange}
+              >
+                {clickedImage === paints && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Paints</div>
+              </div>
+              {clickedImage === paints && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+          </div>
+          {/* element images */}
+          <div
+            className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+            data-aos="slide-right"
+          >
+            {clickedImage && (
+              <div>
+                <img
+                  src={clickedImage}
+                  alt="Clicked Image"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
+              </div>
+            )}
             <div
-              className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+              className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
               style={{
-                color: "transparent",
-                background:
-                  "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
-                backgroundClip: "text",
-                width: "100%",
+                backgroundImage:
+                  "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
               }}
             >
-              {imageDesc}
+              {imageName}
             </div>
-          )}
+          </div>
+          {/* elements description */}
+          <div
+            className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+            // data-aos={window.innerWidth <= 640 ? "slide-up" : "slide-left"}
+            data-aos="slide-left"
+          >
+            {clickedImage && (
+              <div
+                className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+                style={{
+                  color: "transparent",
+                  background:
+                    "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                  backgroundClip: "text",
+                  width: "100%",
+                }}
+              >
+                {imageDesc}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* semi circle component */}
-      <section className="flex flex-col items-center justify-center relative  mb-8 xl:h-[95vh]">
+      <section
+        id="section2"
+        className="  flex flex-col items-center justify-center relative mb-8 xl:h-[95vh]"
+        ref={sectionRefs.section2}
+      >
         <div
           className={`hidden xl:block w-full h-full bg-black absolute transition-opacity duration-500 ${
             overlay ? "opacity-40" : "opacity-0"
@@ -372,8 +503,8 @@ export const Home = () => {
 
         <div className="flex justify-center relative text-center mb-1 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mx-[5%]">
           <div className="flex flex-wrap justify-center gap-1">
-            <div >Patented Ultrasonic </div>
-            <div >
+            <div>Patented Ultrasonic </div>
+            <div>
               <div>Waveguide Sensors:</div>
               <img className=" w-full h-2 -z-10" src={line}></img>
             </div>
@@ -685,9 +816,9 @@ export const Home = () => {
       </section>
 
       {/* grid card section */}
-      <section>
+      <section id="section3" ref={sectionRefs.section3} className=" ">
         <div
-          className="text-white py-4 md:py-20"
+          className="text-white py-4 md:pb-10 md:pt-10"
           style={{
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
@@ -715,8 +846,8 @@ export const Home = () => {
                 <img className="w-[75px]" src={trophy} alt="Trophy icon" />
               </div>
               <div className="text-xl md:text-2xl lg:text-4xl 2xl:text-5xl font-semibold">
-                <div >Award Winning</div>
-                <div >Technology</div>
+                <div>Award Winning</div>
+                <div>Technology</div>
               </div>
 
               <div className="text-xs lg:text-base 2xl:text-lg">
@@ -810,8 +941,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </section>
-      <section>
+
         <div
           className="h-12 w-full"
           style={{
@@ -845,8 +975,11 @@ export const Home = () => {
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="flex flex-col justify-center items-center mt-8 md:mt-20">
+      {/* clients section */}
+      <section id="section4" ref={sectionRefs.section4} className=" ">
+        <div className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4">
           <div
             className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center"
             //data-aos="zoom-in-up"
@@ -937,6 +1070,54 @@ export const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* icon menu for mobile screen */}
+      <div
+        className="md:hidden bg-white z-50 fixed bottom-0 w-full  h-[6vh] "
+        data-aos=""
+      >
+        <div
+          className="h-[0.5vh] w-full"
+          style={{
+            background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+          }}
+        />
+
+        <div className="h-[5.5vh] flex justify-evenly items-center">
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section1)}
+            className={`cursor-pointer ${
+              activeSection === "section1" ? "text-orange-400" : "text-gray-400"
+            }`}
+          >
+            <GiWaterSplash size={25} />
+          </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section2)}
+            className={`cursor-pointer ${
+              activeSection === "section2" ? "text-orange-400" : "text-gray-400"
+            }`}
+          >
+            <MdOutlineSensors size={25} />
+          </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section3)}
+            className={`cursor-pointer ${
+              activeSection === "section3" ? "text-orange-400" : "text-gray-400"
+            }`}
+          >
+            <SiBlueprint size={25} />
+          </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section4)}
+            className={`cursor-pointer ${
+              activeSection === "section4" ? "text-orange-400" : "text-gray-400"
+            }`}
+          >
+            <HiUserGroup size={25} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
