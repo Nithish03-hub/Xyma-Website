@@ -91,7 +91,7 @@ const Navbar = () => {
       {/* hamburger menu */}
       {burgerMenuOpen && (
         <div
-          className="bg-white h-[84vh] md:h-[90vh] w-full lg:hidden"
+          className="bg-white h-[90vh] w-full lg:hidden"
           // data-aos="slide-down"
           // data-aos-duration="800"
         >
@@ -122,9 +122,7 @@ const Navbar = () => {
                   >
                     <FiArrowUpRight size={25} />
                   </div>
-                  {/* </div> */}
                 </NavLink>
-                {/* <div></div> */}
               </div>
             ))}
           </div>

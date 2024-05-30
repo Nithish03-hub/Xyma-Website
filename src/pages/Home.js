@@ -33,22 +33,16 @@ import grp from '../Assets/Group.png';
 import zero from '../Assets/zero.png';
 import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
-import line from '../Assets/underline.png';
-import image1 from "../Assets/image1.png";
-import image2 from "../Assets/image2.png";
-import image3 from "../Assets/image3.png";
+import line from '../Assets/underline.png'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { GiWaterSplash } from "react-icons/gi";
 import { MdOutlineSensors } from "react-icons/md";
 import { SiBlueprint } from "react-icons/si";
 import { HiUserGroup } from "react-icons/hi2";
-import { Swiper, SwiperSlide } from "swiper/react";
-//import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-//import "swiper/css/scrollbar";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const Home = () => {
 
@@ -84,6 +78,45 @@ export const Home = () => {
     section2: useRef(null),
     section3: useRef(null),
     section4: useRef(null),
+  };
+  
+  const settings = {
+    slidesToShow: 1,
+    rows: 2,
+    slidesPerRow: 6,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          dots: true,
+          infinite: true,
+          speed: 1000,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 2,
+          slidesPerRow: 2,
+          adaptiveHeight: true,
+          autoplay: true,
+          autoplaySpeed: 2000,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          dots: true,
+          infinite: true,
+          speed: 1000,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 2,
+          slidesPerRow: 3,
+          adaptiveHeight: true,
+          autoplay: true,
+          autoplaySpeed: 2000,
+        },
+      },
+    ],
   };
 
   // condition to display icon menu
@@ -994,13 +1027,11 @@ export const Home = () => {
         <div className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4">
           <div
             className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center"
-            //data-aos="zoom-in-up"
           >
             Xyma Analytics' Clients
           </div>
           <div
             className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium"
-            //data-aos="zoom-in-up"
           >
             Committed to client satisfaction with constant support at all
             stages, our aim is to aid Industry 4.0 transformation while reducing
@@ -1009,152 +1040,59 @@ export const Home = () => {
           </div>
         </div>
 
-        <div
-          className="border border-black mt-16 overflow-x-auto"
-          style={{ scrollbarWidth: "none" }}
-        >
-          <div className="w-full flex border border-black xl:justify-center">
-            <img
-              src={sg}
-              style={{ maxWidth: "200px" }}
-              data-aos="slide-right"
-            />
-            <img
-              src={tata}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="slide-right"
-            />
-            <img
-              src={lam}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="zoom-in-up"
-            />
-            <img
-              src={ind}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="zoom-in-up"
-              className="object-cover"
-            />
-            <img
-              src={bharat}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="slide-left"
-              className="object-cover"
-            />
-            <img
-              src={ved}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="slide-left"
-            />
-          </div>
-          <div className="border border-black max-w-full mt-2 flex xl:justify-center">
-            <img
-              src={drdo}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="slide-right"
-            />
-            <img
-              src={cumi}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="slide-right"
-            />
-            <img
-              src={epri}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="zoom-in-up"
-            />
-            <img
-              src={skf}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="zoom-in-up"
-            />
-            <img
-              src={schneider}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="slide-left"
-            />
-            <img
-              src={reliance}
-              style={{ maxWidth: "200px", height: "auto" }}
-              data-aos="slide-left"
-            />
-          </div>
+        {/* client logo carousel*/}
+        <div className="mt-16 mb-4 md:mx-[8%] ">
+          <Slider {...settings}>
+            <div className="">
+              <img src={sg} className='mx-auto max-w-[200px] h-auto'/>
+            </div>
+
+            <div>
+              <img src={tata} className='mx-auto max-w-[200px] h-auto' />
+            </div>
+
+            <div className=" ">
+              <img src={drdo} className='mx-auto max-w-[200px] h-auto' />
+            </div>
+
+            <div>
+              <img src={cumi} className='mx-auto max-w-[200px] h-auto' />
+            </div>
+
+            <div>
+              <img src={lam} className='mx-auto max-w-[200px] h-auto' />
+            </div>
+
+            <div>
+              <img src={ind} className='mx-auto max-w-[200px] h-auto' />
+            </div>
+
+            <div>
+              <img src={epri} className='mx-auto max-w-[200px] h-auto' />
+            </div>
+
+            <div>
+              <img src={skf} className='mx-auto max-w-[200px] h-auto' />
+            </div>
+
+            <div className="flex">
+              <img src={bharat} className='mx-auto max-w-[200px] h-auto' />
+            </div>
+
+            <div>
+              <img src={ved} className='mx-auto max-w-[200px] h-auto' />
+            </div>
+
+            <div>
+              <img src={schneider} className='mx-auto max-w-[200px] h-auto'/>
+            </div>
+
+            <div>
+              <img src={reliance} className='mx-auto max-w-[200px] h-auto'/>
+            </div>
+          </Slider>
         </div>
       </section>
-
-      {/* <Swiper
-        // modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={50},
-        slidesPerView={2},
-        observer: true,
-        observeParents: true,
-        //navigation
-        //pagination={{ clickable: true }}
-        //scrollbar={{ draggable: true }}
-        // onSwiper={(swiper) => console.log(swiper)}
-        // autoplay={{ delay: 2500, disableOnInteraction: false }}
-        // loop={true}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperSlide>
-          <img src={image1} alt="Slide 1" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={image2} alt="Slide 2" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={image3} alt="Slide 3" />
-        </SwiperSlide>
-      </Swiper> */}
-
-      {/* icon menu for mobile screen */}
-      <div
-        className="md:hidden bg-white z-50 fixed bottom-0 w-full  h-[6vh] "
-        data-aos=""
-      >
-        <div
-          className="h-[0.5vh] w-full"
-          style={{
-            background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-          }}
-        />
-
-        <div className="h-[5.5vh] flex justify-evenly items-center">
-          <div
-            onClick={() => handleSectionScroll(sectionRefs.section1)}
-            className={`cursor-pointer ${
-              activeSection === "section1" ? "text-orange-400" : "text-gray-400"
-            }`}
-          >
-            <GiWaterSplash size={25} />
-          </div>
-          <div
-            onClick={() => handleSectionScroll(sectionRefs.section2)}
-            className={`cursor-pointer ${
-              activeSection === "section2" ? "text-orange-400" : "text-gray-400"
-            }`}
-          >
-            <MdOutlineSensors size={25} />
-          </div>
-          <div
-            onClick={() => handleSectionScroll(sectionRefs.section3)}
-            className={`cursor-pointer ${
-              activeSection === "section3" ? "text-orange-400" : "text-gray-400"
-            }`}
-          >
-            <SiBlueprint size={25} />
-          </div>
-          <div
-            onClick={() => handleSectionScroll(sectionRefs.section4)}
-            className={`cursor-pointer ${
-              activeSection === "section4" ? "text-orange-400" : "text-gray-400"
-            }`}
-          >
-            <HiUserGroup size={25} />
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

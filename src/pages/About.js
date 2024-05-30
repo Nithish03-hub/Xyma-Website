@@ -15,23 +15,36 @@ import c4 from '../Assets/Framec4.png';
 import c5 from '../Assets/Framec5.png';
 import c6 from '../Assets/Framec6.png';
 import ceo2 from '../Assets/Frameceo2.png';
+import a1 from '../Assets/a1.jpg';
+import a2 from "../Assets/a2.png";
+import a3 from "../Assets/a3.png";
+// import a4 from "../Assets/a4.jpg";
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
 import Xarrow from "react-xarrows";
 import useWindowSize from "react-use/lib/useWindowSize";
 import line from "../Assets/underline.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const About = () => {
   
  const navigate = useNavigate();
 
-  const handleContactClick = () => {
-    
-    navigate('/contact');
-  };
-
   const { width } = useWindowSize();
   const isLargeScreen = width >= 768;
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 2500
+  };
   
   return (
     <div>
@@ -388,10 +401,52 @@ const About = () => {
         </div>
 
         <div className="md:flex mt-4">
-          <div className="w-full md:w-1/2 p-8">
-            <img src={ceo2}></img>
+          {/* react slick carousel */}
+          <div className="  w-full md:w-1/2 p-8 lg:p-16">
+            <Slider {...settings}>
+              <div className="text-center">
+                <img
+                  className="max-h-[400px] 2xl:max-h-[450px] w-full rounded-2xl"
+                  src={a1}
+                  alt="a1"
+                />
+                <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
+                  Dr. Nishanth Raja
+                </div>
+                <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
+                  C.E.O. and Co-founder
+                </div>
+              </div>
+              <div className="text-center">
+                <img
+                  className="max-h-[400px] 2xl:max-h-[450px] w-full rounded-2xl"
+                  src={a2}
+                  alt="a2"
+                />
+                <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
+                  Prof. Krishnan Balasubramaniam
+                </div>
+                <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
+                  Founder & Advisor
+                </div>
+              </div>
+              <div className="text-center">
+                <img
+                  className="max-h-[400px] 2xl:max-h-[450px] w-full rounded-2xl"
+                  src={a3}
+                  alt="a3"
+                />
+                <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
+                  Prof. Prabhu Rajagopal
+                </div>
+                <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
+                  Founder & Advisor
+                </div>
+              </div>
+            </Slider>
           </div>
-          <div className="w-full md:w-1/2 flex flex-col justify-center p-8">
+
+          <div className=" w-full md:w-1/2 flex flex-col justify-center p-8 lg:p-16">
             <div className="text-center font-semibold text-lg md:text-2xl lg:text-3xl 2xl:text-4xl text-[#1C2024]">
               The Mission
             </div>
