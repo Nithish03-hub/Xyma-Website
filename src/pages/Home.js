@@ -45,24 +45,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const Home = () => {
-
-  const imageDescription = {
-    Aluminum:
-      "10°C deviation in ideal bath temperature reduces current efficiency, promotes anode effect, and increases PFC emissions ",
-    Steel:
-      "$5.1M would be worth of steel produced by extending ladle life for 1 set of cycle",
-    Refiniries:
-      "20°C increase in design temperature reduces operational life of reformer tubes by 50%",
-    Lubricants: "30% of maintenance budget is affected by lubricants.",
-    OilRecovery:
-      "1.3 lakhs/day would be the worth of injection polymer of unknown viscosity flooded in EOR due to unavailability of continuous viscosity measurement technique.",
-    Paints:
-      "Batch non-homogeneity due to unavailability of continuous viscosity measurement technique.",
-  };
   
   const [clickedImage, setClickedImage] = useState(aluminum);
-  const [imageDesc, setImageDesc] = useState(imageDescription.Aluminum);
-  const [imageName, setImageName] = useState('ALUMINUM');
   const [hoveredItem, setHoveredItem] = useState(null);
   const [overlay, setOverlay] = useState(false);
   const [utmapsBadge, setUtmapsBadge] = useState(false);
@@ -233,38 +217,26 @@ export const Home = () => {
     switch (event.target.id) {
       case "aluminum":
         setClickedImage(aluminum);
-        setImageDesc(imageDescription.Aluminum);
-        setImageName('ALUMINUM');
         break;
 
       case "steel":
         setClickedImage(steel);
-        setImageDesc(imageDescription.Steel);
-        setImageName("STEEL");
         break;
 
       case "refiniries":
         setClickedImage(reformerTubes);
-        setImageDesc(imageDescription.Refiniries);
-        setImageName("REFINIRIES");
         break;
 
       case "lubricants":
         setClickedImage(lubricants);
-        setImageDesc(imageDescription.Lubricants);
-        setImageName("LUBRICANTS");
         break;
 
       case "oilRecovery":
         setClickedImage(oilRecovery);
-        setImageDesc(imageDescription.OilRecovery);
-        setImageName("OIL\u00A0RECOVERY");
         break;
 
       case "paints":
         setClickedImage(paints);
-        setImageDesc(imageDescription.Paints);
-        setImageName("PAINTS");
         break;
 
       default:
@@ -319,7 +291,7 @@ export const Home = () => {
       {/* icon menu */}
       {renderIconMenu && (
         <div
-          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-50 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
+          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-10 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
           data-aos=""
         >
           <div
@@ -376,7 +348,7 @@ export const Home = () => {
             className="w-full overflow-auto md:w-[14%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
             style={{ scrollbarWidth: "none" }}
           >
-            <div data-aos="zoom-in-up">
+            <div >
               <div
                 className={`md:w-full cursor-pointer p-1 mb-1 flex ${
                   clickedImage === aluminum && "text-[#013872] font-bold"
@@ -394,7 +366,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div data-aos="zoom-in-up">
+            <div >
               <div
                 className={`md:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === steel && "text-[#013872] font-bold"
@@ -412,7 +384,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div data-aos="zoom-in-up">
+            <div >
               <div
                 className={`md:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === reformerTubes && "text-[#013872] font-bold"
@@ -430,7 +402,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div data-aos="zoom-in-up">
+            <div >
               <div
                 className={`md:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === lubricants && "text-[#013872] font-bold"
@@ -448,7 +420,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div data-aos="zoom-in-up">
+            <div >
               <div
                 className={`md:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === oilRecovery && "text-[#013872] font-bold"
@@ -466,7 +438,7 @@ export const Home = () => {
               )}
             </div>
 
-            <div data-aos="zoom-in-up">
+            <div >
               <div
                 className={`md:w-full flex p-1 mb-1 cursor-pointer ${
                   clickedImage === paints && "text-[#013872] font-bold"
@@ -484,8 +456,290 @@ export const Home = () => {
               )}
             </div>
           </div>
-          {/* element images */}
-          <div
+
+          {/* aluminum content */}
+          {clickedImage === aluminum && (
+            <>
+              {/* element image*/}
+              <div
+                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                data-aos="slide-right"
+              >
+                <img
+                  src={aluminum}
+                  alt="aluminum"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
+                <div
+                  className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  ALUMINUM
+                </div>
+              </div>
+              {/* elements description */}
+              <div
+                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                data-aos="slide-left"
+              >
+                <div
+                  className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+                  style={{
+                    color: "transparent",
+                    background:
+                      "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                    backgroundClip: "text",
+                    width: "100%",
+                  }}
+                >
+                  10°C deviation in ideal bath temperature reduces current
+                  efficiency, promotes anode effect, and increases PFC emissions
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* steel content */}
+          {clickedImage === steel && (
+            <>
+              {/* element image*/}
+              <div
+                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                data-aos="fade-up"
+              >
+                <img
+                  src={steel}
+                  alt="steel"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
+                <div
+                  className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  STEEL
+                </div>
+              </div>
+              {/* elements description */}
+              <div
+                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                data-aos="fade-up"
+              >
+                <div
+                  className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+                  style={{
+                    color: "transparent",
+                    background:
+                      "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                    backgroundClip: "text",
+                    width: "100%",
+                  }}
+                >
+                  $5.1M would be worth of steel produced by extending ladle life
+                  for 1 set of cycle
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* refiniries content */}
+          {clickedImage === reformerTubes && (
+            <>
+              {/* element image*/}
+              <div
+                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                data-aos="fade-up"
+              >
+                <img
+                  src={reformerTubes}
+                  alt="reformerTubes"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
+                <div
+                  className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  REFINIRIES
+                </div>
+              </div>
+              {/* elements description */}
+              <div
+                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                data-aos="fade-up"
+              >
+                <div
+                  className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+                  style={{
+                    color: "transparent",
+                    background:
+                      "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                    backgroundClip: "text",
+                    width: "100%",
+                  }}
+                >
+                  20°C increase in design temperature reduces operational life
+                  of reformer tubes by 50%
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* lubricants content */}
+          {clickedImage === lubricants && (
+            <>
+              {/* element image*/}
+              <div
+                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                data-aos="fade-up"
+              >
+                <img
+                  src={lubricants}
+                  alt="lubricants"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
+                <div
+                  className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  LUBRICANTS
+                </div>
+              </div>
+              {/* elements description */}
+              <div
+                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                data-aos="fade-up"
+              >
+                <div
+                  className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+                  style={{
+                    color: "transparent",
+                    background:
+                      "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                    backgroundClip: "text",
+                    width: "100%",
+                  }}
+                >
+                  30% of maintenance budget is affected by lubricants.
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* oil recovery content */}
+          {clickedImage === oilRecovery && (
+            <>
+              {/* element image*/}
+              <div
+                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                data-aos="fade-up"
+              >
+                <img
+                  src={oilRecovery}
+                  alt="oilRecovery"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
+                <div
+                  className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  OIL&nbsp;RECOVERY
+                </div>
+              </div>
+              {/* elements description */}
+              <div
+                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                data-aos="fade-up"
+              >
+                <div
+                  className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+                  style={{
+                    color: "transparent",
+                    background:
+                      "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                    backgroundClip: "text",
+                    width: "100%",
+                  }}
+                >
+                  1.3 lakhs/day would be the worth of injection polymer of
+                  unknown viscosity flooded in EOR due to unavailability of
+                  continuous viscosity measurement technique.
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* paints content */}
+          {clickedImage === paints && (
+            <>
+              {/* element image*/}
+              <div
+                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                data-aos="fade-up"
+              >
+                <img
+                  src={paints}
+                  alt="paints"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
+                <div
+                  className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  PAINTS
+                </div>
+              </div>
+              {/* elements description */}
+              <div
+                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                data-aos="fade-up"
+              >
+                <div
+                  className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+                  style={{
+                    color: "transparent",
+                    background:
+                      "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                    backgroundClip: "text",
+                    width: "100%",
+                  }}
+                >
+                  Batch non-homogeneity due to unavailability of continuous
+                  viscosity measurement technique.
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* <div
             className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
             data-aos="slide-right"
           >
@@ -509,11 +763,10 @@ export const Home = () => {
             >
               {imageName}
             </div>
-          </div>
+          </div> */}
           {/* elements description */}
-          <div
+          {/* <div
             className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
-            // data-aos={window.innerWidth <= 640 ? "slide-up" : "slide-left"}
             data-aos="slide-left"
           >
             {clickedImage && (
@@ -530,7 +783,7 @@ export const Home = () => {
                 {imageDesc}
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -1025,14 +1278,10 @@ export const Home = () => {
       {/* clients section */}
       <section id="section4" ref={sectionRefs.section4} className=" ">
         <div className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4">
-          <div
-            className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center"
-          >
+          <div className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
             Xyma Analytics' Clients
           </div>
-          <div
-            className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium"
-          >
+          <div className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium">
             Committed to client satisfaction with constant support at all
             stages, our aim is to aid Industry 4.0 transformation while reducing
             environmental impact, increasing cost savings, and enhancing process
@@ -1044,51 +1293,51 @@ export const Home = () => {
         <div className="mt-16 mb-4 md:mx-[8%] ">
           <Slider {...settings}>
             <div className="">
-              <img src={sg} className='mx-auto max-w-[200px] h-auto'/>
+              <img src={sg} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div>
-              <img src={tata} className='mx-auto max-w-[200px] h-auto' />
+              <img src={tata} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div className=" ">
-              <img src={drdo} className='mx-auto max-w-[200px] h-auto' />
+              <img src={drdo} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div>
-              <img src={cumi} className='mx-auto max-w-[200px] h-auto' />
+              <img src={cumi} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div>
-              <img src={lam} className='mx-auto max-w-[200px] h-auto' />
+              <img src={lam} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div>
-              <img src={ind} className='mx-auto max-w-[200px] h-auto' />
+              <img src={ind} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div>
-              <img src={epri} className='mx-auto max-w-[200px] h-auto' />
+              <img src={epri} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div>
-              <img src={skf} className='mx-auto max-w-[200px] h-auto' />
+              <img src={skf} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div className="flex">
-              <img src={bharat} className='mx-auto max-w-[200px] h-auto' />
+              <img src={bharat} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div>
-              <img src={ved} className='mx-auto max-w-[200px] h-auto' />
+              <img src={ved} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div>
-              <img src={schneider} className='mx-auto max-w-[200px] h-auto'/>
+              <img src={schneider} className="mx-auto max-w-[200px] h-auto" />
             </div>
 
             <div>
-              <img src={reliance} className='mx-auto max-w-[200px] h-auto'/>
+              <img src={reliance} className="mx-auto max-w-[200px] h-auto" />
             </div>
           </Slider>
         </div>

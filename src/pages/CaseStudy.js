@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { HiChevronLeft } from 'react-icons/hi2';
 import second from '../Assets/secondline.png';
 import aluminum from '../Images/al1.png';
@@ -11,6 +11,8 @@ import oil1 from '../Images/oil1.png';
 import steel1 from '../Images/steel1.png';
 import line from "../Assets/underline.png";
 import { useNavigate } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 const CaseStudy = () => {
@@ -19,6 +21,10 @@ const CaseStudy = () => {
   const handleBack =()=>{
     navigate ('/resources');
   } 
+
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
 
   return (
     <div className=" mx-[5%]">
@@ -47,7 +53,7 @@ const CaseStudy = () => {
 
       <div className="md:flex ">
         <div className=" w-full md:w-1/2 p-4 md:p-8">
-          <img src={aluminum} alt="Aluminum Image" />
+          <img src={aluminum} alt="Aluminum Image" data-aos="zoom-out" />
         </div>
 
         <div className=" w-full md:w-1/2 p-4 md:p-8">
@@ -92,7 +98,7 @@ const CaseStudy = () => {
                 </li>
               </ul>
               <div className=" p-2 md:p-8">
-                <img src={aluminum2} />
+                <img src={aluminum2} data-aos="zoom-out" />
               </div>
             </div>
 
@@ -164,7 +170,7 @@ const CaseStudy = () => {
                 </li>
               </ul>
               <div className="p-2 md:p-8">
-                <img src={alum} />
+                <img src={alum} data-aos="zoom-out" />
               </div>
             </div>
 
@@ -245,7 +251,7 @@ const CaseStudy = () => {
               Reformer Tube
             </div>
             <div className="relative  mb-2">
-              <img className="w-full h-full" src={tube1} />
+              <img className="w-full h-full" src={tube1} data-aos="zoom-out" />
               <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
                 Read More
               </span>
@@ -261,7 +267,7 @@ const CaseStudy = () => {
               Lubricant
             </div>
             <div className="relative  mb-2">
-              <img className="w-full h-full" src={oil1} />
+              <img className="w-full h-full" src={oil1} data-aos="zoom-out" />
               <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
                 Read More
               </span>
@@ -277,7 +283,7 @@ const CaseStudy = () => {
               Steel
             </div>
             <div className="relative  mb-2">
-              <img className="w-full h-full" src={steel1} />
+              <img className="w-full h-full" src={steel1} data-aos="zoom-out" />
               <span className="absolute bottom-2 right-2 bg-white text-xs rounded-full p-1 px-2 cursor-pointer">
                 Read More
               </span>

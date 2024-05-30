@@ -1,6 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Sb.css";
-import Icon from "../Icon";
 import image1 from "../Assets/image1.png";
 import image2 from "../Assets/image2.png";
 import image3 from "../Assets/image3.png";
@@ -16,13 +15,14 @@ import luboil from "../Assets/luboil.png";
 import semi from "../Assets/semi.png";
 import ref from "../Assets/refineries.png";
 import eor from "../Assets/eor.png";
+import video from "../Images/contactOverlay2.mp4";
 import { RiPlayCircleFill } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const Product = () => {
   
@@ -33,10 +33,6 @@ const Product = () => {
   const handleSlideClick = (index) => {
     sliderRef.current.slickGoTo(index);
   };
-
-  const handleUtmapsVideo = () => {
-    setRenderUtmapsVideo(true)
-  }
 
   const settings = {
     dots: false,
@@ -51,15 +47,11 @@ const Product = () => {
     beforeChange: (current, next) => setCurrentSlide(next)
   };
 
-  // useEffect(() => {
-  //   AOS.init({ duration: 1500 });
-  // }, []);
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
 
-  const navigate = useNavigate();
-  const handleContactClick = () => {
-    navigate("/contact");
-  };
-
+  
   return (
     <div className="relative overflow-hidden">
       <div className="h-[10vh]">{/* navbar space */}</div>
@@ -180,7 +172,10 @@ const Product = () => {
 
       <div className=" mx-[5%] xl:mx-[8%]">
         {/* utmaps */}
-        <div className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+        <div
+          className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4"
+          data-aos="flip-up"
+        >
           <div className="w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
@@ -228,14 +223,14 @@ const Product = () => {
               <div className="mb-2 md:mb-0 text-lg lg:text-3xl 2xl:text-4xl font-semibold">
                 Multi-Point Temperature Mapping Sensor
               </div>
-              <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
+              <div
+                className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
+                onClick={() => setRenderUtmapsVideo(true)}
+              >
                 <div className="text-[#FE9D1C]">
                   <RiPlayCircleFill size={20} />
                 </div>
-                <div
-                  className="text-sm mb-[2px] text-white"
-                  onClick={handleUtmapsVideo}
-                >
+                <div className="text-sm mb-[2px] text-white">
                   Play&nbsp;Video
                 </div>
               </div>
@@ -291,7 +286,10 @@ const Product = () => {
         </div>
 
         {/* ports */}
-        <div className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+        <div
+          className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4"
+          data-aos="flip-up"
+        >
           <div className="w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
@@ -403,7 +401,10 @@ const Product = () => {
         </div>
 
         {/* ztar */}
-        <div className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4">
+        <div
+          className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4"
+          data-aos="flip-up"
+        >
           <div className="w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
@@ -494,10 +495,40 @@ const Product = () => {
         </div>
       </div>
       {renderUtmapsVideo && (
-      <div className="fixed h-[60%] w-[80%] bg-white">
-        utmaps video content
-      </div>
-    )}
+        <div className="fixed inset-0 w-full h-full bg-black/80 z-50">
+          <div className="  fixed h-[70vh] w-[75vw] bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md">
+            <div className="h-[15%]">
+              <div
+                className=" flex justify-between p-3 text-white"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
+                }}
+              >
+                <div className="text-lg md:text-xl lg:text-2xl xl:text-xl 2xl:text-3xl font-semibold">
+                  μTMapS Product Demo
+                </div>
+                <button
+                  className="text-orange-400"
+                  onClick={() => setRenderUtmapsVideo(false)}
+                >
+                  <IoMdCloseCircle size={30} />
+                </button>
+              </div>
+              <div
+                className="h-1"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+              />
+            </div>
+            <div className=" h-[85%] flex justify-center p-2">
+              <video className="h-full" src={video} autoPlay loop muted />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

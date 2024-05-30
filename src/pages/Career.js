@@ -1,16 +1,8 @@
 import React, { useState,useRef  } from 'react';
 import { useNavigate } from 'react-router-dom';
-import frame from '../Assets/frame2.png'
-import newframe from '../Assets/newframe.png'
-import newframe2 from '../Assets/newframeResized.png'
-import newframe3 from '../Assets/newframe3.png'
-import newframe4 from "../Assets/newframe4.png";
-import newframe5 from "../Assets/newframe5.png";
 import newframe6 from "../Assets/newframecrop.png";
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
-import uline from '../Assets/uline.png'
-import image1 from "../Assets/image1.png";
 import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
 import ReactReadMoreReadLess from "react-read-more-read-less";
@@ -25,8 +17,6 @@ const Badge2 = ({ text, selected, onClick }) => {
     border: `1px solid ${selected ? '#01285C' : '#B4CEEC'}`,
     cursor: 'pointer'
   };
-
-  
 
   return (
     <span style={badgeStyle} onClick={onClick}>
@@ -82,7 +72,7 @@ const Career = () => {
             We help you grow along with us
           </div>
           <button
-            className="text-white text-xs md:text-base lg:text-lg xl:text-xs text 2xl:text-xl font-normal md:font-medium py-2 px-3 md:px-5 mt-3 rounded-full flex items-center gap-1"
+            className="text-white text-xs md:text-base lg:text-lg xl:text-xs text 2xl:text-xl font-normal md:font-medium py-2 px-3 md:px-5 mt-3 rounded-full flex items-center gap-1 hover:scale-90 duration-200"
             style={{
               background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
             }}

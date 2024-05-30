@@ -290,7 +290,7 @@ const Resource = () => {
             {(selectedContent === "Steel" || selectedContent === "All") && (
               <div
                 className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
-                data-aos="slide-left"
+                data-aos="flip-up"
               >
                 <div className="w-full md:w-1/2 p-4">
                   <div className="mb-4 flex justify-between">
@@ -348,7 +348,7 @@ const Resource = () => {
               selectedContent === "All") && (
               <div
                 className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
-                data-aos="slide-left"
+                data-aos="flip-up"
               >
                 <div className="w-full md:w-1/2 p-4">
                   <div className="mb-4 flex justify-between">
@@ -406,7 +406,7 @@ const Resource = () => {
               selectedContent === "All") && (
               <div
                 className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
-                data-aos="slide-left"
+                data-aos="flip-up"
               >
                 <div className="w-full md:w-1/2 p-4">
                   <div className="mb-4 flex justify-between">
@@ -465,7 +465,7 @@ const Resource = () => {
               selectedContent === "All") && (
               <div
                 className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
-                data-aos="slide-left"
+                data-aos="flip-up"
               >
                 <div className="w-full md:w-1/2 p-4">
                   <div className="mb-4 flex justify-between">
@@ -530,7 +530,7 @@ const Resource = () => {
             {(selectedContent === "Paints" || selectedContent === "All") && (
               <div
                 className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
-                data-aos="slide-left"
+                data-aos="flip-up"
               >
                 <div className="w-full md:w-1/2 p-4">
                   <div className="mb-4 flex justify-between">

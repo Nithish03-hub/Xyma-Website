@@ -1,8 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import iit from '../Assets/Frameiit.png';
-import second from '../Assets/secondline.png';
-import left from '../Assets/leftarrow.png';
 import group1 from '../Assets/Framegroup.png';
 import frame1 from '../Assets/Frame1.png';
 import frame21 from '../Assets/Frame21.png';
@@ -14,11 +12,9 @@ import c3 from '../Assets/Framec3.png';
 import c4 from '../Assets/Framec4.png';
 import c5 from '../Assets/Framec5.png';
 import c6 from '../Assets/Framec6.png';
-import ceo2 from '../Assets/Frameceo2.png';
 import a1 from '../Assets/a1.jpg';
 import a2 from "../Assets/a2.png";
 import a3 from "../Assets/a3.png";
-// import a4 from "../Assets/a4.jpg";
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
 import Xarrow from "react-xarrows";
@@ -27,6 +23,8 @@ import line from "../Assets/underline.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
   
@@ -45,6 +43,10 @@ const About = () => {
     autoplay: true,
     autoplaySpeed: 2500
   };
+
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   
   return (
     <div>
@@ -325,7 +327,7 @@ const About = () => {
             <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <img className="mt-4" src={group1}></img>
+        <img className="mt-4" src={group1} data-aos="zoom-in-up"></img>
       </section>
 
       <section className="mx-[5%] mb-8 md:mb-12 2xl:mb-16">
@@ -347,21 +349,25 @@ const About = () => {
             className="w-[100%] md:w-[24%] md:h-[50%]"
             src={frame1}
             alt="Frame 1"
+            data-aos="fade-up"
           />
           <img
             className="w-[100%] md:w-[24%] md:h-[50%]"
             src={frame21}
             alt="Frame 2"
+            data-aos="fade-up"
           />
           <img
             className="w-[100%] md:w-[24%] md:h-[50%]"
             src={frame3}
             alt="Frame 3"
+            data-aos="fade-up"
           />
           <img
             className="w-[100%] md:w-[24%] md:h-[50%]"
             src={frame4}
             alt="Frame 4"
+            data-aos="fade-up"
           />
         </div>
       </section>

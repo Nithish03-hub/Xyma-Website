@@ -1,21 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import video2 from '../Images/contactOverlay2.mp4';
-import black from '../Images/-66.png';
-import second from '../Assets/secondline.png';
 import map from '../Images/map.png';
 import call from '../Images/call.png';
 import mail from '../Images/mail.png';
 import location from '../Images/location.png'; 
 import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactPage = () => {
 
   const sectionRef = useRef(null);
-
-  // const handleButtonClick = () => {
-  //   sectionRef.current.scrollIntoView({ behavior: 'smooth' });
-  // };
 
   const handleButtonClick = () => {
     const navbarHeight = window.innerHeight * 0.1; // 10vh to account for navbar
@@ -32,6 +28,10 @@ const ContactPage = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
   }
+
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
 
   return (
     <div className="mt-[10vh]">
@@ -51,7 +51,7 @@ const ContactPage = () => {
               Today
             </div>
             <button
-              className="text-white text-xs md:text-base lg:text-lg xl:text-xs text 2xl:text-xl font-normal md:font-medium py-2 px-3 md:px-5 mt-3 rounded-full flex items-center gap-1"
+              className="text-white text-xs md:text-base lg:text-lg xl:text-xs text 2xl:text-xl font-normal md:font-medium py-2 px-3 md:px-5 mt-3 rounded-full flex items-center gap-1 hover:scale-90 duration-200"
               style={{
                 background:
                   "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -220,7 +220,7 @@ const ContactPage = () => {
           Installations of Ultrasonic Waveguide Sensors in different countries
         </div>
         <div className=" h-[200px] md:h-auto">
-          <img className="object-cover w-full h-full" src={map}></img>
+          <img className="object-cover w-full h-full" src={map} data-aos="fade"></img>
         </div>
       </section>
 
